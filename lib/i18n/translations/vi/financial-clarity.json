@@ -1,0 +1,8 @@
+{
+  "Profit is based on the original principal and does not compound automatically. Monthly periods follow the start date; accrual advances in full hours.": "Lợi nhuận tính trên tiền gốc ban đầu và không tự động tái đầu tư sinh lãi kép. Các kỳ tháng tính từ ngày bắt đầu đầu tư; lợi nhuận chỉ tích lũy theo những giờ đã trôi qua trọn vẹn.",
+  "Principal was already released. No duplicate return was made.": "Tiền gốc đã được giải phóng. Không có khoản hoàn trả trùng lặp.",
+  "All scheduled profit is paid. Your principal is awaiting admin release.": "Toàn bộ lợi nhuận theo lịch đã được chi trả. Tiền gốc đang chờ quản trị viên giải phóng.",
+  "Crypto balance": "Số dư tiền mã hóa",
+  "Portfolio balance": "Số dư danh mục đầu tư",
+  "USD account and estimated crypto value, including invested principal.": "Tài khoản USD và giá trị tiền mã hóa ước tính, bao gồm tiền gốc đã đầu tư."
+}

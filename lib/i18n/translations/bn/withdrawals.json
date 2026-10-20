@@ -1,0 +1,15 @@
+{
+  "Available to withdraw": "উত্তোলনের জন্য উপলব্ধ",
+  "Estimated USD value: {value}": "USD-তে আনুমানিক মূল্য: {value}",
+  "Minimum withdrawal is {amount}.": "সর্বনিম্ন উত্তোলনের পরিমাণ {amount}।",
+  "Only the available balance on the selected network can be withdrawn. Reserved funds are excluded.": "শুধু নির্বাচিত নেটওয়ার্কের উপলব্ধ ব্যালেন্স উত্তোলন করা যাবে। সংরক্ষিত অর্থ এর অন্তর্ভুক্ত নয়।",
+  "QR rendering unavailable": "QR কোড তৈরি করা যায়নি",
+  "This withdrawal uses your USD account to pay out in the selected crypto asset.": "নির্বাচিত ক্রিপ্টো সম্পদে অর্থ দিতে এই উত্তোলন আপনার USD অ্যাকাউন্ট ব্যবহার করে।",
+  "Use available balance": "উপলব্ধ ব্যালেন্স ব্যবহার করুন",
+  "You can withdraw up to {amount} within the current 24-hour limit.": "বর্তমান ২৪ ঘণ্টার সীমার মধ্যে আপনি {amount} পর্যন্ত উত্তোলন করতে পারেন।",
+  "Enter a Tron (TRC20) address beginning with T.": "T দিয়ে শুরু হওয়া একটি Tron (TRC20) ঠিকানা লিখুন।",
+  "Available balance": "উপলব্ধ ব্যালেন্স",
+  "USD account and estimated crypto value. Reserved funds and invested principal are excluded.": "USD অ্যাকাউন্ট ও ক্রিপ্টোর আনুমানিক মূল্য। সংরক্ষিত অর্থ ও বিনিয়োগকৃত মূলধন বাদ দেওয়া হয়েছে।",
+  "Illustrative reviews": "উদাহরণমূলক পর্যালোচনা",
+  "Edit receiving wallet": "গ্রহণকারী ওয়ালেট সম্পাদনা করুন"
+}

@@ -1,0 +1,8 @@
+{
+  "Profit is based on the original principal and does not compound automatically. Monthly periods follow the start date; accrual advances in full hours.": "收益依初始本金計算，不會自動複利。每月計算週期以投資開始日為基準；收益僅按已完整經過的小時累計。",
+  "Principal was already released. No duplicate return was made.": "本金已解鎖，並未重複返還資金。",
+  "All scheduled profit is paid. Your principal is awaiting admin release.": "所有預定收益均已支付，本金正等待管理員解鎖。",
+  "Crypto balance": "加密貨幣餘額",
+  "Portfolio balance": "資產組合餘額",
+  "USD account and estimated crypto value, including invested principal.": "USD 帳戶餘額與加密貨幣估值，包含已投資本金。"
+}

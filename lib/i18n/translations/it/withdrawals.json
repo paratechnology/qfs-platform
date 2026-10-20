@@ -1,0 +1,15 @@
+{
+  "Available to withdraw": "Disponibile per il prelievo",
+  "Estimated USD value: {value}": "Valore stimato in USD: {value}",
+  "Minimum withdrawal is {amount}.": "Il prelievo minimo è di {amount}.",
+  "Only the available balance on the selected network can be withdrawn. Reserved funds are excluded.": "È possibile prelevare solo il saldo disponibile sulla rete selezionata. I fondi riservati sono esclusi.",
+  "QR rendering unavailable": "Impossibile generare il codice QR",
+  "This withdrawal uses your USD account to pay out in the selected crypto asset.": "Questo prelievo utilizza il tuo conto in USD per il pagamento nella criptovaluta selezionata.",
+  "Use available balance": "Usa il saldo disponibile",
+  "You can withdraw up to {amount} within the current 24-hour limit.": "Puoi prelevare fino a {amount} entro il limite attuale di 24 ore.",
+  "Enter a Tron (TRC20) address beginning with T.": "Inserisci un indirizzo Tron (TRC20) che inizi con T.",
+  "Available balance": "Saldo disponibile",
+  "USD account and estimated crypto value. Reserved funds and invested principal are excluded.": "Conto in USD e valore stimato delle criptovalute. Sono esclusi i fondi riservati e il capitale investito.",
+  "Illustrative reviews": "Recensioni illustrative",
+  "Edit receiving wallet": "Modifica wallet ricevente"
+}

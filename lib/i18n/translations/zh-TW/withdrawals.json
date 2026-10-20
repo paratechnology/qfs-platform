@@ -1,0 +1,15 @@
+{
+  "Available to withdraw": "可提領餘額",
+  "Estimated USD value: {value}": "預估美元價值：{value}",
+  "Minimum withdrawal is {amount}.": "最低提領金額為 {amount}。",
+  "Only the available balance on the selected network can be withdrawn. Reserved funds are excluded.": "僅可提領所選網路上的可用餘額，不包括已保留的資金。",
+  "QR rendering unavailable": "無法產生 QR 碼",
+  "This withdrawal uses your USD account to pay out in the selected crypto asset.": "本次提領使用您的美元帳戶，以所選加密資產支付。",
+  "Use available balance": "使用可用餘額",
+  "You can withdraw up to {amount} within the current 24-hour limit.": "在目前24小時限額內，您最多可提領 {amount}。",
+  "Enter a Tron (TRC20) address beginning with T.": "請輸入以 T 開頭的 Tron (TRC20) 地址。",
+  "Available balance": "可用餘額",
+  "USD account and estimated crypto value. Reserved funds and invested principal are excluded.": "美元帳戶與加密資產的估算價值。不包括保留資金及已投資本金。",
+  "Illustrative reviews": "示例評論",
+  "Edit receiving wallet": "編輯收款錢包"
+}

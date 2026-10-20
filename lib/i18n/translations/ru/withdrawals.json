@@ -1,0 +1,15 @@
+{
+  "Available to withdraw": "Доступно для вывода",
+  "Estimated USD value: {value}": "Ориентировочная стоимость в USD: {value}",
+  "Minimum withdrawal is {amount}.": "Минимальная сумма вывода — {amount}.",
+  "Only the available balance on the selected network can be withdrawn. Reserved funds are excluded.": "Вывести можно только доступный баланс в выбранной сети. Зарезервированные средства не учитываются.",
+  "QR rendering unavailable": "Не удалось создать QR-код",
+  "This withdrawal uses your USD account to pay out in the selected crypto asset.": "Для этой выплаты используется ваш счёт в USD, а средства выплачиваются в выбранной криптовалюте.",
+  "Use available balance": "Использовать доступный баланс",
+  "You can withdraw up to {amount} within the current 24-hour limit.": "В пределах текущего 24-часового лимита можно вывести до {amount}.",
+  "Enter a Tron (TRC20) address beginning with T.": "Введите адрес Tron (TRC20), начинающийся с T.",
+  "Available balance": "Доступный баланс",
+  "USD account and estimated crypto value. Reserved funds and invested principal are excluded.": "Счёт в USD и оценочная стоимость криптовалют. Зарезервированные средства и инвестированный капитал не учитываются.",
+  "Illustrative reviews": "Иллюстративные отзывы",
+  "Edit receiving wallet": "Редактировать кошелёк для приёма"
+}

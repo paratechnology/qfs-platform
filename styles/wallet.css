@@ -1,0 +1,282 @@
+/* Connect Wallet page. Reuses the dashboard design tokens. */
+
+.wc-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 24px 72px;
+}
+
+.wc-head h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.wc-head p {
+  color: var(--dash-muted);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 26px;
+}
+
+.wc-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  border: 1px solid var(--dash-border);
+  border-radius: 14px;
+  background: var(--dash-tint);
+  color: var(--dash-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.wc-note strong {
+  color: var(--dash-text);
+}
+
+.wc-note a {
+  color: var(--dash-text);
+  font-weight: 600;
+  text-decoration: underline;
+  /* keep the tap target finger-sized */
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+}
+
+.wc-note-warn {
+  border-color: rgba(255, 193, 7, 0.4);
+  background: rgba(255, 193, 7, 0.08);
+}
+
+.wc-card {
+  padding: 22px;
+  border: 1px solid var(--dash-border);
+  border-radius: 16px;
+  background: var(--dash-tint);
+  margin-bottom: 28px;
+}
+
+.wc-manual {
+  margin-top: -10px;
+}
+
+.wc-manual-toggle {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--dash-text);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.wc-manual-intro {
+  margin: 18px 0;
+  color: var(--dash-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.wc-field {
+  display: block;
+  margin: 16px 0 7px;
+  color: var(--dash-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.wc-input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid var(--dash-border-2);
+  border-radius: 10px;
+  background: var(--dash-tint);
+  color: var(--dash-text);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.wc-input:focus-visible,
+.wc-manual-toggle:focus-visible {
+  outline: 2px solid var(--dash-accent);
+  outline-offset: 3px;
+}
+
+.wc-message,
+.wc-signature {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  overflow-wrap: anywhere;
+}
+
+.wc-manual-action {
+  margin-top: 12px;
+}
+
+.wc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 12px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, opacity 0.2s;
+}
+
+.wc-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.wc-btn-primary {
+  background: var(--dash-accent);
+  color: #fff;
+}
+
+.wc-btn-primary:hover:not(:disabled) {
+  background: var(--dash-accent-2);
+}
+
+.wc-btn-ghost {
+  background: transparent;
+  color: var(--dash-muted);
+  border: 1px solid var(--dash-border-2);
+}
+
+.wc-btn-ghost:hover:not(:disabled) {
+  color: var(--dash-text);
+  background: var(--dash-tint-strong);
+}
+
+.wc-status {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: var(--dash-muted);
+  line-height: 1.6;
+}
+
+.wc-status-error {
+  color: #ff8080;
+}
+
+.wc-status-ok {
+  color: #4ade80;
+}
+
+.wc-list h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+
+.wc-empty {
+  color: var(--dash-muted-2);
+  font-size: 13px;
+  margin: 0;
+}
+
+.wc-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wc-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--dash-border);
+  border-radius: 14px;
+  background: var(--dash-tint);
+  /* long addresses must not push the page sideways */
+  min-width: 0;
+}
+
+.wc-addr {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  color: var(--dash-text);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  text-decoration: none;
+  /* a 42-char address must never widen the layout */
+  word-break: break-all;
+}
+
+.wc-addr:hover {
+  text-decoration: underline;
+}
+
+.wc-meta {
+  display: block;
+  color: var(--dash-muted-2);
+  font-size: 12px;
+}
+
+.wc-foot {
+  margin-top: 28px;
+  color: var(--dash-muted-2);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+@media (max-width: 560px) {
+  .wc-wrap {
+    padding: 24px 16px 56px;
+  }
+
+  .wc-head h1 {
+    font-size: 22px;
+  }
+
+  .wc-card {
+    padding: 16px;
+  }
+
+  .wc-btn-primary {
+    width: 100%;
+  }
+
+  /* stack so the address and the button both get full width */
+  .wc-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .wc-item .wc-btn {
+    width: 100%;
+  }
+}
+
+.wc-back { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: 16px; color: var(--dash-muted); font-size: 13px; text-decoration: none; }
+.wc-back:hover { color: var(--dash-text); }
+.wc-app-title { margin: 0; font-size: 16px; font-weight: 600; }
+.wc-app-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.wc-app-links a { text-decoration: none; }
+#wc-provider { margin: 8px 0 16px; }
+.wc-spinner { display: inline-block; width: 12px; height: 12px; margin-inline-end: 8px; vertical-align: -2px; border: 2px solid currentColor; border-inline-end-color: transparent; border-radius: 50%; animation: wc-spin .8s linear infinite; }
+@keyframes wc-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .wc-spinner { animation: none; } }

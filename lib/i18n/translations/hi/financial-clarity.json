@@ -1,0 +1,8 @@
+{
+  "Profit is based on the original principal and does not compound automatically. Monthly periods follow the start date; accrual advances in full hours.": "लाभ शुरुआती मूलधन पर आधारित है और अपने आप चक्रवृद्धि नहीं होता। मासिक अवधि निवेश शुरू होने की तारीख के अनुसार होती है; लाभ केवल बीत चुके पूरे घंटों के लिए जुड़ता है।",
+  "Principal was already released. No duplicate return was made.": "मूलधन पहले ही जारी किया जा चुका है। दोबारा राशि वापस नहीं की गई।",
+  "All scheduled profit is paid. Your principal is awaiting admin release.": "सभी निर्धारित लाभ का भुगतान हो चुका है। मूलधन जारी करने के लिए व्यवस्थापक की मंज़ूरी की प्रतीक्षा है।",
+  "Crypto balance": "क्रिप्टो बैलेंस",
+  "Portfolio balance": "पोर्टफोलियो बैलेंस",
+  "USD account and estimated crypto value, including invested principal.": "USD खाते और क्रिप्टो का अनुमानित मूल्य, जिसमें निवेश किया गया मूलधन शामिल है।"
+}

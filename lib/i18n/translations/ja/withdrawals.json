@@ -1,0 +1,15 @@
+{
+  "Available to withdraw": "出金可能残高",
+  "Estimated USD value: {value}": "推定米ドル相当額：{value}",
+  "Minimum withdrawal is {amount}.": "最低出金額は {amount} です。",
+  "Only the available balance on the selected network can be withdrawn. Reserved funds are excluded.": "選択したネットワークの利用可能残高のみ出金できます。確保済みの資金は含まれません。",
+  "QR rendering unavailable": "QRコードを生成できません",
+  "This withdrawal uses your USD account to pay out in the selected crypto asset.": "この出金では米ドル口座の資金を使用し、選択した暗号資産で支払います。",
+  "Use available balance": "利用可能残高を使用",
+  "You can withdraw up to {amount} within the current 24-hour limit.": "現在の24時間の上限内で、最大 {amount} を出金できます。",
+  "Enter a Tron (TRC20) address beginning with T.": "Tで始まるTron（TRC20）アドレスを入力してください。",
+  "Available balance": "利用可能残高",
+  "USD account and estimated crypto value. Reserved funds and invested principal are excluded.": "米ドル口座と暗号資産の推定価値。確保済み資金と投資元本は含みません。",
+  "Illustrative reviews": "参考用のレビュー",
+  "Edit receiving wallet": "受取ウォレットを編集"
+}

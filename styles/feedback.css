@@ -1,0 +1,35 @@
+.action-notice,.action-toast { --feedback-accent:#a2c87d; display:flex; align-items:flex-start; gap:12px; color:var(--dash-text,#f4f3f6); border:1px solid color-mix(in srgb,var(--feedback-accent) 28%,transparent); background:var(--dash-surface-3,#211e26); border-radius:14px; padding:16px; text-align:start; font-size:14px; line-height:1.55; animation:feedback-enter 180ms ease-out both; }
+.action-notice.error,.action-toast.error { --feedback-accent:#f59a9a; }
+.action-notice.info,.action-toast.info { --feedback-accent:#a9bce8; }
+.action-feedback-icon { width:24px; height:24px; display:grid; place-items:center; flex-shrink:0; border:1px solid var(--feedback-accent); border-radius:50%; color:var(--feedback-accent); font-weight:700; }
+.action-notice p,.action-toast p { margin:0; }
+.action-notice a,.action-toast a { display:inline-block; margin-top:9px; color:var(--feedback-accent); text-decoration:underline; text-underline-offset:4px; }
+.action-toast { position:fixed; inset-inline:16px; bottom:max(20px,env(safe-area-inset-bottom)); margin-inline:auto; width:max-content; max-width:min(580px,calc(100vw - 32px)); z-index:1400; box-shadow:0 12px 48px #0004; }
+.action-feedback-content { flex:1; min-width:0; overflow-wrap:anywhere; }
+.action-feedback-content small { display:block; margin-top:5px; color:var(--dash-muted,#c0b9c8); font-size:12px; }
+.action-feedback-dismiss { display:grid; place-items:center; flex-shrink:0; border:0; width:44px; height:44px; margin:-10px -8px 0 0; color:inherit; background:transparent; border-radius:8px; font-size:24px; cursor:pointer; }
+.action-feedback-dismiss:hover { background:#ffffff0c; }
+.action-feedback-link { display:block; padding:0; margin-top:9px; border:0; color:var(--feedback-accent); background:transparent; font:inherit; text-decoration:underline; text-underline-offset:4px; cursor:pointer; }
+.action-spinner { display:inline-block; width:16px; height:16px; flex-shrink:0; border:2px solid currentColor; border-inline-end-color:transparent; border-radius:50%; animation:feedback-spin .7s linear infinite; vertical-align:middle; }
+.page-loading { min-height:55vh; display:flex; align-items:center; justify-content:center; gap:12px; color:var(--dash-muted,#b4adbf); }
+.action-error-page { min-height:55vh; padding:32px; display:grid; place-content:center; gap:16px; }
+.action-error-page a { color:inherit; text-decoration:underline; }
+.action-route-progress { position:fixed; inset:0 0 auto; height:3px; z-index:1500; overflow:hidden; background:#a9bce826; }
+.action-route-progress::after { content:""; display:block; width:35%; height:100%; background:#a9bce8; animation:feedback-progress 1.1s ease-in-out infinite; }
+.adm-modal[aria-busy="true"] .adm-modal-close { opacity:.45; cursor:wait; }
+.adm-modal-fieldset { border:0; margin:0; padding:0; min-width:0; }
+.adm-modal-fieldset:disabled { opacity:.85; }
+.adm-modal-progress { display:inline-flex; align-items:center; gap:8px; color:var(--dash-muted); font-size:12px; white-space:nowrap; }
+.auth-form[aria-busy="true"] { cursor:progress; }
+.auth-success { outline:none; }
+.auth-success .auth-link { display:inline-flex; gap:8px; align-items:center; }
+.auth-page .auth-submit { transition:transform 120ms ease,filter 150ms ease,opacity 150ms ease; }
+.auth-page .auth-submit:active:not(:disabled) { transform:translateY(1px); }
+.qfs-admin .adm-btn:active:not(:disabled) { transform:translateY(1px); }
+.dash-success-message,.fund-confirmation,.dash-form-error,.adm-banner,.auth-form-error { animation:feedback-enter 180ms ease-out both; }
+@keyframes feedback-enter { from { opacity:.6; transform:translateY(5px); } to { opacity:1; transform:none; } }
+@keyframes feedback-spin { to { transform:rotate(360deg); } }
+@keyframes feedback-progress { from { transform:translateX(-100%); } to { transform:translateX(390%); } }
+@media (prefers-reduced-motion:reduce) { .action-notice,.action-toast,.action-spinner,.action-route-progress::after,.dash-success-message,.fund-confirmation,.dash-form-error,.adm-banner,.auth-form-error { animation:none; } .auth-page .auth-submit,.qfs-admin .adm-btn { transition:none; } }
+
+.action-error-page button { width:max-content; min-height:44px; padding:10px 22px; border:1px solid #a9bce84d; border-radius:10px; color:inherit; background:#a9bce81a; font:inherit; cursor:pointer; }

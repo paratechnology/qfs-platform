@@ -1,0 +1,15 @@
+{
+  "Available to withdraw": "المتاح للسحب",
+  "Estimated USD value: {value}": "القيمة التقديرية بالدولار الأمريكي: {value}",
+  "Minimum withdrawal is {amount}.": "الحد الأدنى للسحب هو {amount}.",
+  "Only the available balance on the selected network can be withdrawn. Reserved funds are excluded.": "يمكن سحب الرصيد المتاح على الشبكة المحددة فقط. لا يشمل ذلك الأموال المحجوزة.",
+  "QR rendering unavailable": "تعذر إنشاء رمز QR",
+  "This withdrawal uses your USD account to pay out in the selected crypto asset.": "يستخدم هذا السحب حسابك بالدولار الأمريكي للدفع بالعملة الرقمية المحددة.",
+  "Use available balance": "استخدام الرصيد المتاح",
+  "You can withdraw up to {amount} within the current 24-hour limit.": "يمكنك سحب ما يصل إلى {amount} ضمن الحد الحالي لفترة 24 ساعة.",
+  "Enter a Tron (TRC20) address beginning with T.": "أدخل عنوان Tron (TRC20) يبدأ بالحرف T.",
+  "Available balance": "الرصيد المتاح",
+  "USD account and estimated crypto value. Reserved funds and invested principal are excluded.": "حساب الدولار الأمريكي والقيمة التقديرية للعملات المشفرة. تُستثنى الأموال المحجوزة ورأس المال المستثمر.",
+  "Illustrative reviews": "مراجعات توضيحية",
+  "Edit receiving wallet": "تعديل محفظة الاستقبال"
+}

@@ -1,0 +1,8 @@
+{
+  "Profit is based on the original principal and does not compound automatically. Monthly periods follow the start date; accrual advances in full hours.": "Kâr başlangıçtaki ana para üzerinden hesaplanır ve otomatik olarak ana paraya eklenmez. Aylık dönemler başlangıç tarihine göre belirlenir; tahakkukta yalnızca geçen tam saatler dikkate alınır.",
+  "Principal was already released. No duplicate return was made.": "Ana para zaten serbest bırakıldı. İkinci kez iade yapılmadı.",
+  "All scheduled profit is paid. Your principal is awaiting admin release.": "Planlanan kârın tamamı ödendi. Ana para, yönetici tarafından serbest bırakılmayı bekliyor.",
+  "Crypto balance": "Kripto bakiyesi",
+  "Portfolio balance": "Portföy bakiyesi",
+  "USD account and estimated crypto value, including invested principal.": "Yatırılan ana para dâhil USD hesabı ve tahmini kripto değeri."
+}

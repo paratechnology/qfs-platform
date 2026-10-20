@@ -1,0 +1,8 @@
+{
+  "Profit is based on the original principal and does not compound automatically. Monthly periods follow the start date; accrual advances in full hours.": "De winst wordt berekend over de oorspronkelijke hoofdsom en wordt niet automatisch herbelegd voor samengestelde groei. Maandelijkse perioden volgen de startdatum; winst wordt alleen opgebouwd voor volledig verstreken uren.",
+  "Principal was already released. No duplicate return was made.": "De hoofdsom is al vrijgegeven. Er is geen tweede terugbetaling gedaan.",
+  "All scheduled profit is paid. Your principal is awaiting admin release.": "Alle geplande winst is uitbetaald. De hoofdsom wacht op vrijgave door een beheerder.",
+  "Crypto balance": "Cryptosaldo",
+  "Portfolio balance": "Portefeuillesaldo",
+  "USD account and estimated crypto value, including invested principal.": "USD-rekening en geschatte cryptowaarde, inclusief de geïnvesteerde hoofdsom."
+}

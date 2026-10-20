@@ -1,0 +1,15 @@
+{
+  "Available to withdraw": "نکالنے کے لیے دستیاب",
+  "Estimated USD value: {value}": "USD میں تخمینی قدر: {value}",
+  "Minimum withdrawal is {amount}.": "کم از کم نکالنے کی رقم {amount} ہے۔",
+  "Only the available balance on the selected network can be withdrawn. Reserved funds are excluded.": "صرف منتخب نیٹ ورک کا دستیاب بیلنس نکالا جا سکتا ہے۔ محفوظ رکھی گئی رقم اس میں شامل نہیں ہے۔",
+  "QR rendering unavailable": "QR کوڈ نہیں بنایا جا سکا",
+  "This withdrawal uses your USD account to pay out in the selected crypto asset.": "یہ نکاسی منتخب کرپٹو اثاثے میں ادائیگی کے لیے آپ کا USD اکاؤنٹ استعمال کرتی ہے۔",
+  "Use available balance": "دستیاب بیلنس استعمال کریں",
+  "You can withdraw up to {amount} within the current 24-hour limit.": "موجودہ 24 گھنٹے کی حد کے اندر آپ {amount} تک نکال سکتے ہیں۔",
+  "Enter a Tron (TRC20) address beginning with T.": "T سے شروع ہونے والا Tron (TRC20) پتہ درج کریں۔",
+  "Available balance": "دستیاب بیلنس",
+  "USD account and estimated crypto value. Reserved funds and invested principal are excluded.": "USD اکاؤنٹ اور کرپٹو کی تخمینی قدر۔ محفوظ کردہ فنڈز اور سرمایہ کاری کی اصل رقم شامل نہیں ہیں۔",
+  "Illustrative reviews": "مثالی جائزے",
+  "Edit receiving wallet": "وصول کرنے والے والیٹ میں ترمیم کریں"
+}

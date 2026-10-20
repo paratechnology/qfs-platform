@@ -1,0 +1,8 @@
+{
+  "Profit is based on the original principal and does not compound automatically. Monthly periods follow the start date; accrual advances in full hours.": "กำไรคำนวณจากเงินต้นเริ่มต้นและไม่มีการทบต้นอัตโนมัติ รอบเดือนนับตามวันเริ่มลงทุน โดยสะสมกำไรเฉพาะชั่วโมงที่ผ่านไปครบแล้ว",
+  "Principal was already released. No duplicate return was made.": "เงินต้นถูกปลดล็อกแล้ว ไม่มีการคืนเงินซ้ำ",
+  "All scheduled profit is paid. Your principal is awaiting admin release.": "จ่ายกำไรตามกำหนดครบแล้ว เงินต้นกำลังรอผู้ดูแลระบบปลดล็อก",
+  "Crypto balance": "ยอดคงเหลือคริปโต",
+  "Portfolio balance": "ยอดคงเหลือพอร์ต",
+  "USD account and estimated crypto value, including invested principal.": "บัญชี USD และมูลค่าคริปโตโดยประมาณ รวมเงินต้นที่ลงทุนแล้ว"
+}

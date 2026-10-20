@@ -1,0 +1,8672 @@
+[
+  {
+    "key": "m514d4dfb",
+    "section": "account",
+    "source": " · active in this browser"
+  },
+  {
+    "key": "mb5e6fe08",
+    "section": "server",
+    "source": " months"
+  },
+  {
+    "key": "m37f0a2e5",
+    "section": "server",
+    "source": " request not found"
+  },
+  {
+    "key": "m9e6397bf",
+    "section": "server",
+    "source": " via "
+  },
+  {
+    "key": "m83f28312",
+    "section": "server",
+    "source": " wants you to connect your wallet:"
+  },
+  {
+    "key": "mb7acfd59",
+    "section": "account",
+    "source": "— you can't withdraw more than this."
+  },
+  {
+    "key": "mfebbd318",
+    "section": "account",
+    "source": ". Switch to"
+  },
+  {
+    "key": "m215dea89",
+    "section": "admin",
+    "source": "(inactive — not included in new investments)"
+  },
+  {
+    "key": "me6bfcf01",
+    "section": "account",
+    "source": "(prefers-reduced-motion: reduce)"
+  },
+  {
+    "key": "me4638f5c",
+    "section": "account",
+    "source": ") in the payment description so we can match it to your account. Deposits are credited once confirmed."
+  },
+  {
+    "key": "m248392de",
+    "section": "server",
+    "source": "{amount, number, ::currency/USD} is now available in your account."
+  },
+  {
+    "key": "mc4dfe164",
+    "section": "server",
+    "source": "{amount} pending payout"
+  },
+  {
+    "key": "me3deb7f1",
+    "section": "admin",
+    "source": "{count, plural, =0 {No translations} one {# translation} other {# translations}}"
+  },
+  {
+    "key": "m7a4ed937",
+    "section": "server",
+    "source": "{count, plural, one {# active plan} other {# active plans}}"
+  },
+  {
+    "key": "m0182f1af",
+    "section": "common",
+    "source": "{count, plural, one {# month} other {# months}}"
+  },
+  {
+    "key": "m4d480f87",
+    "section": "server",
+    "source": "{count, plural, one {# withdrawal} other {# withdrawals}}"
+  },
+  {
+    "key": "m519dcc4b",
+    "section": "admin",
+    "source": "{count} discrepancies"
+  },
+  {
+    "key": "md6867b86",
+    "section": "account",
+    "source": "{count} referral rewards pending. Rewards retry automatically when pricing or account availability is restored."
+  },
+  {
+    "key": "m144c3d9b",
+    "section": "server",
+    "source": "{plan} +{rate}% monthly"
+  },
+  {
+    "key": "mf1bd4ce2",
+    "section": "account",
+    "source": "{rate} USD / {symbol}"
+  },
+  {
+    "key": "m4d16d38b",
+    "section": "server",
+    "source": "{rate}% monthly"
+  },
+  {
+    "key": "m52aa0a39",
+    "section": "account",
+    "source": "{rating} out of 5 stars"
+  },
+  {
+    "key": "m9366627f",
+    "section": "account",
+    "source": "{seconds}s"
+  },
+  {
+    "key": "mfc1e746a",
+    "section": "admin",
+    "source": "{value0} — balance {value1}, available {value2}. Debits cannot exceed the available balance."
+  },
+  {
+    "key": "m1cdea80a",
+    "section": "admin",
+    "source": "{value0} · {value1} · {value2} months"
+  },
+  {
+    "key": "m31dfc2d5",
+    "section": "account",
+    "source": "{value0} · {value1} · Paid {value2}"
+  },
+  {
+    "key": "m44718a74",
+    "section": "admin",
+    "source": "{value0} · {value1} months"
+  },
+  {
+    "key": "m582f7eb3",
+    "section": "account",
+    "source": "{value0} · {value1}. Financial terms remain those recorded when the investment started."
+  },
+  {
+    "key": "ma31786c5",
+    "section": "admin",
+    "source": "{value0} deposit request(s)"
+  },
+  {
+    "key": "mf0fb856c",
+    "section": "admin",
+    "source": "{value0} loan — {value1}"
+  },
+  {
+    "key": "mc991fd53",
+    "section": "account",
+    "source": "{value0} monthly · {value1}Profit paid {value2}"
+  },
+  {
+    "key": "mb9372f9b",
+    "section": "account",
+    "source": "{value0} months"
+  },
+  {
+    "key": "m2d2ee22e",
+    "section": "account",
+    "source": "{value0} on original principal"
+  },
+  {
+    "key": "m1831c843",
+    "section": "admin",
+    "source": "{value0} pending loan application(s)"
+  },
+  {
+    "key": "m37d5c507",
+    "section": "account",
+    "source": "{value0} referred · {value1} earned"
+  },
+  {
+    "key": "ma1239a68",
+    "section": "admin",
+    "source": "{value0} row{value1} · page {value2} of {value3}"
+  },
+  {
+    "key": "m3a9670f5",
+    "section": "account",
+    "source": "{value0} term progress"
+  },
+  {
+    "key": "m3a2f675e",
+    "section": "admin",
+    "source": "{value0} withdrawal request(s)"
+  },
+  {
+    "key": "m344eca9a",
+    "section": "common",
+    "source": "{value0}m {value1}s"
+  },
+  {
+    "key": "m8fee1e5d",
+    "section": "common",
+    "source": "{value0}s"
+  },
+  {
+    "key": "m0990be4b",
+    "section": "account",
+    "source": "© 2026 {domain} — QFS Account Dashboard"
+  },
+  {
+    "key": "m5de44e72",
+    "section": "admin",
+    "source": "© 2026 {domain} — QFS Admin Console"
+  },
+  {
+    "key": "m6ed6a83c",
+    "section": "admin",
+    "source": "← Prev"
+  },
+  {
+    "key": "mfc9d9e18",
+    "section": "admin",
+    "source": "+ New Asset"
+  },
+  {
+    "key": "maf4ce771",
+    "section": "admin",
+    "source": "+ New Document"
+  },
+  {
+    "key": "m827f25ab",
+    "section": "admin",
+    "source": "+ New Plan"
+  },
+  {
+    "key": "m8af792bc",
+    "section": "admin",
+    "source": "+ New Review"
+  },
+  {
+    "key": "m568f6214",
+    "section": "admin",
+    "source": "+ New Setting"
+  },
+  {
+    "key": "mfc2932c8",
+    "section": "server",
+    "source": "+{amount} this month"
+  },
+  {
+    "key": "mc027a1cd",
+    "section": "admin",
+    "source": "+{value0} new in 30d"
+  },
+  {
+    "key": "mf9d9c5aa",
+    "section": "account",
+    "source": "10% monthly"
+  },
+  {
+    "key": "ma1d17e31",
+    "section": "account",
+    "source": "12 months"
+  },
+  {
+    "key": "m953e13c5",
+    "section": "public",
+    "source": "2025 The ’ Best QFS Platform"
+  },
+  {
+    "key": "m5a6c8915",
+    "section": "common",
+    "source": "2025's Best QFS Platform"
+  },
+  {
+    "key": "mb6c4c36e",
+    "section": "account",
+    "source": "25% monthly"
+  },
+  {
+    "key": "m46362a99",
+    "section": "account",
+    "source": "3 months"
+  },
+  {
+    "key": "m2799a9fd",
+    "section": "account",
+    "source": "35% monthly"
+  },
+  {
+    "key": "m9fde1bc4",
+    "section": "account",
+    "source": "6 months"
+  },
+  {
+    "key": "m4fe694ef",
+    "section": "admin",
+    "source": "A balanced plan for steady growth…"
+  },
+  {
+    "key": "m32b423dc",
+    "section": "server",
+    "source": "A fresh crypto price is unavailable. Please try again shortly."
+  },
+  {
+    "key": "m69beee2b",
+    "section": "server",
+    "source": "A principal return already exists. Review the investment ledger."
+  },
+  {
+    "key": "m3027b711",
+    "section": "account",
+    "source": "A recent photo with your face clearly visible"
+  },
+  {
+    "key": "mbc184032",
+    "section": "admin",
+    "source": "A setting key is required"
+  },
+  {
+    "key": "m30b40217",
+    "section": "public",
+    "source": "A universal network that is developed to facilitate the transfer of asset-backed funds."
+  },
+  {
+    "key": "m58e096de",
+    "section": "public",
+    "source": "About"
+  },
+  {
+    "key": "maaf9c612",
+    "section": "public",
+    "source": "About QFS"
+  },
+  {
+    "key": "m0c3fca28",
+    "section": "admin",
+    "source": "Accent color"
+  },
+  {
+    "key": "mfc0d2922",
+    "section": "public",
+    "source": "Access your QFS dashboard, wallets and trading history."
+  },
+  {
+    "key": "m59f8a2fc",
+    "section": "common",
+    "source": "Account"
+  },
+  {
+    "key": "md467f0d3",
+    "section": "server",
+    "source": "Account activated"
+  },
+  {
+    "key": "m216000e9",
+    "section": "admin",
+    "source": "Account activity"
+  },
+  {
+    "key": "mc687e009",
+    "section": "account",
+    "source": "Account Activity"
+  },
+  {
+    "key": "mf611194f",
+    "section": "server",
+    "source": "Account adjustment"
+  },
+  {
+    "key": "mf77d31a0",
+    "section": "server",
+    "source": "Account balance limit exceeded"
+  },
+  {
+    "key": "mcdca8fbb",
+    "section": "server",
+    "source": "Account balances need reconciliation before principal can be released."
+  },
+  {
+    "key": "m3f9bf691",
+    "section": "common",
+    "source": "Account details updated"
+  },
+  {
+    "key": "m522841a8",
+    "section": "server",
+    "source": "Account email could not be queued."
+  },
+  {
+    "key": "m6ff5732b",
+    "section": "account",
+    "source": "Account menu"
+  },
+  {
+    "key": "m16970f4f",
+    "section": "server",
+    "source": "Account name"
+  },
+  {
+    "key": "m2c15b5e6",
+    "section": "account",
+    "source": "Account navigation"
+  },
+  {
+    "key": "m4b920841",
+    "section": "server",
+    "source": "Account not found"
+  },
+  {
+    "key": "m4ced0dc5",
+    "section": "server",
+    "source": "Account number"
+  },
+  {
+    "key": "mb39efc5d",
+    "section": "server",
+    "source": "Account password changed"
+  },
+  {
+    "key": "m39aeafab",
+    "section": "common",
+    "source": "Account recovery"
+  },
+  {
+    "key": "mff11f9b1",
+    "section": "common",
+    "source": "Account registration successful."
+  },
+  {
+    "key": "m4d3b8fd2",
+    "section": "admin",
+    "source": "Account security"
+  },
+  {
+    "key": "m2fac5ec1",
+    "section": "server",
+    "source": "Account security updated"
+  },
+  {
+    "key": "m358e8719",
+    "section": "common",
+    "source": "Account settings"
+  },
+  {
+    "key": "mc3a71bd1",
+    "section": "server",
+    "source": "Account statement"
+  },
+  {
+    "key": "ma2108006",
+    "section": "account",
+    "source": "Account statements"
+  },
+  {
+    "key": "mcfd40fd9",
+    "section": "server",
+    "source": "Account suspended"
+  },
+  {
+    "key": "md94854d6",
+    "section": "account",
+    "source": "Account unavailable"
+  },
+  {
+    "key": "m4ac7d683",
+    "section": "server",
+    "source": "Account updated"
+  },
+  {
+    "key": "m6aca75c3",
+    "section": "account",
+    "source": "Account updates are unavailable. Showing your last loaded balance."
+  },
+  {
+    "key": "ma74ef968",
+    "section": "account",
+    "source": "Account updates unavailable"
+  },
+  {
+    "key": "mfd16696f",
+    "section": "admin",
+    "source": "Accrue hourly, credit monthly"
+  },
+  {
+    "key": "mf650aaa1",
+    "section": "account",
+    "source": "Accrued hourly; credited on each monthly anniversary"
+  },
+  {
+    "key": "m0a77a91f",
+    "section": "admin",
+    "source": "Action"
+  },
+  {
+    "key": "me65fb504",
+    "section": "admin",
+    "source": "Actions"
+  },
+  {
+    "key": "m3b8f0190",
+    "section": "admin",
+    "source": "Activate"
+  },
+  {
+    "key": "m73aea5cc",
+    "section": "admin",
+    "source": "Activate {value0}? They will regain access immediately."
+  },
+  {
+    "key": "m394fa333",
+    "section": "admin",
+    "source": "Activate user"
+  },
+  {
+    "key": "m1f89134f",
+    "section": "common",
+    "source": "Active"
+  },
+  {
+    "key": "m123491cc",
+    "section": "admin",
+    "source": "Active — users can invest in this plan"
+  },
+  {
+    "key": "m9f1daeee",
+    "section": "admin",
+    "source": "Active (visible)"
+  },
+  {
+    "key": "mad9d4e53",
+    "section": "server",
+    "source": "Active balance"
+  },
+  {
+    "key": "mcdf60464",
+    "section": "account",
+    "source": "Active investment"
+  },
+  {
+    "key": "m2d8c1895",
+    "section": "common",
+    "source": "Active Investments"
+  },
+  {
+    "key": "mc1d1e3f0",
+    "section": "server",
+    "source": "Active Loans"
+  },
+  {
+    "key": "md757b25b",
+    "section": "admin",
+    "source": "Active Plans"
+  },
+  {
+    "key": "m2fe1d492",
+    "section": "account",
+    "source": "Active plans, accrued profit, payouts, and completed terms."
+  },
+  {
+    "key": "m3298f0f4",
+    "section": "common",
+    "source": "Active sessions"
+  },
+  {
+    "key": "m2653919b",
+    "section": "admin",
+    "source": "Active Users"
+  },
+  {
+    "key": "m88db9bb1",
+    "section": "server",
+    "source": "Activity in selected period"
+  },
+  {
+    "key": "m283ff013",
+    "section": "account",
+    "source": "Activity timestamps use UTC. Downloads include the full selected period."
+  },
+  {
+    "key": "mb449dc5a",
+    "section": "admin",
+    "source": "Actor"
+  },
+  {
+    "key": "m3f88dfc6",
+    "section": "account",
+    "source": "ADA / USD"
+  },
+  {
+    "key": "m0279db0c",
+    "section": "admin",
+    "source": "Add a note at least 3 characters long"
+  },
+  {
+    "key": "m9d7ecec8",
+    "section": "admin",
+    "source": "Add a receiving wallet to enable crypto deposits."
+  },
+  {
+    "key": "md9f80485",
+    "section": "common",
+    "source": "Add an authenticator app to protect your account. Recommended for administrators."
+  },
+  {
+    "key": "m1107731b",
+    "section": "common",
+    "source": "Add Fund"
+  },
+  {
+    "key": "m36baacb8",
+    "section": "account",
+    "source": "Add Funds"
+  },
+  {
+    "key": "mbb754547",
+    "section": "admin",
+    "source": "Add receiving wallet"
+  },
+  {
+    "key": "mc86faa80",
+    "section": "account",
+    "source": "Add Review"
+  },
+  {
+    "key": "mbabad42c",
+    "section": "common",
+    "source": "Additional plan terms"
+  },
+  {
+    "key": "m022efdae",
+    "section": "account",
+    "source": "Additional terms have not been published for this investment."
+  },
+  {
+    "key": "m700560f3",
+    "section": "account",
+    "source": "Address"
+  },
+  {
+    "key": "md74f0a9e",
+    "section": "admin",
+    "source": "Adjust"
+  },
+  {
+    "key": "m1df0b227",
+    "section": "admin",
+    "source": "Adjust {value0}"
+  },
+  {
+    "key": "m66755419",
+    "section": "admin",
+    "source": "Adjust all users"
+  },
+  {
+    "key": "md5e9511e",
+    "section": "common",
+    "source": "Adjustment"
+  },
+  {
+    "key": "m2b4b2e97",
+    "section": "admin",
+    "source": "Adjustments"
+  },
+  {
+    "key": "m2d3d1da1",
+    "section": "common",
+    "source": "Adjustments target regular user accounts only"
+  },
+  {
+    "key": "mdcffa3b4",
+    "section": "admin",
+    "source": "Admin"
+  },
+  {
+    "key": "m6df15217",
+    "section": "admin",
+    "source": "Admin approval"
+  },
+  {
+    "key": "m4fb9b4c0",
+    "section": "admin",
+    "source": "Admin Dashboard"
+  },
+  {
+    "key": "mbb9e5ee2",
+    "section": "admin",
+    "source": "Admin note (optional, sent to the user)"
+  },
+  {
+    "key": "m5246f08c",
+    "section": "admin",
+    "source": "Admin Sign In"
+  },
+  {
+    "key": "mad6ed245",
+    "section": "admin",
+    "source": "Admins"
+  },
+  {
+    "key": "m00590565",
+    "section": "admin",
+    "source": "After admin approval"
+  },
+  {
+    "key": "m3fb9fae5",
+    "section": "account",
+    "source": "Agricultural Loans"
+  },
+  {
+    "key": "m41a2678a",
+    "section": "account",
+    "source": "All Documents"
+  },
+  {
+    "key": "mb5df93ec",
+    "section": "account",
+    "source": "All notifications marked as read"
+  },
+  {
+    "key": "mee0a5265",
+    "section": "admin",
+    "source": "All roles"
+  },
+  {
+    "key": "m3762256c",
+    "section": "server",
+    "source": "All scheduled profit is paid. Your principal is awaiting admin release."
+  },
+  {
+    "key": "mce972f7c",
+    "section": "server",
+    "source": "All scheduled profit is paid. Your principal is being returned to available balance."
+  },
+  {
+    "key": "m6c4b8a4e",
+    "section": "admin",
+    "source": "All statuses"
+  },
+  {
+    "key": "mec707099",
+    "section": "admin",
+    "source": "All submissions"
+  },
+  {
+    "key": "m7b0e393d",
+    "section": "account",
+    "source": "All text and document edges must be visible"
+  },
+  {
+    "key": "m728b6875",
+    "section": "admin",
+    "source": "All Transactions"
+  },
+  {
+    "key": "md7c45995",
+    "section": "admin",
+    "source": "All types"
+  },
+  {
+    "key": "mbe007795",
+    "section": "admin",
+    "source": "All user accounts"
+  },
+  {
+    "key": "m55f06dea",
+    "section": "public",
+    "source": "Already have an account?"
+  },
+  {
+    "key": "m7b648a7a",
+    "section": "account",
+    "source": "Amazon.com"
+  },
+  {
+    "key": "m244c9369",
+    "section": "common",
+    "source": "Amount"
+  },
+  {
+    "key": "m8d68877e",
+    "section": "admin",
+    "source": "Amount (USD)"
+  },
+  {
+    "key": "mbb9d9296",
+    "section": "server",
+    "source": "Amount can have at most 2 decimal places"
+  },
+  {
+    "key": "m5f9a0057",
+    "section": "account",
+    "source": "Amount exceeds your available balance ({amount})"
+  },
+  {
+    "key": "mc58da8f5",
+    "section": "server",
+    "source": "Amounts show recorded activity. Investment allocations and principal releases are internal movements; do not add all rows as income. Crypto quantities and USD amounts are separate units."
+  },
+  {
+    "key": "m95064023",
+    "section": "common",
+    "source": "An account with this email already exists."
+  },
+  {
+    "key": "mfda2c432",
+    "section": "server",
+    "source": "An administrator updated your account details. Contact support if you did not request this change."
+  },
+  {
+    "key": "m4352083c",
+    "section": "server",
+    "source": "An administrator updated your account details. Your email changed, so your devices were signed out. Contact support if you did not request this change."
+  },
+  {
+    "key": "m85c4520a",
+    "section": "account",
+    "source": "Another wallet request is already open."
+  },
+  {
+    "key": "m30a194e3",
+    "section": "account",
+    "source": "Apple Inc."
+  },
+  {
+    "key": "md250d0cd",
+    "section": "server",
+    "source": "Application under review"
+  },
+  {
+    "key": "m6793c703",
+    "section": "account",
+    "source": "Applied {value0}"
+  },
+  {
+    "key": "m4455a493",
+    "section": "admin",
+    "source": "Applies to every non-admin account, active and suspended alike. Admins are excluded."
+  },
+  {
+    "key": "m20a24dcb",
+    "section": "admin",
+    "source": "Applies to new investments. Principal returns to available balance after the term and final profit payment."
+  },
+  {
+    "key": "md9ceeaee",
+    "section": "account",
+    "source": "Apply for Loan"
+  },
+  {
+    "key": "ma5883778",
+    "section": "account",
+    "source": "Apply period"
+  },
+  {
+    "key": "mb24fd963",
+    "section": "admin",
+    "source": "Approvals (30d)"
+  },
+  {
+    "key": "me6edf55a",
+    "section": "admin",
+    "source": "Approve"
+  },
+  {
+    "key": "m3724162c",
+    "section": "admin",
+    "source": "Approve identity"
+  },
+  {
+    "key": "mbb761682",
+    "section": "admin",
+    "source": "Approve or reject loan applications. Approved loans receive a due date based on the repayment period."
+  },
+  {
+    "key": "mc699109a",
+    "section": "common",
+    "source": "Approved"
+  },
+  {
+    "key": "m2c0f45c7",
+    "section": "admin",
+    "source": "Approved (visible)"
+  },
+  {
+    "key": "m8c660bfa",
+    "section": "admin",
+    "source": "Approved. The account is verified."
+  },
+  {
+    "key": "mffeb0cfb",
+    "section": "account",
+    "source": "Arabic Presentation"
+  },
+  {
+    "key": "mb8065d92",
+    "section": "admin",
+    "source": "are under review — funds are already reserved for these payouts."
+  },
+  {
+    "key": "mcf2bb276",
+    "section": "admin",
+    "source": "are under review. Head to"
+  },
+  {
+    "key": "m829f123b",
+    "section": "common",
+    "source": "Asset"
+  },
+  {
+    "key": "mf4227605",
+    "section": "admin",
+    "source": "Asset {symbol} created"
+  },
+  {
+    "key": "m516b64dc",
+    "section": "admin",
+    "source": "Asset {symbol} deleted"
+  },
+  {
+    "key": "m87f6eb82",
+    "section": "admin",
+    "source": "Asset {symbol} updated"
+  },
+  {
+    "key": "mec05e41c",
+    "section": "server",
+    "source": "Asset / network"
+  },
+  {
+    "key": "me7a9569c",
+    "section": "common",
+    "source": "Asset and network"
+  },
+  {
+    "key": "m6829dc56",
+    "section": "public",
+    "source": "Asset Protection"
+  },
+  {
+    "key": "m787a8542",
+    "section": "public",
+    "source": "Asset Recovery"
+  },
+  {
+    "key": "m3b21ef4e",
+    "section": "public",
+    "source": "Assets & Conversion"
+  },
+  {
+    "key": "m68f9622a",
+    "section": "admin",
+    "source": "Audit Log"
+  },
+  {
+    "key": "m0bb2bd55",
+    "section": "admin",
+    "source": "Audited admin actions"
+  },
+  {
+    "key": "m65e98669",
+    "section": "public",
+    "source": "Australia"
+  },
+  {
+    "key": "m0dbed8a9",
+    "section": "common",
+    "source": "Authenticator or recovery code"
+  },
+  {
+    "key": "m7d00293f",
+    "section": "server",
+    "source": "Authenticator setup expired. Start setup again."
+  },
+  {
+    "key": "m1ce0ac5d",
+    "section": "common",
+    "source": "Authenticator setup QR code"
+  },
+  {
+    "key": "m3885cdfd",
+    "section": "account",
+    "source": "Auto Loans"
+  },
+  {
+    "key": "m607aa2f5",
+    "section": "common",
+    "source": "Auto-refreshes every {value0}s"
+  },
+  {
+    "key": "m616a6784",
+    "section": "common",
+    "source": "Automatic"
+  },
+  {
+    "key": "m87fe68cc",
+    "section": "account",
+    "source": "Automatic connection failed? Verify manually"
+  },
+  {
+    "key": "m5ad34826",
+    "section": "admin",
+    "source": "Automatic treasury funding is configured."
+  },
+  {
+    "key": "mbfcafcf2",
+    "section": "server",
+    "source": "Automatic treasury funding is enabled. Reconcile the existing transfer instead."
+  },
+  {
+    "key": "mbfa07038",
+    "section": "account",
+    "source": "Automotive"
+  },
+  {
+    "key": "m66fdf298",
+    "section": "server",
+    "source": "available"
+  },
+  {
+    "key": "m72402638",
+    "section": "account",
+    "source": "Available"
+  },
+  {
+    "key": "md7ed85bc",
+    "section": "account",
+    "source": "Available balance"
+  },
+  {
+    "key": "m5b5b5783",
+    "section": "account",
+    "source": "Available to invest or withdraw"
+  },
+  {
+    "key": "mb8395929",
+    "section": "account",
+    "source": "Available to withdraw"
+  },
+  {
+    "key": "m85c18208",
+    "section": "admin",
+    "source": "Available USD"
+  },
+  {
+    "key": "mdcfbd526",
+    "section": "account",
+    "source": "Available:"
+  },
+  {
+    "key": "md8a79c86",
+    "section": "server",
+    "source": "Available: {amount}"
+  },
+  {
+    "key": "mf776bd65",
+    "section": "admin",
+    "source": "Avatar URL"
+  },
+  {
+    "key": "m906b1fb5",
+    "section": "account",
+    "source": "Awaiting admin release"
+  },
+  {
+    "key": "m7092336a",
+    "section": "account",
+    "source": "Awaiting transfer"
+  },
+  {
+    "key": "mc2954bc2",
+    "section": "account",
+    "source": "Back"
+  },
+  {
+    "key": "m490e4ca7",
+    "section": "account",
+    "source": "Back to dashboard"
+  },
+  {
+    "key": "mb70e630e",
+    "section": "account",
+    "source": "Back to deposits"
+  },
+  {
+    "key": "m5b7ba2af",
+    "section": "common",
+    "source": "Back to sign in"
+  },
+  {
+    "key": "m24cbd0bf",
+    "section": "account",
+    "source": "Back to transaction"
+  },
+  {
+    "key": "m4b7a788b",
+    "section": "admin",
+    "source": "Balance"
+  },
+  {
+    "key": "m75b6726c",
+    "section": "admin",
+    "source": "Balance reconciliation"
+  },
+  {
+    "key": "mb0d67516",
+    "section": "account",
+    "source": "Balances and investment records in your download show their current state, not historical opening or closing balances. Internal investment allocations are not income."
+  },
+  {
+    "key": "m144748a4",
+    "section": "public",
+    "source": "Bangladesh"
+  },
+  {
+    "key": "ma274c5b7",
+    "section": "server",
+    "source": "Bank"
+  },
+  {
+    "key": "mcf05c477",
+    "section": "account",
+    "source": "Bank / Account Details"
+  },
+  {
+    "key": "mf280fe2d",
+    "section": "admin",
+    "source": "Bank the user transfers to, e.g. \"GTBank\"."
+  },
+  {
+    "key": "m24cd9456",
+    "section": "common",
+    "source": "Bank Transfer"
+  },
+  {
+    "key": "me9b3b537",
+    "section": "admin",
+    "source": "Basis points paid per approved referral deposit. 500 = 5%."
+  },
+  {
+    "key": "m7e9448dc",
+    "section": "admin",
+    "source": "Begin funding before sending. Send the exact quantity to the exchange address and include its destination tag when shown."
+  },
+  {
+    "key": "m67912b96",
+    "section": "admin",
+    "source": "Begin treasury funding"
+  },
+  {
+    "key": "m27aca7cb",
+    "section": "account",
+    "source": "Bengali Presentation"
+  },
+  {
+    "key": "m1955105c",
+    "section": "public",
+    "source": "Bid for the new QFS cards that allow you to shop Worldwide"
+  },
+  {
+    "key": "m955817dc",
+    "section": "account",
+    "source": "BNB / USD"
+  },
+  {
+    "key": "mc36d38d5",
+    "section": "account",
+    "source": "BNB Smart Chain"
+  },
+  {
+    "key": "m6e010511",
+    "section": "server",
+    "source": "BNB Smart Chain (BEP20)"
+  },
+  {
+    "key": "m808bf777",
+    "section": "public",
+    "source": "Brazil"
+  },
+  {
+    "key": "m30635f6c",
+    "section": "admin",
+    "source": "Breadcrumb"
+  },
+  {
+    "key": "m30fc9f55",
+    "section": "public",
+    "source": "Break free from current financial system as ' it is built to collapse."
+  },
+  {
+    "key": "m2cd14e44",
+    "section": "account",
+    "source": "Browser wallet"
+  },
+  {
+    "key": "m6dbca8c1",
+    "section": "account",
+    "source": "BTC / USD"
+  },
+  {
+    "key": "m53423dea",
+    "section": "server",
+    "source": "BTC receiving address"
+  },
+  {
+    "key": "mf96198b4",
+    "section": "account",
+    "source": "Business Loans"
+  },
+  {
+    "key": "mb2fd043a",
+    "section": "admin",
+    "source": "Call {value0}"
+  },
+  {
+    "key": "m5cf10bfb",
+    "section": "public",
+    "source": "Canada"
+  },
+  {
+    "key": "m35afca3b",
+    "section": "common",
+    "source": "Cancel"
+  },
+  {
+    "key": "ma62b09bc",
+    "section": "common",
+    "source": "Cancelled"
+  },
+  {
+    "key": "m8c005e94",
+    "section": "server",
+    "source": "Cannot deduct more than the user's available balance"
+  },
+  {
+    "key": "m33f2cee4",
+    "section": "admin",
+    "source": "Cap per user per day, in cents."
+  },
+  {
+    "key": "me11bd9bb",
+    "section": "account",
+    "source": "Card frozen"
+  },
+  {
+    "key": "mf3dffa87",
+    "section": "account",
+    "source": "Card Holder"
+  },
+  {
+    "key": "m6e2450f2",
+    "section": "server",
+    "source": "Card not found"
+  },
+  {
+    "key": "mc1e40960",
+    "section": "account",
+    "source": "Card unfrozen"
+  },
+  {
+    "key": "m106dc989",
+    "section": "account",
+    "source": "Card update failed"
+  },
+  {
+    "key": "ma968fda9",
+    "section": "account",
+    "source": "Cardano"
+  },
+  {
+    "key": "mdc5bbdff",
+    "section": "account",
+    "source": "Chain {value0}"
+  },
+  {
+    "key": "m89454950",
+    "section": "common",
+    "source": "Change (24h)"
+  },
+  {
+    "key": "m7ca699c0",
+    "section": "admin",
+    "source": "Change {value0}'s role to {value1}?"
+  },
+  {
+    "key": "m87f6bf6e",
+    "section": "common",
+    "source": "Change password"
+  },
+  {
+    "key": "m417e7af2",
+    "section": "common",
+    "source": "Changes requested"
+  },
+  {
+    "key": "m57967117",
+    "section": "admin",
+    "source": "Changes requested. The user can update and resubmit their documents."
+  },
+  {
+    "key": "ma9d81cac",
+    "section": "common",
+    "source": "Changing language…"
+  },
+  {
+    "key": "mcc9eb989",
+    "section": "common",
+    "source": "Changing password…"
+  },
+  {
+    "key": "m43dc6483",
+    "section": "admin",
+    "source": "Changing the email signs out this user's devices and invalidates old recovery links."
+  },
+  {
+    "key": "m31437ac8",
+    "section": "common",
+    "source": "Changing your password signs out your other devices."
+  },
+  {
+    "key": "m962b719c",
+    "section": "admin",
+    "source": "Check next accounts"
+  },
+  {
+    "key": "meeae9087",
+    "section": "account",
+    "source": "Check swap request"
+  },
+  {
+    "key": "m28bed9fa",
+    "section": "admin",
+    "source": "Check the asset, network and full address before enabling deposits."
+  },
+  {
+    "key": "mb7791f4a",
+    "section": "admin",
+    "source": "Check the treasury wallet for an existing payment before sending again."
+  },
+  {
+    "key": "m26eb828a",
+    "section": "common",
+    "source": "Check your email"
+  },
+  {
+    "key": "m10ba2462",
+    "section": "account",
+    "source": "Check your wallet before sending again. If a transfer was sent, paste its transaction hash below."
+  },
+  {
+    "key": "m8bf68470",
+    "section": "account",
+    "source": "Check your wallet for the transaction hash before trying another payment."
+  },
+  {
+    "key": "m6022324b",
+    "section": "admin",
+    "source": "Checked {count} accounts on this page"
+  },
+  {
+    "key": "mf4d2e84a",
+    "section": "account",
+    "source": "Checking a previous swap request. Retry with the same reference to avoid a duplicate exchange."
+  },
+  {
+    "key": "mb05f6de8",
+    "section": "admin",
+    "source": "Checking account records…"
+  },
+  {
+    "key": "mf522dffc",
+    "section": "admin",
+    "source": "Checks"
+  },
+  {
+    "key": "mb9e94542",
+    "section": "admin",
+    "source": "Checks account reservations, latest ledger balances and completed swap records. No balances are changed."
+  },
+  {
+    "key": "m94da8330",
+    "section": "public",
+    "source": "China"
+  },
+  {
+    "key": "mbd9b5c27",
+    "section": "common",
+    "source": "Choose a new password for your QFS account."
+  },
+  {
+    "key": "m3d95651c",
+    "section": "account",
+    "source": "Choose a plan and enter an amount"
+  },
+  {
+    "key": "m99dee443",
+    "section": "server",
+    "source": "Choose a valid PDF file"
+  },
+  {
+    "key": "m00914c6a",
+    "section": "server",
+    "source": "Choose a valid statement period of up to one year, ending today or earlier."
+  },
+  {
+    "key": "ma53f27bd",
+    "section": "server",
+    "source": "Choose an active receiving wallet on the matching network."
+  },
+  {
+    "key": "m7ccb86d6",
+    "section": "account",
+    "source": "Choose file"
+  },
+  {
+    "key": "m17b0ce92",
+    "section": "server",
+    "source": "Choose two different assets or networks."
+  },
+  {
+    "key": "m44fac3c0",
+    "section": "account",
+    "source": "Choose your wallet"
+  },
+  {
+    "key": "me014ced1",
+    "section": "common",
+    "source": "Click here to log in"
+  },
+  {
+    "key": "mcd86acc3",
+    "section": "common",
+    "source": "Close"
+  },
+  {
+    "key": "m2c2d3ccd",
+    "section": "account",
+    "source": "Close dialog"
+  },
+  {
+    "key": "m58ee52ce",
+    "section": "common",
+    "source": "Close menu"
+  },
+  {
+    "key": "m3201cae5",
+    "section": "common",
+    "source": "Closed"
+  },
+  {
+    "key": "mcf3e308e",
+    "section": "account",
+    "source": "Closed investment"
+  },
+  {
+    "key": "m795db914",
+    "section": "admin",
+    "source": "Code"
+  },
+  {
+    "key": "me5b43cf8",
+    "section": "admin",
+    "source": "Color"
+  },
+  {
+    "key": "m4a0e865d",
+    "section": "admin",
+    "source": "Color {value0}"
+  },
+  {
+    "key": "m6cd8674c",
+    "section": "admin",
+    "source": "Company BTC wallet the user pays to."
+  },
+  {
+    "key": "mb26cde18",
+    "section": "admin",
+    "source": "Company ETH wallet the user pays to."
+  },
+  {
+    "key": "m3d46c61c",
+    "section": "common",
+    "source": "Company Presentation"
+  },
+  {
+    "key": "m6f9283ba",
+    "section": "admin",
+    "source": "Company USDT BEP20 address (0x-prefixed)."
+  },
+  {
+    "key": "mbe0faf90",
+    "section": "admin",
+    "source": "Company USDT TRC20 address (T-prefixed)."
+  },
+  {
+    "key": "m5149a269",
+    "section": "common",
+    "source": "Complete the translated description, terms, and risk disclosure before publishing this language."
+  },
+  {
+    "key": "m64e17c50",
+    "section": "account",
+    "source": "Complete your identity verification"
+  },
+  {
+    "key": "mf4748112",
+    "section": "server",
+    "source": "completed"
+  },
+  {
+    "key": "mec88aab2",
+    "section": "common",
+    "source": "Completed"
+  },
+  {
+    "key": "m87dce66e",
+    "section": "account",
+    "source": "Completed · principal returned"
+  },
+  {
+    "key": "m772a1668",
+    "section": "admin",
+    "source": "Completed investment terms awaiting return of original principal."
+  },
+  {
+    "key": "m43617520",
+    "section": "account",
+    "source": "Completed investments"
+  },
+  {
+    "key": "mee4ec167",
+    "section": "account",
+    "source": "Completed movements and account activity."
+  },
+  {
+    "key": "md7f146b4",
+    "section": "account",
+    "source": "Completed terms and principal returns will appear here."
+  },
+  {
+    "key": "m163e25eb",
+    "section": "admin",
+    "source": "Configure"
+  },
+  {
+    "key": "mc8bec607",
+    "section": "admin",
+    "source": "Configure Changelly credentials on the server to connect the exchange provider."
+  },
+  {
+    "key": "me01a6ff2",
+    "section": "admin",
+    "source": "Configure swap asset"
+  },
+  {
+    "key": "macc6e703",
+    "section": "admin",
+    "source": "Configure swaps"
+  },
+  {
+    "key": "ma183c9ef",
+    "section": "admin",
+    "source": "Confirm"
+  },
+  {
+    "key": "maf74f892",
+    "section": "account",
+    "source": "Confirm in your wallet…"
+  },
+  {
+    "key": "mb8965b2a",
+    "section": "common",
+    "source": "Confirm new password"
+  },
+  {
+    "key": "m5ad9dc20",
+    "section": "server",
+    "source": "Confirm password"
+  },
+  {
+    "key": "mfbf2f740",
+    "section": "public",
+    "source": "Confirm Password"
+  },
+  {
+    "key": "m4a23e335",
+    "section": "common",
+    "source": "Confirm session sign-out"
+  },
+  {
+    "key": "maa6a4218",
+    "section": "common",
+    "source": "Confirm sign out"
+  },
+  {
+    "key": "mdb2d8be6",
+    "section": "account",
+    "source": "Confirm swap"
+  },
+  {
+    "key": "m7bfda4cf",
+    "section": "account",
+    "source": "Confirm the signature in your wallet…"
+  },
+  {
+    "key": "mf2d307e4",
+    "section": "account",
+    "source": "Confirm USD investment"
+  },
+  {
+    "key": "m9e6ad872",
+    "section": "account",
+    "source": "Confirm withdrawal"
+  },
+  {
+    "key": "m9d0bc213",
+    "section": "account",
+    "source": "Connect a wallet first, or paste an address below."
+  },
+  {
+    "key": "mc4b8e871",
+    "section": "account",
+    "source": "Connect a wallet to attach an address to this deposit."
+  },
+  {
+    "key": "m5fa13cb7",
+    "section": "account",
+    "source": "Connect another wallet"
+  },
+  {
+    "key": "mc5bff1ee",
+    "section": "account",
+    "source": "Connect wallet"
+  },
+  {
+    "key": "m6cba1bce",
+    "section": "common",
+    "source": "Connect Wallet"
+  },
+  {
+    "key": "mf8757a0e",
+    "section": "account",
+    "source": "Connect Wallet | QFS"
+  },
+  {
+    "key": "m0385df3d",
+    "section": "account",
+    "source": "Connect your Ethereum or BNB Smart Chain wallet by signing a message. Connecting verifies ownership and never moves money on its own."
+  },
+  {
+    "key": "ma3a3bbc5",
+    "section": "account",
+    "source": "Connected wallet"
+  },
+  {
+    "key": "mfcd6e2ea",
+    "section": "common",
+    "source": "Connection lost. Please try again."
+  },
+  {
+    "key": "mfddd385d",
+    "section": "server",
+    "source": "Consent"
+  },
+  {
+    "key": "mcab5de4f",
+    "section": "common",
+    "source": "Consent recorded"
+  },
+  {
+    "key": "m73ac94c3",
+    "section": "common",
+    "source": "Contact"
+  },
+  {
+    "key": "m265074ab",
+    "section": "admin",
+    "source": "Contact address used in notifications."
+  },
+  {
+    "key": "md3dc12ac",
+    "section": "common",
+    "source": "Contact support"
+  },
+  {
+    "key": "m93d301aa",
+    "section": "common",
+    "source": "Contact support for more information"
+  },
+  {
+    "key": "m91dd0cb5",
+    "section": "public",
+    "source": "Contact Us"
+  },
+  {
+    "key": "mab43d664",
+    "section": "common",
+    "source": "Continue"
+  },
+  {
+    "key": "m3c0f4005",
+    "section": "account",
+    "source": "Continue a deposit"
+  },
+  {
+    "key": "m90dea3a7",
+    "section": "account",
+    "source": "Continue verification"
+  },
+  {
+    "key": "m8dc21305",
+    "section": "account",
+    "source": "Copied"
+  },
+  {
+    "key": "mbd385078",
+    "section": "account",
+    "source": "Copied to clipboard"
+  },
+  {
+    "key": "me3c64274",
+    "section": "account",
+    "source": "Copper"
+  },
+  {
+    "key": "me54dc5fd",
+    "section": "account",
+    "source": "Copper / USD"
+  },
+  {
+    "key": "m658f3664",
+    "section": "account",
+    "source": "Copy"
+  },
+  {
+    "key": "ma9bde98b",
+    "section": "account",
+    "source": "Copy message"
+  },
+  {
+    "key": "m700d25a1",
+    "section": "account",
+    "source": "Copy the receiving address shown above."
+  },
+  {
+    "key": "mf8af17f1",
+    "section": "public",
+    "source": "Copyright © 2026 {domain}"
+  },
+  {
+    "key": "ma4cd9b8a",
+    "section": "common",
+    "source": "Could not change language. Please try again."
+  },
+  {
+    "key": "meddaf39c",
+    "section": "common",
+    "source": "Could not complete this request. Please try again."
+  },
+  {
+    "key": "me3ede425",
+    "section": "account",
+    "source": "Could not copy. Select the link and copy it manually."
+  },
+  {
+    "key": "m467277ca",
+    "section": "account",
+    "source": "Could not copy. Select the text and copy it manually."
+  },
+  {
+    "key": "me0d71618",
+    "section": "account",
+    "source": "Could not load completed investments."
+  },
+  {
+    "key": "m7af9dc5e",
+    "section": "account",
+    "source": "Could not load loans"
+  },
+  {
+    "key": "m0a94bc9a",
+    "section": "account",
+    "source": "Could not load transactions"
+  },
+  {
+    "key": "m95c4ee76",
+    "section": "common",
+    "source": "Could not load verification history."
+  },
+  {
+    "key": "m878bb431",
+    "section": "account",
+    "source": "Could not load your statement."
+  },
+  {
+    "key": "m9d37c702",
+    "section": "account",
+    "source": "Could not reach your wallet."
+  },
+  {
+    "key": "m503f98f1",
+    "section": "server",
+    "source": "Could not save the PDF"
+  },
+  {
+    "key": "m2fada290",
+    "section": "account",
+    "source": "Could not save verification. Please try again."
+  },
+  {
+    "key": "mcab39fd5",
+    "section": "server",
+    "source": "Could not save your document. Please try again."
+  },
+  {
+    "key": "m32b8b887",
+    "section": "account",
+    "source": "Could not submit review"
+  },
+  {
+    "key": "m15619c79",
+    "section": "common",
+    "source": "Could not update your account. Please try again."
+  },
+  {
+    "key": "m04f4fe71",
+    "section": "common",
+    "source": "Country"
+  },
+  {
+    "key": "m87569fc6",
+    "section": "common",
+    "source": "Country of residence"
+  },
+  {
+    "key": "m990de47d",
+    "section": "admin",
+    "source": "Create"
+  },
+  {
+    "key": "m8a38dd0b",
+    "section": "public",
+    "source": "Create a password"
+  },
+  {
+    "key": "m39803f82",
+    "section": "public",
+    "source": "Create Account"
+  },
+  {
+    "key": "m67674c65",
+    "section": "public",
+    "source": "Create one"
+  },
+  {
+    "key": "m8b76e500",
+    "section": "admin",
+    "source": "Create Plan"
+  },
+  {
+    "key": "m09de135b",
+    "section": "admin",
+    "source": "Created"
+  },
+  {
+    "key": "m6f5b4253",
+    "section": "common",
+    "source": "Creating account…"
+  },
+  {
+    "key": "m3045a61a",
+    "section": "admin",
+    "source": "Credit (add profit)"
+  },
+  {
+    "key": "m9d5f8cb0",
+    "section": "admin",
+    "source": "Credit balance"
+  },
+  {
+    "key": "mad62cf47",
+    "section": "public",
+    "source": "Credit card in hands female receptionist returning it to client after accepting payment"
+  },
+  {
+    "key": "me70716bd",
+    "section": "admin",
+    "source": "Credit spendable balance hourly"
+  },
+  {
+    "key": "mb2f6f6c8",
+    "section": "server",
+    "source": "Credited {amount, number, ::currency/USD} to your balance — {note}."
+  },
+  {
+    "key": "m102a1bda",
+    "section": "account",
+    "source": "Credited to available balance hourly"
+  },
+  {
+    "key": "me9b4e681",
+    "section": "server",
+    "source": "CRON_SECRET is not configured"
+  },
+  {
+    "key": "me9bdcbc1",
+    "section": "server",
+    "source": "Cross-origin request blocked"
+  },
+  {
+    "key": "md85ffb70",
+    "section": "common",
+    "source": "Crypto"
+  },
+  {
+    "key": "mcd992b74",
+    "section": "account",
+    "source": "Crypto balance"
+  },
+  {
+    "key": "m17db921b",
+    "section": "server",
+    "source": "Crypto deposit confirmed"
+  },
+  {
+    "key": "m8a7b12fc",
+    "section": "account",
+    "source": "Crypto deposits are not configured yet."
+  },
+  {
+    "key": "m90fb87d3",
+    "section": "account",
+    "source": "Crypto Merchant Loans"
+  },
+  {
+    "key": "m0d7851a5",
+    "section": "account",
+    "source": "Crypto quantity"
+  },
+  {
+    "key": "mbcc8bf53",
+    "section": "common",
+    "source": "Crypto swap"
+  },
+  {
+    "key": "m83e58e16",
+    "section": "server",
+    "source": "Crypto swap completed"
+  },
+  {
+    "key": "m5004df60",
+    "section": "admin",
+    "source": "Crypto swaps"
+  },
+  {
+    "key": "mf55e23e0",
+    "section": "common",
+    "source": "Crypto swaps are not available yet."
+  },
+  {
+    "key": "m9e9b89a7",
+    "section": "account",
+    "source": "Crypto values change until invested. Investments and their returns are fixed in USD."
+  },
+  {
+    "key": "m3b85af87",
+    "section": "server",
+    "source": "Crypto withdrawal paid"
+  },
+  {
+    "key": "m146f2256",
+    "section": "server",
+    "source": "Currency"
+  },
+  {
+    "key": "mbc0bb823",
+    "section": "server",
+    "source": "Current account snapshot"
+  },
+  {
+    "key": "m32c79659",
+    "section": "server",
+    "source": "Current investment records"
+  },
+  {
+    "key": "m8eedf1f3",
+    "section": "common",
+    "source": "Current password"
+  },
+  {
+    "key": "m47cec786",
+    "section": "account",
+    "source": "Current USD balance"
+  },
+  {
+    "key": "m1fcc47af",
+    "section": "admin",
+    "source": "Current value:"
+  },
+  {
+    "key": "mb8614cd4",
+    "section": "account",
+    "source": "Customer voices"
+  },
+  {
+    "key": "m0b4f4403",
+    "section": "account",
+    "source": "Customers Reviews"
+  },
+  {
+    "key": "m9b13df54",
+    "section": "server",
+    "source": "Daily withdrawal limit reached — {amount} max per 24 hours"
+  },
+  {
+    "key": "m11f6d87b",
+    "section": "account",
+    "source": "Dashboard"
+  },
+  {
+    "key": "mf12dd307",
+    "section": "account",
+    "source": "Dashboard | QFS"
+  },
+  {
+    "key": "m312f852d",
+    "section": "account",
+    "source": "Dashboard unavailable"
+  },
+  {
+    "key": "m3b527379",
+    "section": "common",
+    "source": "Date"
+  },
+  {
+    "key": "m96156047",
+    "section": "common",
+    "source": "Date of birth"
+  },
+  {
+    "key": "m0a1f22e9",
+    "section": "admin",
+    "source": "Debit (deduct)"
+  },
+  {
+    "key": "m16367cf5",
+    "section": "admin",
+    "source": "Debit balance"
+  },
+  {
+    "key": "m4ce204ef",
+    "section": "account",
+    "source": "Debt Consolidation Loans"
+  },
+  {
+    "key": "m986ec621",
+    "section": "public",
+    "source": "Decentralization"
+  },
+  {
+    "key": "m0a37bd75",
+    "section": "public",
+    "source": "Decentralized financial system designed to democratize money and eliminate the control of central bank."
+  },
+  {
+    "key": "me57acba5",
+    "section": "server",
+    "source": "Deducted {amount, number, ::currency/USD} from your balance — {note}."
+  },
+  {
+    "key": "m5797ea6a",
+    "section": "admin",
+    "source": "Delete"
+  },
+  {
+    "key": "m5bf527c2",
+    "section": "admin",
+    "source": "Delete \"{value0}\"?"
+  },
+  {
+    "key": "m5861e774",
+    "section": "admin",
+    "source": "Delete {value0}?"
+  },
+  {
+    "key": "mf3abf08f",
+    "section": "admin",
+    "source": "Delete this review?"
+  },
+  {
+    "key": "m95f76a55",
+    "section": "common",
+    "source": "Deposit"
+  },
+  {
+    "key": "mdcc55823",
+    "section": "admin",
+    "source": "Deposit / Withdrawal Requests"
+  },
+  {
+    "key": "m7b9d2f90",
+    "section": "common",
+    "source": "Deposit approved"
+  },
+  {
+    "key": "m994b4bd0",
+    "section": "account",
+    "source": "Deposit confirmed"
+  },
+  {
+    "key": "mc2268de6",
+    "section": "account",
+    "source": "Deposit Method"
+  },
+  {
+    "key": "m7991e7fe",
+    "section": "server",
+    "source": "Deposit not found."
+  },
+  {
+    "key": "m8f9accdc",
+    "section": "account",
+    "source": "Deposit reference"
+  },
+  {
+    "key": "ma5d23d5d",
+    "section": "common",
+    "source": "Deposit rejected"
+  },
+  {
+    "key": "m4425ee25",
+    "section": "account",
+    "source": "Deposit request submitted"
+  },
+  {
+    "key": "me75dc1d9",
+    "section": "admin",
+    "source": "Deposit Requests"
+  },
+  {
+    "key": "me102a73c",
+    "section": "account",
+    "source": "Deposit submitted — awaiting review"
+  },
+  {
+    "key": "m8089d2c5",
+    "section": "admin",
+    "source": "Deposit: account name"
+  },
+  {
+    "key": "m7b81b6d3",
+    "section": "admin",
+    "source": "Deposit: account number"
+  },
+  {
+    "key": "md7008bec",
+    "section": "admin",
+    "source": "Deposit: bank name"
+  },
+  {
+    "key": "m8e858b2f",
+    "section": "admin",
+    "source": "Deposit: Bitcoin address"
+  },
+  {
+    "key": "m720cc142",
+    "section": "admin",
+    "source": "Deposit: Ethereum address"
+  },
+  {
+    "key": "m4f47ca1f",
+    "section": "admin",
+    "source": "Deposit: USDT (BEP20) address"
+  },
+  {
+    "key": "m61f7681b",
+    "section": "admin",
+    "source": "Deposit: USDT (TRC20) address"
+  },
+  {
+    "key": "m3a7c19d2",
+    "section": "admin",
+    "source": "Deposits"
+  },
+  {
+    "key": "m172cc370",
+    "section": "admin",
+    "source": "Deposits go to these addresses. Existing deposit instructions keep their saved address."
+  },
+  {
+    "key": "mcdfd9712",
+    "section": "admin",
+    "source": "Description (shown to users)"
+  },
+  {
+    "key": "md2eb97ab",
+    "section": "public",
+    "source": "Designed to fortified your assets with anti theft and hack security system"
+  },
+  {
+    "key": "m7d598a48",
+    "section": "admin",
+    "source": "Destination treasury"
+  },
+  {
+    "key": "m0ec24245",
+    "section": "common",
+    "source": "Details"
+  },
+  {
+    "key": "md4e269c7",
+    "section": "common",
+    "source": "Device details unavailable"
+  },
+  {
+    "key": "m26be3ad9",
+    "section": "account",
+    "source": "Dialog"
+  },
+  {
+    "key": "m61fefc0a",
+    "section": "admin",
+    "source": "Direction"
+  },
+  {
+    "key": "mfe508d03",
+    "section": "admin",
+    "source": "Disable"
+  },
+  {
+    "key": "me4b58a45",
+    "section": "common",
+    "source": "Disable two-factor authentication"
+  },
+  {
+    "key": "mbfce9925",
+    "section": "common",
+    "source": "Disabled"
+  },
+  {
+    "key": "m052a111b",
+    "section": "admin",
+    "source": "Discard translation edits"
+  },
+  {
+    "key": "mda84790b",
+    "section": "account",
+    "source": "Disconnect"
+  },
+  {
+    "key": "maa141233",
+    "section": "account",
+    "source": "Disconnecting…"
+  },
+  {
+    "key": "m10764f00",
+    "section": "common",
+    "source": "Dismiss confirmation"
+  },
+  {
+    "key": "m4e167b8c",
+    "section": "common",
+    "source": "Display name"
+  },
+  {
+    "key": "m4f6dc3f5",
+    "section": "admin",
+    "source": "Doc"
+  },
+  {
+    "key": "mf843faf4",
+    "section": "common",
+    "source": "Document"
+  },
+  {
+    "key": "m081f2d09",
+    "section": "admin",
+    "source": "Document \"{code}\" created"
+  },
+  {
+    "key": "m2f3706d8",
+    "section": "admin",
+    "source": "Document \"{code}\" deleted"
+  },
+  {
+    "key": "m2ee9a16e",
+    "section": "admin",
+    "source": "Document \"{code}\" updated"
+  },
+  {
+    "key": "m63156079",
+    "section": "server",
+    "source": "Document not found"
+  },
+  {
+    "key": "m51a6a8f5",
+    "section": "server",
+    "source": "Document not found."
+  },
+  {
+    "key": "m4f11f454",
+    "section": "common",
+    "source": "Document type"
+  },
+  {
+    "key": "m5a036285",
+    "section": "common",
+    "source": "Documents"
+  },
+  {
+    "key": "m1023accd",
+    "section": "account",
+    "source": "Documents are stored privately and reviewed by authorised admins. This review does not include automated liveness checks."
+  },
+  {
+    "key": "m042eb140",
+    "section": "common",
+    "source": "Documents submitted"
+  },
+  {
+    "key": "m45d4484d",
+    "section": "account",
+    "source": "DOGE / USD"
+  },
+  {
+    "key": "mece34261",
+    "section": "account",
+    "source": "Dogecoin"
+  },
+  {
+    "key": "m42148d10",
+    "section": "public",
+    "source": "Don't have an account?"
+  },
+  {
+    "key": "m8dd31791",
+    "section": "account",
+    "source": "Done"
+  },
+  {
+    "key": "m1cc6f1d6",
+    "section": "account",
+    "source": "Dow Jones"
+  },
+  {
+    "key": "ma4995035",
+    "section": "admin",
+    "source": "Down"
+  },
+  {
+    "key": "m95ee194a",
+    "section": "admin",
+    "source": "Download {value0}"
+  },
+  {
+    "key": "mec186815",
+    "section": "account",
+    "source": "Download CSV"
+  },
+  {
+    "key": "m00356fe9",
+    "section": "account",
+    "source": "Download QR code"
+  },
+  {
+    "key": "m0c946712",
+    "section": "common",
+    "source": "Download recovery codes"
+  },
+  {
+    "key": "m3ed1851b",
+    "section": "account",
+    "source": "Download uploaded file"
+  },
+  {
+    "key": "m7751228e",
+    "section": "account",
+    "source": "Download your account activity and investment records."
+  },
+  {
+    "key": "m89eb712c",
+    "section": "common",
+    "source": "Draft"
+  },
+  {
+    "key": "m645faf93",
+    "section": "account",
+    "source": "Driving licence"
+  },
+  {
+    "key": "m49b9cb86",
+    "section": "account",
+    "source": "Due {value0}"
+  },
+  {
+    "key": "md4c7492d",
+    "section": "account",
+    "source": "Duration"
+  },
+  {
+    "key": "m9d9c0871",
+    "section": "account",
+    "source": "e.g. account number, SWIFT, wallet address"
+  },
+  {
+    "key": "m4cc398ba",
+    "section": "admin",
+    "source": "e.g. Deposit confirmed. Welcome aboard!"
+  },
+  {
+    "key": "ma5f63b7e",
+    "section": "admin",
+    "source": "e.g. Please provide a valid payment proof and retry."
+  },
+  {
+    "key": "m71e272a4",
+    "section": "admin",
+    "source": "e.g. Q3 performance bonus"
+  },
+  {
+    "key": "m3601d52f",
+    "section": "admin",
+    "source": "e.g. Your loan was approved. Disbursement is handled separately."
+  },
+  {
+    "key": "m2126b260",
+    "section": "common",
+    "source": "Each code works once. These codes will not be displayed again."
+  },
+  {
+    "key": "m9d1bc63d",
+    "section": "account",
+    "source": "Each file must be 3 MB or smaller."
+  },
+  {
+    "key": "me55df077",
+    "section": "account",
+    "source": "Earn {rate}% in USD when someone you invite has a deposit approved."
+  },
+  {
+    "key": "m4b270a71",
+    "section": "common",
+    "source": "Earning"
+  },
+  {
+    "key": "m5074c126",
+    "section": "admin",
+    "source": "Earnings"
+  },
+  {
+    "key": "mc2c76cb1",
+    "section": "admin",
+    "source": "Edit"
+  },
+  {
+    "key": "m41b92410",
+    "section": "admin",
+    "source": "Edit \"{value0}\""
+  },
+  {
+    "key": "m8e92dac2",
+    "section": "admin",
+    "source": "Edit {value0}"
+  },
+  {
+    "key": "md91f2ac6",
+    "section": "admin",
+    "source": "Edit account"
+  },
+  {
+    "key": "mb6e0d8e1",
+    "section": "account",
+    "source": "Edit or refresh quote"
+  },
+  {
+    "key": "m0b71e990",
+    "section": "admin",
+    "source": "Edit receiving wallet"
+  },
+  {
+    "key": "md7e1af08",
+    "section": "public",
+    "source": "Egypt"
+  },
+  {
+    "key": "m43352167",
+    "section": "common",
+    "source": "Email"
+  },
+  {
+    "key": "mb2637b3c",
+    "section": "admin",
+    "source": "Email {value0}"
+  },
+  {
+    "key": "mae595053",
+    "section": "common",
+    "source": "Email address"
+  },
+  {
+    "key": "mf1f487f3",
+    "section": "common",
+    "source": "Email Address"
+  },
+  {
+    "key": "m51887c9f",
+    "section": "server",
+    "source": "Email recovery is temporarily unavailable. Please contact support."
+  },
+  {
+    "key": "medd61b88",
+    "section": "public",
+    "source": "Email Support"
+  },
+  {
+    "key": "m97494c7c",
+    "section": "public",
+    "source": "Empower Your Financial Future With Quantum Financial System"
+  },
+  {
+    "key": "m8614a9ee",
+    "section": "admin",
+    "source": "Enable"
+  },
+  {
+    "key": "mb5ed6e6d",
+    "section": "admin",
+    "source": "Enable this swap asset"
+  },
+  {
+    "key": "m1794a0c4",
+    "section": "common",
+    "source": "Enable two-factor authentication"
+  },
+  {
+    "key": "m9c86e43e",
+    "section": "admin",
+    "source": "Enabled"
+  },
+  {
+    "key": "m6d10b959",
+    "section": "common",
+    "source": "Enabled. Sign-in requires your password and an authenticator or recovery code."
+  },
+  {
+    "key": "me797bdc4",
+    "section": "account",
+    "source": "Energy-efficient Loans"
+  },
+  {
+    "key": "m6846079d",
+    "section": "account",
+    "source": "English Presentation"
+  },
+  {
+    "key": "mf103a167",
+    "section": "server",
+    "source": "Enter a crypto quantity using decimal notation."
+  },
+  {
+    "key": "m1437da41",
+    "section": "account",
+    "source": "Enter a crypto quantity without thousands separators."
+  },
+  {
+    "key": "m607d5d24",
+    "section": "server",
+    "source": "Enter a new authenticator code or an unused recovery code."
+  },
+  {
+    "key": "m79052c28",
+    "section": "account",
+    "source": "Enter a Tron (TRC20) address beginning with T."
+  },
+  {
+    "key": "mdbfa9824",
+    "section": "common",
+    "source": "Enter a valid amount"
+  },
+  {
+    "key": "mc59a1640",
+    "section": "common",
+    "source": "Enter a valid email address"
+  },
+  {
+    "key": "m7f9fe05c",
+    "section": "account",
+    "source": "Enter a valid Ethereum public address."
+  },
+  {
+    "key": "md713a379",
+    "section": "server",
+    "source": "Enter a valid receiving address for the selected network."
+  },
+  {
+    "key": "m8cbe93c7",
+    "section": "server",
+    "source": "Enter a valid transaction hash for this network."
+  },
+  {
+    "key": "m780f96db",
+    "section": "server",
+    "source": "Enter a valid USD amount with at most two decimal places."
+  },
+  {
+    "key": "mbb710aec",
+    "section": "server",
+    "source": "Enter a valid XRP destination tag between 0 and 4294967295."
+  },
+  {
+    "key": "m59bd0705",
+    "section": "common",
+    "source": "Enter the code from your authenticator app, or use an unused recovery code."
+  },
+  {
+    "key": "m1a159040",
+    "section": "admin",
+    "source": "Enter the document details and choose a PDF or file URL"
+  },
+  {
+    "key": "m76126107",
+    "section": "account",
+    "source": "Enter the tag supplied by the receiving wallet, if required."
+  },
+  {
+    "key": "mcf231daa",
+    "section": "account",
+    "source": "Enter the wallet address to receive the funds"
+  },
+  {
+    "key": "md4dd51c3",
+    "section": "admin",
+    "source": "Enter valid amounts, a monthly return, and whole numbers for the term and sort order."
+  },
+  {
+    "key": "m668a7d92",
+    "section": "common",
+    "source": "Enter your account email to request a private recovery link."
+  },
+  {
+    "key": "m652bdc53",
+    "section": "account",
+    "source": "Enter your occupation"
+  },
+  {
+    "key": "m7b5830fd",
+    "section": "common",
+    "source": "Enter your password"
+  },
+  {
+    "key": "m66559f45",
+    "section": "account",
+    "source": "Enter your public Ethereum address, sign the one-time message in your wallet, then paste the signature. Never enter your recovery phrase or private key here."
+  },
+  {
+    "key": "mea1d1d83",
+    "section": "account",
+    "source": "Estimated USD value: {value}"
+  },
+  {
+    "key": "md743c035",
+    "section": "account",
+    "source": "ETH / USD"
+  },
+  {
+    "key": "m3f52f706",
+    "section": "server",
+    "source": "ETH receiving address"
+  },
+  {
+    "key": "m573a72ab",
+    "section": "account",
+    "source": "Ether"
+  },
+  {
+    "key": "m72332a00",
+    "section": "account",
+    "source": "Ethereum Mainnet"
+  },
+  {
+    "key": "md511b912",
+    "section": "admin",
+    "source": "Every account with its name, email and contact number. Suspending a user revokes their active sessions."
+  },
+  {
+    "key": "m4765b394",
+    "section": "admin",
+    "source": "Every ledger movement across all accounts: deposits, withdrawals, investments, earnings and bonuses."
+  },
+  {
+    "key": "m7654d98c",
+    "section": "account",
+    "source": "Exchange available crypto. Your USD investments keep their existing terms."
+  },
+  {
+    "key": "m2972dd0c",
+    "section": "admin",
+    "source": "Exchange provider connected."
+  },
+  {
+    "key": "m33f5b4e2",
+    "section": "account",
+    "source": "Exchange rate"
+  },
+  {
+    "key": "m4c1888aa",
+    "section": "admin",
+    "source": "Exchange receiving address"
+  },
+  {
+    "key": "mbb362b9b",
+    "section": "common",
+    "source": "Exchanging"
+  },
+  {
+    "key": "mbfbc8870",
+    "section": "admin",
+    "source": "Existing investments keep their financial terms and any materials recorded at purchase."
+  },
+  {
+    "key": "m8659f1f9",
+    "section": "admin",
+    "source": "Expected"
+  },
+  {
+    "key": "mbca9f3d2",
+    "section": "common",
+    "source": "Expired"
+  },
+  {
+    "key": "m3b1bebf5",
+    "section": "server",
+    "source": "Expired cards cannot be changed"
+  },
+  {
+    "key": "mc7aa0523",
+    "section": "account",
+    "source": "Expires"
+  },
+  {
+    "key": "m4b4de2ac",
+    "section": "account",
+    "source": "Explore Customers Reviews"
+  },
+  {
+    "key": "m01c40ea8",
+    "section": "common",
+    "source": "Face photo"
+  },
+  {
+    "key": "m5579c3d4",
+    "section": "common",
+    "source": "Failed"
+  },
+  {
+    "key": "m46df08c9",
+    "section": "common",
+    "source": "Failed to fetch"
+  },
+  {
+    "key": "m294cea7a",
+    "section": "admin",
+    "source": "Failed to load overview"
+  },
+  {
+    "key": "m228d43a3",
+    "section": "common",
+    "source": "Fee"
+  },
+  {
+    "key": "mb5addc0d",
+    "section": "admin",
+    "source": "Fee applied to withdrawals, in basis points."
+  },
+  {
+    "key": "m2b183663",
+    "section": "server",
+    "source": "File"
+  },
+  {
+    "key": "mf5c0197b",
+    "section": "admin",
+    "source": "File URL (PDF)"
+  },
+  {
+    "key": "m36881f45",
+    "section": "account",
+    "source": "Filipino Presentation"
+  },
+  {
+    "key": "m1cf71335",
+    "section": "account",
+    "source": "Fill in the loan amount and your occupation"
+  },
+  {
+    "key": "mcd0f491f",
+    "section": "admin",
+    "source": "First accounts"
+  },
+  {
+    "key": "m19153138",
+    "section": "public",
+    "source": "First Name"
+  },
+  {
+    "key": "m6ae8b975",
+    "section": "admin",
+    "source": "Flag image path"
+  },
+  {
+    "key": "m4f170fba",
+    "section": "admin",
+    "source": "Flat"
+  },
+  {
+    "key": "me2619568",
+    "section": "common",
+    "source": "Forgot password?"
+  },
+  {
+    "key": "m125f19fb",
+    "section": "common",
+    "source": "Forgot Your Password?"
+  },
+  {
+    "key": "m7b2e4bba",
+    "section": "public",
+    "source": "France"
+  },
+  {
+    "key": "meac50ed4",
+    "section": "account",
+    "source": "Freeze Card"
+  },
+  {
+    "key": "m8f0b2667",
+    "section": "account",
+    "source": "French Presentation"
+  },
+  {
+    "key": "m95cd8075",
+    "section": "account",
+    "source": "from"
+  },
+  {
+    "key": "m18743595",
+    "section": "account",
+    "source": "From"
+  },
+  {
+    "key": "mec65d4ee",
+    "section": "account",
+    "source": "From our community"
+  },
+  {
+    "key": "me1fbbf3a",
+    "section": "admin",
+    "source": "From Wallet"
+  },
+  {
+    "key": "m9ac114a3",
+    "section": "common",
+    "source": "Frozen"
+  },
+  {
+    "key": "mf2a61dc4",
+    "section": "common",
+    "source": "Full legal name"
+  },
+  {
+    "key": "m9010932f",
+    "section": "server",
+    "source": "Full name"
+  },
+  {
+    "key": "m28a46cc5",
+    "section": "account",
+    "source": "Fund Account"
+  },
+  {
+    "key": "m7838f3c6",
+    "section": "account",
+    "source": "Funded with {quantity} {asset} at {rate} USD per coin. Principal and returns are fixed in USD."
+  },
+  {
+    "key": "m02eb590b",
+    "section": "account",
+    "source": "Funding method"
+  },
+  {
+    "key": "md4e25362",
+    "section": "admin",
+    "source": "Funding transaction"
+  },
+  {
+    "key": "mf481218e",
+    "section": "account",
+    "source": "Funds remain reserved during review."
+  },
+  {
+    "key": "me53d4dae",
+    "section": "account",
+    "source": "Generate signing message"
+  },
+  {
+    "key": "m91050de3",
+    "section": "server",
+    "source": "Generated at"
+  },
+  {
+    "key": "m263d0c7e",
+    "section": "public",
+    "source": "Germany"
+  },
+  {
+    "key": "m94c9d067",
+    "section": "public",
+    "source": "Get access to funds once your Humanitarian Project is Approved"
+  },
+  {
+    "key": "m41009e6a",
+    "section": "account",
+    "source": "Get deposit instructions"
+  },
+  {
+    "key": "mfb63fee0",
+    "section": "account",
+    "source": "Get MetaMask"
+  },
+  {
+    "key": "m25dbf896",
+    "section": "public",
+    "source": "Get Onboard today on QFS and get liberated from all financial limitations."
+  },
+  {
+    "key": "m6a59fdb1",
+    "section": "public",
+    "source": "Get Ready for revolutionary Financial System QFS Nesara Official"
+  },
+  {
+    "key": "md0e07f4e",
+    "section": "public",
+    "source": "Get Started"
+  },
+  {
+    "key": "ma25d0289",
+    "section": "public",
+    "source": "Get to Safety before the collapse of World Banking System"
+  },
+  {
+    "key": "m2a7abcbb",
+    "section": "public",
+    "source": "Get your assets secured' on our ledger 3 security system"
+  },
+  {
+    "key": "m4a90db4a",
+    "section": "public",
+    "source": "Get your new QFS card"
+  },
+  {
+    "key": "mb0b5c104",
+    "section": "common",
+    "source": "Ghana"
+  },
+  {
+    "key": "m6c94b6b3",
+    "section": "common",
+    "source": "Gold"
+  },
+  {
+    "key": "m5ae299ee",
+    "section": "common",
+    "source": "Gold / USD"
+  },
+  {
+    "key": "md6667ae4",
+    "section": "server",
+    "source": "Hello {name},"
+  },
+  {
+    "key": "mbbf4ae03",
+    "section": "public",
+    "source": "Help Center"
+  },
+  {
+    "key": "m0aeb7bb0",
+    "section": "account",
+    "source": "Here is what's happening with your QFS account today. · {value0}"
+  },
+  {
+    "key": "m3c2dfe59",
+    "section": "common",
+    "source": "Hidden"
+  },
+  {
+    "key": "mf57424d4",
+    "section": "account",
+    "source": "Hide manual verification"
+  },
+  {
+    "key": "mcd577cde",
+    "section": "common",
+    "source": "Hide password"
+  },
+  {
+    "key": "m1485b165",
+    "section": "account",
+    "source": "Hindi Presentation"
+  },
+  {
+    "key": "m44b6516d",
+    "section": "common",
+    "source": "History will appear after your next submission or review. Earlier document versions may not be available."
+  },
+  {
+    "key": "m52f50eae",
+    "section": "public",
+    "source": "Home"
+  },
+  {
+    "key": "mcc2a1722",
+    "section": "account",
+    "source": "Home Equity Loans"
+  },
+  {
+    "key": "mfc3a08e0",
+    "section": "account",
+    "source": "hourly"
+  },
+  {
+    "key": "m2900ce00",
+    "section": "common",
+    "source": "Hourly"
+  },
+  {
+    "key": "m02ff0734",
+    "section": "server",
+    "source": "hours"
+  },
+  {
+    "key": "m615dbfa8",
+    "section": "public",
+    "source": "How we work"
+  },
+  {
+    "key": "m68419bf5",
+    "section": "public",
+    "source": "Humanitarian Project"
+  },
+  {
+    "key": "mc1b20530",
+    "section": "admin",
+    "source": "I checked the treasury wallet and verified that no payment was sent for this expired order."
+  },
+  {
+    "key": "m3f479e59",
+    "section": "account",
+    "source": "I confirm these details are mine and authorise their review for identity verification."
+  },
+  {
+    "key": "mc3d87222",
+    "section": "admin",
+    "source": "I have reviewed the identity document, face photo, and submitted details."
+  },
+  {
+    "key": "mf86d4f8f",
+    "section": "common",
+    "source": "I have saved my codes"
+  },
+  {
+    "key": "mc6c04895",
+    "section": "admin",
+    "source": "I verified the refund address, transaction and received quantity on the source network."
+  },
+  {
+    "key": "m2027d196",
+    "section": "common",
+    "source": "Identity approved"
+  },
+  {
+    "key": "m5001ae18",
+    "section": "account",
+    "source": "Identity document"
+  },
+  {
+    "key": "mc139a13d",
+    "section": "common",
+    "source": "Identity document — back"
+  },
+  {
+    "key": "mcf3c9409",
+    "section": "account",
+    "source": "Identity document — front"
+  },
+  {
+    "key": "m38e58091",
+    "section": "common",
+    "source": "Identity document — front / passport page"
+  },
+  {
+    "key": "m108e682c",
+    "section": "server",
+    "source": "Identity documents submitted"
+  },
+  {
+    "key": "m13b80b6f",
+    "section": "account",
+    "source": "Identity review in progress"
+  },
+  {
+    "key": "m62bbdbca",
+    "section": "common",
+    "source": "Identity verification"
+  },
+  {
+    "key": "m92c87cea",
+    "section": "common",
+    "source": "Identity Verification"
+  },
+  {
+    "key": "m138df7b9",
+    "section": "server",
+    "source": "Identity verification approved"
+  },
+  {
+    "key": "m154fb9b9",
+    "section": "account",
+    "source": "Identity verified"
+  },
+  {
+    "key": "m59e0c1aa",
+    "section": "common",
+    "source": "If an active account matches this email, look for a password reset link. Check your spam folder too. The link expires in 30 minutes."
+  },
+  {
+    "key": "m8b12d65e",
+    "section": "server",
+    "source": "If an active account matches this email, look for a password reset link. If it does not arrive, try again or contact support."
+  },
+  {
+    "key": "m915fc408",
+    "section": "server",
+    "source": "If the button does not work, copy this link into your browser:"
+  },
+  {
+    "key": "mf62ccf37",
+    "section": "common",
+    "source": "If the email does not arrive, try again or contact support."
+  },
+  {
+    "key": "m2b62e4a8",
+    "section": "server",
+    "source": "If you did not make this change, contact QFS support immediately."
+  },
+  {
+    "key": "maec12c74",
+    "section": "server",
+    "source": "If you did not request this, you can ignore this email. Your password has not changed."
+  },
+  {
+    "key": "mc1bab469",
+    "section": "account",
+    "source": "If you only have a recovery phrase, import it in your wallet app first, then return here to connect. This site will never ask you to type it."
+  },
+  {
+    "key": "m67640722",
+    "section": "account",
+    "source": "Illustrative reviews"
+  },
+  {
+    "key": "m8471d9cd",
+    "section": "admin",
+    "source": "Immutable record of every admin action: approvals, rejections, role changes and content edits."
+  },
+  {
+    "key": "m0b381ba4",
+    "section": "admin",
+    "source": "in the queue. Review them in the Loans section."
+  },
+  {
+    "key": "m901aca78",
+    "section": "common",
+    "source": "Inactive"
+  },
+  {
+    "key": "mb1a18cef",
+    "section": "account",
+    "source": "Include this destination tag with the transfer."
+  },
+  {
+    "key": "mcd54d59b",
+    "section": "account",
+    "source": "Include your reference ("
+  },
+  {
+    "key": "maec7ae4b",
+    "section": "account",
+    "source": "Index"
+  },
+  {
+    "key": "m9dbd062c",
+    "section": "public",
+    "source": "India"
+  },
+  {
+    "key": "m49323ae9",
+    "section": "public",
+    "source": "Indonesia"
+  },
+  {
+    "key": "m14920087",
+    "section": "account",
+    "source": "Indonesian Presentation"
+  },
+  {
+    "key": "mfb51f46a",
+    "section": "public",
+    "source": "Innovation"
+  },
+  {
+    "key": "mbc506d0b",
+    "section": "server",
+    "source": "Insufficient account balance — cannot pay this withdrawal"
+  },
+  {
+    "key": "m4ea4ec1f",
+    "section": "server",
+    "source": "Insufficient available balance for this investment"
+  },
+  {
+    "key": "m9aeea5f5",
+    "section": "server",
+    "source": "Insufficient available balance for this withdrawal"
+  },
+  {
+    "key": "m07d5a218",
+    "section": "server",
+    "source": "Insufficient available crypto balance."
+  },
+  {
+    "key": "m93e9b7fd",
+    "section": "server",
+    "source": "Insufficient available USD balance."
+  },
+  {
+    "key": "md3260c69",
+    "section": "public",
+    "source": "Intercept and recover stolen digital assets with help with International Police."
+  },
+  {
+    "key": "m3e3eba88",
+    "section": "server",
+    "source": "Invalid cron secret"
+  },
+  {
+    "key": "m3c37302b",
+    "section": "account",
+    "source": "Invalid deposit instructions."
+  },
+  {
+    "key": "m4d625586",
+    "section": "server",
+    "source": "Invalid email or password"
+  },
+  {
+    "key": "m05dde9bd",
+    "section": "server",
+    "source": "Invalid investment history cursor."
+  },
+  {
+    "key": "md0a7c438",
+    "section": "account",
+    "source": "Invest From"
+  },
+  {
+    "key": "m4b98bd76",
+    "section": "account",
+    "source": "Invest Today, Thrive Tomorrow:"
+  },
+  {
+    "key": "mdf1f4ef8",
+    "section": "server",
+    "source": "Invested in "
+  },
+  {
+    "key": "m600559ac",
+    "section": "common",
+    "source": "Investment"
+  },
+  {
+    "key": "m964ec680",
+    "section": "server",
+    "source": "Investment account not found."
+  },
+  {
+    "key": "ma3ebfac8",
+    "section": "account",
+    "source": "Investment Amount"
+  },
+  {
+    "key": "mf1d130cd",
+    "section": "server",
+    "source": "Investment not found."
+  },
+  {
+    "key": "m51e1bf0a",
+    "section": "server",
+    "source": "Investment plan not found"
+  },
+  {
+    "key": "mb0b1fccc",
+    "section": "admin",
+    "source": "Investment Plans"
+  },
+  {
+    "key": "m65371d1f",
+    "section": "admin",
+    "source": "Investment plans online"
+  },
+  {
+    "key": "ma39e1a3d",
+    "section": "server",
+    "source": "Investment principal released"
+  },
+  {
+    "key": "m089b70fd",
+    "section": "server",
+    "source": "Investment principal returned to available balance"
+  },
+  {
+    "key": "mf941b0c6",
+    "section": "server",
+    "source": "Investment Profit"
+  },
+  {
+    "key": "m65f4a119",
+    "section": "account",
+    "source": "Investment reference"
+  },
+  {
+    "key": "m269edce9",
+    "section": "server",
+    "source": "Investment started"
+  },
+  {
+    "key": "m1138732c",
+    "section": "account",
+    "source": "Investment started. Your plan is active and accruing profit."
+  },
+  {
+    "key": "mf1b232ef",
+    "section": "server",
+    "source": "Investment term completed"
+  },
+  {
+    "key": "m97542cd7",
+    "section": "account",
+    "source": "Investment terms"
+  },
+  {
+    "key": "m076c7a0d",
+    "section": "admin",
+    "source": "Investments"
+  },
+  {
+    "key": "ma2dcd53c",
+    "section": "account",
+    "source": "Investor Reviews"
+  },
+  {
+    "key": "mca209f91",
+    "section": "public",
+    "source": "ISO20022: GLOBAL ECONOMIC SECURITY AND REFORMATION ACT"
+  },
+  {
+    "key": "m3415f00c",
+    "section": "public",
+    "source": "Italy"
+  },
+  {
+    "key": "ma28f44fb",
+    "section": "public",
+    "source": "Japan"
+  },
+  {
+    "key": "m60484ee0",
+    "section": "account",
+    "source": "Join QFS!"
+  },
+  {
+    "key": "mfad7bd7e",
+    "section": "public",
+    "source": "JOIN THE BIGGEST FINANCIAL REVOLUTIONARY SYSTEM DESIGNED TO OVERTAKE THE WORLD'S BANKING SYSTEM BY ELIMINATING CONTROL OF MONEY BY CABALS."
+  },
+  {
+    "key": "m78ed8f1b",
+    "section": "public",
+    "source": "Join Us"
+  },
+  {
+    "key": "m350edd78",
+    "section": "server",
+    "source": "Keep recovery links private. QFS will never ask for your wallet seed phrase or private key."
+  },
+  {
+    "key": "m58c8bfc3",
+    "section": "public",
+    "source": "Kenya"
+  },
+  {
+    "key": "mcd1ac90c",
+    "section": "admin",
+    "source": "Key"
+  },
+  {
+    "key": "m16e43807",
+    "section": "account",
+    "source": "Kurdish Presentation"
+  },
+  {
+    "key": "m9a73db9b",
+    "section": "common",
+    "source": "Language"
+  },
+  {
+    "key": "mf4eeb0a8",
+    "section": "admin",
+    "source": "Language versions"
+  },
+  {
+    "key": "m885c9753",
+    "section": "admin",
+    "source": "Language versions are published when you save the plan. PDFs keep their original language."
+  },
+  {
+    "key": "mdc800895",
+    "section": "common",
+    "source": "Last active"
+  },
+  {
+    "key": "m99e25be0",
+    "section": "public",
+    "source": "Last Name"
+  },
+  {
+    "key": "m96769aeb",
+    "section": "server",
+    "source": "Last: {date}"
+  },
+  {
+    "key": "m5c2bbbf9",
+    "section": "admin",
+    "source": "Leave blank to approve without a transaction hash. Correct or clear an incorrect reference before approving."
+  },
+  {
+    "key": "m2c0b8b9d",
+    "section": "common",
+    "source": "Legal name"
+  },
+  {
+    "key": "me52e0ba9",
+    "section": "public",
+    "source": "Let's Talk!"
+  },
+  {
+    "key": "m4e7f615e",
+    "section": "admin",
+    "source": "Lifetime, credited"
+  },
+  {
+    "key": "mf20a66e4",
+    "section": "admin",
+    "source": "Lifetime, paid out"
+  },
+  {
+    "key": "m142095d5",
+    "section": "common",
+    "source": "Link expired? Request a new one"
+  },
+  {
+    "key": "m823a5ef0",
+    "section": "account",
+    "source": "Litecoin"
+  },
+  {
+    "key": "m881c63cf",
+    "section": "common",
+    "source": "Live"
+  },
+  {
+    "key": "m732957aa",
+    "section": "common",
+    "source": "Live · {value0} ago"
+  },
+  {
+    "key": "md95e5b98",
+    "section": "common",
+    "source": "Live · just now"
+  },
+  {
+    "key": "m7e42b06f",
+    "section": "account",
+    "source": "Live preview"
+  },
+  {
+    "key": "m857b6489",
+    "section": "admin",
+    "source": "Live price feeds split by tab (Metals, Stocks, Crypto) on the user dashboard."
+  },
+  {
+    "key": "mb28d133f",
+    "section": "common",
+    "source": "Load earlier records"
+  },
+  {
+    "key": "m2b7b053e",
+    "section": "account",
+    "source": "Load more"
+  },
+  {
+    "key": "mff92d49f",
+    "section": "common",
+    "source": "Loading account settings…"
+  },
+  {
+    "key": "m6ae965fa",
+    "section": "admin",
+    "source": "Loading audit log…"
+  },
+  {
+    "key": "mc8f66924",
+    "section": "account",
+    "source": "Loading balances…"
+  },
+  {
+    "key": "m5f8206d0",
+    "section": "account",
+    "source": "Loading completed investments"
+  },
+  {
+    "key": "m796a6d6b",
+    "section": "admin",
+    "source": "Loading documents…"
+  },
+  {
+    "key": "me0b28154",
+    "section": "admin",
+    "source": "Loading loans…"
+  },
+  {
+    "key": "m47481616",
+    "section": "admin",
+    "source": "Loading markets…"
+  },
+  {
+    "key": "mb57cd84b",
+    "section": "admin",
+    "source": "Loading matured investments…"
+  },
+  {
+    "key": "mca0a0d2a",
+    "section": "admin",
+    "source": "Loading overview…"
+  },
+  {
+    "key": "macbc26dd",
+    "section": "admin",
+    "source": "Loading plans…"
+  },
+  {
+    "key": "m2a3c58a2",
+    "section": "admin",
+    "source": "Loading private documents…"
+  },
+  {
+    "key": "ma5b9a055",
+    "section": "admin",
+    "source": "Loading receiving wallets…"
+  },
+  {
+    "key": "mb0f7ed9d",
+    "section": "admin",
+    "source": "Loading requests…"
+  },
+  {
+    "key": "m736e7946",
+    "section": "admin",
+    "source": "Loading reviews…"
+  },
+  {
+    "key": "me5500144",
+    "section": "admin",
+    "source": "Loading settings…"
+  },
+  {
+    "key": "mf3c385ee",
+    "section": "admin",
+    "source": "Loading submissions…"
+  },
+  {
+    "key": "meb0db021",
+    "section": "account",
+    "source": "Loading swaps…"
+  },
+  {
+    "key": "mb851c5e0",
+    "section": "account",
+    "source": "Loading transactions"
+  },
+  {
+    "key": "m4bbf511c",
+    "section": "admin",
+    "source": "Loading transactions…"
+  },
+  {
+    "key": "m090e23bd",
+    "section": "admin",
+    "source": "Loading users…"
+  },
+  {
+    "key": "m2425eafa",
+    "section": "common",
+    "source": "Loading verification history…"
+  },
+  {
+    "key": "mc39441e3",
+    "section": "account",
+    "source": "Loading wallets…"
+  },
+  {
+    "key": "m3c9975eb",
+    "section": "account",
+    "source": "Loading withdrawals"
+  },
+  {
+    "key": "mb5ff65d9",
+    "section": "account",
+    "source": "Loading your loans"
+  },
+  {
+    "key": "m67e691a1",
+    "section": "account",
+    "source": "Loading your verification"
+  },
+  {
+    "key": "mc4e2f181",
+    "section": "common",
+    "source": "Loading…"
+  },
+  {
+    "key": "m6eafab7b",
+    "section": "common",
+    "source": "Loan"
+  },
+  {
+    "key": "mbfef76cd",
+    "section": "account",
+    "source": "Loan Amount"
+  },
+  {
+    "key": "mf00f4269",
+    "section": "account",
+    "source": "Loan Application"
+  },
+  {
+    "key": "m33b1d26f",
+    "section": "account",
+    "source": "Loan application submitted. Status: Pending review."
+  },
+  {
+    "key": "m71d16629",
+    "section": "admin",
+    "source": "Loan applications to review"
+  },
+  {
+    "key": "m7cae1bd6",
+    "section": "server",
+    "source": "Loan approved"
+  },
+  {
+    "key": "mbb7dc23e",
+    "section": "server",
+    "source": "Loan not found"
+  },
+  {
+    "key": "m523f7b7b",
+    "section": "server",
+    "source": "Loan rejected"
+  },
+  {
+    "key": "mabab5657",
+    "section": "account",
+    "source": "Loan Repayment Period"
+  },
+  {
+    "key": "m14aedf60",
+    "section": "admin",
+    "source": "Loan review completed"
+  },
+  {
+    "key": "mf6c296a9",
+    "section": "account",
+    "source": "Loan Type"
+  },
+  {
+    "key": "m468a3d98",
+    "section": "common",
+    "source": "Loans"
+  },
+  {
+    "key": "m34b80f1f",
+    "section": "account",
+    "source": "Local demo"
+  },
+  {
+    "key": "mb4e45b3f",
+    "section": "server",
+    "source": "Local Demo"
+  },
+  {
+    "key": "m0c9deb5c",
+    "section": "server",
+    "source": "Local preview"
+  },
+  {
+    "key": "m423b6110",
+    "section": "public",
+    "source": "Log in"
+  },
+  {
+    "key": "m41ebaf30",
+    "section": "public",
+    "source": "Log In"
+  },
+  {
+    "key": "m8c0a7d37",
+    "section": "public",
+    "source": "Log In to Your Account"
+  },
+  {
+    "key": "m55edebd2",
+    "section": "public",
+    "source": "Login"
+  },
+  {
+    "key": "m877a6a0b",
+    "section": "common",
+    "source": "Logout"
+  },
+  {
+    "key": "m803a8bbc",
+    "section": "admin",
+    "source": "Looking for your account?"
+  },
+  {
+    "key": "m64ede0c3",
+    "section": "account",
+    "source": "LTC / USD"
+  },
+  {
+    "key": "m5363878c",
+    "section": "server",
+    "source": "Main Balance"
+  },
+  {
+    "key": "mcbeb9acc",
+    "section": "admin",
+    "source": "Make admin"
+  },
+  {
+    "key": "mbb5f5304",
+    "section": "account",
+    "source": "Make New withdrawal"
+  },
+  {
+    "key": "md7aff116",
+    "section": "account",
+    "source": "Manage"
+  },
+  {
+    "key": "m04c32911",
+    "section": "account",
+    "source": "Manage Cards"
+  },
+  {
+    "key": "meb6417e0",
+    "section": "server",
+    "source": "Manage crypto addresses in Receiving wallets."
+  },
+  {
+    "key": "m09851af2",
+    "section": "admin",
+    "source": "Manage swaps"
+  },
+  {
+    "key": "m0558f35c",
+    "section": "common",
+    "source": "Manage two-factor authentication"
+  },
+  {
+    "key": "m6ccef17b",
+    "section": "account",
+    "source": "Manage Wallet"
+  },
+  {
+    "key": "m4fbc52d9",
+    "section": "admin",
+    "source": "Manage your administrator profile, sign-in protection and active sessions."
+  },
+  {
+    "key": "m2cf51986",
+    "section": "account",
+    "source": "Manage your card status below."
+  },
+  {
+    "key": "mf819f303",
+    "section": "common",
+    "source": "Manual"
+  },
+  {
+    "key": "mb3d9c019",
+    "section": "server",
+    "source": "Manual "
+  },
+  {
+    "key": "mbd06f3ea",
+    "section": "admin",
+    "source": "Manually review each request. Approving creates the transaction and updates the ledger atomically; withdrawals already reserve funds at submission."
+  },
+  {
+    "key": "m33114e1c",
+    "section": "admin",
+    "source": "Map supported exchange assets to your treasury receiving wallets."
+  },
+  {
+    "key": "m6d267c97",
+    "section": "account",
+    "source": "Mark all as read"
+  },
+  {
+    "key": "ma3536b91",
+    "section": "common",
+    "source": "Market"
+  },
+  {
+    "key": "mfe52d4c6",
+    "section": "common",
+    "source": "Markets"
+  },
+  {
+    "key": "m2c5748b8",
+    "section": "account",
+    "source": "Marking as read…"
+  },
+  {
+    "key": "m360e5f7f",
+    "section": "common",
+    "source": "Matured"
+  },
+  {
+    "key": "m3ca7e3b9",
+    "section": "admin",
+    "source": "Max"
+  },
+  {
+    "key": "m0e05dab5",
+    "section": "admin",
+    "source": "Max daily withdrawal (cents)"
+  },
+  {
+    "key": "mf3668ae0",
+    "section": "admin",
+    "source": "Maximum amount (USD, optional)"
+  },
+  {
+    "key": "m5a41c9e2",
+    "section": "server",
+    "source": "Maximum investment for this plan is {amount}"
+  },
+  {
+    "key": "m833140af",
+    "section": "account",
+    "source": "Medical Loans"
+  },
+  {
+    "key": "m8d812c19",
+    "section": "account",
+    "source": "Member since"
+  },
+  {
+    "key": "me54b5179",
+    "section": "admin",
+    "source": "Member Since"
+  },
+  {
+    "key": "m6e786ccb",
+    "section": "server",
+    "source": "Member since {date}"
+  },
+  {
+    "key": "me8dde678",
+    "section": "admin",
+    "source": "Meta"
+  },
+  {
+    "key": "ma951317c",
+    "section": "admin",
+    "source": "Metal"
+  },
+  {
+    "key": "m8974ce94",
+    "section": "account",
+    "source": "Metals & Crypto"
+  },
+  {
+    "key": "m3f4adee5",
+    "section": "account",
+    "source": "MetaMask ↗"
+  },
+  {
+    "key": "m98a2c750",
+    "section": "admin",
+    "source": "Method"
+  },
+  {
+    "key": "m2c485c16",
+    "section": "public",
+    "source": "Mexico"
+  },
+  {
+    "key": "ma1fa2ae7",
+    "section": "account",
+    "source": "Microsoft"
+  },
+  {
+    "key": "m2e9445f7",
+    "section": "admin",
+    "source": "Min"
+  },
+  {
+    "key": "mc9d5f4f7",
+    "section": "admin",
+    "source": "Min deposit (cents)"
+  },
+  {
+    "key": "m26ced740",
+    "section": "admin",
+    "source": "Min withdrawal (cents)"
+  },
+  {
+    "key": "m6372ccae",
+    "section": "admin",
+    "source": "Minimum amount (USD)"
+  },
+  {
+    "key": "m6b764527",
+    "section": "admin",
+    "source": "Minimum deposit amount, in cents."
+  },
+  {
+    "key": "m7ea1d330",
+    "section": "server",
+    "source": "Minimum investment for this plan is {amount}"
+  },
+  {
+    "key": "m33697434",
+    "section": "admin",
+    "source": "Minimum withdrawal amount, in cents."
+  },
+  {
+    "key": "mfabe36ba",
+    "section": "server",
+    "source": "Minimum withdrawal is {amount}"
+  },
+  {
+    "key": "m4d6feafc",
+    "section": "server",
+    "source": "Minimum withdrawal is {amount}."
+  },
+  {
+    "key": "m7b9791b4",
+    "section": "public",
+    "source": "Mobile banking and shopping online panoramic image, selective focus"
+  },
+  {
+    "key": "m805966bd",
+    "section": "admin",
+    "source": "Monitor account balances, pending reviews and platform activity at a glance. Approve deposits and withdrawals from the Requests section — every action is recorded in the audit log."
+  },
+  {
+    "key": "ma8ec83b6",
+    "section": "common",
+    "source": "monthly"
+  },
+  {
+    "key": "m1640a356",
+    "section": "common",
+    "source": "Monthly"
+  },
+  {
+    "key": "m13e7fc68",
+    "section": "account",
+    "source": "Monthly profit"
+  },
+  {
+    "key": "mcb1d9070",
+    "section": "server",
+    "source": "Monthly rate"
+  },
+  {
+    "key": "mc7b1a9cc",
+    "section": "account",
+    "source": "Monthly return"
+  },
+  {
+    "key": "m838133ac",
+    "section": "admin",
+    "source": "Monthly ROI"
+  },
+  {
+    "key": "m325c924e",
+    "section": "admin",
+    "source": "Monthly ROI (%)"
+  },
+  {
+    "key": "m18182bc2",
+    "section": "server",
+    "source": "months"
+  },
+  {
+    "key": "md0e4d1b0",
+    "section": "account",
+    "source": "Mortgage Loans"
+  },
+  {
+    "key": "ma53c5b68",
+    "section": "account",
+    "source": "My Cards"
+  },
+  {
+    "key": "m7cf40d2c",
+    "section": "account",
+    "source": "My Loans"
+  },
+  {
+    "key": "mbbf9687a",
+    "section": "account",
+    "source": "My Profile"
+  },
+  {
+    "key": "m0fe07306",
+    "section": "common",
+    "source": "Name"
+  },
+  {
+    "key": "ma979d3b1",
+    "section": "admin",
+    "source": "Name and a valid minimum amount are required"
+  },
+  {
+    "key": "mb56ae8a7",
+    "section": "admin",
+    "source": "Name and review text are required"
+  },
+  {
+    "key": "mb4056049",
+    "section": "admin",
+    "source": "Name on the receiving account."
+  },
+  {
+    "key": "m0377bc33",
+    "section": "account",
+    "source": "National identity card"
+  },
+  {
+    "key": "mcc9db78b",
+    "section": "common",
+    "source": "Needs changes"
+  },
+  {
+    "key": "m64b61f6b",
+    "section": "public",
+    "source": "Netherlands"
+  },
+  {
+    "key": "m6974ad65",
+    "section": "account",
+    "source": "Network"
+  },
+  {
+    "key": "md3529674",
+    "section": "common",
+    "source": "Network error. Please try again."
+  },
+  {
+    "key": "m13c94a13",
+    "section": "account",
+    "source": "Network fee included"
+  },
+  {
+    "key": "m78dddc95",
+    "section": "admin",
+    "source": "New Asset"
+  },
+  {
+    "key": "mbd73ec16",
+    "section": "admin",
+    "source": "New Document"
+  },
+  {
+    "key": "md8d469a2",
+    "section": "account",
+    "source": "New Investment"
+  },
+  {
+    "key": "m69bf962d",
+    "section": "admin",
+    "source": "New Investment Plan"
+  },
+  {
+    "key": "m6a3aaab2",
+    "section": "common",
+    "source": "New password"
+  },
+  {
+    "key": "m62b6927b",
+    "section": "admin",
+    "source": "New Review"
+  },
+  {
+    "key": "m43287a29",
+    "section": "admin",
+    "source": "New Setting"
+  },
+  {
+    "key": "mdce2da08",
+    "section": "account",
+    "source": "Next"
+  },
+  {
+    "key": "m7e43e71e",
+    "section": "admin",
+    "source": "Next →"
+  },
+  {
+    "key": "m4c69f0e4",
+    "section": "account",
+    "source": "Next profit payout"
+  },
+  {
+    "key": "m287d159c",
+    "section": "account",
+    "source": "Next review"
+  },
+  {
+    "key": "m49f4fbac",
+    "section": "account",
+    "source": "NFT Loans"
+  },
+  {
+    "key": "md1d1ca2c",
+    "section": "public",
+    "source": "Nigeria"
+  },
+  {
+    "key": "m34cc999d",
+    "section": "account",
+    "source": "No {value0} yet."
+  },
+  {
+    "key": "m906c6617",
+    "section": "admin",
+    "source": "No account details changed"
+  },
+  {
+    "key": "m8f9fe3c0",
+    "section": "account",
+    "source": "No account was shared by the wallet."
+  },
+  {
+    "key": "md80e9223",
+    "section": "server",
+    "source": "No active loans"
+  },
+  {
+    "key": "m6e657947",
+    "section": "common",
+    "source": "No activity in this period."
+  },
+  {
+    "key": "m1800ac2c",
+    "section": "account",
+    "source": "No approved reviews yet."
+  },
+  {
+    "key": "m4cfa2b5c",
+    "section": "account",
+    "source": "No card"
+  },
+  {
+    "key": "mbec9d3c7",
+    "section": "account",
+    "source": "No card has been issued to this account."
+  },
+  {
+    "key": "m7a535725",
+    "section": "admin",
+    "source": "No discrepancies found"
+  },
+  {
+    "key": "md91da696",
+    "section": "account",
+    "source": "No documents have been published yet."
+  },
+  {
+    "key": "m7ff88a1f",
+    "section": "account",
+    "source": "No end date recorded"
+  },
+  {
+    "key": "m1df88a2e",
+    "section": "account",
+    "source": "No Ethereum wallet found."
+  },
+  {
+    "key": "m1403c6be",
+    "section": "account",
+    "source": "No Ethereum wallet found. Install MetaMask to continue."
+  },
+  {
+    "key": "m6e03aba4",
+    "section": "server",
+    "source": "No investments yet."
+  },
+  {
+    "key": "md9e9af51",
+    "section": "account",
+    "source": "No loan applications yet."
+  },
+  {
+    "key": "m030e3edb",
+    "section": "account",
+    "source": "No matching results"
+  },
+  {
+    "key": "m39851bfd",
+    "section": "admin",
+    "source": "No settings yet — add your first key/value pair above."
+  },
+  {
+    "key": "m38f22bf5",
+    "section": "account",
+    "source": "No supporting documents are attached."
+  },
+  {
+    "key": "m6bba0d99",
+    "section": "admin",
+    "source": "No swaps to display."
+  },
+  {
+    "key": "m5fe32140",
+    "section": "admin",
+    "source": "No transfer reference attached"
+  },
+  {
+    "key": "m25f411f5",
+    "section": "account",
+    "source": "No transfer was sent — try again"
+  },
+  {
+    "key": "mbb3ffb82",
+    "section": "admin",
+    "source": "No treasury route configured"
+  },
+  {
+    "key": "mf8d899ef",
+    "section": "account",
+    "source": "No wallet detected."
+  },
+  {
+    "key": "mb5e73023",
+    "section": "account",
+    "source": "No wallet is available in this browser."
+  },
+  {
+    "key": "m6cf7458d",
+    "section": "account",
+    "source": "No wallets connected yet."
+  },
+  {
+    "key": "m15ae4fe0",
+    "section": "server",
+    "source": "No withdrawals yet"
+  },
+  {
+    "key": "mdcf35875",
+    "section": "account",
+    "source": "Not available"
+  },
+  {
+    "key": "m37222abd",
+    "section": "admin",
+    "source": "Not provided"
+  },
+  {
+    "key": "m758a82ca",
+    "section": "admin",
+    "source": "Not recorded"
+  },
+  {
+    "key": "m6695021d",
+    "section": "account",
+    "source": "Not scheduled"
+  },
+  {
+    "key": "md27b474f",
+    "section": "common",
+    "source": "Not started"
+  },
+  {
+    "key": "m1440c15d",
+    "section": "admin",
+    "source": "Note"
+  },
+  {
+    "key": "mc652a1ba",
+    "section": "admin",
+    "source": "Nothing here yet"
+  },
+  {
+    "key": "m21d7b707",
+    "section": "server",
+    "source": "Notification not found"
+  },
+  {
+    "key": "m381d190f",
+    "section": "account",
+    "source": "Notifications"
+  },
+  {
+    "key": "m39a29be0",
+    "section": "account",
+    "source": "NVIDIA Corp."
+  },
+  {
+    "key": "ma1fa72a1",
+    "section": "account",
+    "source": "On your phone, open this page in MetaMask or Trust Wallet. Sign in there, then connect your wallet."
+  },
+  {
+    "key": "mb90bc6c4",
+    "section": "public",
+    "source": "Once KYC Submission is Approved, proceed to Sync your wallet with KYC. You can also Apply for Humanitarian Project."
+  },
+  {
+    "key": "m39f335c1",
+    "section": "account",
+    "source": "Only the available balance on the selected network can be withdrawn. Reserved funds are excluded."
+  },
+  {
+    "key": "md51d4bb7",
+    "section": "account",
+    "source": "Open document ↗"
+  },
+  {
+    "key": "m3a5dc012",
+    "section": "server",
+    "source": "Open identity verification to see the requested changes."
+  },
+  {
+    "key": "m7b3edd62",
+    "section": "account",
+    "source": "Open in wallet app"
+  },
+  {
+    "key": "mb79c01dc",
+    "section": "common",
+    "source": "Open menu"
+  },
+  {
+    "key": "mfe13a0fb",
+    "section": "account",
+    "source": "Open PDF"
+  },
+  {
+    "key": "ma41edd40",
+    "section": "common",
+    "source": "Open the complete link from your recovery email, or request a new one."
+  },
+  {
+    "key": "m36b50e00",
+    "section": "account",
+    "source": "Open the presentation or share its link."
+  },
+  {
+    "key": "md9253404",
+    "section": "account",
+    "source": "Open this page in your wallet app, or use a browser with a wallet extension."
+  },
+  {
+    "key": "mf25f644c",
+    "section": "account",
+    "source": "Opening {value0}"
+  },
+  {
+    "key": "mb1e84f65",
+    "section": "common",
+    "source": "Opening account recovery…"
+  },
+  {
+    "key": "m3d64d2fa",
+    "section": "common",
+    "source": "Opening recovery link…"
+  },
+  {
+    "key": "m226edae9",
+    "section": "account",
+    "source": "Opening your wallet…"
+  },
+  {
+    "key": "m46144ff2",
+    "section": "admin",
+    "source": "Operations Overview"
+  },
+  {
+    "key": "mef3b1e49",
+    "section": "admin",
+    "source": "Or upload a PDF (10 MB max)"
+  },
+  {
+    "key": "m4159c193",
+    "section": "server",
+    "source": "Order creation needs reconciliation. Do not create or fund a replacement order."
+  },
+  {
+    "key": "m14aedc25",
+    "section": "server",
+    "source": "Order details need review before any treasury payment."
+  },
+  {
+    "key": "m6e38ff95",
+    "section": "public",
+    "source": "Other"
+  },
+  {
+    "key": "ma69c9425",
+    "section": "common",
+    "source": "Other device"
+  },
+  {
+    "key": "mdd6edcf7",
+    "section": "public",
+    "source": "Our Services"
+  },
+  {
+    "key": "m7ac5ca83",
+    "section": "public",
+    "source": "Our System is developed to stop any form of cyber attacks that could result to loss of assets."
+  },
+  {
+    "key": "m6a494fba",
+    "section": "admin",
+    "source": "Overview"
+  },
+  {
+    "key": "mf5240e27",
+    "section": "common",
+    "source": "Paid"
+  },
+  {
+    "key": "me95fdef0",
+    "section": "common",
+    "source": "Paid to balance"
+  },
+  {
+    "key": "mb9ff7162",
+    "section": "public",
+    "source": "Pakistan"
+  },
+  {
+    "key": "m1898a8c8",
+    "section": "account",
+    "source": "Palladium"
+  },
+  {
+    "key": "m6fbde1b9",
+    "section": "account",
+    "source": "Palladium / USD"
+  },
+  {
+    "key": "m59388803",
+    "section": "account",
+    "source": "Passport"
+  },
+  {
+    "key": "m1cfffb26",
+    "section": "account",
+    "source": "Passport photo page"
+  },
+  {
+    "key": "m2cc30838",
+    "section": "common",
+    "source": "Password"
+  },
+  {
+    "key": "me2e0c2c4",
+    "section": "server",
+    "source": "Password change notification delivery failed."
+  },
+  {
+    "key": "m0f090ccc",
+    "section": "common",
+    "source": "Password changed"
+  },
+  {
+    "key": "m17e0da39",
+    "section": "common",
+    "source": "Password changed. Other devices have been signed out."
+  },
+  {
+    "key": "m9e6972db",
+    "section": "server",
+    "source": "Password is too long (72 bytes maximum)"
+  },
+  {
+    "key": "m54fff7af",
+    "section": "server",
+    "source": "Password is too long (72 bytes maximum)."
+  },
+  {
+    "key": "m7de3c324",
+    "section": "server",
+    "source": "Password recovery email delivery failed."
+  },
+  {
+    "key": "ma8bf4976",
+    "section": "common",
+    "source": "Passwords do not match"
+  },
+  {
+    "key": "mfd207588",
+    "section": "common",
+    "source": "Passwords do not match."
+  },
+  {
+    "key": "maf7ca188",
+    "section": "account",
+    "source": "Paste the full 0x signature from your wallet."
+  },
+  {
+    "key": "mca812754",
+    "section": "account",
+    "source": "Pause reviews"
+  },
+  {
+    "key": "m6f2dbdc6",
+    "section": "account",
+    "source": "Pay to"
+  },
+  {
+    "key": "me74aa649",
+    "section": "account",
+    "source": "Pay with connected wallet"
+  },
+  {
+    "key": "m9d6c8fa6",
+    "section": "account",
+    "source": "Payday Loans"
+  },
+  {
+    "key": "m62547751",
+    "section": "account",
+    "source": "Payment cancelled in your wallet."
+  },
+  {
+    "key": "m361341e7",
+    "section": "account",
+    "source": "Payment instructions for {value0} aren't set up yet — please contact support."
+  },
+  {
+    "key": "m68d8fea3",
+    "section": "admin",
+    "source": "Payout"
+  },
+  {
+    "key": "m1c85d2d4",
+    "section": "server",
+    "source": "Payout interval"
+  },
+  {
+    "key": "m6eda0358",
+    "section": "admin",
+    "source": "Payout Wallet"
+  },
+  {
+    "key": "m408e8e10",
+    "section": "account",
+    "source": "Payout will be sent to the connected wallet after admin review. Check the address carefully — on-chain transfers cannot be reversed."
+  },
+  {
+    "key": "m75aeced9",
+    "section": "admin",
+    "source": "PDF files must be 10 MB or smaller"
+  },
+  {
+    "key": "me1732932",
+    "section": "admin",
+    "source": "PDF resources shown in the user dashboard Resources tab."
+  },
+  {
+    "key": "m50ab69cb",
+    "section": "account",
+    "source": "PDF unavailable"
+  },
+  {
+    "key": "m333082f7",
+    "section": "admin",
+    "source": "PDF upload failed"
+  },
+  {
+    "key": "m99bf7f3c",
+    "section": "common",
+    "source": "pending"
+  },
+  {
+    "key": "m3352afdc",
+    "section": "common",
+    "source": "Pending"
+  },
+  {
+    "key": "mcc5019d3",
+    "section": "admin",
+    "source": "Pending Deposits"
+  },
+  {
+    "key": "m5f269dcf",
+    "section": "admin",
+    "source": "Pending Loans"
+  },
+  {
+    "key": "m02d6af1e",
+    "section": "account",
+    "source": "Pending payout"
+  },
+  {
+    "key": "m755b12e8",
+    "section": "common",
+    "source": "Pending review"
+  },
+  {
+    "key": "medd09006",
+    "section": "admin",
+    "source": "Pending swaps only"
+  },
+  {
+    "key": "mcac31950",
+    "section": "admin",
+    "source": "Pending Withdrawals"
+  },
+  {
+    "key": "mabafd025",
+    "section": "account",
+    "source": "Persian Presentation"
+  },
+  {
+    "key": "m36911e1a",
+    "section": "account",
+    "source": "Personal Loans"
+  },
+  {
+    "key": "m8ce1f52c",
+    "section": "public",
+    "source": "Philippines"
+  },
+  {
+    "key": "m3ade6bf8",
+    "section": "common",
+    "source": "Phone number"
+  },
+  {
+    "key": "mf25088d8",
+    "section": "public",
+    "source": "Phone Number"
+  },
+  {
+    "key": "m715b9ce4",
+    "section": "account",
+    "source": "Photo of your face"
+  },
+  {
+    "key": "m1eab5e32",
+    "section": "common",
+    "source": "Plan"
+  },
+  {
+    "key": "m57989add",
+    "section": "admin",
+    "source": "Plan \"{name}\" created"
+  },
+  {
+    "key": "mcf9a0b64",
+    "section": "admin",
+    "source": "Plan \"{name}\" deleted"
+  },
+  {
+    "key": "mf86acc3a",
+    "section": "admin",
+    "source": "Plan \"{name}\" updated"
+  },
+  {
+    "key": "m2dabbd70",
+    "section": "admin",
+    "source": "Plan min {value0} · {value1} months · ROI {value2}%. Plans with investment history are deactivated instead of hard-deleted; active history is preserved."
+  },
+  {
+    "key": "m89f083b5",
+    "section": "admin",
+    "source": "Plan name"
+  },
+  {
+    "key": "m88c56053",
+    "section": "admin",
+    "source": "Plans"
+  },
+  {
+    "key": "mb15130aa",
+    "section": "admin",
+    "source": "Plans power the earnings accrual engine. ROI is stored in basis points (bps) — 5% monthly = 500 bps."
+  },
+  {
+    "key": "m773d77d4",
+    "section": "admin",
+    "source": "Platform fee (bps)"
+  },
+  {
+    "key": "m40bad1f3",
+    "section": "admin",
+    "source": "Platform-wide configuration keyed by name. Values are stored as strings."
+  },
+  {
+    "key": "m67bf0d55",
+    "section": "account",
+    "source": "Platinum"
+  },
+  {
+    "key": "m883bc390",
+    "section": "account",
+    "source": "Platinum / USD"
+  },
+  {
+    "key": "m816ef302",
+    "section": "account",
+    "source": "Play reviews"
+  },
+  {
+    "key": "ma6f720e8",
+    "section": "public",
+    "source": "Play video"
+  },
+  {
+    "key": "me47cc088",
+    "section": "server",
+    "source": "Please log in to continue."
+  },
+  {
+    "key": "m85f3ce26",
+    "section": "common",
+    "source": "Please try again. If the problem continues, contact support."
+  },
+  {
+    "key": "md25b07c4",
+    "section": "server",
+    "source": "Please wait before submitting another review."
+  },
+  {
+    "key": "mf06edd9f",
+    "section": "account",
+    "source": "Portfolio balance"
+  },
+  {
+    "key": "m45f0d01c",
+    "section": "account",
+    "source": "Portuguese Presentation"
+  },
+  {
+    "key": "m173e60eb",
+    "section": "account",
+    "source": "Preferred payout currency"
+  },
+  {
+    "key": "m97a4b697",
+    "section": "account",
+    "source": "Preferred payout: {value0}"
+  },
+  {
+    "key": "m8360312f",
+    "section": "account",
+    "source": "Preparing a one-time message…"
+  },
+  {
+    "key": "m5eeb3c0f",
+    "section": "account",
+    "source": "Preparing account statement…"
+  },
+  {
+    "key": "m8d645563",
+    "section": "account",
+    "source": "Preparing deposit…"
+  },
+  {
+    "key": "md67d2148",
+    "section": "common",
+    "source": "Preparing exchange"
+  },
+  {
+    "key": "m1fccdbcb",
+    "section": "account",
+    "source": "Preparing signature…"
+  },
+  {
+    "key": "mead1fb48",
+    "section": "account",
+    "source": "Previous"
+  },
+  {
+    "key": "mda1eb6dd",
+    "section": "common",
+    "source": "Previous record preserved"
+  },
+  {
+    "key": "mc505af5c",
+    "section": "account",
+    "source": "Previous review"
+  },
+  {
+    "key": "mdd3ec7ca",
+    "section": "common",
+    "source": "Price"
+  },
+  {
+    "key": "mff3549e0",
+    "section": "account",
+    "source": "Price unavailable"
+  },
+  {
+    "key": "m558e30c9",
+    "section": "common",
+    "source": "Principal"
+  },
+  {
+    "key": "m252be526",
+    "section": "server",
+    "source": "Principal can only be released after maturity and final profit settlement."
+  },
+  {
+    "key": "m960f9973",
+    "section": "account",
+    "source": "Principal is locked for the plan term, then {value0}. Early exit is not available."
+  },
+  {
+    "key": "m99530d38",
+    "section": "admin",
+    "source": "Principal release"
+  },
+  {
+    "key": "m3b292904",
+    "section": "admin",
+    "source": "Principal release at maturity"
+  },
+  {
+    "key": "ma10a20cc",
+    "section": "account",
+    "source": "Principal release: {value0}. Early exit is not available."
+  },
+  {
+    "key": "ma8bded11",
+    "section": "admin",
+    "source": "Principal releases"
+  },
+  {
+    "key": "mf8873e31",
+    "section": "admin",
+    "source": "Principal Releases"
+  },
+  {
+    "key": "ma631d899",
+    "section": "common",
+    "source": "Principal return"
+  },
+  {
+    "key": "m8a78785e",
+    "section": "admin",
+    "source": "Principal returns"
+  },
+  {
+    "key": "m3a02e4bd",
+    "section": "account",
+    "source": "Principal status"
+  },
+  {
+    "key": "m2c282caf",
+    "section": "admin",
+    "source": "Principal was already released. No duplicate return was made."
+  },
+  {
+    "key": "m286be1e4",
+    "section": "common",
+    "source": "Print / save as PDF"
+  },
+  {
+    "key": "m8ff9725a",
+    "section": "admin",
+    "source": "Priority queue"
+  },
+  {
+    "key": "mda2e78e5",
+    "section": "admin",
+    "source": "Private document review. Approvals update the account’s verification status."
+  },
+  {
+    "key": "mcd17328e",
+    "section": "common",
+    "source": "Profile"
+  },
+  {
+    "key": "mdec72f05",
+    "section": "common",
+    "source": "Profile saved."
+  },
+  {
+    "key": "ma0e1d7d1",
+    "section": "account",
+    "source": "Profile, password, two-factor authentication and active sessions."
+  },
+  {
+    "key": "ma5ff0bf5",
+    "section": "server",
+    "source": "Profit credited"
+  },
+  {
+    "key": "m141d9a4f",
+    "section": "account",
+    "source": "Profit is based on the original principal and does not compound automatically. Monthly periods follow the start date; accrual advances in full hours."
+  },
+  {
+    "key": "m5cc19407",
+    "section": "common",
+    "source": "Profit paid"
+  },
+  {
+    "key": "m06a0a683",
+    "section": "common",
+    "source": "Profit payout"
+  },
+  {
+    "key": "mf8888b1a",
+    "section": "public",
+    "source": "Protection"
+  },
+  {
+    "key": "mf38ad8d7",
+    "section": "server",
+    "source": "Provider action is required. Keep funds reserved until the outcome is verified."
+  },
+  {
+    "key": "m6fb3713c",
+    "section": "admin",
+    "source": "Provider asset"
+  },
+  {
+    "key": "m683da58c",
+    "section": "admin",
+    "source": "Provider order"
+  },
+  {
+    "key": "maf6d472d",
+    "section": "account",
+    "source": "Public wallet address"
+  },
+  {
+    "key": "m6c6229a8",
+    "section": "admin",
+    "source": "Publish"
+  },
+  {
+    "key": "m1598ed25",
+    "section": "admin",
+    "source": "Publish the plan’s conditions, including capital release and early exit rules."
+  },
+  {
+    "key": "md4199632",
+    "section": "common",
+    "source": "QFS – Your Financial Freedom Begins here"
+  },
+  {
+    "key": "m0196c54b",
+    "section": "server",
+    "source": "QFS account recovery"
+  },
+  {
+    "key": "me453b0bf",
+    "section": "account",
+    "source": "QFS Card"
+  },
+  {
+    "key": "m6d4610dd",
+    "section": "account",
+    "source": "QFS Company Presentation · PDF"
+  },
+  {
+    "key": "m95b583ef",
+    "section": "admin",
+    "source": "QFS Control Center"
+  },
+  {
+    "key": "m4e9b9f06",
+    "section": "common",
+    "source": "QFS Growth"
+  },
+  {
+    "key": "m12bc4e3f",
+    "section": "public",
+    "source": "QFS is Coming!"
+  },
+  {
+    "key": "m3b8282f4",
+    "section": "public",
+    "source": "QFS is encrypted ' with 256bits and our servers are fortified against any form of attack."
+  },
+  {
+    "key": "m0beb7a7e",
+    "section": "public",
+    "source": "QFS is equipped with Web 3 Technology to mitigate any form of centralization."
+  },
+  {
+    "key": "m2c77145c",
+    "section": "public",
+    "source": "QFS literal meaning is Quantum Financial System, which is an advanced financial system launched to eradicate monopoly on monetary system and for that purpose, a system that comprises of Artificial Intelligence and complex computer programs fully backed by banks is needed."
+  },
+  {
+    "key": "m714b8119",
+    "section": "public",
+    "source": "QFS literal meaning is Quantum Financial System, which is an advanced financial system launched to eradicate monopoly on monetary system and for that purpose, a system that comprises of Artificial Intelligence and complex computer programs fully backed by banks is needed. Quantum Financial System would be a breakthrough in the world of banking which will lead to a new era of banking. QFS will not be influenced by Government policies, rather it will be entirely backed by tangible assets like Gold, Platinum, Oil and will not be based upon mere piece of papers which have no evidentiary value."
+  },
+  {
+    "key": "mc0c20443",
+    "section": "public",
+    "source": "QFS Manual"
+  },
+  {
+    "key": "mbad2331e",
+    "section": "account",
+    "source": "QFS Premium"
+  },
+  {
+    "key": "m55cf20e4",
+    "section": "common",
+    "source": "QFS recovery codes"
+  },
+  {
+    "key": "m4cc3f8d4",
+    "section": "account",
+    "source": "QFS Starter"
+  },
+  {
+    "key": "mb580a925",
+    "section": "server",
+    "source": "QFS_SESSION_SECRET must contain at least 32 characters"
+  },
+  {
+    "key": "mddf74f64",
+    "section": "account",
+    "source": "QR rendering unavailable"
+  },
+  {
+    "key": "m22d22717",
+    "section": "server",
+    "source": "Quantity must be greater than zero."
+  },
+  {
+    "key": "me8e0bc7a",
+    "section": "common",
+    "source": "Quantum Financial System"
+  },
+  {
+    "key": "m60d9279a",
+    "section": "public",
+    "source": "QUANTUM FINANCIAL SYSTEM"
+  },
+  {
+    "key": "m89cab5ab",
+    "section": "public",
+    "source": "Questions about your account? Send us an email."
+  },
+  {
+    "key": "m86e46d4d",
+    "section": "public",
+    "source": "Quicklinks"
+  },
+  {
+    "key": "ma4c81b66",
+    "section": "account",
+    "source": "Quote expired. Request a new quote."
+  },
+  {
+    "key": "m85fe9c4a",
+    "section": "account",
+    "source": "Quote expires in"
+  },
+  {
+    "key": "m2058b919",
+    "section": "account",
+    "source": "Quote unavailable"
+  },
+  {
+    "key": "m28b010ba",
+    "section": "account",
+    "source": "Quote valid for {seconds} seconds"
+  },
+  {
+    "key": "mb63a91c8",
+    "section": "account",
+    "source": "Quoted output; settlement is not complete."
+  },
+  {
+    "key": "m389c8a70",
+    "section": "common",
+    "source": "Rating"
+  },
+  {
+    "key": "mf0273c50",
+    "section": "admin",
+    "source": "Rating (1–5)"
+  },
+  {
+    "key": "m913e780b",
+    "section": "public",
+    "source": "Re-type your password"
+  },
+  {
+    "key": "mb6621ddf",
+    "section": "account",
+    "source": "Read all reviews"
+  },
+  {
+    "key": "m9e109252",
+    "section": "account",
+    "source": "Read-only preview"
+  },
+  {
+    "key": "me0d1398e",
+    "section": "admin",
+    "source": "Reason for change"
+  },
+  {
+    "key": "me6ecbad0",
+    "section": "admin",
+    "source": "Reason for reverification"
+  },
+  {
+    "key": "m2e823442",
+    "section": "account",
+    "source": "Receive"
+  },
+  {
+    "key": "mff8b103d",
+    "section": "common",
+    "source": "Receiving address"
+  },
+  {
+    "key": "m4c10b785",
+    "section": "account",
+    "source": "Receiving address QR code"
+  },
+  {
+    "key": "m2eb2c704",
+    "section": "admin",
+    "source": "Receiving wallet added"
+  },
+  {
+    "key": "m539e465f",
+    "section": "server",
+    "source": "Receiving wallet not found."
+  },
+  {
+    "key": "m932bd559",
+    "section": "admin",
+    "source": "Receiving wallet updated"
+  },
+  {
+    "key": "me9546a5b",
+    "section": "admin",
+    "source": "Receiving wallets"
+  },
+  {
+    "key": "m0b2c066c",
+    "section": "account",
+    "source": "Recent funding activity"
+  },
+  {
+    "key": "mb615d28f",
+    "section": "account",
+    "source": "Recent Transactions"
+  },
+  {
+    "key": "m10ed8068",
+    "section": "admin",
+    "source": "Reconciliation"
+  },
+  {
+    "key": "mc2a0d1c1",
+    "section": "admin",
+    "source": "Record funding transaction"
+  },
+  {
+    "key": "m7e445b71",
+    "section": "server",
+    "source": "Record not found"
+  },
+  {
+    "key": "me0245ef2",
+    "section": "admin",
+    "source": "Record verified refund"
+  },
+  {
+    "key": "maaec27dd",
+    "section": "admin",
+    "source": "Recorded"
+  },
+  {
+    "key": "ma57e293a",
+    "section": "admin",
+    "source": "Recorded in the audit log"
+  },
+  {
+    "key": "m31dc2637",
+    "section": "server",
+    "source": "Recorded USD amount"
+  },
+  {
+    "key": "m358b2e6d",
+    "section": "admin",
+    "source": "Recover provider order ID"
+  },
+  {
+    "key": "m2ac3a6d5",
+    "section": "common",
+    "source": "Recovery codes remaining: {count}"
+  },
+  {
+    "key": "mf49fe342",
+    "section": "common",
+    "source": "Recovery link missing"
+  },
+  {
+    "key": "m330d4e07",
+    "section": "server",
+    "source": "Recovery token"
+  },
+  {
+    "key": "madc8c33a",
+    "section": "common",
+    "source": "Reference"
+  },
+  {
+    "key": "mcdc31082",
+    "section": "server",
+    "source": "Reference already in use"
+  },
+  {
+    "key": "m4602abd7",
+    "section": "common",
+    "source": "Referral Bonus"
+  },
+  {
+    "key": "m873b89d3",
+    "section": "server",
+    "source": "Referral bonus — "
+  },
+  {
+    "key": "mdd964076",
+    "section": "server",
+    "source": "Referral bonus earned"
+  },
+  {
+    "key": "m72676aff",
+    "section": "admin",
+    "source": "Referral bonuses"
+  },
+  {
+    "key": "m73566183",
+    "section": "admin",
+    "source": "Referral commission (bps)"
+  },
+  {
+    "key": "mcea39ea7",
+    "section": "account",
+    "source": "Referral link copied to clipboard"
+  },
+  {
+    "key": "mf94f0cfc",
+    "section": "account",
+    "source": "Referral Program"
+  },
+  {
+    "key": "m61a23e82",
+    "section": "admin",
+    "source": "Referral rate"
+  },
+  {
+    "key": "m831411ac",
+    "section": "admin",
+    "source": "Referred"
+  },
+  {
+    "key": "mcbea1ebd",
+    "section": "admin",
+    "source": "Refresh provider status"
+  },
+  {
+    "key": "m4360ca3e",
+    "section": "common",
+    "source": "Refunded"
+  },
+  {
+    "key": "m2739c9e0",
+    "section": "public",
+    "source": "Register"
+  },
+  {
+    "key": "m94a5af8f",
+    "section": "public",
+    "source": "Register for QFS"
+  },
+  {
+    "key": "mcb4844e6",
+    "section": "admin",
+    "source": "Reject"
+  },
+  {
+    "key": "mf050c067",
+    "section": "common",
+    "source": "Rejected"
+  },
+  {
+    "key": "m2256dba7",
+    "section": "admin",
+    "source": "Release {value0}"
+  },
+  {
+    "key": "m282eb159",
+    "section": "admin",
+    "source": "Release investment principal"
+  },
+  {
+    "key": "m35034995",
+    "section": "admin",
+    "source": "Release unfunded reservation"
+  },
+  {
+    "key": "m7f8792a6",
+    "section": "account",
+    "source": "released by an admin after the term and final profit settlement"
+  },
+  {
+    "key": "m06d78b58",
+    "section": "account",
+    "source": "released to available balance after admin approval"
+  },
+  {
+    "key": "m08fb4509",
+    "section": "admin",
+    "source": "Releasing principal…"
+  },
+  {
+    "key": "m45ad3fd6",
+    "section": "admin",
+    "source": "Remove admin"
+  },
+  {
+    "key": "mc11f64e5",
+    "section": "admin",
+    "source": "Remove language version"
+  },
+  {
+    "key": "mc04e94f5",
+    "section": "admin",
+    "source": "Remove the review by {value0}?"
+  },
+  {
+    "key": "me4d54f63",
+    "section": "account",
+    "source": "Replace"
+  },
+  {
+    "key": "m234d54a0",
+    "section": "common",
+    "source": "Replace recovery codes"
+  },
+  {
+    "key": "mbe49be61",
+    "section": "common",
+    "source": "Request a new link"
+  },
+  {
+    "key": "m637e8883",
+    "section": "admin",
+    "source": "Request changes"
+  },
+  {
+    "key": "mf6043b37",
+    "section": "common",
+    "source": "Request failed"
+  },
+  {
+    "key": "m8dd0fb0c",
+    "section": "account",
+    "source": "Request failed. Please try again."
+  },
+  {
+    "key": "m91b7501b",
+    "section": "account",
+    "source": "Request rejected. You cancelled the signature."
+  },
+  {
+    "key": "me6941964",
+    "section": "admin",
+    "source": "Request reverification"
+  },
+  {
+    "key": "m202e5df1",
+    "section": "account",
+    "source": "Request Withdrawal"
+  },
+  {
+    "key": "m7aca4c52",
+    "section": "common",
+    "source": "Requesting link…"
+  },
+  {
+    "key": "mbdadf2b3",
+    "section": "account",
+    "source": "Requesting withdrawal…"
+  },
+  {
+    "key": "m340586f3",
+    "section": "admin",
+    "source": "Requests"
+  },
+  {
+    "key": "m63cec0e8",
+    "section": "admin",
+    "source": "Required when your administrator account has two-factor authentication enabled."
+  },
+  {
+    "key": "mce87231d",
+    "section": "server",
+    "source": "Reserved"
+  },
+  {
+    "key": "m7e9637d1",
+    "section": "server",
+    "source": "Reserved for withdrawal ("
+  },
+  {
+    "key": "m647e5064",
+    "section": "common",
+    "source": "Reserved: {quantity}"
+  },
+  {
+    "key": "m679a51e9",
+    "section": "common",
+    "source": "Reset password"
+  },
+  {
+    "key": "m42f0a3dc",
+    "section": "server",
+    "source": "Reset your password"
+  },
+  {
+    "key": "m68b860e4",
+    "section": "server",
+    "source": "Reset your QFS password"
+  },
+  {
+    "key": "me8903a2d",
+    "section": "common",
+    "source": "Residential address"
+  },
+  {
+    "key": "m55da18a4",
+    "section": "server",
+    "source": "Resource not found"
+  },
+  {
+    "key": "m9564a892",
+    "section": "account",
+    "source": "Resources"
+  },
+  {
+    "key": "m8036af59",
+    "section": "common",
+    "source": "Retry"
+  },
+  {
+    "key": "mf9b3c3aa",
+    "section": "admin",
+    "source": "Return automatically"
+  },
+  {
+    "key": "mef955223",
+    "section": "account",
+    "source": "Return to your transaction after your deposit is confirmed."
+  },
+  {
+    "key": "md1be2427",
+    "section": "account",
+    "source": "Returned {value0}"
+  },
+  {
+    "key": "m2ac94e0b",
+    "section": "account",
+    "source": "returned automatically to available balance"
+  },
+  {
+    "key": "ma29d10a6",
+    "section": "account",
+    "source": "returned to available balance automatically after the term and final profit settlement"
+  },
+  {
+    "key": "m69190cd7",
+    "section": "admin",
+    "source": "Reveals the Bank Transfer deposit method once set."
+  },
+  {
+    "key": "m823d7307",
+    "section": "common",
+    "source": "Reverification requested"
+  },
+  {
+    "key": "m6ae55601",
+    "section": "common",
+    "source": "Review"
+  },
+  {
+    "key": "m321b970d",
+    "section": "account",
+    "source": "Review {current} of {total}"
+  },
+  {
+    "key": "m06afc41d",
+    "section": "account",
+    "source": "Review & submit"
+  },
+  {
+    "key": "m3b5f917c",
+    "section": "admin",
+    "source": "Review deleted"
+  },
+  {
+    "key": "m5dec7cbf",
+    "section": "admin",
+    "source": "Review each translation against the English description, terms, and risk disclosure. Existing investments keep their recorded materials."
+  },
+  {
+    "key": "mcf54433b",
+    "section": "admin",
+    "source": "Review note (required when requesting changes)"
+  },
+  {
+    "key": "mbf01af83",
+    "section": "admin",
+    "source": "Review published"
+  },
+  {
+    "key": "mc94234e0",
+    "section": "admin",
+    "source": "Review release"
+  },
+  {
+    "key": "m689b302d",
+    "section": "admin",
+    "source": "Review Requests"
+  },
+  {
+    "key": "m5612cf97",
+    "section": "common",
+    "source": "Review submission"
+  },
+  {
+    "key": "m9279259c",
+    "section": "account",
+    "source": "Review Submitted"
+  },
+  {
+    "key": "m6025b244",
+    "section": "account",
+    "source": "Review swap"
+  },
+  {
+    "key": "m8afd6034",
+    "section": "admin",
+    "source": "Review text"
+  },
+  {
+    "key": "m2c5f5222",
+    "section": "admin",
+    "source": "Review updated"
+  },
+  {
+    "key": "mbe3cffff",
+    "section": "account",
+    "source": "Review USD conversion"
+  },
+  {
+    "key": "me638dd10",
+    "section": "common",
+    "source": "Review where your account is signed in. Device details are reported by the browser."
+  },
+  {
+    "key": "m843aefdc",
+    "section": "account",
+    "source": "Review withdrawal"
+  },
+  {
+    "key": "m1620f6f5",
+    "section": "account",
+    "source": "Review your details and upload your identity documents privately."
+  },
+  {
+    "key": "m44037998",
+    "section": "admin",
+    "source": "Reviewed"
+  },
+  {
+    "key": "m5a039c3a",
+    "section": "admin",
+    "source": "Reviewer"
+  },
+  {
+    "key": "mebd1f44d",
+    "section": "admin",
+    "source": "Reviewer name"
+  },
+  {
+    "key": "mb9071576",
+    "section": "common",
+    "source": "Reviews"
+  },
+  {
+    "key": "mfc2b39af",
+    "section": "account",
+    "source": "Reviews appear after moderation."
+  },
+  {
+    "key": "m8c2d1543",
+    "section": "common",
+    "source": "Risk disclosure"
+  },
+  {
+    "key": "mfb6616ad",
+    "section": "server",
+    "source": "ROI payout — "
+  },
+  {
+    "key": "m902b7e39",
+    "section": "admin",
+    "source": "Role"
+  },
+  {
+    "key": "m36269b2f",
+    "section": "admin",
+    "source": "Run checks again"
+  },
+  {
+    "key": "m20c3bdc3",
+    "section": "account",
+    "source": "S&P 500"
+  },
+  {
+    "key": "m02b4c3f6",
+    "section": "account",
+    "source": "Sample data for preview. Account actions are disabled until PostgreSQL is configured."
+  },
+  {
+    "key": "m5b567bff",
+    "section": "public",
+    "source": "Saudi Arabia"
+  },
+  {
+    "key": "m4d2d5d68",
+    "section": "admin",
+    "source": "Save"
+  },
+  {
+    "key": "mc40e8607",
+    "section": "account",
+    "source": "Save & continue"
+  },
+  {
+    "key": "m69e3d2c5",
+    "section": "admin",
+    "source": "Save account details"
+  },
+  {
+    "key": "m174a0119",
+    "section": "admin",
+    "source": "Save Changes"
+  },
+  {
+    "key": "m9bf48ffd",
+    "section": "common",
+    "source": "Save profile"
+  },
+  {
+    "key": "m545f6ef4",
+    "section": "admin",
+    "source": "Save Setting"
+  },
+  {
+    "key": "mf9aefaec",
+    "section": "common",
+    "source": "Save these recovery codes now"
+  },
+  {
+    "key": "m12330be1",
+    "section": "admin",
+    "source": "Saving decision…"
+  },
+  {
+    "key": "m08e7e107",
+    "section": "account",
+    "source": "Saving details…"
+  },
+  {
+    "key": "m15852dfa",
+    "section": "account",
+    "source": "Saving transfer…"
+  },
+  {
+    "key": "mbd79b37d",
+    "section": "common",
+    "source": "Saving…"
+  },
+  {
+    "key": "m5ef24676",
+    "section": "common",
+    "source": "Scan this code in your authenticator app, or enter the setup key manually. Setup expires in 10 minutes."
+  },
+  {
+    "key": "m2507f8be",
+    "section": "account",
+    "source": "Scheduled profit over term"
+  },
+  {
+    "key": "mc646a2c9",
+    "section": "common",
+    "source": "Search"
+  },
+  {
+    "key": "mdb7a8205",
+    "section": "server",
+    "source": "Search is too long"
+  },
+  {
+    "key": "mc2d95b1e",
+    "section": "account",
+    "source": "Search is unavailable. Try again."
+  },
+  {
+    "key": "md0d72665",
+    "section": "admin",
+    "source": "Search name or email"
+  },
+  {
+    "key": "me5378f21",
+    "section": "admin",
+    "source": "Search name, email, phone, referral code, wallet…"
+  },
+  {
+    "key": "m94f50c43",
+    "section": "account",
+    "source": "Search results"
+  },
+  {
+    "key": "mf49fc81a",
+    "section": "account",
+    "source": "Search transactions, plans…"
+  },
+  {
+    "key": "mc9153c41",
+    "section": "account",
+    "source": "Searching…"
+  },
+  {
+    "key": "mda71f20d",
+    "section": "public",
+    "source": "Secured System"
+  },
+  {
+    "key": "mc2fe21db",
+    "section": "public",
+    "source": "Security"
+  },
+  {
+    "key": "m86d9c197",
+    "section": "common",
+    "source": "Security updated. Save your recovery codes somewhere private."
+  },
+  {
+    "key": "m3e892b4d",
+    "section": "admin",
+    "source": "Select"
+  },
+  {
+    "key": "m1ac903cb",
+    "section": "server",
+    "source": "Select a supported asset and network."
+  },
+  {
+    "key": "m35baa877",
+    "section": "server",
+    "source": "Select a supported translation language."
+  },
+  {
+    "key": "mf55135c2",
+    "section": "server",
+    "source": "Select a user for a single adjustment"
+  },
+  {
+    "key": "m5029ffc3",
+    "section": "server",
+    "source": "Select a valid withdrawal quote."
+  },
+  {
+    "key": "m17edc97e",
+    "section": "account",
+    "source": "Select and copy the message above."
+  },
+  {
+    "key": "me39daa90",
+    "section": "account",
+    "source": "Select Plan"
+  },
+  {
+    "key": "m69d0557e",
+    "section": "public",
+    "source": "Select your country"
+  },
+  {
+    "key": "m78335033",
+    "section": "common",
+    "source": "Select…"
+  },
+  {
+    "key": "mc4a4b1fb",
+    "section": "common",
+    "source": "Selected sessions signed out."
+  },
+  {
+    "key": "meb3799c8",
+    "section": "admin",
+    "source": "Selected: {value0}. This upload replaces the file URL when saved."
+  },
+  {
+    "key": "m55d58751",
+    "section": "account",
+    "source": "Semiconductors"
+  },
+  {
+    "key": "m75c94734",
+    "section": "common",
+    "source": "Send another link"
+  },
+  {
+    "key": "m46adda86",
+    "section": "admin",
+    "source": "Send before"
+  },
+  {
+    "key": "m2806cbed",
+    "section": "account",
+    "source": "Send only {symbol} on {network} to this address."
+  },
+  {
+    "key": "m2e662ed2",
+    "section": "common",
+    "source": "Send recovery link"
+  },
+  {
+    "key": "m92993a05",
+    "section": "account",
+    "source": "Send the payment below and we'll credit your balance once it's confirmed. Keep your reference"
+  },
+  {
+    "key": "m1c23bbf7",
+    "section": "admin",
+    "source": "Send the stated crypto quantity to this address, then record the completed payout transaction. Approval records payment; it does not send funds."
+  },
+  {
+    "key": "mb8eefa33",
+    "section": "common",
+    "source": "Sending to exchange"
+  },
+  {
+    "key": "m63b30055",
+    "section": "public",
+    "source": "Services"
+  },
+  {
+    "key": "mcc9faa82",
+    "section": "admin",
+    "source": "Session expired"
+  },
+  {
+    "key": "m83a5950f",
+    "section": "common",
+    "source": "Set a New Password"
+  },
+  {
+    "key": "m4a62d996",
+    "section": "common",
+    "source": "Set new password"
+  },
+  {
+    "key": "mc55dda53",
+    "section": "admin",
+    "source": "Set role to {value0}"
+  },
+  {
+    "key": "m663ba1cb",
+    "section": "common",
+    "source": "Set up authenticator"
+  },
+  {
+    "key": "m93204e02",
+    "section": "public",
+    "source": "Set up your QFS account to access wallets, trading and payments."
+  },
+  {
+    "key": "m889f754b",
+    "section": "common",
+    "source": "Setting"
+  },
+  {
+    "key": "md343db31",
+    "section": "admin",
+    "source": "Setting \"{key}\" saved"
+  },
+  {
+    "key": "m4b058728",
+    "section": "admin",
+    "source": "Settings"
+  },
+  {
+    "key": "m5fac762d",
+    "section": "server",
+    "source": "Settlement could not be verified. Funds remain reserved."
+  },
+  {
+    "key": "mcb7bf418",
+    "section": "account",
+    "source": "Share Link"
+  },
+  {
+    "key": "m0ff39ce6",
+    "section": "account",
+    "source": "Share PDF"
+  },
+  {
+    "key": "m38f44ae5",
+    "section": "account",
+    "source": "Share your experience"
+  },
+  {
+    "key": "mc5777a55",
+    "section": "admin",
+    "source": "Show all accounts"
+  },
+  {
+    "key": "m500e3555",
+    "section": "common",
+    "source": "Show password"
+  },
+  {
+    "key": "m552bab1d",
+    "section": "admin",
+    "source": "Showing activity for the selected account."
+  },
+  {
+    "key": "m90ee56a0",
+    "section": "account",
+    "source": "Showing the first 500 records. Download CSV or the printable statement for the complete period."
+  },
+  {
+    "key": "m29c3f924",
+    "section": "admin",
+    "source": "Shown in the public header/footer."
+  },
+  {
+    "key": "m0cd96883",
+    "section": "admin",
+    "source": "Shown to the user and recorded in the audit log"
+  },
+  {
+    "key": "m35fa8b07",
+    "section": "public",
+    "source": "Side view portrait of modern young woman holding credit card and paying via NFC while working with laptop in cafe, copy space"
+  },
+  {
+    "key": "m744be623",
+    "section": "common",
+    "source": "Sign in"
+  },
+  {
+    "key": "m749b9803",
+    "section": "admin",
+    "source": "Sign In"
+  },
+  {
+    "key": "m8bd5cc27",
+    "section": "account",
+    "source": "Sign in with a real account to submit a review."
+  },
+  {
+    "key": "mb67087d8",
+    "section": "admin",
+    "source": "Sign in with your administrator account."
+  },
+  {
+    "key": "m334e1fb9",
+    "section": "common",
+    "source": "Sign in with your email address and password to access your account."
+  },
+  {
+    "key": "m86c707ba",
+    "section": "common",
+    "source": "Sign out device"
+  },
+  {
+    "key": "m81fc22ce",
+    "section": "common",
+    "source": "Sign out failed. Please try again."
+  },
+  {
+    "key": "maeeb5271",
+    "section": "common",
+    "source": "Sign out other devices"
+  },
+  {
+    "key": "mb91b5ee7",
+    "section": "account",
+    "source": "Sign this exact message in your wallet"
+  },
+  {
+    "key": "m6acd2511",
+    "section": "public",
+    "source": "Sign Up"
+  },
+  {
+    "key": "m30a8c217",
+    "section": "public",
+    "source": "Sign up for onboarding on QFS, then verify your identity."
+  },
+  {
+    "key": "m8ffe379b",
+    "section": "account",
+    "source": "Signature from your wallet"
+  },
+  {
+    "key": "m9196e701",
+    "section": "server",
+    "source": "Signature verification failed."
+  },
+  {
+    "key": "m38f7e48f",
+    "section": "common",
+    "source": "Signed in. Opening your dashboard…"
+  },
+  {
+    "key": "m6e3a8d2d",
+    "section": "common",
+    "source": "Signing in…"
+  },
+  {
+    "key": "mf6e288d5",
+    "section": "account",
+    "source": "Signing message copied."
+  },
+  {
+    "key": "m69575a66",
+    "section": "server",
+    "source": "Signing message does not match this address."
+  },
+  {
+    "key": "m5f079e3c",
+    "section": "admin",
+    "source": "Signing out…"
+  },
+  {
+    "key": "m1dbd6051",
+    "section": "server",
+    "source": "Signing request expired. Please try again."
+  },
+  {
+    "key": "m27a78440",
+    "section": "account",
+    "source": "Silver"
+  },
+  {
+    "key": "m9effde41",
+    "section": "account",
+    "source": "Silver / USD"
+  },
+  {
+    "key": "me17d1641",
+    "section": "public",
+    "source": "Singapore"
+  },
+  {
+    "key": "meed3b091",
+    "section": "admin",
+    "source": "Site name"
+  },
+  {
+    "key": "m524cb95c",
+    "section": "account",
+    "source": "Snapshot generated"
+  },
+  {
+    "key": "mf3ef6744",
+    "section": "account",
+    "source": "SOL / USD"
+  },
+  {
+    "key": "m68793371",
+    "section": "common",
+    "source": "Solana"
+  },
+  {
+    "key": "m00a05b4e",
+    "section": "account",
+    "source": "Some crypto prices are unavailable. Your quantities are unchanged; the combined USD estimate is temporarily unavailable."
+  },
+  {
+    "key": "mc951164f",
+    "section": "common",
+    "source": "Something went wrong. Please try again."
+  },
+  {
+    "key": "m8459a7f1",
+    "section": "admin",
+    "source": "Sort"
+  },
+  {
+    "key": "mcd5661a5",
+    "section": "admin",
+    "source": "Sort order"
+  },
+  {
+    "key": "m02d95d85",
+    "section": "admin",
+    "source": "Source treasury"
+  },
+  {
+    "key": "maf086de8",
+    "section": "public",
+    "source": "South Africa"
+  },
+  {
+    "key": "me6d1e3ee",
+    "section": "public",
+    "source": "Spain"
+  },
+  {
+    "key": "m557acffd",
+    "section": "account",
+    "source": "Spanish Presentation"
+  },
+  {
+    "key": "mca60d120",
+    "section": "account",
+    "source": "Stablecoin Loans"
+  },
+  {
+    "key": "me48f59c9",
+    "section": "server",
+    "source": "Start investing today"
+  },
+  {
+    "key": "m4985c254",
+    "section": "account",
+    "source": "Start Investment"
+  },
+  {
+    "key": "mb233713a",
+    "section": "account",
+    "source": "Start New Investment"
+  },
+  {
+    "key": "md9630947",
+    "section": "account",
+    "source": "Started {value0}"
+  },
+  {
+    "key": "m541815da",
+    "section": "account",
+    "source": "Starting investment…"
+  },
+  {
+    "key": "m005ef20f",
+    "section": "common",
+    "source": "Status"
+  },
+  {
+    "key": "m742b3292",
+    "section": "public",
+    "source": "Step 01"
+  },
+  {
+    "key": "m732b30ff",
+    "section": "public",
+    "source": "Step 02"
+  },
+  {
+    "key": "m722b2f6c",
+    "section": "public",
+    "source": "Step 03"
+  },
+  {
+    "key": "m67c7f535",
+    "section": "admin",
+    "source": "Stock"
+  },
+  {
+    "key": "ma5c71d32",
+    "section": "account",
+    "source": "Stocks"
+  },
+  {
+    "key": "m78d0738b",
+    "section": "public",
+    "source": "Stolen & Asset Recovery"
+  },
+  {
+    "key": "m2080c52b",
+    "section": "account",
+    "source": "Student Loans"
+  },
+  {
+    "key": "mcf796b76",
+    "section": "admin",
+    "source": "Sub-label"
+  },
+  {
+    "key": "m2d230db2",
+    "section": "server",
+    "source": "Submission not found."
+  },
+  {
+    "key": "m778cf7d6",
+    "section": "account",
+    "source": "Submit Deposit Request"
+  },
+  {
+    "key": "m45be5836",
+    "section": "account",
+    "source": "Submit for review"
+  },
+  {
+    "key": "maec16ae7",
+    "section": "account",
+    "source": "Submit Review"
+  },
+  {
+    "key": "m37a454c5",
+    "section": "account",
+    "source": "Submit transfer for review"
+  },
+  {
+    "key": "mb58f2b06",
+    "section": "account",
+    "source": "Submit your identity documents for private review."
+  },
+  {
+    "key": "m8a095d62",
+    "section": "admin",
+    "source": "Submitted"
+  },
+  {
+    "key": "m0046881b",
+    "section": "account",
+    "source": "Submitted {value0}"
+  },
+  {
+    "key": "m3ea42bb1",
+    "section": "account",
+    "source": "Submitting application…"
+  },
+  {
+    "key": "m1c156775",
+    "section": "account",
+    "source": "Submitting deposit…"
+  },
+  {
+    "key": "m34f48486",
+    "section": "account",
+    "source": "Submitting for review…"
+  },
+  {
+    "key": "m3a24d021",
+    "section": "account",
+    "source": "Submitting review…"
+  },
+  {
+    "key": "m6be6f488",
+    "section": "public",
+    "source": "Support"
+  },
+  {
+    "key": "me40e2840",
+    "section": "admin",
+    "source": "Support email"
+  },
+  {
+    "key": "m31b0d20e",
+    "section": "common",
+    "source": "Supporting documents"
+  },
+  {
+    "key": "m28d1bc1e",
+    "section": "admin",
+    "source": "Supporting materials"
+  },
+  {
+    "key": "mb3a94ef6",
+    "section": "account",
+    "source": "Supporting materials recorded when this investment began"
+  },
+  {
+    "key": "m8da81026",
+    "section": "account",
+    "source": "Supporting materials reflect the current plan publication"
+  },
+  {
+    "key": "me196ab03",
+    "section": "admin",
+    "source": "Suspend"
+  },
+  {
+    "key": "m8e4b833f",
+    "section": "admin",
+    "source": "Suspend {value0}? Their sessions will be revoked and they will be unable to log in until activated again."
+  },
+  {
+    "key": "me8afddc6",
+    "section": "admin",
+    "source": "Suspend user"
+  },
+  {
+    "key": "m33478642",
+    "section": "common",
+    "source": "Suspended"
+  },
+  {
+    "key": "me519d36e",
+    "section": "account",
+    "source": "Swap"
+  },
+  {
+    "key": "m7aa42b3a",
+    "section": "account",
+    "source": "Swap again"
+  },
+  {
+    "key": "mc5ef116d",
+    "section": "account",
+    "source": "Swap cancelled"
+  },
+  {
+    "key": "m3e5181ff",
+    "section": "common",
+    "source": "Swap completed"
+  },
+  {
+    "key": "m88ad5013",
+    "section": "admin",
+    "source": "Swap configuration saved"
+  },
+  {
+    "key": "m868fcfb7",
+    "section": "account",
+    "source": "Swap crypto"
+  },
+  {
+    "key": "m7f4b10d8",
+    "section": "admin",
+    "source": "Swap details"
+  },
+  {
+    "key": "m48652a0e",
+    "section": "account",
+    "source": "Swap from"
+  },
+  {
+    "key": "macb473ba",
+    "section": "account",
+    "source": "Swap history"
+  },
+  {
+    "key": "ma65f63f3",
+    "section": "server",
+    "source": "Swap not found."
+  },
+  {
+    "key": "m4c2be0e1",
+    "section": "common",
+    "source": "Swap refunded"
+  },
+  {
+    "key": "m71bb5c2e",
+    "section": "admin",
+    "source": "Swap status updated. Review the latest exchange details before taking another action."
+  },
+  {
+    "key": "m03a2f5a3",
+    "section": "account",
+    "source": "Swap submitted"
+  },
+  {
+    "key": "m1ed15c2b",
+    "section": "account",
+    "source": "Switch network"
+  },
+  {
+    "key": "m632a8ec9",
+    "section": "common",
+    "source": "Switch to dark mode"
+  },
+  {
+    "key": "mceec0c91",
+    "section": "common",
+    "source": "Switch to light mode"
+  },
+  {
+    "key": "m6706712f",
+    "section": "account",
+    "source": "Switch your wallet to the selected network before paying."
+  },
+  {
+    "key": "m9bcbf122",
+    "section": "public",
+    "source": "Switzerland"
+  },
+  {
+    "key": "m3a105ef1",
+    "section": "admin",
+    "source": "Symbol"
+  },
+  {
+    "key": "mb3aef261",
+    "section": "admin",
+    "source": "Symbol, name, price and change are required"
+  },
+  {
+    "key": "mdd4cec0b",
+    "section": "public",
+    "source": "Sync Your Asset to Qfs Ledger 3 System"
+  },
+  {
+    "key": "m0b7885be",
+    "section": "public",
+    "source": "Sync Your Wallet"
+  },
+  {
+    "key": "mfa8a5e9b",
+    "section": "public",
+    "source": "Synchronization"
+  },
+  {
+    "key": "m8b67f168",
+    "section": "admin",
+    "source": "Target"
+  },
+  {
+    "key": "mf528b685",
+    "section": "admin",
+    "source": "Target ID"
+  },
+  {
+    "key": "m94fbdccf",
+    "section": "account",
+    "source": "Technology"
+  },
+  {
+    "key": "m5a3370da",
+    "section": "account",
+    "source": "Tell us about your experience"
+  },
+  {
+    "key": "m22fa6af7",
+    "section": "common",
+    "source": "Term"
+  },
+  {
+    "key": "m8f542b9b",
+    "section": "admin",
+    "source": "Term (months)"
+  },
+  {
+    "key": "m09335ce2",
+    "section": "admin",
+    "source": "Term completed"
+  },
+  {
+    "key": "m2d85df7a",
+    "section": "account",
+    "source": "Term completed · awaiting principal release"
+  },
+  {
+    "key": "m7c845b80",
+    "section": "account",
+    "source": "Term ends {value0}"
+  },
+  {
+    "key": "mae82d80a",
+    "section": "account",
+    "source": "Tesla Inc."
+  },
+  {
+    "key": "m48bcc12a",
+    "section": "admin",
+    "source": "Testimonials shown in the user dashboard. Only APPROVED reviews are visible to users."
+  },
+  {
+    "key": "m6f7bc1f9",
+    "section": "server",
+    "source": "Tether"
+  },
+  {
+    "key": "m3e142d5e",
+    "section": "admin",
+    "source": "Text"
+  },
+  {
+    "key": "m1cc5e9fd",
+    "section": "account",
+    "source": "Thai Presentation"
+  },
+  {
+    "key": "m76434a8d",
+    "section": "server",
+    "source": "That is not a valid Ethereum address."
+  },
+  {
+    "key": "m12eb1655",
+    "section": "server",
+    "source": "The :attribute failed to upload."
+  },
+  {
+    "key": "m6f0a74d0",
+    "section": "server",
+    "source": "The :attribute field and :other must be different."
+  },
+  {
+    "key": "meeae381a",
+    "section": "server",
+    "source": "The :attribute field confirmation does not match."
+  },
+  {
+    "key": "m2e107935",
+    "section": "server",
+    "source": "The :attribute field contains an unauthorized value."
+  },
+  {
+    "key": "mbd93d8aa",
+    "section": "server",
+    "source": "The :attribute field format is invalid."
+  },
+  {
+    "key": "ma2f6d3a5",
+    "section": "server",
+    "source": "The :attribute field has a duplicate value."
+  },
+  {
+    "key": "m9f66f3cd",
+    "section": "server",
+    "source": "The :attribute field has invalid image dimensions."
+  },
+  {
+    "key": "mb701afe5",
+    "section": "server",
+    "source": "The :attribute field is invalid."
+  },
+  {
+    "key": "m7acb0c8f",
+    "section": "server",
+    "source": "The :attribute field is missing a required value."
+  },
+  {
+    "key": "m2af20465",
+    "section": "server",
+    "source": "The :attribute field is prohibited unless :other is in :values."
+  },
+  {
+    "key": "m0164b79f",
+    "section": "server",
+    "source": "The :attribute field is prohibited when :other is :value."
+  },
+  {
+    "key": "md5e0ca81",
+    "section": "server",
+    "source": "The :attribute field is prohibited when :other is accepted."
+  },
+  {
+    "key": "me0e59ff0",
+    "section": "server",
+    "source": "The :attribute field is prohibited when :other is declined."
+  },
+  {
+    "key": "m6c7dd98a",
+    "section": "server",
+    "source": "The :attribute field is prohibited."
+  },
+  {
+    "key": "m5bb2a9c4",
+    "section": "server",
+    "source": "The :attribute field is required unless :other is in :values."
+  },
+  {
+    "key": "m4f381c4a",
+    "section": "server",
+    "source": "The :attribute field is required when :other is :value."
+  },
+  {
+    "key": "mcab730c0",
+    "section": "server",
+    "source": "The :attribute field is required when :other is accepted."
+  },
+  {
+    "key": "md5051c09",
+    "section": "server",
+    "source": "The :attribute field is required when :other is declined."
+  },
+  {
+    "key": "m23b4e1ce",
+    "section": "server",
+    "source": "The :attribute field is required when :values are present."
+  },
+  {
+    "key": "m7f294ff9",
+    "section": "server",
+    "source": "The :attribute field is required when :values is not present."
+  },
+  {
+    "key": "mb0eb163a",
+    "section": "server",
+    "source": "The :attribute field is required when :values is present."
+  },
+  {
+    "key": "m7dd57edb",
+    "section": "server",
+    "source": "The :attribute field is required when none of :values are present."
+  },
+  {
+    "key": "mcfd6cccf",
+    "section": "server",
+    "source": "The :attribute field is required."
+  },
+  {
+    "key": "m8c19bf64",
+    "section": "server",
+    "source": "The :attribute field must be :digits digits."
+  },
+  {
+    "key": "mfb8b8b65",
+    "section": "server",
+    "source": "The :attribute field must be :size characters."
+  },
+  {
+    "key": "m512e3b2f",
+    "section": "server",
+    "source": "The :attribute field must be :size kilobytes."
+  },
+  {
+    "key": "mc6293bdb",
+    "section": "server",
+    "source": "The :attribute field must be :size."
+  },
+  {
+    "key": "m196e68e5",
+    "section": "server",
+    "source": "The :attribute field must be a date after :date."
+  },
+  {
+    "key": "m895f2e87",
+    "section": "server",
+    "source": "The :attribute field must be a date after or equal to :date."
+  },
+  {
+    "key": "m6fee0b0c",
+    "section": "server",
+    "source": "The :attribute field must be a date before :date."
+  },
+  {
+    "key": "m99f31aea",
+    "section": "server",
+    "source": "The :attribute field must be a date before or equal to :date."
+  },
+  {
+    "key": "m8f510f0a",
+    "section": "server",
+    "source": "The :attribute field must be a date equal to :date."
+  },
+  {
+    "key": "m24f43ca8",
+    "section": "server",
+    "source": "The :attribute field must be a file of type: :values."
+  },
+  {
+    "key": "m28d773db",
+    "section": "server",
+    "source": "The :attribute field must be a file."
+  },
+  {
+    "key": "m32830789",
+    "section": "server",
+    "source": "The :attribute field must be a list."
+  },
+  {
+    "key": "mad5abfd1",
+    "section": "server",
+    "source": "The :attribute field must be a multiple of :value."
+  },
+  {
+    "key": "m9daa8636",
+    "section": "server",
+    "source": "The :attribute field must be a number."
+  },
+  {
+    "key": "mf0f00906",
+    "section": "server",
+    "source": "The :attribute field must be a string."
+  },
+  {
+    "key": "m5e58aac5",
+    "section": "server",
+    "source": "The :attribute field must be a valid Base64 string."
+  },
+  {
+    "key": "mf2933cd7",
+    "section": "server",
+    "source": "The :attribute field must be a valid date."
+  },
+  {
+    "key": "m5d6cb159",
+    "section": "server",
+    "source": "The :attribute field must be a valid email address."
+  },
+  {
+    "key": "mba80168d",
+    "section": "server",
+    "source": "The :attribute field must be a valid hexadecimal color."
+  },
+  {
+    "key": "mf9f59184",
+    "section": "server",
+    "source": "The :attribute field must be a valid IP address."
+  },
+  {
+    "key": "m294356c6",
+    "section": "server",
+    "source": "The :attribute field must be a valid IPv4 address."
+  },
+  {
+    "key": "mfbd47a58",
+    "section": "server",
+    "source": "The :attribute field must be a valid IPv6 address."
+  },
+  {
+    "key": "md7c24c7c",
+    "section": "server",
+    "source": "The :attribute field must be a valid JSON string."
+  },
+  {
+    "key": "m685a27a8",
+    "section": "server",
+    "source": "The :attribute field must be a valid MAC address."
+  },
+  {
+    "key": "m1ff50fc2",
+    "section": "server",
+    "source": "The :attribute field must be a valid timezone."
+  },
+  {
+    "key": "m9b92d307",
+    "section": "server",
+    "source": "The :attribute field must be a valid ULID."
+  },
+  {
+    "key": "m481aeeca",
+    "section": "server",
+    "source": "The :attribute field must be a valid URL."
+  },
+  {
+    "key": "m93c304b6",
+    "section": "server",
+    "source": "The :attribute field must be a valid UUID."
+  },
+  {
+    "key": "ma741cc38",
+    "section": "server",
+    "source": "The :attribute field must be accepted when :other is :value."
+  },
+  {
+    "key": "md7fcda9d",
+    "section": "server",
+    "source": "The :attribute field must be accepted."
+  },
+  {
+    "key": "ma9396c00",
+    "section": "server",
+    "source": "The :attribute field must be an array."
+  },
+  {
+    "key": "mc76374f4",
+    "section": "server",
+    "source": "The :attribute field must be an image."
+  },
+  {
+    "key": "m01499869",
+    "section": "server",
+    "source": "The :attribute field must be an integer."
+  },
+  {
+    "key": "mbdd87fa8",
+    "section": "server",
+    "source": "The :attribute field must be at least :min characters."
+  },
+  {
+    "key": "med24ab94",
+    "section": "server",
+    "source": "The :attribute field must be at least :min kilobytes."
+  },
+  {
+    "key": "m98dd94b4",
+    "section": "server",
+    "source": "The :attribute field must be at least :min."
+  },
+  {
+    "key": "m06ae406f",
+    "section": "server",
+    "source": "The :attribute field must be between :min and :max characters."
+  },
+  {
+    "key": "m8d1c5f61",
+    "section": "server",
+    "source": "The :attribute field must be between :min and :max digits."
+  },
+  {
+    "key": "m07d825f1",
+    "section": "server",
+    "source": "The :attribute field must be between :min and :max kilobytes."
+  },
+  {
+    "key": "ma213d8c5",
+    "section": "server",
+    "source": "The :attribute field must be between :min and :max."
+  },
+  {
+    "key": "m03b7ecb1",
+    "section": "server",
+    "source": "The :attribute field must be declined when :other is :value."
+  },
+  {
+    "key": "m6fa663ec",
+    "section": "server",
+    "source": "The :attribute field must be declined."
+  },
+  {
+    "key": "mf4576b24",
+    "section": "server",
+    "source": "The :attribute field must be encoded in :encoding."
+  },
+  {
+    "key": "m23cd3216",
+    "section": "server",
+    "source": "The :attribute field must be greater than :value characters."
+  },
+  {
+    "key": "m14917962",
+    "section": "server",
+    "source": "The :attribute field must be greater than :value kilobytes."
+  },
+  {
+    "key": "m6eb5a9a2",
+    "section": "server",
+    "source": "The :attribute field must be greater than :value."
+  },
+  {
+    "key": "m97be83e4",
+    "section": "server",
+    "source": "The :attribute field must be greater than or equal to :value characters."
+  },
+  {
+    "key": "m63647778",
+    "section": "server",
+    "source": "The :attribute field must be greater than or equal to :value kilobytes."
+  },
+  {
+    "key": "mc1fd71d8",
+    "section": "server",
+    "source": "The :attribute field must be greater than or equal to :value."
+  },
+  {
+    "key": "m96008061",
+    "section": "server",
+    "source": "The :attribute field must be less than :value characters."
+  },
+  {
+    "key": "m1713a053",
+    "section": "server",
+    "source": "The :attribute field must be less than :value kilobytes."
+  },
+  {
+    "key": "mdc4faa7f",
+    "section": "server",
+    "source": "The :attribute field must be less than :value."
+  },
+  {
+    "key": "m4d60884f",
+    "section": "server",
+    "source": "The :attribute field must be less than or equal to :value characters."
+  },
+  {
+    "key": "m35d2c351",
+    "section": "server",
+    "source": "The :attribute field must be less than or equal to :value kilobytes."
+  },
+  {
+    "key": "m335dcba5",
+    "section": "server",
+    "source": "The :attribute field must be less than or equal to :value."
+  },
+  {
+    "key": "m207aa1a5",
+    "section": "server",
+    "source": "The :attribute field must be lowercase."
+  },
+  {
+    "key": "m333f9391",
+    "section": "server",
+    "source": "The :attribute field must be missing unless :other is :value."
+  },
+  {
+    "key": "mbaba1817",
+    "section": "server",
+    "source": "The :attribute field must be missing when :other is :value."
+  },
+  {
+    "key": "m66904601",
+    "section": "server",
+    "source": "The :attribute field must be missing when :values are present."
+  },
+  {
+    "key": "m79824723",
+    "section": "server",
+    "source": "The :attribute field must be missing when :values is present."
+  },
+  {
+    "key": "m6f937a62",
+    "section": "server",
+    "source": "The :attribute field must be missing."
+  },
+  {
+    "key": "mf86c44a0",
+    "section": "server",
+    "source": "The :attribute field must be present unless :other is :value."
+  },
+  {
+    "key": "m768ae682",
+    "section": "server",
+    "source": "The :attribute field must be present when :other is :value."
+  },
+  {
+    "key": "m55ab2806",
+    "section": "server",
+    "source": "The :attribute field must be present when :values are present."
+  },
+  {
+    "key": "m408428d2",
+    "section": "server",
+    "source": "The :attribute field must be present when :values is present."
+  },
+  {
+    "key": "ma0eecfa7",
+    "section": "server",
+    "source": "The :attribute field must be present."
+  },
+  {
+    "key": "m2b9a9078",
+    "section": "server",
+    "source": "The :attribute field must be true or false."
+  },
+  {
+    "key": "md128cf12",
+    "section": "server",
+    "source": "The :attribute field must be uppercase."
+  },
+  {
+    "key": "ma4cdd256",
+    "section": "server",
+    "source": "The :attribute field must contain :size items."
+  },
+  {
+    "key": "m669cc2af",
+    "section": "server",
+    "source": "The :attribute field must contain at least one letter."
+  },
+  {
+    "key": "m54a41b10",
+    "section": "server",
+    "source": "The :attribute field must contain at least one number."
+  },
+  {
+    "key": "mf94325da",
+    "section": "server",
+    "source": "The :attribute field must contain at least one of the following keys: :values."
+  },
+  {
+    "key": "mc19bd1fb",
+    "section": "server",
+    "source": "The :attribute field must contain at least one symbol."
+  },
+  {
+    "key": "mbba4cea7",
+    "section": "server",
+    "source": "The :attribute field must contain at least one uppercase and one lowercase letter."
+  },
+  {
+    "key": "m337626f0",
+    "section": "server",
+    "source": "The :attribute field must contain entries for: :values."
+  },
+  {
+    "key": "mf34802eb",
+    "section": "server",
+    "source": "The :attribute field must end with one of the following: :values."
+  },
+  {
+    "key": "m012b3da5",
+    "section": "server",
+    "source": "The :attribute field must exist in :other."
+  },
+  {
+    "key": "m4f1ee5a1",
+    "section": "server",
+    "source": "The :attribute field must have :decimal decimal places."
+  },
+  {
+    "key": "md73f175a",
+    "section": "server",
+    "source": "The :attribute field must have :value items or more."
+  },
+  {
+    "key": "m8e02dc65",
+    "section": "server",
+    "source": "The :attribute field must have a value."
+  },
+  {
+    "key": "mdf6d2549",
+    "section": "server",
+    "source": "The :attribute field must have at least :min digits."
+  },
+  {
+    "key": "m086843b1",
+    "section": "server",
+    "source": "The :attribute field must have at least :min items."
+  },
+  {
+    "key": "m163c485c",
+    "section": "server",
+    "source": "The :attribute field must have between :min and :max items."
+  },
+  {
+    "key": "m24a9b55c",
+    "section": "server",
+    "source": "The :attribute field must have less than :value items."
+  },
+  {
+    "key": "m98bedd9c",
+    "section": "server",
+    "source": "The :attribute field must have more than :value items."
+  },
+  {
+    "key": "mbee49586",
+    "section": "server",
+    "source": "The :attribute field must have one of the following extensions: :values."
+  },
+  {
+    "key": "m5a975454",
+    "section": "server",
+    "source": "The :attribute field must match :other."
+  },
+  {
+    "key": "mb640623d",
+    "section": "server",
+    "source": "The :attribute field must match the format :format."
+  },
+  {
+    "key": "m342f2756",
+    "section": "server",
+    "source": "The :attribute field must not be greater than :max characters."
+  },
+  {
+    "key": "md7eefda2",
+    "section": "server",
+    "source": "The :attribute field must not be greater than :max kilobytes."
+  },
+  {
+    "key": "mdf45ff62",
+    "section": "server",
+    "source": "The :attribute field must not be greater than :max."
+  },
+  {
+    "key": "m9b8e73cd",
+    "section": "server",
+    "source": "The :attribute field must not contain any of the following: :values."
+  },
+  {
+    "key": "mee55a602",
+    "section": "server",
+    "source": "The :attribute field must not end with one of the following: :values."
+  },
+  {
+    "key": "m9e4c8c38",
+    "section": "server",
+    "source": "The :attribute field must not have more than :max digits."
+  },
+  {
+    "key": "m110d8e5a",
+    "section": "server",
+    "source": "The :attribute field must not have more than :max items."
+  },
+  {
+    "key": "mcc60262f",
+    "section": "server",
+    "source": "The :attribute field must not have more than :value items."
+  },
+  {
+    "key": "m6452c54f",
+    "section": "server",
+    "source": "The :attribute field must not start with one of the following: :values."
+  },
+  {
+    "key": "m818b0749",
+    "section": "server",
+    "source": "The :attribute field must only contain letters and numbers."
+  },
+  {
+    "key": "m10aed35e",
+    "section": "server",
+    "source": "The :attribute field must only contain letters, numbers, dashes, and underscores."
+  },
+  {
+    "key": "m16f7e020",
+    "section": "server",
+    "source": "The :attribute field must only contain letters."
+  },
+  {
+    "key": "m38bdf893",
+    "section": "server",
+    "source": "The :attribute field must only contain single-byte alphanumeric characters and symbols."
+  },
+  {
+    "key": "m05a1335d",
+    "section": "server",
+    "source": "The :attribute field must only contain the following keys: :values."
+  },
+  {
+    "key": "m695e76c6",
+    "section": "server",
+    "source": "The :attribute field must start with one of the following: :values."
+  },
+  {
+    "key": "m12d71b50",
+    "section": "server",
+    "source": "The :attribute field prohibits :other from being present."
+  },
+  {
+    "key": "m93674e07",
+    "section": "server",
+    "source": "The :attribute has already been taken."
+  },
+  {
+    "key": "ma1a17e6e",
+    "section": "server",
+    "source": "The amount is below the smallest unit of this asset."
+  },
+  {
+    "key": "m2fdef372",
+    "section": "server",
+    "source": "The amount is outside the exchange limits for this pair."
+  },
+  {
+    "key": "mf333a91a",
+    "section": "account",
+    "source": "The amount is reserved from your available balance while your request is reviewed."
+  },
+  {
+    "key": "m5e69a95f",
+    "section": "server",
+    "source": "The authenticator code is incorrect."
+  },
+  {
+    "key": "m9c8735fb",
+    "section": "server",
+    "source": "The code is incorrect or this sign-in expired. Try a new code or sign in again."
+  },
+  {
+    "key": "mb7afeee7",
+    "section": "common",
+    "source": "The deposit is confirmed and the account balance has been updated."
+  },
+  {
+    "key": "m570ac522",
+    "section": "account",
+    "source": "The document has not been uploaded yet."
+  },
+  {
+    "key": "m98847e44",
+    "section": "admin",
+    "source": "The email address changed. The user's devices were signed out and old recovery links were invalidated."
+  },
+  {
+    "key": "m07e82788",
+    "section": "admin",
+    "source": "The English materials have changed. Review this translation before publishing it again."
+  },
+  {
+    "key": "me722138e",
+    "section": "common",
+    "source": "The exchange provider is unavailable. Please try again shortly."
+  },
+  {
+    "key": "m15bfd7d1",
+    "section": "server",
+    "source": "The given :attribute has appeared in a data leak. Please choose a different :attribute."
+  },
+  {
+    "key": "m03078943",
+    "section": "public",
+    "source": "The Global Currency Reset (GCR) and (NESARA GESARA) is upon us! Regulated ISO 20022 Cryptos like these below will change the world and EXPLODE really soon. The central banks are using them for the new QFS. Cryptos like XRP, XLM, XDC, ALGO, IOTA, SHX also Gold and Silver, Let me tell you more if you are interested in Nesara states Rainbow \"Treasury\" Tokens (XRP and XLM)backed by precious metals Adding Quantum & ISO20022 Internationally Regulated USA Coins also backed by metals."
+  },
+  {
+    "key": "mca12db24",
+    "section": "public",
+    "source": "The History of money is entering a new era, You might just wake up with no money. We might just wake up one day with no money. Convert all paper money into a digitally gold backed currency."
+  },
+  {
+    "key": "m24ebdea6",
+    "section": "server",
+    "source": "The investment amount differs from the confirmed quote."
+  },
+  {
+    "key": "m167ecdb6",
+    "section": "admin",
+    "source": "The loan was approved. This decision does not disburse funds to the account."
+  },
+  {
+    "key": "m2a7f7eba",
+    "section": "admin",
+    "source": "The loan was rejected. The user can see the decision and review note."
+  },
+  {
+    "key": "m9f0013f2",
+    "section": "server",
+    "source": "The password is incorrect."
+  },
+  {
+    "key": "m62e16e21",
+    "section": "server",
+    "source": "The provider does not support this asset on the selected network."
+  },
+  {
+    "key": "m62ae229e",
+    "section": "server",
+    "source": "The provider has not confirmed a refund."
+  },
+  {
+    "key": "m1edd000e",
+    "section": "admin",
+    "source": "The provider is connected. Enable swaps on the server after configuring treasury routes."
+  },
+  {
+    "key": "m0c918fba",
+    "section": "server",
+    "source": "The quantity has too many decimal places for this asset."
+  },
+  {
+    "key": "ma81d49c9",
+    "section": "server",
+    "source": "The quoted amount exceeds the transaction limit."
+  },
+  {
+    "key": "med20d355",
+    "section": "account",
+    "source": "The quoted amount includes exchange and destination network fees. Treasury sending fees are covered by the platform."
+  },
+  {
+    "key": "mcbbbca33",
+    "section": "account",
+    "source": "The quoted crypto quantity is the requested payout. No additional platform fee is deducted from this request."
+  },
+  {
+    "key": "m2d5f8cc8",
+    "section": "server",
+    "source": "The quoted USD value must be between $0.01 and $1,000,000."
+  },
+  {
+    "key": "mfb9d692e",
+    "section": "server",
+    "source": "The receiving wallet limit has been reached."
+  },
+  {
+    "key": "mdb6444e1",
+    "section": "server",
+    "source": "The refund cannot exceed the reserved quantity."
+  },
+  {
+    "key": "me92934b9",
+    "section": "common",
+    "source": "The returned crypto is available in your balance."
+  },
+  {
+    "key": "md89e5865",
+    "section": "admin",
+    "source": "The review is complete. The user can see the updated status and review note."
+  },
+  {
+    "key": "m64292d5e",
+    "section": "server",
+    "source": "The selected :attribute is invalid."
+  },
+  {
+    "key": "mac50f67b",
+    "section": "account",
+    "source": "The selected crypto is committed from your platform balance. The investment and its returns are fixed in USD; no wallet payment is needed."
+  },
+  {
+    "key": "m3c584c5c",
+    "section": "server",
+    "source": "The withdrawal reservation is inconsistent."
+  },
+  {
+    "key": "m6dd1056b",
+    "section": "admin",
+    "source": "The withdrawal review is complete. The recorded payout is available in transaction history."
+  },
+  {
+    "key": "meee2c207",
+    "section": "server",
+    "source": "These balances and investment records are current at generation time. They are not the opening or closing balances for the selected period."
+  },
+  {
+    "key": "m8224903c",
+    "section": "account",
+    "source": "These materials are available in English. A reviewed translation has not been published for your language."
+  },
+  {
+    "key": "m0df6fa40",
+    "section": "server",
+    "source": "This account has been suspended. Contact support."
+  },
+  {
+    "key": "m10c53283",
+    "section": "account",
+    "source": "This card is frozen. Unfreeze it when you are ready to use it."
+  },
+  {
+    "key": "mdbbd9b2b",
+    "section": "admin",
+    "source": "This checks internal records. It does not verify treasury assets on the blockchain or reconstruct the complete historical ledger."
+  },
+  {
+    "key": "m18290830",
+    "section": "server",
+    "source": "This deposit can no longer be changed."
+  },
+  {
+    "key": "m8fc5c8b9",
+    "section": "common",
+    "source": "This device"
+  },
+  {
+    "key": "m3b0eb79f",
+    "section": "server",
+    "source": "This does not trigger a blockchain transaction or cost any gas."
+  },
+  {
+    "key": "meb362ea5",
+    "section": "server",
+    "source": "This loan was already reviewed"
+  },
+  {
+    "key": "m73fe9c11",
+    "section": "account",
+    "source": "This local preview is read-only. Create an account to use this action."
+  },
+  {
+    "key": "md6f5152e",
+    "section": "server",
+    "source": "This order is not confirmed expired and unfunded."
+  },
+  {
+    "key": "mbda159b1",
+    "section": "server",
+    "source": "This payout transaction was already used."
+  },
+  {
+    "key": "m359ce4a6",
+    "section": "admin",
+    "source": "This permanently removes the asset from the markets feed."
+  },
+  {
+    "key": "mb0fc3ded",
+    "section": "admin",
+    "source": "This permanently removes the document from the platform."
+  },
+  {
+    "key": "m2d5b11a7",
+    "section": "server",
+    "source": "This plan is no longer available"
+  },
+  {
+    "key": "mdbf2f2d3",
+    "section": "server",
+    "source": "This quote is unavailable or expired. Request a new quote."
+  },
+  {
+    "key": "m765304de",
+    "section": "server",
+    "source": "This receiving wallet already exists."
+  },
+  {
+    "key": "m67fca041",
+    "section": "common",
+    "source": "This receiving wallet is no longer accepting new deposits."
+  },
+  {
+    "key": "m03996547",
+    "section": "server",
+    "source": "This recovery link is invalid or expired. Request a new link."
+  },
+  {
+    "key": "m4920d255",
+    "section": "server",
+    "source": "This reference belongs to a different deposit."
+  },
+  {
+    "key": "m3c56e204",
+    "section": "server",
+    "source": "This reference belongs to a different swap."
+  },
+  {
+    "key": "m089cd000",
+    "section": "server",
+    "source": "This reference belongs to a different withdrawal."
+  },
+  {
+    "key": "m76ce3b61",
+    "section": "admin",
+    "source": "This removes verified status and asks the user to update and resubmit. Enter the reason below."
+  },
+  {
+    "key": "m7b089ffe",
+    "section": "common",
+    "source": "This request was already reviewed"
+  },
+  {
+    "key": "maf83f01c",
+    "section": "admin",
+    "source": "This restores the original principal to available balance. Total balance remains unchanged because it already includes invested capital. Profit was settled separately."
+  },
+  {
+    "key": "m352997d9",
+    "section": "server",
+    "source": "This statement is too large. Choose a shorter period."
+  },
+  {
+    "key": "mc821507b",
+    "section": "server",
+    "source": "This submission changed or was already reviewed. Reload before deciding."
+  },
+  {
+    "key": "m5f02dde7",
+    "section": "server",
+    "source": "This swap can no longer be changed."
+  },
+  {
+    "key": "mb09114b7",
+    "section": "server",
+    "source": "This swap is not available for treasury funding."
+  },
+  {
+    "key": "mec82cd2c",
+    "section": "server",
+    "source": "This swap pair is temporarily unavailable."
+  },
+  {
+    "key": "m33128705",
+    "section": "server",
+    "source": "This transaction was already submitted."
+  },
+  {
+    "key": "m8bbd00ce",
+    "section": "admin",
+    "source": "This version matches the current English materials."
+  },
+  {
+    "key": "md83bae9e",
+    "section": "account",
+    "source": "This wallet does not have Ethereum Mainnet enabled."
+  },
+  {
+    "key": "m86762e03",
+    "section": "account",
+    "source": "This withdrawal uses your USD account to pay out in the selected crypto asset."
+  },
+  {
+    "key": "m24d471a9",
+    "section": "admin",
+    "source": "Title"
+  },
+  {
+    "key": "m41f59644",
+    "section": "account",
+    "source": "To"
+  },
+  {
+    "key": "me469067d",
+    "section": "admin",
+    "source": "to approve or reject them."
+  },
+  {
+    "key": "mc6016124",
+    "section": "account",
+    "source": "to connect."
+  },
+  {
+    "key": "m8a1231d0",
+    "section": "admin",
+    "source": "Toggle theme"
+  },
+  {
+    "key": "m47b89982",
+    "section": "server",
+    "source": "Too many attempts. Please wait a minute and try again."
+  },
+  {
+    "key": "m897aae3d",
+    "section": "server",
+    "source": "Too many requests. Please try again later."
+  },
+  {
+    "key": "mad066d9d",
+    "section": "server",
+    "source": "Total"
+  },
+  {
+    "key": "ma14807e5",
+    "section": "server",
+    "source": "Total Balance"
+  },
+  {
+    "key": "mc0bd24a5",
+    "section": "admin",
+    "source": "Total Users"
+  },
+  {
+    "key": "mcc1f7f71",
+    "section": "common",
+    "source": "Total Withdrawals"
+  },
+  {
+    "key": "me68983a3",
+    "section": "admin",
+    "source": "totaling"
+  },
+  {
+    "key": "mb20b5559",
+    "section": "admin",
+    "source": "Track exchange execution, treasury funding and settlement."
+  },
+  {
+    "key": "m43d29151",
+    "section": "account",
+    "source": "Track requests from submission to review."
+  },
+  {
+    "key": "md0481ac3",
+    "section": "common",
+    "source": "Transaction"
+  },
+  {
+    "key": "m91333a60",
+    "section": "common",
+    "source": "Transaction hash (optional)"
+  },
+  {
+    "key": "m15290d0b",
+    "section": "account",
+    "source": "Transaction History"
+  },
+  {
+    "key": "me0518d98",
+    "section": "account",
+    "source": "Transaction not found."
+  },
+  {
+    "key": "m91820310",
+    "section": "common",
+    "source": "Transactions"
+  },
+  {
+    "key": "m937f6e0d",
+    "section": "admin",
+    "source": "Translated description"
+  },
+  {
+    "key": "m6d77af71",
+    "section": "admin",
+    "source": "Translated plan terms"
+  },
+  {
+    "key": "mfbbc8b57",
+    "section": "admin",
+    "source": "Translated risk disclosure"
+  },
+  {
+    "key": "mdef6c7ee",
+    "section": "admin",
+    "source": "Translation language"
+  },
+  {
+    "key": "mdccf4975",
+    "section": "server",
+    "source": "Translation source fingerprint"
+  },
+  {
+    "key": "m8cb9ad17",
+    "section": "public",
+    "source": "Transparency"
+  },
+  {
+    "key": "m4560b89d",
+    "section": "server",
+    "source": "Treasury confirmed no payment was sent. Waiting for the exchange order to expire."
+  },
+  {
+    "key": "m2958c237",
+    "section": "server",
+    "source": "Treasury funding needs reconciliation. Check the existing transfer before sending again."
+  },
+  {
+    "key": "mc165a896",
+    "section": "admin",
+    "source": "Treasury payments require an administrator to send funds and record the transaction."
+  },
+  {
+    "key": "m3dc321ca",
+    "section": "server",
+    "source": "Tron (TRC20)"
+  },
+  {
+    "key": "m939da183",
+    "section": "account",
+    "source": "Trust Wallet ↗"
+  },
+  {
+    "key": "m213e90fa",
+    "section": "common",
+    "source": "Try again"
+  },
+  {
+    "key": "m706ddafd",
+    "section": "account",
+    "source": "Turkish Presentation"
+  },
+  {
+    "key": "m68cad341",
+    "section": "common",
+    "source": "Two-factor authentication"
+  },
+  {
+    "key": "m6e2d9298",
+    "section": "common",
+    "source": "Two-factor authentication disabled. Other devices have been signed out."
+  },
+  {
+    "key": "mf9d47380",
+    "section": "server",
+    "source": "Two-factor authentication is already enabled."
+  },
+  {
+    "key": "m210ab0af",
+    "section": "server",
+    "source": "Two-factor authentication is not enabled."
+  },
+  {
+    "key": "md155d06d",
+    "section": "common",
+    "source": "Type"
+  },
+  {
+    "key": "m4fd95202",
+    "section": "common",
+    "source": "Unable to load this page"
+  },
+  {
+    "key": "m06f362e9",
+    "section": "admin",
+    "source": "Unable to prepare the translation. Refresh and try again."
+  },
+  {
+    "key": "m07000a6f",
+    "section": "common",
+    "source": "Under review"
+  },
+  {
+    "key": "me9bc2305",
+    "section": "account",
+    "source": "Unfreeze Card"
+  },
+  {
+    "key": "md8e2d83e",
+    "section": "public",
+    "source": "United Arab Emirates"
+  },
+  {
+    "key": "m710317c3",
+    "section": "public",
+    "source": "United Kingdom"
+  },
+  {
+    "key": "m1c3065ac",
+    "section": "common",
+    "source": "United States"
+  },
+  {
+    "key": "m2d283a80",
+    "section": "admin",
+    "source": "Unlimited"
+  },
+  {
+    "key": "md17b0d01",
+    "section": "common",
+    "source": "Unlock your financial freedom with QFS. Discover innovative solutions for secure and efficient financial management."
+  },
+  {
+    "key": "m42f35940",
+    "section": "admin",
+    "source": "Up"
+  },
+  {
+    "key": "m7a822d57",
+    "section": "account",
+    "source": "Update verification"
+  },
+  {
+    "key": "mf9a8e512",
+    "section": "admin",
+    "source": "Updated live"
+  },
+  {
+    "key": "m330f3d59",
+    "section": "account",
+    "source": "Updating card…"
+  },
+  {
+    "key": "m9f0e51b3",
+    "section": "server",
+    "source": "Upload all required documents before submitting."
+  },
+  {
+    "key": "m936c2d76",
+    "section": "account",
+    "source": "Upload clear, uncropped images. JPG, PNG, or PDF, up to 3 MB per file. Your face photo must be JPG or PNG."
+  },
+  {
+    "key": "m8a7352e1",
+    "section": "admin",
+    "source": "Upload documents in the Documents section, then attach them to this plan."
+  },
+  {
+    "key": "ma3274dad",
+    "section": "account",
+    "source": "Uploaded securely"
+  },
+  {
+    "key": "mc659d18b",
+    "section": "account",
+    "source": "Uploading document…"
+  },
+  {
+    "key": "m4b41cf7b",
+    "section": "account",
+    "source": "Urdu Presentation"
+  },
+  {
+    "key": "m3709bc1c",
+    "section": "common",
+    "source": "USD account"
+  },
+  {
+    "key": "m3befaf14",
+    "section": "account",
+    "source": "USD account and estimated crypto value, including invested principal."
+  },
+  {
+    "key": "mbd36bfd2",
+    "section": "account",
+    "source": "USD account and estimated crypto value. Reserved funds and invested principal are excluded."
+  },
+  {
+    "key": "m4102db21",
+    "section": "admin",
+    "source": "USD account balances"
+  },
+  {
+    "key": "m77d4dc09",
+    "section": "common",
+    "source": "USD amount"
+  },
+  {
+    "key": "mc3f3e072",
+    "section": "admin",
+    "source": "USD deposits"
+  },
+  {
+    "key": "m3f22378a",
+    "section": "account",
+    "source": "USD value"
+  },
+  {
+    "key": "me6c10d3d",
+    "section": "common",
+    "source": "USDT (BEP20)"
+  },
+  {
+    "key": "m9d130b9b",
+    "section": "server",
+    "source": "USDT (BEP20) receiving address"
+  },
+  {
+    "key": "mb4e90b60",
+    "section": "account",
+    "source": "USDT (ERC20)"
+  },
+  {
+    "key": "m3463fc1d",
+    "section": "common",
+    "source": "USDT (TRC20)"
+  },
+  {
+    "key": "m0d3538fb",
+    "section": "server",
+    "source": "USDT (TRC20) receiving address"
+  },
+  {
+    "key": "m6b93c24a",
+    "section": "common",
+    "source": "Use 10–72 characters, including a letter and a number. After reset, you’ll need to sign in again."
+  },
+  {
+    "key": "m06fea634",
+    "section": "server",
+    "source": "Use a site path or an https:// link"
+  },
+  {
+    "key": "m8d9dab1a",
+    "section": "server",
+    "source": "Use a site path or an https:// link for the flag"
+  },
+  {
+    "key": "m07bae248",
+    "section": "common",
+    "source": "Use at least 10 characters, including a letter and a number."
+  },
+  {
+    "key": "mc4c450a3",
+    "section": "account",
+    "source": "Use available balance"
+  },
+  {
+    "key": "m9fbba3a7",
+    "section": "admin",
+    "source": "Use or discard your translation edits before saving the plan."
+  },
+  {
+    "key": "mf3103a72",
+    "section": "admin",
+    "source": "Use reviewed translation"
+  },
+  {
+    "key": "m3a9e9423",
+    "section": "server",
+    "source": "Use Sign out to end your current session."
+  },
+  {
+    "key": "ma6b6e59d",
+    "section": "account",
+    "source": "Use the address or QR option for this wallet and network."
+  },
+  {
+    "key": "m475d27df",
+    "section": "server",
+    "source": "Use the crypto deposit flow to record the asset, network and quantity."
+  },
+  {
+    "key": "m0ef4027d",
+    "section": "server",
+    "source": "Use the crypto withdrawal flow to confirm the asset, network and quantity."
+  },
+  {
+    "key": "mf4e34461",
+    "section": "account",
+    "source": "Use the HTTPS website address to open this page in a wallet app."
+  },
+  {
+    "key": "m12c7e792",
+    "section": "admin",
+    "source": "Use wallets controlled by the platform. The source wallet also receives any exchange refund."
+  },
+  {
+    "key": "me0a63e12",
+    "section": "common",
+    "source": "User"
+  },
+  {
+    "key": "md2fcc429",
+    "section": "admin",
+    "source": "User activated"
+  },
+  {
+    "key": "m02065b46",
+    "section": "admin",
+    "source": "User Dashboard"
+  },
+  {
+    "key": "m36b52bf3",
+    "section": "server",
+    "source": "User not found"
+  },
+  {
+    "key": "m8b837f9a",
+    "section": "admin",
+    "source": "User sign in"
+  },
+  {
+    "key": "m9704c05b",
+    "section": "admin",
+    "source": "User suspended"
+  },
+  {
+    "key": "m06b432b3",
+    "section": "admin",
+    "source": "Users"
+  },
+  {
+    "key": "md147f96a",
+    "section": "admin",
+    "source": "Value"
+  },
+  {
+    "key": "m866c5079",
+    "section": "admin",
+    "source": "Verification — {value0}"
+  },
+  {
+    "key": "mb0400c17",
+    "section": "account",
+    "source": "Verification details saved."
+  },
+  {
+    "key": "m934a750a",
+    "section": "common",
+    "source": "Verification history"
+  },
+  {
+    "key": "m0d8ada1b",
+    "section": "server",
+    "source": "Verification is already submitted or approved."
+  },
+  {
+    "key": "md77a35a6",
+    "section": "server",
+    "source": "Verification needs changes"
+  },
+  {
+    "key": "m78a3f969",
+    "section": "admin",
+    "source": "Verification review completed. The user has been notified."
+  },
+  {
+    "key": "mb88b782e",
+    "section": "admin",
+    "source": "Verification status filter"
+  },
+  {
+    "key": "m26fa3eb1",
+    "section": "account",
+    "source": "Verification steps"
+  },
+  {
+    "key": "mc1fae1e6",
+    "section": "account",
+    "source": "Verification uploads are available on a real account."
+  },
+  {
+    "key": "m51a0b8e6",
+    "section": "admin",
+    "source": "Verified identity details remain in the identity verification flow. Balance changes use audited adjustments."
+  },
+  {
+    "key": "me6f8d893",
+    "section": "server",
+    "source": "Verified Investor"
+  },
+  {
+    "key": "mdf5e21de",
+    "section": "admin",
+    "source": "Verified refund quantity"
+  },
+  {
+    "key": "m25b3bfbb",
+    "section": "account",
+    "source": "Verify and connect"
+  },
+  {
+    "key": "m772b15a9",
+    "section": "admin",
+    "source": "Verify and recover order"
+  },
+  {
+    "key": "m6577a5d9",
+    "section": "common",
+    "source": "Verify and sign in"
+  },
+  {
+    "key": "mc801b566",
+    "section": "account",
+    "source": "Verify identity"
+  },
+  {
+    "key": "mf90773b9",
+    "section": "server",
+    "source": "Verify that no treasury payment was sent before releasing an expired order."
+  },
+  {
+    "key": "m7ca2de53",
+    "section": "admin",
+    "source": "Verify the recipient, network, asset, received quantity and confirmations before crediting this deposit."
+  },
+  {
+    "key": "m65072759",
+    "section": "server",
+    "source": "Verify the refund transaction and returned quantity before continuing."
+  },
+  {
+    "key": "mb9f9fa62",
+    "section": "server",
+    "source": "Verify the returned amount on the source network before recording a refund."
+  },
+  {
+    "key": "m44c1cf40",
+    "section": "account",
+    "source": "Verifying wallet ownership…"
+  },
+  {
+    "key": "mdc2b8200",
+    "section": "account",
+    "source": "Verifying…"
+  },
+  {
+    "key": "md7f94491",
+    "section": "common",
+    "source": "Version {version}"
+  },
+  {
+    "key": "m69122c13",
+    "section": "admin",
+    "source": "via"
+  },
+  {
+    "key": "mb2a9060a",
+    "section": "account",
+    "source": "Vietnamese Presentation"
+  },
+  {
+    "key": "me7c3d42b",
+    "section": "account",
+    "source": "View All"
+  },
+  {
+    "key": "mf69cb7a7",
+    "section": "account",
+    "source": "View All PDF Documents"
+  },
+  {
+    "key": "md4323edf",
+    "section": "server",
+    "source": "View applications"
+  },
+  {
+    "key": "m93699c91",
+    "section": "admin",
+    "source": "View audit log"
+  },
+  {
+    "key": "m88573813",
+    "section": "common",
+    "source": "View blockchain transaction ↗"
+  },
+  {
+    "key": "mbb2c5dd0",
+    "section": "server",
+    "source": "View History"
+  },
+  {
+    "key": "m080cbc5a",
+    "section": "server",
+    "source": "View Investments"
+  },
+  {
+    "key": "mec54b133",
+    "section": "server",
+    "source": "View Loans"
+  },
+  {
+    "key": "mffaeac6c",
+    "section": "account",
+    "source": "View notifications"
+  },
+  {
+    "key": "m64aa78ad",
+    "section": "account",
+    "source": "View original English materials"
+  },
+  {
+    "key": "m61912730",
+    "section": "common",
+    "source": "View Public Site"
+  },
+  {
+    "key": "m90363533",
+    "section": "admin",
+    "source": "View refund transaction ↗"
+  },
+  {
+    "key": "m76fba8ac",
+    "section": "admin",
+    "source": "View review"
+  },
+  {
+    "key": "mcd97288a",
+    "section": "account",
+    "source": "View status"
+  },
+  {
+    "key": "me469116d",
+    "section": "account",
+    "source": "View withdrawal details"
+  },
+  {
+    "key": "m9c177849",
+    "section": "server",
+    "source": "Wait before requesting another signing message."
+  },
+  {
+    "key": "m4ced320e",
+    "section": "server",
+    "source": "Wait for a pending swap to finish before starting another."
+  },
+  {
+    "key": "m926aae3e",
+    "section": "public",
+    "source": "Wait for approval"
+  },
+  {
+    "key": "m018248cc",
+    "section": "common",
+    "source": "Wallet"
+  },
+  {
+    "key": "meef6a4d3",
+    "section": "account",
+    "source": "Wallet Address or Details"
+  },
+  {
+    "key": "m95477c70",
+    "section": "account",
+    "source": "Wallet connected and verified."
+  },
+  {
+    "key": "m835eecf4",
+    "section": "account",
+    "source": "Wallet Connection"
+  },
+  {
+    "key": "m410287e3",
+    "section": "account",
+    "source": "Wallet disconnected."
+  },
+  {
+    "key": "m074c5462",
+    "section": "admin",
+    "source": "Wallet label"
+  },
+  {
+    "key": "mc82b206d",
+    "section": "server",
+    "source": "Wallet not found."
+  },
+  {
+    "key": "m93bfb47a",
+    "section": "account",
+    "source": "Wallet reconnected."
+  },
+  {
+    "key": "m574b6dc2",
+    "section": "public",
+    "source": "Wallet Security"
+  },
+  {
+    "key": "m56451067",
+    "section": "public",
+    "source": "Wallet Sync"
+  },
+  {
+    "key": "m0406d8d2",
+    "section": "account",
+    "source": "Wallet verification does not authorize a payment or transfer. Withdrawal requests require separate review."
+  },
+  {
+    "key": "me4ad03b2",
+    "section": "account",
+    "source": "We couldn’t load your account. Please try again."
+  },
+  {
+    "key": "mbd5b7943",
+    "section": "server",
+    "source": "We received a request to reset your account password. This private link expires in 30 minutes and can be used once."
+  },
+  {
+    "key": "mcb897846",
+    "section": "public",
+    "source": "Welcome Back"
+  },
+  {
+    "key": "mb73c1f08",
+    "section": "account",
+    "source": "Welcome Back, {value0} 👋"
+  },
+  {
+    "key": "m021e3a39",
+    "section": "admin",
+    "source": "When"
+  },
+  {
+    "key": "mb2b63962",
+    "section": "public",
+    "source": "Why Choose QFS"
+  },
+  {
+    "key": "m1dba6cb7",
+    "section": "common",
+    "source": "Withdraw"
+  },
+  {
+    "key": "mf2ae4f05",
+    "section": "account",
+    "source": "Withdraw from"
+  },
+  {
+    "key": "me2a2afd4",
+    "section": "account",
+    "source": "Withdraw To"
+  },
+  {
+    "key": "m53001b8a",
+    "section": "common",
+    "source": "Withdrawal"
+  },
+  {
+    "key": "m810920f9",
+    "section": "common",
+    "source": "Withdrawal approved"
+  },
+  {
+    "key": "me136b9e4",
+    "section": "server",
+    "source": "Withdrawal paid"
+  },
+  {
+    "key": "m07c17d24",
+    "section": "common",
+    "source": "Withdrawal rejected"
+  },
+  {
+    "key": "m80d5f1d3",
+    "section": "server",
+    "source": "Withdrawal request"
+  },
+  {
+    "key": "m24d6d600",
+    "section": "admin",
+    "source": "Withdrawal Requests"
+  },
+  {
+    "key": "me20f3663",
+    "section": "server",
+    "source": "Withdrawal reservation released ("
+  },
+  {
+    "key": "mc4c6eccf",
+    "section": "account",
+    "source": "Withdrawal submitted"
+  },
+  {
+    "key": "m290ec867",
+    "section": "account",
+    "source": "Withdrawal submitted. Status: Pending review. The amount is reserved from your available balance."
+  },
+  {
+    "key": "ma22c08fb",
+    "section": "common",
+    "source": "Withdrawals"
+  },
+  {
+    "key": "md5507854",
+    "section": "common",
+    "source": "Working…"
+  },
+  {
+    "key": "m24fa9a18",
+    "section": "common",
+    "source": "World Enrolled Users"
+  },
+  {
+    "key": "me1efc9a9",
+    "section": "account",
+    "source": "Write a Review"
+  },
+  {
+    "key": "m40999a58",
+    "section": "account",
+    "source": "XRP / USD"
+  },
+  {
+    "key": "madfecfbd",
+    "section": "common",
+    "source": "XRP destination tag"
+  },
+  {
+    "key": "mdca50bfe",
+    "section": "server",
+    "source": "XRP Ledger"
+  },
+  {
+    "key": "md950a04f",
+    "section": "server",
+    "source": "You already have a loan application under review."
+  },
+  {
+    "key": "m7cefb944",
+    "section": "account",
+    "source": "You can submit this deposit for manual review without a transaction hash."
+  },
+  {
+    "key": "m17ca2677",
+    "section": "server",
+    "source": "You can withdraw up to {amount} within the current 24-hour limit."
+  },
+  {
+    "key": "mad2943c9",
+    "section": "server",
+    "source": "You cannot change your own account from here"
+  },
+  {
+    "key": "m93e42513",
+    "section": "server",
+    "source": "You do not have access to this action."
+  },
+  {
+    "key": "m8df9f654",
+    "section": "server",
+    "source": "You earned a {amount, number, ::currency/USD} referral bonus from {name}."
+  },
+  {
+    "key": "m731a1c1f",
+    "section": "account",
+    "source": "You have no active investments."
+  },
+  {
+    "key": "m207a80c3",
+    "section": "account",
+    "source": "You have no notifications yet."
+  },
+  {
+    "key": "m70bb0909",
+    "section": "account",
+    "source": "You receive"
+  },
+  {
+    "key": "m581ff09f",
+    "section": "public",
+    "source": "Young happy woman doing shopping online with her laptop at home. Portrait of excited woman holding credit card and buy on an e-commerce site with copy space. Beautiful laughing girl paying online bills using debit card and computer."
+  },
+  {
+    "key": "m014f5db8",
+    "section": "server",
+    "source": "Your {plan} investment of {amount, number, ::currency/USD} is now active."
+  },
+  {
+    "key": "m3cb98b1b",
+    "section": "server",
+    "source": "Your {type} loan of {amount, number, ::currency/USD} has been approved. This approval has not credited your account."
+  },
+  {
+    "key": "m0fa9a181",
+    "section": "account",
+    "source": "Your account"
+  },
+  {
+    "key": "m504fd215",
+    "section": "server",
+    "source": "Your account has been suspended. Contact support."
+  },
+  {
+    "key": "m192c589b",
+    "section": "server",
+    "source": "Your account is active again."
+  },
+  {
+    "key": "m21f62d06",
+    "section": "account",
+    "source": "Your account overview."
+  },
+  {
+    "key": "mdd9dbeb7",
+    "section": "server",
+    "source": "Your account password was changed. Existing sessions have been signed out."
+  },
+  {
+    "key": "m891f538b",
+    "section": "server",
+    "source": "Your account role is now {role}."
+  },
+  {
+    "key": "md4a77199",
+    "section": "account",
+    "source": "Your applications and their current status."
+  },
+  {
+    "key": "mf33216ca",
+    "section": "account",
+    "source": "Your balance updates after the payment is confirmed."
+  },
+  {
+    "key": "mcc65aac4",
+    "section": "account",
+    "source": "Your crypto quantity is credited after the transfer is reviewed. Its USD value is fixed only when you invest."
+  },
+  {
+    "key": "m652fe575",
+    "section": "account",
+    "source": "Your crypto remains available. Request a fresh quote to try again."
+  },
+  {
+    "key": "m018f0468",
+    "section": "admin",
+    "source": "Your current password"
+  },
+  {
+    "key": "m291a828f",
+    "section": "server",
+    "source": "Your current password is incorrect."
+  },
+  {
+    "key": "m86a3e747",
+    "section": "server",
+    "source": "Your deposit has been approved and credited to your account."
+  },
+  {
+    "key": "ma0a61d16",
+    "section": "account",
+    "source": "Your deposit is saved for manual review. Your balance will update after admin confirmation."
+  },
+  {
+    "key": "ma87f146d",
+    "section": "account",
+    "source": "Your deposit reference"
+  },
+  {
+    "key": "m8097c1e0",
+    "section": "common",
+    "source": "Your deposit request was rejected."
+  },
+  {
+    "key": "m0180a6a4",
+    "section": "account",
+    "source": "Your details"
+  },
+  {
+    "key": "m60af1bd3",
+    "section": "common",
+    "source": "Your display details. Verified identity details are managed through identity verification."
+  },
+  {
+    "key": "m9d06a645",
+    "section": "common",
+    "source": "Your documents are awaiting admin review."
+  },
+  {
+    "key": "m9f139c47",
+    "section": "account",
+    "source": "Your documents are awaiting admin review. You’ll receive an account notification when a decision is made."
+  },
+  {
+    "key": "m023bc165",
+    "section": "common",
+    "source": "Your exchanged crypto is now available."
+  },
+  {
+    "key": "m009303b6",
+    "section": "common",
+    "source": "Your existing sessions have been signed out. Sign in with your new password."
+  },
+  {
+    "key": "m2020457a",
+    "section": "server",
+    "source": "Your face photo must be a JPG or PNG image."
+  },
+  {
+    "key": "m4e6375fb",
+    "section": "public",
+    "source": "Your Financial Freedom begins Here"
+  },
+  {
+    "key": "m4336b65b",
+    "section": "common",
+    "source": "Your Financial Freedom Begins Here"
+  },
+  {
+    "key": "ma4c4c16f",
+    "section": "public",
+    "source": "Your first name"
+  },
+  {
+    "key": "me7db5514",
+    "section": "account",
+    "source": "Your funds are reserved while the withdrawal is reviewed. The payout transaction will appear in funding activity once paid."
+  },
+  {
+    "key": "m0c368896",
+    "section": "account",
+    "source": "Your identity documents have been approved by the review team."
+  },
+  {
+    "key": "m172eff64",
+    "section": "server",
+    "source": "Your identity documents were approved."
+  },
+  {
+    "key": "mf9df0075",
+    "section": "public",
+    "source": "Your last name"
+  },
+  {
+    "key": "me8482f67",
+    "section": "server",
+    "source": "Your loan application was rejected."
+  },
+  {
+    "key": "m157ac629",
+    "section": "account",
+    "source": "Your Occupation"
+  },
+  {
+    "key": "m53ffb5d3",
+    "section": "server",
+    "source": "Your password has been changed. Sign in with your new password."
+  },
+  {
+    "key": "m5c282135",
+    "section": "server",
+    "source": "Your password was changed and other sessions were signed out."
+  },
+  {
+    "key": "m4e7a3b16",
+    "section": "server",
+    "source": "Your password was reset and existing sessions were signed out. Contact support if this was not you."
+  },
+  {
+    "key": "me8c5803a",
+    "section": "server",
+    "source": "Your QFS password was changed"
+  },
+  {
+    "key": "m520dd2c1",
+    "section": "account",
+    "source": "Your referral link"
+  },
+  {
+    "key": "mc48387fb",
+    "section": "account",
+    "source": "Your request was saved. The latest balance is temporarily unavailable; do not submit it again."
+  },
+  {
+    "key": "mc1b91016",
+    "section": "account",
+    "source": "Your review"
+  },
+  {
+    "key": "mfbe14fab",
+    "section": "account",
+    "source": "Your review appears here after approval."
+  },
+  {
+    "key": "m086537a3",
+    "section": "account",
+    "source": "Your review was submitted and is awaiting moderation."
+  },
+  {
+    "key": "m2175097b",
+    "section": "account",
+    "source": "Your source crypto is reserved. The exchanged crypto becomes available after settlement."
+  },
+  {
+    "key": "mcc98d06f",
+    "section": "server",
+    "source": "Your two-factor authentication settings changed. Other sessions were signed out."
+  },
+  {
+    "key": "m339f0218",
+    "section": "account",
+    "source": "Your verification needs an update"
+  },
+  {
+    "key": "m1edf1ae3",
+    "section": "account",
+    "source": "Your wallet is on chain"
+  },
+  {
+    "key": "m8de92464",
+    "section": "account",
+    "source": "Your wallets"
+  },
+  {
+    "key": "m3db4afe0",
+    "section": "account",
+    "source": "Your wallets could not be loaded."
+  },
+  {
+    "key": "m7b9df8c1",
+    "section": "common",
+    "source": "Your withdrawal has been approved and paid out."
+  },
+  {
+    "key": "mbf36a117",
+    "section": "common",
+    "source": "Your withdrawal request was rejected and funds returned to your balance."
+  }
+]

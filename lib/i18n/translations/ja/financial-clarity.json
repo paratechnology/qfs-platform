@@ -1,0 +1,8 @@
+{
+  "Profit is based on the original principal and does not compound automatically. Monthly periods follow the start date; accrual advances in full hours.": "利益は当初の元本に基づき、自動的に複利運用されることはありません。月ごとの期間は投資開始日を基準とし、利益は経過した丸一時間ごとに計上されます。",
+  "Principal was already released. No duplicate return was made.": "元本はすでに利用可能残高に戻されています。重複した返還は行っていません。",
+  "All scheduled profit is paid. Your principal is awaiting admin release.": "予定された利益はすべて支払済みです。元本は管理者による利用制限の解除を待っています。",
+  "Crypto balance": "暗号資産残高",
+  "Portfolio balance": "ポートフォリオ残高",
+  "USD account and estimated crypto value, including invested principal.": "投資元本を含む、USD口座残高と暗号資産の推定価値。"
+}

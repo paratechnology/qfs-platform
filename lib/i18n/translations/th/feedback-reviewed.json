@@ -1,0 +1,6 @@
+{
+  "Account registration successful.": "สร้างบัญชีสำเร็จแล้ว",
+  "Click here to log in": "คลิกที่นี่เพื่อเข้าสู่ระบบ",
+  "The loan was approved. This decision does not disburse funds to the account.": "สินเชื่อได้รับการอนุมัติแล้ว การอนุมัตินี้ยังไม่ได้โอนเงินเข้าบัญชี",
+  "Your request was saved. The latest balance is temporarily unavailable; do not submit it again.": "บันทึกคำขอของคุณแล้ว ขณะนี้ไม่สามารถแสดงยอดเงินล่าสุดได้ชั่วคราว โปรดอย่าส่งคำขอซ้ำ"
+}

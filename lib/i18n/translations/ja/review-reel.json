@@ -1,0 +1,8 @@
+{
+  "Play reviews": "レビューの自動再生を開始",
+  "Pause reviews": "レビューの自動再生を一時停止",
+  "Previous review": "前のレビュー",
+  "Next review": "次のレビュー",
+  "Read all reviews": "すべてのレビューを読む",
+  "Review {current} of {total}": "全 {total} 件中 {current} 件目のレビュー"
+}

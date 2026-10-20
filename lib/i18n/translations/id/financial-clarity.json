@@ -1,0 +1,8 @@
+{
+  "Profit is based on the original principal and does not compound automatically. Monthly periods follow the start date; accrual advances in full hours.": "Keuntungan dihitung dari pokok awal dan tidak otomatis diinvestasikan kembali untuk menghasilkan keuntungan majemuk. Periode bulanan mengikuti tanggal mulai; keuntungan hanya dihitung untuk jam yang telah berlalu penuh.",
+  "Principal was already released. No duplicate return was made.": "Pokok sudah dilepaskan. Tidak ada pengembalian kedua.",
+  "All scheduled profit is paid. Your principal is awaiting admin release.": "Semua keuntungan terjadwal sudah dibayarkan. Pokok menunggu pelepasan oleh admin.",
+  "Crypto balance": "Saldo kripto",
+  "Portfolio balance": "Saldo portofolio",
+  "USD account and estimated crypto value, including invested principal.": "Akun USD dan perkiraan nilai kripto, termasuk pokok yang diinvestasikan."
+}

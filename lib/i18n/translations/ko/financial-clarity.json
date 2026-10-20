@@ -1,0 +1,8 @@
+{
+  "Profit is based on the original principal and does not compound automatically. Monthly periods follow the start date; accrual advances in full hours.": "수익은 최초 투자 원금을 기준으로 계산되며 자동으로 복리 운용되지 않습니다. 월별 기간은 투자 시작일을 기준으로 하며, 경과한 시간이 한 시간을 채울 때마다 수익이 누적됩니다.",
+  "Principal was already released. No duplicate return was made.": "원금은 이미 사용 가능한 잔액으로 반환되었습니다. 중복 반환은 하지 않았습니다.",
+  "All scheduled profit is paid. Your principal is awaiting admin release.": "예정된 수익이 모두 지급되었습니다. 원금은 관리자의 사용 제한 해제를 기다리고 있습니다.",
+  "Crypto balance": "암호화폐 잔액",
+  "Portfolio balance": "포트폴리오 잔액",
+  "USD account and estimated crypto value, including invested principal.": "투자 원금을 포함한 USD 계정과 암호화폐의 추정 가치입니다."
+}

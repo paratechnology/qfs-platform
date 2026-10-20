@@ -1,0 +1,8 @@
+{
+  "Profit is based on the original principal and does not compound automatically. Monthly periods follow the start date; accrual advances in full hours.": "Zysk jest obliczany od pierwotnego kapitału i nie podlega automatycznej kapitalizacji. Okresy miesięczne są liczone od daty rozpoczęcia inwestycji; zysk nalicza się tylko za pełne godziny, które upłynęły.",
+  "Principal was already released. No duplicate return was made.": "Kapitał został już uwolniony. Nie dokonano ponownego zwrotu.",
+  "All scheduled profit is paid. Your principal is awaiting admin release.": "Cały zaplanowany zysk został wypłacony. Kapitał czeka na uwolnienie przez administratora.",
+  "Crypto balance": "Saldo kryptowalut",
+  "Portfolio balance": "Saldo portfela",
+  "USD account and estimated crypto value, including invested principal.": "Konto w USD i szacunkowa wartość kryptowalut, w tym zainwestowany kapitał."
+}

@@ -1,0 +1,15 @@
+{
+  "Available to withdraw": "Beschikbaar voor opname",
+  "Estimated USD value: {value}": "Geschatte waarde in USD: {value}",
+  "Minimum withdrawal is {amount}.": "De minimale opname is {amount}.",
+  "Only the available balance on the selected network can be withdrawn. Reserved funds are excluded.": "Alleen het beschikbare saldo op het geselecteerde netwerk kan worden opgenomen. Gereserveerde bedragen zijn uitgesloten.",
+  "QR rendering unavailable": "QR-code kan niet worden gemaakt",
+  "This withdrawal uses your USD account to pay out in the selected crypto asset.": "Deze opname gebruikt uw USD-rekening en wordt uitbetaald in de geselecteerde cryptovaluta.",
+  "Use available balance": "Beschikbaar saldo gebruiken",
+  "You can withdraw up to {amount} within the current 24-hour limit.": "Binnen de huidige limiet van 24 uur kunt u maximaal {amount} opnemen.",
+  "Enter a Tron (TRC20) address beginning with T.": "Voer een Tron-adres (TRC20) in dat begint met T.",
+  "Available balance": "Beschikbaar saldo",
+  "USD account and estimated crypto value. Reserved funds and invested principal are excluded.": "USD-rekening en geschatte cryptowaarde. Gereserveerde middelen en belegd kapitaal zijn uitgesloten.",
+  "Illustrative reviews": "Voorbeeldbeoordelingen",
+  "Edit receiving wallet": "Ontvangstwallet bewerken"
+}

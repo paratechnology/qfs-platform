@@ -1,0 +1,15 @@
+{
+  "Available to withdraw": "Çekilebilir bakiye",
+  "Estimated USD value: {value}": "Tahmini USD değeri: {value}",
+  "Minimum withdrawal is {amount}.": "Minimum çekim tutarı {amount}.",
+  "Only the available balance on the selected network can be withdrawn. Reserved funds are excluded.": "Yalnızca seçilen ağdaki kullanılabilir bakiye çekilebilir. Ayrılmış tutarlar buna dahil değildir.",
+  "QR rendering unavailable": "QR kodu oluşturulamıyor",
+  "This withdrawal uses your USD account to pay out in the selected crypto asset.": "Bu çekim, seçilen kripto varlıkla ödeme yapmak için USD hesabınızı kullanır.",
+  "Use available balance": "Kullanılabilir bakiyeyi kullan",
+  "You can withdraw up to {amount} within the current 24-hour limit.": "Mevcut 24 saatlik limit kapsamında en fazla {amount} çekebilirsiniz.",
+  "Enter a Tron (TRC20) address beginning with T.": "T ile başlayan bir Tron (TRC20) adresi girin.",
+  "Available balance": "Kullanılabilir bakiye",
+  "USD account and estimated crypto value. Reserved funds and invested principal are excluded.": "USD hesabı ve tahmini kripto değeri. Rezerve edilen fonlar ve yatırılan anapara hariçtir.",
+  "Illustrative reviews": "Örnek değerlendirmeler",
+  "Edit receiving wallet": "Alıcı cüzdanı düzenle"
+}

@@ -1,0 +1,15 @@
+{
+  "Available to withdraw": "Có thể rút",
+  "Estimated USD value: {value}": "Giá trị USD ước tính: {value}",
+  "Minimum withdrawal is {amount}.": "Số tiền rút tối thiểu là {amount}.",
+  "Only the available balance on the selected network can be withdrawn. Reserved funds are excluded.": "Chỉ có thể rút số dư khả dụng trên mạng đã chọn. Không bao gồm tiền đang được giữ lại.",
+  "QR rendering unavailable": "Không thể tạo mã QR",
+  "This withdrawal uses your USD account to pay out in the selected crypto asset.": "Lệnh rút này sử dụng tài khoản USD của bạn để thanh toán bằng tài sản mã hóa đã chọn.",
+  "Use available balance": "Sử dụng số dư khả dụng",
+  "You can withdraw up to {amount} within the current 24-hour limit.": "Bạn có thể rút tối đa {amount} trong giới hạn 24 giờ hiện tại.",
+  "Enter a Tron (TRC20) address beginning with T.": "Nhập địa chỉ Tron (TRC20) bắt đầu bằng T.",
+  "Available balance": "Số dư khả dụng",
+  "USD account and estimated crypto value. Reserved funds and invested principal are excluded.": "Tài khoản USD và giá trị tiền mã hóa ước tính. Không bao gồm tiền đã giữ chỗ và vốn đã đầu tư.",
+  "Illustrative reviews": "Đánh giá minh họa",
+  "Edit receiving wallet": "Chỉnh sửa ví nhận"
+}

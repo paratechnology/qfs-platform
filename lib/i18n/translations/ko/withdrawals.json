@@ -1,0 +1,15 @@
+{
+  "Available to withdraw": "출금 가능 잔액",
+  "Estimated USD value: {value}": "예상 USD 가치: {value}",
+  "Minimum withdrawal is {amount}.": "최소 출금액은 {amount}입니다.",
+  "Only the available balance on the selected network can be withdrawn. Reserved funds are excluded.": "선택한 네트워크의 사용 가능한 잔액만 출금할 수 있습니다. 예약된 자금은 제외됩니다.",
+  "QR rendering unavailable": "QR 코드를 생성할 수 없습니다",
+  "This withdrawal uses your USD account to pay out in the selected crypto asset.": "이 출금은 USD 계좌를 사용하여 선택한 암호화폐로 지급됩니다.",
+  "Use available balance": "사용 가능한 잔액 사용",
+  "You can withdraw up to {amount} within the current 24-hour limit.": "현재 24시간 한도 내에서 최대 {amount}까지 출금할 수 있습니다.",
+  "Enter a Tron (TRC20) address beginning with T.": "T로 시작하는 Tron(TRC20) 주소를 입력하세요.",
+  "Available balance": "사용 가능한 잔액",
+  "USD account and estimated crypto value. Reserved funds and invested principal are excluded.": "USD 계좌 및 암호화폐의 예상 가치입니다. 예약된 자금과 투자 원금은 제외됩니다.",
+  "Illustrative reviews": "예시 리뷰",
+  "Edit receiving wallet": "수신 지갑 편집"
+}

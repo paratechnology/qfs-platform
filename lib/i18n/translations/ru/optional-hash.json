@@ -1,0 +1,5 @@
+{
+  "Transaction hash (optional)": "Хеш транзакции (необязательно)",
+  "Download QR code": "Скачать QR-код",
+  "Leave blank to approve without a transaction hash. Correct or clear an incorrect reference before approving.": "Оставьте поле пустым, чтобы подтвердить без хеша транзакции. Исправьте или удалите неверный идентификатор перед подтверждением."
+}

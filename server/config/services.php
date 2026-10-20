@@ -1,0 +1,45 @@
+<?php
+
+return [
+    'swaps' => [
+        'enabled' => env('SWAPS_ENABLED', false),
+        'api_key' => env('CHANGELLY_API_KEY', ''),
+        'private_key_path' => env('CHANGELLY_PRIVATE_KEY_PATH', ''),
+        'treasury_url' => env('SWAP_TREASURY_URL', ''),
+        'treasury_token' => env('SWAP_TREASURY_TOKEN', ''),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Third Party Services
+    |--------------------------------------------------------------------------
+    |
+    | This file is for storing the credentials for third party services such
+    | as Resend, Postmark, AWS, and more. This file provides the de facto
+    | location for this type of information, allowing packages to have
+    | a conventional file to locate the various service credentials.
+    |
+    */
+
+    'postmark' => [
+        'key' => env('POSTMARK_API_KEY'),
+    ],
+
+    'resend' => [
+        'key' => env('RESEND_API_KEY'),
+    ],
+
+    'ses' => [
+        'key' => env('AWS_ACCESS_KEY_ID'),
+        'secret' => env('AWS_SECRET_ACCESS_KEY'),
+        'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
+    ],
+
+    'slack' => [
+        'notifications' => [
+            'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),
+            'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
+        ],
+    ],
+
+];

@@ -1,0 +1,4 @@
+{
+  "Transaction hash (optional)": "Hachage de transaction (facultatif)",
+  "Leave blank to approve without a transaction hash. Correct or clear an incorrect reference before approving.": "Laissez ce champ vide pour approuver sans hachage de transaction. Corrigez ou effacez une référence incorrecte avant d’approuver."
+}

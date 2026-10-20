@@ -1,0 +1,36 @@
+# Netlify deployment for QFS.
+#
+# Next serves the frontend. Laravel owns API migrations and scheduled earnings;
+# its deployment must be configured separately before publishing this frontend.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Prisma needs openssl on some Linux images.
+  PRISMA_SKIP_POSTINSTALL_GENERATE = "false"
+  # Next reads this to decide dev-vs-prod behaviour in next.config.mjs.
+  NODE_ENV = "production"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# The Next.js serverless function.
+[functions."___NEXTSERVER"]
+  node_bundler = "esbuild"
+
+[build.processing]
+  skip_processing = false
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-DNS-Prefetch-Control = "off"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"

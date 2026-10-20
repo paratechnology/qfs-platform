@@ -1,0 +1,15 @@
+{
+  "Available to withdraw": "Tersedia untuk ditarik",
+  "Estimated USD value: {value}": "Perkiraan nilai dalam USD: {value}",
+  "Minimum withdrawal is {amount}.": "Penarikan minimum adalah {amount}.",
+  "Only the available balance on the selected network can be withdrawn. Reserved funds are excluded.": "Hanya saldo yang tersedia di jaringan terpilih yang dapat ditarik. Dana yang dicadangkan tidak termasuk.",
+  "QR rendering unavailable": "Kode QR tidak dapat dibuat",
+  "This withdrawal uses your USD account to pay out in the selected crypto asset.": "Penarikan ini menggunakan akun USD Anda untuk pembayaran dalam aset kripto yang dipilih.",
+  "Use available balance": "Gunakan saldo tersedia",
+  "You can withdraw up to {amount} within the current 24-hour limit.": "Anda dapat menarik hingga {amount} dalam batas 24 jam saat ini.",
+  "Enter a Tron (TRC20) address beginning with T.": "Masukkan alamat Tron (TRC20) yang diawali T.",
+  "Available balance": "Saldo tersedia",
+  "USD account and estimated crypto value. Reserved funds and invested principal are excluded.": "Akun USD dan perkiraan nilai kripto. Dana yang dicadangkan dan modal yang diinvestasikan tidak termasuk.",
+  "Illustrative reviews": "Ulasan ilustratif",
+  "Edit receiving wallet": "Edit dompet penerima"
+}

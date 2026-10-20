@@ -1,0 +1,8 @@
+{
+  "Profit is based on the original principal and does not compound automatically. Monthly periods follow the start date; accrual advances in full hours.": "Прибыль рассчитывается от первоначальной основной суммы без автоматической капитализации. Месячные периоды отсчитываются от даты начала инвестиции; начисление производится только за полные прошедшие часы.",
+  "Principal was already released. No duplicate return was made.": "Основная сумма уже разблокирована. Повторного возврата не было.",
+  "All scheduled profit is paid. Your principal is awaiting admin release.": "Вся плановая прибыль выплачена. Основная сумма ожидает разблокировки администратором.",
+  "Crypto balance": "Криптовалютный баланс",
+  "Portfolio balance": "Баланс портфеля",
+  "USD account and estimated crypto value, including invested principal.": "Счёт в USD и оценочная стоимость криптовалюты, включая инвестированную основную сумму."
+}

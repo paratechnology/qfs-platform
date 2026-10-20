@@ -1,0 +1,15 @@
+{
+  "Available to withdraw": "ยอดที่ถอนได้",
+  "Estimated USD value: {value}": "มูลค่าโดยประมาณใน USD: {value}",
+  "Minimum withdrawal is {amount}.": "ยอดถอนขั้นต่ำคือ {amount}",
+  "Only the available balance on the selected network can be withdrawn. Reserved funds are excluded.": "ถอนได้เฉพาะยอดคงเหลือที่ใช้ได้บนเครือข่ายที่เลือก ไม่รวมเงินที่กันไว้",
+  "QR rendering unavailable": "ไม่สามารถสร้างรหัส QR ได้",
+  "This withdrawal uses your USD account to pay out in the selected crypto asset.": "การถอนนี้ใช้บัญชี USD ของคุณเพื่อจ่ายเป็นสินทรัพย์คริปโตที่เลือก",
+  "Use available balance": "ใช้ยอดคงเหลือที่มีอยู่",
+  "You can withdraw up to {amount} within the current 24-hour limit.": "คุณสามารถถอนได้สูงสุด {amount} ภายในวงเงิน 24 ชั่วโมงปัจจุบัน",
+  "Enter a Tron (TRC20) address beginning with T.": "ป้อนที่อยู่ Tron (TRC20) ที่ขึ้นต้นด้วย T",
+  "Available balance": "ยอดคงเหลือที่ใช้ได้",
+  "USD account and estimated crypto value. Reserved funds and invested principal are excluded.": "บัญชี USD และมูลค่าคริปโตโดยประมาณ ไม่รวมเงินที่กันไว้และเงินต้นที่ลงทุนแล้ว",
+  "Illustrative reviews": "รีวิวตัวอย่าง",
+  "Edit receiving wallet": "แก้ไขกระเป๋ารับเงิน"
+}
