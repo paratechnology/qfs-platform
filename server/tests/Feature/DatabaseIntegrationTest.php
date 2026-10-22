@@ -6,24 +6,35 @@ use App\Support\CryptoFunds;
 use App\Support\Qfs;
 use App\Support\SessionAuth;
 use Carbon\CarbonImmutable;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Schema;
 use Symfony\Component\Process\Process;
 use Tests\TestCase;
 
-class MySqlIntegrationTest extends TestCase
+class DatabaseIntegrationTest extends TestCase
 {
+    private ?string $sqliteFile = null;
+
     protected function setUp(): void
     {
         parent::setUp();
-        if (! in_array(DB::getDriverName(), ['mysql', 'mariadb'], true)) {
-            $this->markTestSkipped('Run against an isolated MySQL/MariaDB database ending in _test.');
+        if (DB::getDriverName() === 'sqlite' && DB::connection()->getDatabaseName() === ':memory:') {
+            $this->sqliteFile = sys_get_temp_dir().'/qfs-'.bin2hex(random_bytes(8)).'_test.sqlite';
+            touch($this->sqliteFile);
+            config()->set('database.connections.sqlite.database', $this->sqliteFile);
+            DB::purge('sqlite');
         }
-        if (! app()->environment('testing') || ! str_ends_with(DB::connection()->getDatabaseName(), '_test')) {
-            throw new \RuntimeException('Integration tests require APP_ENV=testing and a dedicated *_test database.');
+        $database = DB::connection()->getDatabaseName();
+        $isolated = DB::getDriverName() === 'sqlite'
+            ? str_ends_with($database, '_test.sqlite')
+            : str_ends_with($database, '_test');
+        if (! app()->environment('testing') || ! $isolated) {
+            throw new \RuntimeException('Integration tests require an isolated *_test database or *_test.sqlite file.');
         }
         $this->withCredentials();
         config()->set('qfs.session_secret', str_repeat('x', 64));
@@ -36,7 +47,17 @@ class MySqlIntegrationTest extends TestCase
     protected function tearDown(): void
     {
         CarbonImmutable::setTestNow();
+        if ($this->sqliteFile !== null) {
+            DB::disconnect('sqlite');
+        }
         parent::tearDown();
+        if ($this->sqliteFile !== null) {
+            foreach ([$this->sqliteFile, $this->sqliteFile.'-wal', $this->sqliteFile.'-shm'] as $file) {
+                if (file_exists($file)) {
+                    unlink($file);
+                }
+            }
+        }
     }
 
     private function member(string $id, string $role = 'USER', int $balance = 10000): string
@@ -64,6 +85,13 @@ class MySqlIntegrationTest extends TestCase
             DB::table('ReceivingWallet')->insert(['id' => 'wallet-'.$i, 'assetKey' => 'SOL', 'label' => 'Solana', 'address' => $address]);
         }
         $this->assertSame(2, DB::table('ReceivingWallet')->count());
+        DB::table('Transaction')->insert(['id' => 'transaction', 'userId' => 'member', 'type' => 'DEPOSIT', 'amountCents' => 100, 'reference' => 'FK-REBUILD']);
+        DB::table('LedgerEntry')->insert(['id' => 'ledger', 'accountId' => 'account-member', 'movement' => 'CREDIT', 'amountCents' => 100, 'balanceAfterCents' => 10100, 'txId' => 'transaction']);
+        Schema::table('LedgerEntry', fn (Blueprint $table) => $table->text('note')->nullable()->change());
+        $this->assertSame('transaction', DB::table('LedgerEntry')->value('txId'));
+        DB::table('Transaction')->where('id', 'transaction')->delete();
+        $this->assertNull(DB::table('LedgerEntry')->value('txId'));
+
         $this->expectException(UniqueConstraintViolationException::class);
         DB::table('ReceivingWallet')->insert(['id' => 'duplicate', 'assetKey' => 'SOL', 'label' => 'Solana', 'address' => 'CaseSensitiveAddress']);
     }
@@ -100,21 +128,21 @@ class MySqlIntegrationTest extends TestCase
         $this->assertStringContainsString('Terms', DB::table('Investment')->value('materials'));
     }
 
-    /** Start two independent PHP processes together so InnoDB row locks are exercised. */
+    /** Start independent writers together to exercise each engine's actual locking. */
     private function race(array $jobs): array
     {
         $barrier = tempnam(sys_get_temp_dir(), 'qfs-race-');
         unlink($barrier);
         $connection = DB::connection()->getConfig();
-        $environment = ['APP_ENV' => 'testing', 'DB_CONNECTION' => DB::getDriverName(), 'DB_HOST' => $connection['host'],
-            'DB_PORT' => (string) $connection['port'], 'DB_DATABASE' => $connection['database'], 'DB_USERNAME' => $connection['username'],
-            'DB_PASSWORD' => $connection['password'], 'DB_URL' => '', 'QFS_SESSION_SECRET' => str_repeat('x', 64),
+        $environment = ['APP_ENV' => 'testing', 'DB_CONNECTION' => DB::getDriverName(), 'DB_HOST' => ($connection['host'] ?? ''),
+            'DB_PORT' => (string) ($connection['port'] ?? ''), 'DB_DATABASE' => $connection['database'], 'DB_USERNAME' => ($connection['username'] ?? ''),
+            'DB_PASSWORD' => ($connection['password'] ?? ''), 'DB_URL' => '', 'QFS_SESSION_SECRET' => str_repeat('x', 64),
             'QFS_ACCOUNT_EMAILS' => 'false', 'CACHE_STORE' => 'array', 'QFS_TEST_BARRIER' => $barrier];
         $script = <<<'PHP'
 require 'vendor/autoload.php';
 $app = require 'bootstrap/app.php';
 $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
-if (! app()->environment('testing') || ! str_ends_with(Illuminate\Support\Facades\DB::connection()->getDatabaseName(), '_test')) throw new RuntimeException('Test database required');
+if (! app()->environment('testing') || ! preg_match('/_test(?:\.sqlite)?$/', Illuminate\Support\Facades\DB::connection()->getDatabaseName())) throw new RuntimeException('Test database required');
 $job = json_decode(getenv('QFS_TEST_JOB'), true, 512, JSON_THROW_ON_ERROR);
 echo "READY\n";
 while (! file_exists(getenv('QFS_TEST_BARRIER'))) usleep(20000);
