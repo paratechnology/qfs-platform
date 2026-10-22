@@ -1,6 +1,6 @@
 # QFS
 
-Next.js 15 / React 19 frontend and Laravel 12 API. Local development uses SQLite; cPanel deployment supports MySQL 8.0.13+ or MariaDB 10.11+.
+Next.js 15 / React 19 frontend and Laravel 12 API. Local development uses SQLite; cPanel deployment supports MySQL 8.0.13+.
 All authentication, database access, financial operations, and scheduled processing live in Laravel. Next.js renders the public website, user dashboard, and admin console and proxies `/api/*` to Laravel.
 
 ## Code map
@@ -35,7 +35,7 @@ The frontend opens at http://localhost:3000. Only Laravel receives database cred
 
 ## Hosting on cPanel
 
-- Confirm PHP 8.3+, PDO MySQL, and the actual host database version. Set `DB_CONNECTION=mysql` (or `mariadb`), fill the host's `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`, and keep `DB_COLLATION=utf8mb4_bin` with strict mode and InnoDB. Shared migrations and financial flows are tested with local SQLite and MariaDB 11.4.
+- Confirm PHP 8.3+, PDO MySQL, and the actual host database version. Set `DB_CONNECTION=mysql`, fill the host's `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`, and keep `DB_COLLATION=utf8mb4_bin` with strict mode and InnoDB. Shared migrations and financial flows are verified on local SQLite. Run the database integration suite against the host's actual MySQL version before deployment.
 - Next.js requires Node.js application hosting or a separate frontend host. A PHP-only cPanel plan cannot run this frontend by uploading static files.
 - Deploy Laravel with the document root pointing at `server/public`. Keep `.env`, `storage/app/private`, source, and vendor files outside publicly served paths.
 - Fill `DB_*`, `APP_URL`, `QFS_PUBLIC_URL`, `QFS_ALLOWED_ORIGINS`, keys, SMTP, and optional provider credentials. Set `APP_ENV=production`, `APP_DEBUG=false`, and `QFS_DEV_LOGIN=false`.
@@ -54,7 +54,7 @@ For a database move, pause writes and scheduled workers, take final backups, imp
 - `npm run lint`: TypeScript checking.
 - `npm run build`: production frontend build.
 - `cd server; php artisan test`: isolated SQLite feature tests and full-schema/concurrency tests on disposable SQLite files. The application database is never used.
-- `cd server; php artisan test --filter=DatabaseIntegrationTest`: full migrations, precision/collation, search, financial requests, reserved-name foreign-key rebuilding, and concurrent approvals/withdrawals/earnings. Defaults to disposable `*_test.sqlite` files. For cPanel-style testing, supply `APP_ENV=testing` and MySQL/MariaDB `DB_*` process environment values for a restricted database ending in `_test`. This suite recreates only that isolated schema and refuses the application database.
+- `cd server; php artisan test --filter=DatabaseIntegrationTest`: full migrations, precision/collation, search, financial requests, reserved-name foreign-key rebuilding, and concurrent approvals/withdrawals/earnings. Defaults to disposable `*_test.sqlite` files. For cPanel-style testing, supply `APP_ENV=testing` and MySQL `DB_*` process environment values for a restricted database ending in `_test`. This suite recreates only that isolated schema and refuses the application database.
 - Browser scripts use fixtures for financial writes and require a local check session/account. They do not send cryptocurrency.
 
 Migrations remain in execution order because they are the supported installation path, not an alternative historical backend. The application has one backend and one migration owner.

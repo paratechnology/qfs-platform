@@ -79,6 +79,6 @@
     "prefer-stable": true,
     "suggest": {
         "ext-pdo_sqlite": "Required for local SQLite development.",
-        "ext-pdo_mysql": "Required when deploying with MySQL/MariaDB."
+        "ext-pdo_mysql": "Required when deploying with MySQL."
     }
 }
