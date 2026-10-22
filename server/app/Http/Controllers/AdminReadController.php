@@ -7,6 +7,7 @@ use App\Support\CryptoAssets;
 use App\Support\CryptoFunds;
 use App\Support\Guard;
 use App\Support\Qfs;
+use App\Support\Search;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -58,13 +59,13 @@ final class AdminReadController
         Guard::admin($request);
         $query = DB::table('User');
         if ($search = trim((string) $request->query('search', ''))) {
-            $like = '%'.$search.'%';
+            $like = Search::pattern($search);
             $query->where(function ($q) use ($like) {
                 foreach (['name', 'email', 'phone', 'referralCode'] as $column) {
-                    $q->orWhere($column, 'ilike', $like);
+                    Search::match($q, $column, $like, 'or');
                 }
                 $q->orWhereExists(fn ($sub) => $sub->selectRaw('1')->from('WalletConnection')
-                    ->whereColumn('WalletConnection.userId', 'User.id')->where('address', 'ilike', $like));
+                    ->whereColumn('WalletConnection.userId', 'User.id')->where(fn ($q) => Search::match($q, 'address', $like)));
             });
         }
         foreach (['role', 'status'] as $filter) {

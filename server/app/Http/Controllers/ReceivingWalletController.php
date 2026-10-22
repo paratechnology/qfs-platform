@@ -8,6 +8,7 @@ use App\Support\CryptoAssets;
 use App\Support\Guard;
 use App\Support\Qfs;
 use Illuminate\Database\QueryException;
+use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -58,7 +59,7 @@ final class ReceivingWalletController
                 return DB::table('ReceivingWallet')->where('id', $key)->first();
             });
         } catch (QueryException $error) {
-            if (in_array((string) $error->getCode(), ['23505', '23000'], true)) {
+            if ($error instanceof UniqueConstraintViolationException) {
                 Guard::fail('CONFLICT', 'This receiving wallet already exists.', 409);
             }
             throw $error;

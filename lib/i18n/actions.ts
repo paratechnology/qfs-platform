@@ -1,5 +1,6 @@
 "use server";
 
+import { laravelUrl } from "../backend";
 import { cookies } from "next/headers";
 import { isAvailableLocale, LOCALE_COOKIE } from "./locales";
 
@@ -7,8 +8,8 @@ export async function setLanguage(locale: string) {
   if (!isAvailableLocale(locale)) throw new Error("Unsupported language");
   const store = await cookies();
   const token = store.get("qfs_session")?.value;
-  if (token && process.env.LARAVEL_API_URL) {
-    const response = await fetch(`${process.env.LARAVEL_API_URL.replace(/\/$/, "")}/api/auth/locale`, {
+  if (token) {
+    const response = await fetch(laravelUrl("/api/auth/locale"), {
       method: "POST", cache: "no-store", headers: {
         "Content-Type": "application/json", Cookie: `qfs_session=${encodeURIComponent(token)}`, "Accept-Language": locale,
       }, body: JSON.stringify({locale}),

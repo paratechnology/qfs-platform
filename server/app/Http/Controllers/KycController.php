@@ -204,12 +204,12 @@ final class KycController
             ->whereIn('KycSubmission.status', ['PENDING', 'NEEDS_CHANGES', 'APPROVED'])
             ->when(($data['status'] ?? 'ALL') !== 'ALL', fn ($query) => $query->where('KycSubmission.status', $data['status']))
             ->when(trim($data['search'] ?? '') !== '', fn ($query) => $query->where(fn ($query) => $query
-                ->whereRaw('LOWER("User"."email") LIKE ? ESCAPE \'!\'', [$search])
-                ->orWhereRaw('LOWER("User"."name") LIKE ? ESCAPE \'!\'', [$search])));
+                ->whereRaw('LOWER('.DB::getQueryGrammar()->wrap('User.email').") LIKE ? ESCAPE '!'", [$search])
+                ->orWhereRaw('LOWER('.DB::getQueryGrammar()->wrap('User.name').") LIKE ? ESCAPE '!'", [$search])));
         $total = (clone $query)->count();
         $page = min((int) ($data['page'] ?? 1), max(1, (int) ceil($total / 25)));
         $rows = $query
-            ->orderByRaw('CASE WHEN "KycSubmission"."status" = ? THEN 0 ELSE 1 END', ['PENDING'])
+            ->orderByRaw('CASE WHEN '.DB::getQueryGrammar()->wrap('KycSubmission.status').' = ? THEN 0 ELSE 1 END', ['PENDING'])
             ->orderByDesc('KycSubmission.submittedAt')->orderBy('KycSubmission.id')->offset(($page - 1) * 25)->limit(25)
             ->select('KycSubmission.*', 'User.name as userName', 'User.email')->get();
 

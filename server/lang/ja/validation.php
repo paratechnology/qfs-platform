@@ -11,9 +11,7 @@ return [
     'alpha_num' => ':attribute フィールドには文字と数字のみを含める必要があります。',
     'any_of' => ':attribute フィールドが無効です。',
     'array' => ':attribute フィールドは配列でなければなりません。',
-    'array_keys' => ':attribute フィールドには、キー :values のみを含める必要があります。',
     'ascii' => ':attribute フィールドには、半角英数字と記号のみを含める必要があります。',
-    'base64' => ':attribute フィールドは有効な Base64 文字列である必要があります。',
     'before' => ':attribute フィールドは :date より前の日付である必要があります。',
     'before_or_equal' => ':attribute フィールドは、:date 以前の日付である必要があります。',
     'between' => [

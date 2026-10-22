@@ -50,20 +50,12 @@ const nextConfig = {
       { source: "/admin", destination: "/user/admin" },
       { source: "/admin/:rest*", destination: "/user/admin/:rest*" },
     ];
-    if (!backend) {
-      if (isProd) throw new Error("LARAVEL_API_URL is required for a production build");
-      return { beforeFiles: [], afterFiles: adminAliases, fallback: [] };
-    }
-    const paths = ["auth", "dashboard", "deposits", "withdrawals", "investments",
-      "loans", "cards", "markets", "documents", "reviews", "notifications",
-      "referrals", "transactions", "cron", "admin", "search", "wallet", "kyc", "account"];
-    return { beforeFiles: paths.map((path) => ({
-      source: `/api/${path}/:rest*`,
-      destination: `${backend}/api/${path}/:rest*`,
-    })).concat(paths.map((path) => ({
-      source: `/api/${path}`,
-      destination: `${backend}/api/${path}`,
-    }))), afterFiles: adminAliases, fallback: [] };
+    if (!backend) throw new Error("LARAVEL_API_URL must point to the Laravel API.");
+    return {
+      beforeFiles: [{ source: "/api/:path*", destination: `${backend}/api/:path*` }],
+      afterFiles: adminAliases,
+      fallback: [],
+    };
   },
   async redirects() {
     return [

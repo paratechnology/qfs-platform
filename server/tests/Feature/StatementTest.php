@@ -32,7 +32,7 @@ class StatementTest extends TestCase
             $t->string('userId');
             $t->string('tokenHash');
             $t->timestamp('expiresAt');
-            $t->timestamp('createdAt')->useCurrent();
+            $t->timestamp('createdAt')->default('2026-10-16 00:00:00');
         });
         Schema::create('Account', function (Blueprint $t) {
             $t->string('id')->primary();
@@ -53,7 +53,7 @@ class StatementTest extends TestCase
             $t->string('quantityAtomic')->nullable();
             $t->text('note')->nullable();
             $t->text('meta')->nullable();
-            $t->timestamp('createdAt')->useCurrent();
+            $t->timestamp('createdAt')->default('2026-10-16 00:00:00');
         });
         Schema::create('Investment', function (Blueprint $t) {
             $t->string('id')->primary();
@@ -64,7 +64,7 @@ class StatementTest extends TestCase
             $t->integer('termMonths')->default(3);
             $t->string('payoutInterval')->default('HOURLY');
             $t->integer('paidOutCents')->default(0);
-            $t->timestamp('startDate')->useCurrent();
+            $t->timestamp('startDate')->default('2026-10-16 00:00:00');
             $t->timestamp('endDate')->nullable();
             $t->timestamp('principalReturnedAt')->nullable();
         });
@@ -99,7 +99,7 @@ class StatementTest extends TestCase
             $t->string('reference');
             $t->string('totalAfterAtomic');
             $t->string('reservedAfterAtomic');
-            $t->timestamp('createdAt')->useCurrent();
+            $t->timestamp('createdAt')->default('2026-10-16 00:00:00');
         });
         Schema::create('LedgerEntry', function (Blueprint $t) {
             $t->string('txId')->nullable();
@@ -107,7 +107,7 @@ class StatementTest extends TestCase
             $t->string('id')->primary();
             $t->string('accountId');
             $t->integer('balanceAfterCents');
-            $t->timestamp('createdAt')->useCurrent();
+            $t->timestamp('createdAt')->default('2026-10-16 00:00:00');
         });
         foreach (['user', 'admin'] as $id) {
             DB::table('User')->insert(['id' => $id, 'name' => $id, 'email' => $id.'@test.local', 'role' => $id === 'admin' ? 'ADMIN' : 'USER']);

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
@@ -38,7 +39,7 @@ return new class extends Migration
         Schema::table('InvestmentPlan', function (Blueprint $table) {
             $table->text('terms')->nullable();
             $table->text('riskDisclosure')->nullable();
-            $table->text('documentIds')->default('[]');
+            $table->text('documentIds')->default(new Expression("('[]')"));
         });
         Schema::table('Investment', function (Blueprint $table) {
             $table->text('materials')->nullable();

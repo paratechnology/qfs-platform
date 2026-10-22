@@ -11,9 +11,7 @@ return [
     'alpha_num' => 'يجب أن يحتوي الحقل :attribute على أحرف وأرقام فقط.',
     'any_of' => 'الحقل :attribute غير صالح.',
     'array' => 'يجب أن يكون الحقل :attribute مصفوفة.',
-    'array_keys' => 'يجب أن يحتوي الحقل :attribute على المفاتيح التالية فقط: :values.',
     'ascii' => 'يجب أن يحتوي الحقل :attribute على أحرف وأرقام ورموز أحادية البايت فقط.',
-    'base64' => 'يجب أن يكون الحقل :attribute نص Base64 صالحًا.',
     'before' => 'يجب أن يكون الحقل :attribute تاريخًا قبل :date.',
     'before_or_equal' => 'يجب أن يكون الحقل :attribute تاريخًا يوافق :date أو يأتي قبله.',
     'between' => [

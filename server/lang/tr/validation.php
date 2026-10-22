@@ -11,9 +11,7 @@ return [
     'alpha_num' => ':attribute alanı yalnızca harf ve rakam içermelidir.',
     'any_of' => ':attribute alanı geçersiz.',
     'array' => ':attribute alanı bir dizi olmalıdır.',
-    'array_keys' => ':attribute alanı yalnızca şu anahtarları içermelidir: :values.',
     'ascii' => ':attribute alanı yalnızca tek baytlık alfasayısal karakterler ve simgeler içermelidir.',
-    'base64' => ':attribute alanı geçerli bir Base64 dizisi olmalıdır.',
     'before' => ':attribute alanı, :date’den önceki bir tarih olmalıdır.',
     'before_or_equal' => ':attribute alanı, :date’den önce veya ona eşit bir tarih olmalıdır.',
     'between' => [

@@ -11,9 +11,7 @@ return [
     'alpha_num' => 'Bidang :attribute hanya boleh berisi huruf dan angka.',
     'any_of' => 'Bidang :attribute tidak valid.',
     'array' => 'Bidang :attribute harus berupa array.',
-    'array_keys' => 'Bidang :attribute hanya boleh berisi kunci berikut: :values.',
     'ascii' => 'Bidang :attribute hanya boleh berisi karakter dan simbol alfanumerik byte tunggal.',
-    'base64' => 'Bidang :attribute harus berupa string Base64 yang valid.',
     'before' => 'Bidang :attribute harus berisi tanggal sebelum :date.',
     'before_or_equal' => 'Bidang :attribute harus berupa tanggal sebelum atau sama dengan :date.',
     'between' => [

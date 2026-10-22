@@ -185,8 +185,15 @@ const AUDIT = `(() => {
 })()`;
 
 /* ------------------------------------------------------------------ routes */
-const USER_COOKIE = await login("john@example.com", "Demo12345!");
-const ADMIN_COOKIE = await login("admin@qfs.local", "Admin1234!");
+async function roleCookie(role) {
+  const prefix = `QFS_${role}`;
+  if (process.env[`${prefix}_SESSION_TOKEN`]) return process.env[`${prefix}_SESSION_TOKEN`];
+  const email = process.env[`${prefix}_EMAIL`], password = process.env[`${prefix}_PASSWORD`];
+  if (!email || !password) throw new Error(`Set ${prefix}_SESSION_TOKEN or ${prefix}_EMAIL and ${prefix}_PASSWORD for the responsive check.`);
+  return login(email, password);
+}
+const USER_COOKIE = await roleCookie("USER");
+const ADMIN_COOKIE = await roleCookie("ADMIN");
 
 const ROUTES = [
   { path: "/", who: "public", name: "landing" },
@@ -194,17 +201,17 @@ const ROUTES = [
   { path: "/user/user/register", who: "public", name: "register" },
   { path: "/user/user/dashboard", who: "user", name: "user-dashboard" },
   { path: "/user/user/connect", who: "user", name: "connect-wallet" },
-  { path: "/user/admin", who: "admin", name: "admin-overview" },
-  { path: "/user/admin/users", who: "admin", name: "admin-users" },
-  { path: "/user/admin/requests", who: "admin", name: "admin-requests" },
-  { path: "/user/admin/transactions", who: "admin", name: "admin-transactions" },
-  { path: "/user/admin/plans", who: "admin", name: "admin-plans" },
-  { path: "/user/admin/loans", who: "admin", name: "admin-loans" },
-  { path: "/user/admin/documents", who: "admin", name: "admin-documents" },
-  { path: "/user/admin/reviews", who: "admin", name: "admin-reviews" },
-  { path: "/user/admin/markets", who: "admin", name: "admin-markets" },
-  { path: "/user/admin/settings", who: "admin", name: "admin-settings" },
-  { path: "/user/admin/audit", who: "admin", name: "admin-audit" },
+  { path: "/admin", who: "admin", name: "admin-overview" },
+  { path: "/admin/users", who: "admin", name: "admin-users" },
+  { path: "/admin/requests", who: "admin", name: "admin-requests" },
+  { path: "/admin/transactions", who: "admin", name: "admin-transactions" },
+  { path: "/admin/plans", who: "admin", name: "admin-plans" },
+  { path: "/admin/loans", who: "admin", name: "admin-loans" },
+  { path: "/admin/documents", who: "admin", name: "admin-documents" },
+  { path: "/admin/reviews", who: "admin", name: "admin-reviews" },
+  { path: "/admin/markets", who: "admin", name: "admin-markets" },
+  { path: "/admin/settings", who: "admin", name: "admin-settings" },
+  { path: "/admin/audit", who: "admin", name: "admin-audit" },
 ];
 
 /* ------------------------------------------------------------------- run */

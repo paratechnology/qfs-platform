@@ -1831,7 +1831,7 @@ export default function DashboardApp({ overview, demo = false }: DashboardAppPro
           {demo && (
             <div className="dash-demo-banner" role="status">
               <strong>{tx("Local demo")}</strong>
-              <span>{tx("Sample data for preview. Account actions are disabled until PostgreSQL is configured.")}</span>
+              <span>{tx("Read-only preview")}</span>
             </div>
           )}
           {view !== "verification" && data && data.kyc?.status !== "APPROVED" && data.user.kycLevel === 0 && (

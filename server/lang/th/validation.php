@@ -11,9 +11,7 @@ return [
     'alpha_num' => 'ช่อง :attribute ต้องมีเฉพาะตัวอักษรและตัวเลขเท่านั้น',
     'any_of' => 'ฟิลด์ :attribute ไม่ถูกต้อง',
     'array' => 'ฟิลด์ :attribute ต้องเป็นอาร์เรย์',
-    'array_keys' => 'ฟิลด์ :attribute ต้องมีเฉพาะคีย์ต่อไปนี้: :values',
     'ascii' => 'ฟิลด์ :attribute ต้องมีเฉพาะอักขระและตัวเลขและสัญลักษณ์แบบไบต์เดียว',
-    'base64' => 'ฟิลด์ :attribute ต้องเป็นสตริง Base64 ที่ถูกต้อง',
     'before' => 'ฟิลด์ :attribute ต้องเป็นวันที่ก่อน :date',
     'before_or_equal' => 'ฟิลด์ :attribute ต้องเป็นวันที่ก่อนหรือเท่ากับ :date',
     'between' => [

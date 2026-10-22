@@ -11,9 +11,7 @@ return [
     'alpha_num' => 'Het veld :attribute mag alleen letters en cijfers bevatten.',
     'any_of' => 'Het veld :attribute is ongeldig.',
     'array' => 'Het veld :attribute moet een array zijn.',
-    'array_keys' => 'Het veld :attribute mag alleen de volgende sleutels bevatten: :values.',
     'ascii' => 'Het veld :attribute mag alleen alfanumerieke tekens en symbolen van één byte bevatten.',
-    'base64' => 'Het veld :attribute moet een geldige Base64-tekenreeks zijn.',
     'before' => 'Het veld :attribute moet een datum vóór :date zijn.',
     'before_or_equal' => 'Het veld :attribute moet een datum vóór of gelijk aan :date zijn.',
     'between' => [

@@ -2,7 +2,7 @@
 
 return [
     // Share sessions with the Next server-rendered frontend.
-    'session_secret' => env('QFS_SESSION_SECRET', env('SESSION_SECRET')),
+    'session_secret' => env('QFS_SESSION_SECRET'),
     'public_url' => env('QFS_PUBLIC_URL', 'https://q-arculuspro.live'),
     'support_email' => env('QFS_SUPPORT_EMAIL', 'support@q-arculuspro.live'),
     'account_emails' => env('QFS_ACCOUNT_EMAILS', false),

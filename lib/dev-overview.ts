@@ -22,7 +22,7 @@ function marketItems(items: typeof METALS): OverviewData["markets"]["metals"] {
   }));
 }
 
-/** Read-only sample payload for the local login when PostgreSQL is unavailable. */
+/** Read-only sample payload for the explicitly enabled local preview login. */
 export function getDevOverview(): OverviewData {
   const email = process.env.QFS_DEV_LOGIN_EMAIL ?? "dev@qfs.local";
   return {

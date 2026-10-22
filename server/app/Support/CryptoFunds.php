@@ -4,6 +4,7 @@ namespace App\Support;
 
 use Brick\Math\BigInteger;
 use Illuminate\Database\QueryException;
+use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Support\Facades\DB;
 
 final class CryptoFunds
@@ -174,7 +175,7 @@ final class CryptoFunds
             try {
                 DB::table('CryptoTransferClaim')->insert(['chainTxKey' => $key, 'reference' => $claimReference]);
             } catch (QueryException $error) {
-                if (in_array((string) $error->getCode(), ['23505', '23000'], true)) {
+                if ($error instanceof UniqueConstraintViolationException) {
                     Guard::fail('DUPLICATE_TRANSFER', 'This transaction was already submitted.', 409);
                 }
                 throw $error;

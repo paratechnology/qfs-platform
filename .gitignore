@@ -1,89 +1,45 @@
-# dependencies
+# Dependencies and build output
 /node_modules/
-
-# next.js
 /.next/
 /.next-dev/
 /out/
+/build/
+/.netlify/
+/.vercel/
+/coverage/
+*.tsbuildinfo
+next-env.d.ts
 
-# production
-/build
-
-# misc / OS
-.DS_Store
-Thumbs.db
-desktop.ini
-*.pem
-
-# debug logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-*.log
-
-# local env files (keep the committed template)
+# Private configuration, keys, database files, and exports
 .env*
 !.env.example
-
-# sqlite databases (dev + test)
+*.pem
+*.key
 *.db
-*.db-journal
-*.db-shm
-*.db-wal
-*.db.bak-*
+*.db-*
 *.sqlite
+*.sqlite-*
 *.sqlite3
+*.sqlite3-*
+*.sql
+*.sql.gz
+*.dump
+/backups/
 
-# editors / IDEs
+# Local logs, diagnostics, screenshots, and Python caches
+*.log
+*.err
+/scripts/shots/
+/scripts/responsive-report.txt
+__pycache__/
+*.py[cod]
+
+# Editors and operating-system files
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-
-# netlify build state
-.netlify/
-
-# test coverage
-/coverage/
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-# generated analysis / reference material (not source)
-/graphify-out/
-/shots/
-/qfs1/
-/scripts/responsive-report.txt
-/scripts/shots/
-
-# scratch scripts & temp outputs (root-level dev experiments)
-/*.cjs
-/*.err
-/*.print.txt
-/cmperr.txt
-/ab.json
-/carmes.json
-/clonecar.json
-/cloneD.json
-/cmpA.json
-/cmpout.json
-/geom2.json
-
-# local Python cache and database sidecars
-__pycache__/
-*.py[cod]
-*.sqlite-journal
-*.sqlite-shm
-*.sqlite-wal
-*.sqlite3-journal
-*.sqlite3-shm
-*.sqlite3-wal
-
-# private signing keys
-*.key
+.DS_Store
+Thumbs.db
+desktop.ini

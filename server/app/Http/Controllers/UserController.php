@@ -8,6 +8,7 @@ use App\Support\Guard;
 use App\Support\LiveQuotes;
 use App\Support\LocalizedText;
 use App\Support\Qfs;
+use App\Support\Search;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -256,24 +257,30 @@ final class UserController
         if (mb_strlen($term) > 80) {
             Guard::fail('BAD_REQUEST', 'Search is too long', 400);
         }
-        $like = '%'.str_replace(['%', '_'], ['\\%', '\\_'], $term).'%';
+        $like = Search::pattern($term);
         $items = [];
         $labels = ['DEPOSIT' => 'Deposit', 'WITHDRAWAL' => 'Withdrawal', 'INVESTMENT' => 'Investment',
             'EARNING' => 'Earning', 'REFERRAL_BONUS' => 'Referral Bonus', 'LOAN' => 'Loan', 'ADJUSTMENT' => 'Adjustment', 'PRINCIPAL_RETURN' => 'Principal return', 'SWAP' => 'Crypto swap'];
         foreach (DB::table('Transaction')->where('userId', $user->id)
-            ->where(fn ($q) => $q->where('reference', 'ilike', $like)->orWhere('type', 'ilike', $like)
-                ->orWhere('note', 'ilike', $like))->orderByDesc('createdAt')->limit(5)->get() as $tx) {
+            ->where(function ($q) use ($like) {
+                Search::match($q, 'reference', $like);
+                Search::match($q, 'type', $like, 'or');
+                Search::match($q, 'note', $like, 'or');
+            })->orderByDesc('createdAt')->limit(5)->get() as $tx) {
             $items[] = ['kind' => 'Transaction', 'title' => LocalizedText::translate($labels[$tx->type] ?? $tx->type).' · '.CryptoFunds::transactionAmount($tx),
                 'subtitle' => $tx->reference, 'actionModal' => 'transaction', 'targetId' => $tx->id];
         }
-        foreach (DB::table('InvestmentPlan')->where('isActive', true)->where('name', 'ilike', $like)
+        foreach (DB::table('InvestmentPlan')->where('isActive', true)->where(fn ($q) => Search::match($q, 'name', $like))
             ->orderBy('sort')->limit(5)->get() as $plan) {
             $items[] = ['kind' => 'Plan', 'title' => $plan->name,
                 'subtitle' => LocalizedText::translate('{rate}% monthly', ['rate' => Qfs::number($plan->monthlyRoiBps / 100, 2)]),
                 'actionModal' => 'invest', 'targetId' => $plan->id];
         }
         foreach (DB::table('MarketAsset')->where('isActive', true)
-            ->where(fn ($q) => $q->where('symbol', 'ilike', $like)->orWhere('name', 'ilike', $like))
+            ->where(function ($q) use ($like) {
+                Search::match($q, 'symbol', $like);
+                Search::match($q, 'name', $like, 'or');
+            })
             ->orderBy('sort')->limit(5)->get() as $asset) {
             $items[] = ['kind' => 'Market', 'title' => $asset->name,
                 'subtitle' => $asset->symbol, 'actionModal' => 'market:'.strtolower($asset->type)];

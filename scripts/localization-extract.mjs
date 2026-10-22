@@ -221,6 +221,7 @@ echo json_encode($result, JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR);
 `, ...backend], { encoding: "utf8" }));
 const technical = new Set(["Accept", "Cache-Control", "Content-Disposition", "Content-Language", "Origin", "Referer", "Sec-Fetch-Site", "User-Agent", "F Y", "M j, Y, h:i A", "MMM d, y, h:mm a", "MMMM y", "Version: 1", "Issued At: ", "Nonce: ", "Transaction."]);
 for (const message of phpStrings) {
+  if (/LIKE\s*\?|\bTHEN\s+\d+\s+ELSE/.test(message)) continue;
   if ([" months; payout: ", " to ", "; activity timestamps are UTC. Snapshot rows show current values, not historical closing balances.", "; ends: ", "; paid profit USD: ", "%; term: ", "0 <= available <= total", "0 <= reserved <= total", "Asset/network", "Available USD: ", "Crypto quantity / reserved", "Invalid authenticator secret", "Missing", "Monthly rate: ", "No ledger record", "Record", "Recorded at (UTC)", "Reserved: ", "USD fee"].includes(message) || message.startsWith("LOWER(")) continue;
   if (["Idempotency-Key", "from", "binance smart chain", "bnb smart chain"].includes(message)) continue;
   if (["Y-m-d H:i:s", "Crypto payout ", "USD investment funding from ", "USD reserved for crypto withdrawal ("].includes(message)) continue;

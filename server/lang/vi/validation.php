@@ -11,9 +11,7 @@ return [
     'alpha_num' => 'Trường :attribute chỉ được chứa chữ cái và số.',
     'any_of' => 'Trường :attribute không hợp lệ.',
     'array' => 'Trường :attribute phải là một mảng.',
-    'array_keys' => 'Trường :attribute chỉ được chứa các khóa sau: :values.',
     'ascii' => 'Trường :attribute chỉ được chứa các ký tự và ký hiệu chữ và số một byte.',
-    'base64' => 'Trường :attribute phải là chuỗi Base64 hợp lệ.',
     'before' => 'Trường :attribute phải là ngày trước :date.',
     'before_or_equal' => 'Trường :attribute phải có ngày trước hoặc bằng :date.',
     'between' => [

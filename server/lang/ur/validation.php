@@ -11,9 +11,7 @@ return [
     'alpha_num' => ':attribute فیلڈ میں صرف حروف اور اعداد ہونے چاہئیں۔',
     'any_of' => ':attribute فیلڈ غلط ہے۔',
     'array' => ':attribute فیلڈ ایک صف ہونی چاہیے۔',
-    'array_keys' => ':attribute فیلڈ میں صرف درج ذیل کلیدیں ہونی چاہئیں: :values۔',
     'ascii' => ':attribute فیلڈ میں صرف سنگل بائٹ حروف اور علامتیں ہونی چاہئیں۔',
-    'base64' => ':attribute فیلڈ ایک درست Base64 سٹرنگ ہونی چاہیے۔',
     'before' => ':attribute فیلڈ :date سے پہلے کی تاریخ ہونی چاہیے۔',
     'before_or_equal' => ':attribute فیلڈ :date سے پہلے یا اس کے مساوی تاریخ ہونی چاہیے۔',
     'between' => [

@@ -11,9 +11,7 @@ return [
     'alpha_num' => ':attribute 欄位只能包含字母和數字。',
     'any_of' => ':attribute 欄位無效。',
     'array' => ':attribute 欄位必須是陣列。',
-    'array_keys' => ':attribute 欄位必須只包含以下鍵：:values。',
     'ascii' => ':attribute 欄位必須僅包含單字節字母數字字元和符號。',
-    'base64' => ':attribute 欄位必須是有效的 Base64 字串。',
     'before' => ':attribute 欄位必須是 :date 之前的日期。',
     'before_or_equal' => ':attribute 欄位必須是早於或等於 :date 的日期。',
     'between' => [

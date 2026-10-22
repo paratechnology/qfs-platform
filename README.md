@@ -1,65 +1,68 @@
 # QFS
 
-QFS is a Next.js 15 and React 19 frontend with a Laravel API and PostgreSQL data store. The public site, user dashboard, and admin console remain in Next. Laravel handles authentication, account operations, admin APIs, earnings and wallet signature verification.
+Next.js 15 / React 19 frontend, Laravel 12 API, and MySQL 8.0.13+ or MariaDB 10.11+.
+All authentication, database access, financial operations, and scheduled processing live in Laravel. Next.js renders the public website, user dashboard, and admin console and proxies `/api/*` to Laravel.
 
-## Run locally
+## Code map
 
-The current Windows workspace has a portable PostgreSQL cluster, PHP 8.4, Composer, and Tailscale Serve configured. Start the stack with:
+| Directory | Responsibility |
+| --- | --- |
+| `app/` | Next.js routes and layouts; `/admin` aliases the admin console |
+| `components/` | Public, account, and admin interface components |
+| `lib/` | API payload types, Laravel session adapter, localization, wallet UI, and client utilities |
+| `styles/`, `public/` | Styling and static assets |
+| `server/app/Http/Controllers/` | Authoritative API endpoints |
+| `server/app/Support/` | Financial rules, exact crypto arithmetic, pricing, security, verification, and provider adapters |
+| `server/database/migrations/` | Complete schema installation and incremental changes |
+| `server/tests/` | Laravel feature and database integration tests |
+| `tests/`, `scripts/` | Frontend localization and isolated browser checks |
 
-```powershell
-powershell -ExecutionPolicy Bypass -File scripts/start-local.ps1
-```
+## Local setup
 
-Open [http://localhost:3000](http://localhost:3000). The Tailnet URL is [https://desktop-3agleec.tailf7d6a2.ts.net:8443/](https://desktop-3agleec.tailf7d6a2.ts.net:8443/). The Laravel API listens on `http://127.0.0.1:8000` and is reached by the frontend through Next rewrites. The local read-only preview login remains available; real accounts use the local PostgreSQL database.
+Requirements: Node.js 22+, PHP 8.3+ with PDO MySQL, intl, mbstring, openssl, GMP, and standard Laravel extensions; Composer; MySQL/MariaDB.
 
-For a fresh machine, follow [server/README.md](server/README.md). The [migration matrix](server/MIGRATION_MATRIX.md) lists every frontend API flow and the product placeholders still awaiting rules or content.
+1. Run `npm ci` in the project root and `composer install` in `server/`.
+2. Copy `.env.example` to `.env` and `server/.env.example` to `server/.env`.
+3. Create a database and restricted database user. Fill Laravel's `DB_*` settings. Set `DB_CONNECTION=mysql` for MySQL or `mariadb` for MariaDB. Use InnoDB, strict SQL mode, utf8mb4, and the template's binary collation so identifiers and crypto addresses retain case-sensitive uniqueness.
+4. For a **new installation only**, run `php artisan key:generate` from `server/`. Generate a separate random 32+ character `QFS_SESSION_SECRET`. Preserve both keys when moving an existing installation.
+5. Run `php artisan migrate` from `server/`. For an empty installation, run `php artisan db:seed` to add reference plans/settings and the optional admin specified by `ADMIN_EMAIL` / `ADMIN_PASSWORD`. Do not seed sample data into an imported account database.
+6. Run `php artisan serve --host=127.0.0.1 --port=8000` from `server/` and `npm run dev` from the root.
+7. Run `php artisan schedule:work` separately when scheduled financial processing is wanted locally.
 
-## Checks
+The existing Windows workspace can also use `powershell -ExecutionPolicy Bypass -File scripts/start-local.ps1`. It starts the configured portable MariaDB instance, API, frontend, and scheduler. A separately managed database may be started before the script. Logs and local database files stay outside the repository.
 
-```powershell
-cd server
-php artisan test
-cd ..
-npx tsc --noEmit
-npm run build
-```
+The frontend opens at http://localhost:3000. Only Laravel receives database credentials; the frontend needs `LARAVEL_API_URL` and public site/support settings.
 
-Laravel's `QfsSeeder` adds only missing reference rows. The old Prisma seed deletes all accounts and ledger records and is disabled unless explicitly unlocked. Laravel now owns migrations, scheduled earnings, and wallet signature verification. The legacy Next handlers remain in the repository during the transition.
+## Hosting on cPanel
 
-Crypto funding uses admin receiving wallets configured in `/admin/settings`. Supported assets are BTC, ETH, XRP, SOL and USDT on Tron or BNB Smart Chain. Users receive address/QR instructions, including XRP destination tags where configured; injected-wallet payments cover ETH and BEP20 USDT. Deposits credit exact quantities only after admin review. Investments allocate funds to a fixed USD principal without a blockchain transaction. Withdrawals reserve funds and require a manually completed external payout.
+- Confirm that the host supports PHP 8.3+, PDO MySQL, and the actual MySQL/MariaDB version. The local integration target is MariaDB 11.4.
+- Next.js requires Node.js application hosting or a separate frontend host. A PHP-only cPanel plan cannot run this frontend by uploading static files.
+- Deploy Laravel with the document root pointing at `server/public`. Keep `.env`, `storage/app/private`, source, and vendor files outside publicly served paths.
+- Fill `DB_*`, `APP_URL`, `QFS_PUBLIC_URL`, `QFS_ALLOWED_ORIGINS`, keys, SMTP, and optional provider credentials. Set `APP_ENV=production`, `APP_DEBUG=false`, and `QFS_DEV_LOGIN=false`.
+- Point frontend `LARAVEL_API_URL` to the API origin and set `NEXT_PUBLIC_APP_URL` / support email. Build using `npm run build` and run `npm start` under the host's process manager. API requests and session cookies must pass through unchanged.
+- Run migrations and `php artisan config:cache` during deployment. Preserve existing application/session keys and password hashes.
+- Add one cron entry every minute: `* * * * * cd /absolute/path/to/server && /absolute/path/to/php artisan schedule:run >> /dev/null 2>&1`.
+- The scheduler processes hourly investment earnings, referral rewards, swap reconciliation, and the database mail queue. Avoid duplicate scheduler installations; verify cron and queued email on the actual host.
+- Configure SMTP through the mailbox's cPanel connection values. A blank SMTP configuration cannot deliver recovery or account mail.
+- Keep private database/file backups outside this public repository. Changing connection settings does not move data: import an approved database export and copy private uploads separately, then verify row counts, financial balances, reservations, and file references before enabling writes.
 
-The dashboard's **Swap** action uses server quotes and reserved crypto balances. `/admin/swaps` manages exchange funding, settlement and recovery; `/admin/settings` maps provider assets to treasury wallets. The Changelly adapter uses authenticated fixed-rate quotes and settlement records. Live swaps are disabled until provider credentials and actual treasury wallets are configured. An optional external signer adapter supports automatic swap funding; manual admin funding is available without that signer. Automatic deposit monitoring and general withdrawal broadcasting remain separate integrations. See `server/IMPLEMENTATION_STATE.md` for configuration, accounting and verification details.
+For a database move, pause writes and scheduled workers, take final backups, import and reconcile, then reopen the application. After the new database has accepted writes, reverting to an old backup requires reconciling those new records first.
 
-The admin console is at `/admin`. Signed-out admins use `/admin/login`; the former `/user/admin` URLs redirect to the shorter paths.
+## Verification
 
-Account settings at `/user/user/dashboard/settings` support profile editing, password changes, device/session management and optional authenticator two-factor protection. Admins have the same controls at `/admin/security`. Enroll your own authenticator and save the single-use recovery codes; existing accounts are not enrolled automatically. Password recovery preserves any enabled second factor. Recovery delivery and queued account emails are wired to the mail configuration; production SMTP credentials/DNS and email verification remain to be configured.
+- `npm test`: frontend localization, financial amount-entry, and shared utility checks; no database writes.
+- `npm run lint`: TypeScript checking.
+- `npm run build`: production frontend build.
+- `cd server; php artisan test`: isolated SQLite feature tests. SQLite is a fast test fixture engine, not the deployed database.
+- `cd server; php artisan test --filter=MySqlIntegrationTest`: full migrations, precision/collation, searches, financial requests, and concurrent approvals/withdrawals/earnings on a real MySQL/MariaDB database. Supply `APP_ENV=testing` and `DB_*` through the process environment for an isolated database ending in `_test`; its user must have access only to that test database. This suite intentionally recreates that isolated schema and refuses to run on the application database.
+- Browser scripts use fixtures for financial writes and require a local check session/account. They do not send cryptocurrency.
 
-Account statements at `/user/user/dashboard/statements` provide CSV and print/save-as-PDF exports. Selected-period activity uses UTC; balances and investment records are clearly labelled current snapshots. `/admin/reconciliation` checks internal reservations, latest ledger balances and completed swap records without changing balances. KYC review at `/admin/kyc` supports server search, filtering, pagination, private encrypted revision/document history and a reasoned reverification request. Earlier files deleted before this history update cannot be restored.
+Migrations remain in execution order because they are the supported installation path, not an alternative historical backend. The application has one backend and one migration owner.
 
-## Account flows
+## Languages and optional services
 
-Registration creates the account and shows a confirmation with an explicit login link. It does not issue a session; users sign in with their email and password before accessing the dashboard. Login and registration forms stay available when a previous session is saved.
+Translation catalogs are bundled locally in 21 languages. Edit source-keyed files under `lib/i18n/translations/`, regenerate using `node scripts/localization-extract.mjs` (without `--write`) and `node scripts/localization-catalogs.mjs`, then run localization tests. Crypto amounts preserve atomic precision; investment principal and returns remain fixed in USD.
 
-Crypto deposits can be submitted and manually approved without a transaction hash; withdrawal approvals also allow a blank hash. Admins can correct or clear a submitted deposit reference. Non-empty hashes are validated and protected against duplicate use; approval remains an explicit admin decision. Deposit QR codes use whole-pixel modules, a white quiet zone and a downloadable high-resolution SVG.
+Wallet connections use signatures and never collect seed phrases. Receiving wallets are managed by admins. Changelly swaps remain disabled until valid provider and treasury credentials are configured. Private KYC uploads are reviewed by admins. Illustrative class-project reviews appear only when explicitly enabled and retain their disclosure.
 
-Active account and admin actions use visible pending states, guarded forms, persistent errors, outcome confirmations and relevant activity/support links. Financial messages distinguish submitted requests, reviewed decisions and recorded payouts. Investment, withdrawal and swap forms keep close/cancel/funding controls visible. Fund Account opens deposits with a return action that preserves the transaction draft. Administrators can edit display/contact details at `/admin/users`; changes require their current password, a second factor when enabled, and an audit reason. Changing a user’s email revokes that user’s sessions and old recovery links.
-
-The dashboard review reel rotates published reviews in random order, with a cinematic text treatment every third slide. Authors and quotes stay paired. Playback pauses on hover, keyboard focus, open dialogs, hidden tabs and offscreen content; manual pause is remembered. Reduced-motion preferences disable autoplay. Empty review lists invite a moderated submission. No generated testimonials are inserted.
-
-## Languages
-
-The site uses local translation catalogs, with no runtime translation API or third-party translation script. All 21 registered languages are published: English, Spanish, French, German, Italian, Portuguese, Dutch, Polish, Russian, Turkish, Arabic, Hindi, Bengali, Urdu, Simplified Chinese, Traditional Chinese, Japanese, Korean, Indonesian, Vietnamese and Thai. Each catalog covers all 1,716 current source messages. The selector publishes a language only when its catalog is complete.
-
-Language selection is saved in an HTTP-only cookie and, for signed-in accounts, in the account preference. Browser language is used when there is no published saved choice. Arabic and Urdu use right-to-left layouts, including recovery emails and printable statements. Currency stays in USD. Amount entry accepts the supported native digit scripts while preserving exact crypto quantities and the submitted USD value. Pages receive only the selected language's common catalog and their public, account or admin section.
-
-Edit source-keyed JSON files in `lib/i18n/translations/<locale>/`. Regenerate the source inventory with `node scripts/localization-extract.mjs` (without `--write`), then build catalogs with `node scripts/localization-catalogs.mjs`. The builder checks ICU arguments, currency/date formatting, Laravel validation placeholders and unresolved authoring tokens, and generates matching Next/Laravel catalogs plus the publication manifests. Run `node scripts/localization-catalogs.mjs --check` to verify all languages, and `node --import tsx --test tests/localization.test.mjs` for locale, plural, private-value and amount-entry checks.
-
-The optional `scripts/localization-draft.py` authoring tool produces resumable drafts from public source strings through an external translation endpoint. It is never run by the application or build, and sends no customer records. Drafts were structurally checked and selectively refined for financial/security language; they have not undergone independent native-speaker review. Reviewed terminology and financial explanations are kept separately from the first-pass catalogs. Languages are published only by the catalog builder after validation.
-
-Admins can publish reviewed plan descriptions, terms and risk disclosures in each language. English remains available beside the translation. Changing the English source makes an older translation unavailable for new purchases until it is reviewed again. Existing investments retain their recorded versions and financial conditions. PDFs, private messages and user-entered content retain their original language.
-
-## Deployment
-
-Deploy the Laravel API to a PHP host with PostgreSQL first. Set `LARAVEL_API_URL` for the Next frontend, share the session secret between both servers, and configure `QFS_ALLOWED_ORIGINS` for the frontend domain. The Netlify configuration builds the frontend only. The target domain is `https://q-arculuspro.live`; cPanel SMTP and deployment instructions are in `server/README.md`. Public DNS, HTTPS, the mailbox and the deployed Laravel/Next services still need hosting setup.
-
-The previous full-stack Next implementation notes are archived in [docs/legacy-next-readme.md](docs/legacy-next-readme.md).
+Laravel 12 security support ends on 24 February 2027; schedule the next framework upgrade before then.

@@ -6,42 +6,30 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "db:generate": "prisma generate",
-    "db:studio": "prisma studio",
-    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.mjs",
     "check:responsive": "node scripts/responsive-check.mjs",
     "check:redirects": "node scripts/redirect-check.mjs",
-    "check:wallet": "node scripts/wallet-e2e.mjs",
-    "check:wallet-ui": "node scripts/wallet-ui.mjs"
+    "check:wallet": "node scripts/wallet-connection-check.mjs",
+    "test:api": "cd server && php artisan test"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "^5.3.0",
-    "@prisma/client": "^6.19.3",
-    "bcryptjs": "^3.0.3",
     "next": "15.5.25",
     "next-intl": "^4.14.9",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "viem": "^2.56.9",
-    "zod": "^4.6.5"
+    "viem": "^2.56.9"
   },
   "devDependencies": {
-    "@netlify/functions": "^6.0.0",
     "@netlify/plugin-nextjs": "^5.16.0",
-    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^22.10.5",
     "@types/react": "^19.0.4",
     "@types/react-dom": "^19.0.2",
-    "prisma": "^6.19.3",
     "tsx": "^4.23.15",
-    "typescript": "^5.7.2",
-    "vitest": "^5.0.2"
+    "typescript": "^5.7.2"
   },
   "allowScripts": {
-    "@prisma/client@6.19.3": true,
-    "prisma@6.19.3": true,
-    "@prisma/engines@6.19.3": true,
     "esbuild@0.28.2": true
   }
 }

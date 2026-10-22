@@ -5675,11 +5675,6 @@
     "source": "S&P 500"
   },
   {
-    "key": "m02b4c3f6",
-    "section": "account",
-    "source": "Sample data for preview. Account actions are disabled until PostgreSQL is configured."
-  },
-  {
     "key": "m5b567bff",
     "section": "public",
     "source": "Saudi Arabia"
@@ -6740,11 +6735,6 @@
     "source": "The :attribute field must be a string."
   },
   {
-    "key": "m5e58aac5",
-    "section": "server",
-    "source": "The :attribute field must be a valid Base64 string."
-  },
-  {
     "key": "mf2933cd7",
     "section": "server",
     "source": "The :attribute field must be a valid date."
@@ -7168,11 +7158,6 @@
     "key": "m38bdf893",
     "section": "server",
     "source": "The :attribute field must only contain single-byte alphanumeric characters and symbols."
-  },
-  {
-    "key": "m05a1335d",
-    "section": "server",
-    "source": "The :attribute field must only contain the following keys: :values."
   },
   {
     "key": "m695e76c6",

@@ -11,9 +11,7 @@ return [
     'alpha_num' => ':attribute 필드에는 문자와 숫자만 포함되어야 합니다.',
     'any_of' => ':attribute 필드가 잘못되었습니다.',
     'array' => ':attribute 필드는 배열이어야 합니다.',
-    'array_keys' => ':attribute 필드에는 :values 키만 포함되어야 합니다.',
     'ascii' => ':attribute 필드에는 1바이트 영숫자 문자 및 기호만 포함되어야 합니다.',
-    'base64' => ':attribute 필드는 유효한 Base64 문자열이어야 합니다.',
     'before' => ':attribute 필드는 :date 이전 날짜여야 합니다.',
     'before_or_equal' => ':attribute 필드는 :date 이전 또는 같은 날짜여야 합니다.',
     'between' => [

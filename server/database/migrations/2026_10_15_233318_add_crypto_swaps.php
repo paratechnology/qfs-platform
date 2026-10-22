@@ -9,9 +9,6 @@ return new class extends Migration
 {
     public function up(): void
     {
-        if (DB::getDriverName() === 'pgsql') {
-            DB::statement('ALTER TYPE "TxType" ADD VALUE IF NOT EXISTS \'SWAP\'');
-        }
         Schema::create('CryptoTransferClaim', function (Blueprint $t) {
             $t->string('chainTxKey', 120)->primary();
             $t->string('reference')->unique();

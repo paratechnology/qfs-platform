@@ -11,9 +11,7 @@ return [
     'alpha_num' => ':attribute 字段只能包含字母和数字。',
     'any_of' => ':attribute 字段无效。',
     'array' => ':attribute 字段必须是数组。',
-    'array_keys' => ':attribute 字段必须仅包含以下键：:values。',
     'ascii' => ':attribute 字段必须仅包含单字节字母数字字符和符号。',
-    'base64' => ':attribute 字段必须是有效的 Base64 字符串。',
     'before' => ':attribute 字段必须是 :date 之前的日期。',
     'before_or_equal' => ':attribute 字段必须是早于或等于 :date 的日期。',
     'between' => [

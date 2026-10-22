@@ -11,9 +11,7 @@ return [
     'alpha_num' => 'Pole :attribute może zawierać tylko litery i cyfry.',
     'any_of' => 'Pole :attribute jest nieprawidłowe.',
     'array' => 'Pole :attribute musi być tablicą.',
-    'array_keys' => 'Pole :attribute może zawierać wyłącznie następujące klucze: :values.',
     'ascii' => 'Pole :attribute może zawierać wyłącznie jednobajtowe znaki alfanumeryczne i symbole.',
-    'base64' => 'Pole :attribute musi być poprawnym ciągiem Base64.',
     'before' => 'Pole :attribute musi być datą wcześniejszą niż :date.',
     'before_or_equal' => 'Pole :attribute musi być datą wcześniejszą lub równą :date.',
     'between' => [
