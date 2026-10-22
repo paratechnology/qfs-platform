@@ -29,7 +29,7 @@ Requirements locally: Node.js 22+, PHP 8.4+ with PDO SQLite, intl, mbstring, ope
 6. Run `php artisan serve --host=127.0.0.1 --port=8000` from `server/` and `npm run dev` from the root.
 7. Run `php artisan schedule:work` separately for scheduled financial processing.
 
-Windows shortcut: `powershell -ExecutionPolicy Bypass -File scripts/start-local.ps1`. It checks PHP/PDO SQLite, creates the default file if needed, runs pending migrations, and starts the API, frontend and scheduler. It does not start a database service. SQLite files and WAL sidecars are ignored by Git; logs stay outside the repository.
+Windows shortcut: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-local.ps1`. It checks PHP/PDO SQLite, creates the default file if needed, runs pending migrations, and starts the API, frontend and scheduler. `-NoProfile` prevents shell profile scripts from overriding the app's environment values. It does not start a database service. SQLite files and WAL sidecars are ignored by Git; logs stay outside the repository.
 
 The frontend opens at http://localhost:3000. Only Laravel receives database credentials; the frontend needs `LARAVEL_API_URL` and public site/support settings.
 
