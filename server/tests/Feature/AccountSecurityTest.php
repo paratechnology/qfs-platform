@@ -95,6 +95,16 @@ class AccountSecurityTest extends TestCase
         $this->patchJson('/api/account/profile', ['name' => ' ', 'country' => 'France'])->assertStatus(400);
     }
 
+    public function test_session_expiry_uses_the_application_clock(): void
+    {
+        $this->travelTo(now()->setDate(2026, 1, 1)->startOfDay());
+        $token = SessionAuth::issue('admin');
+        $this->withUnencryptedCookie('qfs_session', $token)->getJson('/api/auth/me')->assertOk();
+        $this->travel(8)->days();
+        $this->getJson('/api/auth/me')->assertUnauthorized();
+        $this->assertDatabaseMissing('Session', ['tokenHash' => SessionAuth::tokenHash($token)]);
+    }
+
     public function test_sessions_are_private_and_revocation_requires_password_and_preserves_current(): void
     {
         $second = SessionAuth::issue('admin');

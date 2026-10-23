@@ -108,6 +108,66 @@ class DatabaseIntegrationTest extends TestCase
         $this->getJson('/api/admin/kyc?search=uppercase')->assertOk()->assertJsonFragment(['id' => 'kyc']);
     }
 
+    public function test_sqlite_retries_a_stale_snapshot_before_recalculating_the_balance(): void
+    {
+        if (DB::getDriverName() !== 'sqlite') {
+            $this->markTestSkipped('SQLite WAL snapshot regression.');
+        }
+        $this->member('member');
+        config()->set('database.connections.sqlite.transaction_mode', 'DEFERRED');
+        DB::purge('sqlite');
+        $otherWriter = new \PDO('sqlite:'.DB::connection()->getDatabaseName(), options: [\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION]);
+        $attempts = 0;
+        $notifications = 0;
+
+        DB::transaction(function () use ($otherWriter, &$attempts, &$notifications): void {
+            $attempts++;
+            $balance = DB::table('Account')->where('userId', 'member')->value('availableCents');
+            DB::afterCommit(function () use (&$notifications): void {
+                $notifications++;
+            });
+            if ($attempts === 1) {
+                $otherWriter->exec('UPDATE "Account" SET "availableCents" = "availableCents" + 100');
+            }
+            DB::table('Account')->where('userId', 'member')->update(['availableCents' => $balance + 1000]);
+        });
+
+        $this->assertSame(2, $attempts);
+        $this->assertSame(11100, DB::table('Account')->value('availableCents'));
+        $this->assertSame(1, $notifications);
+        $this->assertSame(0, DB::transactionLevel());
+        $this->assertFalse(DB::getPdo()->inTransaction());
+    }
+
+    public function test_nested_transactions_and_business_failures_roll_back_without_retrying(): void
+    {
+        $this->member('member');
+        DB::beginTransaction();
+        DB::table('Account')->update(['availableCents' => 9000]);
+        DB::beginTransaction();
+        DB::table('Account')->update(['availableCents' => 8000]);
+        DB::rollBack();
+        $this->assertSame(9000, DB::table('Account')->value('availableCents'));
+        DB::commit();
+
+        $attempts = 0;
+        try {
+            DB::transaction(function () use (&$attempts): void {
+                $attempts++;
+                DB::table('Account')->update(['availableCents' => 5000]);
+                throw new \RuntimeException('Business validation failed');
+            });
+            $this->fail('The business failure must propagate.');
+        } catch (\RuntimeException $e) {
+            $this->assertSame('Business validation failed', $e->getMessage());
+        }
+
+        $this->assertSame(1, $attempts);
+        $this->assertSame(9000, DB::table('Account')->value('availableCents'));
+        $this->assertSame(0, DB::transactionLevel());
+        $this->assertFalse(DB::getPdo()->inTransaction());
+    }
+
     public function test_complete_financial_flow_retains_reservations_and_recorded_plan_terms(): void
     {
         $member = $this->member('member');

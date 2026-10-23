@@ -63,7 +63,7 @@ final class SessionAuth
         if (! $session) {
             return null;
         }
-        if (strtotime($session->expiresAt) < time()) {
+        if (strtotime($session->expiresAt) < now()->timestamp) {
             DB::table('Session')->where('id', $session->id)->delete();
 
             return null;

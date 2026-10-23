@@ -1,4 +1,4 @@
-param([switch]$NoTailscale)
+param([switch]$NoTailscale, [string]$PhpPath)
 
 $ErrorActionPreference = 'Stop'
 $project = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
@@ -17,16 +17,16 @@ function Test-Port([int]$Port) {
 }
 
 
-$php = (Get-Command php.exe -ErrorAction SilentlyContinue).Source
-if (-not $php) {
-    $php = Join-Path $env:LOCALAPPDATA 'Microsoft\WinGet\Packages\PHP.PHP.8.4_Microsoft.Winget.Source_8wekyb3d8bbwe\php.exe'
+$php = $PhpPath
+if (-not $php) { $php = (Get-Command php.exe -ErrorAction SilentlyContinue).Source }
+if (-not $php -or -not (Test-Path -LiteralPath $php)) {
+    throw 'PHP 8.2.12 or newer with PDO SQLite is required. Add php.exe to PATH or pass -PhpPath with its full path.'
 }
-if (-not (Test-Path -LiteralPath $php)) { throw 'PHP 8.4 or newer with PDO SQLite is required locally.' }
 
 @'
 <?php
-if (PHP_VERSION_ID < 80400 || !extension_loaded('pdo_sqlite')) {
-    fwrite(STDERR, 'Local SQLite requires PHP 8.4+ with PDO SQLite.');
+if (PHP_VERSION_ID < 80212 || !extension_loaded('pdo_sqlite')) {
+    fwrite(STDERR, 'Local SQLite requires PHP 8.2.12+ with PDO SQLite.');
     exit(1);
 }
 '@ | & $php

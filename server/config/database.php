@@ -41,7 +41,7 @@ return [
             'busy_timeout' => env('DB_BUSY_TIMEOUT', 10000),
             'journal_mode' => env('DB_JOURNAL_MODE', 'WAL'),
             'synchronous' => env('DB_SYNCHRONOUS', 'FULL'),
-            'transaction_mode' => env('DB_TRANSACTION_MODE', 'IMMEDIATE'),
+            'transaction_mode' => PHP_VERSION_ID >= 80400 ? env('DB_TRANSACTION_MODE', 'IMMEDIATE') : 'DEFERRED',
         ],
 
         'mysql' => [

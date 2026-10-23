@@ -19,7 +19,7 @@ All authentication, database access, financial operations, and scheduled process
 
 ## Local setup
 
-Requirements locally: Node.js 22+, PHP 8.4+ with PDO SQLite, intl, mbstring, openssl, GMP, and standard Laravel extensions; Composer. No database server is required. PHP 8.4 enables the immediate SQLite transactions used to serialize local financial writes.
+Requirements locally: Node.js 22+, PHP 8.2.12+ with PDO SQLite, intl, mbstring, openssl, GMP, and standard Laravel extensions; Composer. No database server is required. SQLite uses native transactions with bounded retries for write conflicts. PHP 8.4+ also supports immediate write locking.
 
 1. Run `npm ci` in the root and `composer install` in `server/`.
 2. Copy `.env.example` to `.env` and `server/.env.example` to `server/.env`.
@@ -29,13 +29,15 @@ Requirements locally: Node.js 22+, PHP 8.4+ with PDO SQLite, intl, mbstring, ope
 6. Run `php artisan serve --host=127.0.0.1 --port=8000` from `server/` and `npm run dev` from the root.
 7. Run `php artisan schedule:work` separately for scheduled financial processing.
 
-Windows shortcut: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-local.ps1`. It checks PHP/PDO SQLite, creates the default file if needed, runs pending migrations, and starts the API, frontend and scheduler. `-NoProfile` prevents shell profile scripts from overriding the app's environment values. It does not start a database service. SQLite files and WAL sidecars are ignored by Git; logs stay outside the repository.
+Windows shortcut: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-local.ps1`. Add `-PhpPath "C:\path\to\php.exe"` to choose a specific PHP installation; otherwise it uses PHP from PATH. It checks PHP/PDO SQLite, creates the default file if needed, runs pending migrations, and starts the API, frontend and scheduler. `-NoProfile` prevents shell profile scripts from overriding the app's environment values. It does not start a database service. SQLite files and WAL sidecars are ignored by Git; logs stay outside the repository.
+
+When updating an existing installation to the PHP 8.2.12-compatible dependency lock, run `composer install` and `php artisan optimize:clear` in `server/`, then restart Laravel and the scheduler. Preserve the existing `.env`, database, keys, and private uploads.
 
 The frontend opens at http://localhost:3000. Only Laravel receives database credentials; the frontend needs `LARAVEL_API_URL` and public site/support settings.
 
 ## Hosting on cPanel
 
-- Confirm PHP 8.3+, PDO MySQL, and the actual host database version. Set `DB_CONNECTION=mysql`, fill the host's `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`, and keep `DB_COLLATION=utf8mb4_bin` with strict mode and InnoDB. Shared migrations and financial flows are verified on local SQLite. Run the database integration suite against the host's actual MySQL version before deployment.
+- Confirm PHP 8.2.12+, PDO MySQL, and the actual host database version. Set `DB_CONNECTION=mysql`, fill the host's `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`, and keep `DB_COLLATION=utf8mb4_bin` with strict mode and InnoDB. Shared migrations and financial flows are verified on local SQLite. Run the database integration suite against the host's actual MySQL version before deployment.
 - Next.js requires Node.js application hosting or a separate frontend host. A PHP-only cPanel plan cannot run this frontend by uploading static files.
 - Deploy Laravel with the document root pointing at `server/public`. Keep `.env`, `storage/app/private`, source, and vendor files outside publicly served paths.
 - Fill `DB_*`, `APP_URL`, `QFS_PUBLIC_URL`, `QFS_ALLOWED_ORIGINS`, keys, SMTP, and optional provider credentials. Set `APP_ENV=production`, `APP_DEBUG=false`, and `QFS_DEV_LOGIN=false`.
