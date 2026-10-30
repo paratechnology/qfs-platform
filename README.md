@@ -21,6 +21,8 @@ All authentication, database access, financial operations, and scheduled process
 
 Requirements locally: Node.js 22+, PHP 8.2.12+ with PDO SQLite, intl, mbstring, openssl, GMP, and standard Laravel extensions; Composer. No database server is required. SQLite uses native transactions with bounded retries for write conflicts. PHP 8.4+ also supports immediate write locking.
 
+For the owner's existing local accounts and investments, use the [encrypted developer handoff](handoff/README.md) instead of the empty-database initialization and seeding steps below. Obtain its password privately from the owner.
+
 1. Run `npm ci` in the root and `composer install` in `server/`.
 2. Copy `.env.example` to `.env` and `server/.env.example` to `server/.env`.
 3. Keep `DB_CONNECTION=sqlite`. Create an empty `server/database/database.sqlite` file (`New-Item -ItemType File server/database/database.sqlite` in PowerShell). Omit `DB_DATABASE` to use that default, or set an absolute SQLite file path.
