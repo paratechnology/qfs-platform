@@ -136,6 +136,19 @@ class BladeFunctionalityTest extends TestCase
         $this->assertSame(2, Reviews::ratingSummary()['total']);
     }
 
+    public function test_login_redirects_respect_https_only_from_the_local_reverse_proxy(): void
+    {
+        $this->withServerVariables(['REMOTE_ADDR' => '127.0.0.1'])
+            ->get('http://proxy.example.test:8443/admin', ['X-Forwarded-Proto' => 'https'])
+            ->assertRedirect('https://proxy.example.test:8443/admin/login');
+        $this->withServerVariables(['REMOTE_ADDR' => '203.0.113.10'])
+            ->get('http://proxy.example.test:8443/admin', ['X-Forwarded-Proto' => 'https'])
+            ->assertRedirect('http://proxy.example.test:8443/admin/login');
+        $this->withServerVariables(['REMOTE_ADDR' => '127.0.0.1'])
+            ->get('http://localhost:8082/user/user/dashboard', ['X-Forwarded-Proto' => 'http'])
+            ->assertRedirect('http://localhost:8082/user/user/login');
+    }
+
     public function test_dashboard_and_admin_pages_keep_the_new_architecture_and_restored_controls(): void
     {
         foreach (['', '/investments', '/transactions', '/withdrawals', '/loans', '/verification', '/settings', '/statements'] as $view) {
