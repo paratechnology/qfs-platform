@@ -1,0 +1,46 @@
+# Compatibility entry point only. Prefer setting the document root to public/.
+<FilesMatch "^(\.|artisan$|composer\.|phpunit\.|dev-|fetchColumn|.*\.(sqlite.*|sql|zip|ps1|mjs|py)$)">
+    Require all denied
+</FilesMatch>
+# ACME SSL (Let's Encrypt / AutoSSL)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_URI} ^/\.well-known/acme-challenge/ [NC]
+    RewriteRule ^ - [L]
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    DirectoryIndex index.php
+
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    RewriteCond %{HTTP:x-xsrf-token} .
+    RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
+
+    # Block web access to Laravel internals (doc root is parent of public/)
+    RewriteRule ^(app|bootstrap|config|database|resources|routes|storage|tests|vendor|docs|scripts|lang|node_modules|lib)(/|$) - [F,L,NC]
+
+    # Serve files from public/ at the same URL path (/css/... → public/css/...)
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f [OR]
+    RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -d
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ - [L]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>

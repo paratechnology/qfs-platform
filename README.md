@@ -1,5 +1,9 @@
 # QFS
 
+The maintained Laravel/Blade/Alpine application is now in [`scripts/`](scripts/README.md). Use its setup instructions for the current architecture and database. The Next.js application and `server/` API below remain the original reference implementation; their launch commands do not start the maintained app.
+
+## Original application reference
+
 Next.js 15 / React 19 frontend and Laravel 12 API. Local development uses SQLite; cPanel deployment supports MySQL 8.0.13+.
 All authentication, database access, financial operations, and scheduled processing live in Laravel. Next.js renders the public website, user dashboard, and admin console and proxies `/api/*` to Laravel.
 

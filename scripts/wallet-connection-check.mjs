@@ -107,6 +107,6 @@ try {
   assert.deepEqual(errors,[]);console.log(`${passed} wallet browser checks passed`);
 } finally {
   if(browser)await browser.close();
-  php(`Illuminate\\Support\\Facades\\DB::table('Session')->where('tokenHash',hash('sha256',${JSON.stringify(token)}))->delete();`);
+  php(`Illuminate\\Support\\Facades\\DB::table('Session')->where('tokenHash',App\\Support\\SessionAuth::tokenHash(${JSON.stringify(token)}))->delete();`);
 }
 process.exit(0);

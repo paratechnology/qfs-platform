@@ -63,6 +63,6 @@ try{
  console.log(JSON.stringify(await evaluate(`(()=>{const qr=document.querySelector('.fund-qr img'),rect=qr.getBoundingClientRect();return {size:rect.width,viewBox:+qr.dataset.modules,scheme:getComputedStyle(qr).colorScheme,addressMatches:document.querySelector('.fund-address code').textContent===${JSON.stringify(wallet.address)},overflow:document.documentElement.scrollWidth>innerWidth};})()`)));
 }finally{
  if(browser)await browser.close();
- php(`Illuminate\\Support\\Facades\\DB::table('Session')->where('tokenHash',hash('sha256',${JSON.stringify(token)}))->delete();`);
+ php(`Illuminate\\Support\\Facades\\DB::table('Session')->where('tokenHash',App\\Support\\SessionAuth::tokenHash(${JSON.stringify(token)}))->delete();`);
 }
 process.exit(0);
