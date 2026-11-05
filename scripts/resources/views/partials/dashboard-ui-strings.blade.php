@@ -8,7 +8,7 @@
         'Loan Amount', 'Loan Type', 'Loan Repayment Period', 'Your Occupation', 'Enter your occupation',
         'Preferred payout currency', 'Submitting application…', 'Fill in the loan amount and your occupation',
         'Loan application submitted. Status: Pending review.', 'Done', 'Close menu', 'Available balance',
-        'USD value', 'Add Fund', 'Logout', 'Account', 'Manage', 'My Cards', 'Wallet Connection',
+        'USD value', 'Add Fund', 'Logout', 'Account', 'Manage', 'My Cards', 'Secure Wallet',
         'Dashboard', 'Active Investments', 'Transactions', 'Account statements', 'Withdrawals', 'Loans',
         'Customers Reviews', 'Reviews', 'average', 'Illustrative reviews', 'No approved reviews yet.',
         'Identity Verification', 'Account settings', 'Search transactions, plans…', 'Searching…',

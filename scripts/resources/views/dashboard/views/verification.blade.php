@@ -29,18 +29,18 @@
                 {{-- Step 1: details --}}
                 <form x-show="step === 0" @submit.prevent="saveDetails()">
                     <div class="dash-kyc-fields">
-                        <div class="dash-form-group"><label>{{ $tx('Full legal name') }}</label><input class="dash-input" required maxlength="120" autocomplete="name" x-model="fields.legalName"></div>
-                        <div class="dash-form-group"><label>{{ $tx('Date of birth') }}</label><input class="dash-input" type="date" required autocomplete="bday" x-model="fields.dateOfBirth"></div>
-                        <div class="dash-form-group"><label>{{ $tx('Country of residence') }}</label><input class="dash-input" required maxlength="80" autocomplete="country-name" x-model="fields.country"></div>
-                        <div class="dash-form-group"><label>{{ $tx('Identity document') }}</label>
-                            <select class="dash-select" x-model="fields.documentType">
+                        <div class="dash-form-group"><label for="kyc-legalName">{{ $tx('Full legal name') }}</label><input class="dash-input" required maxlength="120" autocomplete="name" id="kyc-legalName" x-model="fields.legalName"></div>
+                        <div class="dash-form-group"><label for="kyc-dateOfBirth">{{ $tx('Date of birth') }}</label><input class="dash-input" type="date" required autocomplete="bday" id="kyc-dateOfBirth" x-model="fields.dateOfBirth"></div>
+                        <div class="dash-form-group"><label for="kyc-country">{{ $tx('Country of residence') }}</label><input class="dash-input" required maxlength="80" autocomplete="country-name" id="kyc-country" x-model="fields.country"></div>
+                        <div class="dash-form-group"><label for="kyc-documentType">{{ $tx('Identity document') }}</label>
+                            <select class="dash-select" id="kyc-documentType" x-model="fields.documentType">
                                 <option value="PASSPORT">{{ $tx('Passport') }}</option>
                                 <option value="NATIONAL_ID">{{ $tx('National identity card') }}</option>
                                 <option value="DRIVING_LICENSE">{{ $tx('Driving licence') }}</option>
                             </select>
                         </div>
                     </div>
-                    <div class="dash-form-group"><label>{{ $tx('Residential address') }}</label><textarea class="dash-input" required maxlength="500" rows="3" autocomplete="street-address" x-model="fields.address"></textarea></div>
+                    <div class="dash-form-group"><label for="kyc-address">{{ $tx('Residential address') }}</label><textarea class="dash-input" required maxlength="500" rows="3" autocomplete="street-address" id="kyc-address" x-model="fields.address"></textarea></div>
                     <button class="dash-btn primary" type="submit" :disabled="!!busy"><span x-text="busy || 'Save & continue'"></span></button>
                 </form>
 
@@ -57,7 +57,7 @@
                                 </div>
                                 <label class="dash-btn ghost">
                                     <span x-text="hasFile(kind) ? 'Replace' : 'Choose file'"></span>
-                                    <input type="file" style="display:none" :accept="kind === 'PORTRAIT' ? 'image/jpeg,image/png' : 'image/jpeg,image/png,application/pdf'" @change="upload(kind, $event)">
+                                    <input type="file" :aria-label="(hasFile(kind) ? 'Replace ' : 'Upload ') + label(kind)" :accept="kind === 'PORTRAIT' ? 'image/jpeg,image/png' : 'image/jpeg,image/png,application/pdf'" @change="upload(kind, $event)">
                                 </label>
                             </div>
                         </template>

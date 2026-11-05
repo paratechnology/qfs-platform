@@ -1,4 +1,4 @@
-<section x-data="kycHistory({{ $historyEndpoint }})" class="dash-position-prose">
+<section x-data="kycHistory({{ $historyEndpoint }})" class="dash-position-prose account-kyc-history">
     <button type="button" class="{{ $historyAdmin ?? false ? 'adm-btn ghost' : 'dash-btn ghost' }}" :disabled="loading" @click="load()" x-text="loading ? 'Loading…' : 'View verification history'"></button>
     <p x-show="error" x-text="error" role="alert"></p><p x-show="loaded && !items.length">{{ $tx('No previous revisions.') }}</p>
     <template x-for="revision in items" :key="revision.id"><details><summary><span x-text="'Version ' + revision.version + ' · ' + revision.status + ' · ' + date(revision.createdAt)"></span></summary>

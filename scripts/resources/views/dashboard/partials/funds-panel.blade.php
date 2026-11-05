@@ -33,7 +33,7 @@
             </div>
             <template x-for="asset in visibleHoldings()" :key="asset.assetKey">
                 <div class="fund-asset-row" :data-asset-key="asset.assetKey">
-                    <span class="fund-asset-symbol" aria-hidden="true" x-text="symbolGlyph(asset.symbol)"></span>
+                    <span class="fund-asset-symbol" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><use :href="'/icons/crypto.svg#' + asset.symbol.toLowerCase()"></use></svg></span>
                     <div class="fund-asset-name"><strong x-text="asset.symbol"></strong><span x-text="asset.network"></span></div>
                     <div class="fund-asset-value">
                         <strong><bdi x-text="asset.available + ' ' + asset.symbol"></bdi></strong>

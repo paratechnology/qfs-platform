@@ -23,6 +23,7 @@ define('LARAVEL_START', microtime(true));
 require $root.'/vendor/autoload.php';
 $app = require $root.'/bootstrap/app.php';
 $app->make(Kernel::class)->bootstrap();
+config()->set('filesystems.disks.local.root', dirname((string) getenv('DB_DATABASE')).'/private');
 Http::preventStrayRequests();
 $prices = [];
 foreach (['bitcoin' => 100000, 'ethereum' => 2000, 'tether' => 1, 'ripple' => 2, 'solana' => 100] as $coin => $rate) {

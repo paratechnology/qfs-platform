@@ -117,14 +117,6 @@ document.addEventListener("alpine:init", () => {
       }
     },
 
-    symbolGlyph(sym) {
-      if (sym === "BTC") return "₿";
-      if (sym === "ETH") return "Ξ";
-      if (sym === "XRP") return "X";
-      if (sym === "SOL") return "◎";
-      return "₮";
-    },
-
     visibleHoldings() {
       return (this.data?.holdings || []).filter((a) => a.quantity !== "0" || a.reserved !== "0");
     },

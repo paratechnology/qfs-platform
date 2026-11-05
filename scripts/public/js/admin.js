@@ -313,19 +313,20 @@ document.addEventListener("alpine:init", () => {
     },
 
     closeEdit() {
-      if (!this.busy) this.editing = null;
+      if (!this.busy) { this.editing = null; this.editForm = {}; this.error = ""; }
     },
 
     async saveProfile() {
-      if (this.busy) return;
+      if (this.busy || !this.editing) return;
       this.busy = true;
       this.error = "";
       try {
-        await admSend("/api/admin/users/" + this.editing.id, "PATCH", { action: "UPDATE_PROFILE", ...this.editForm });
+        const result = await admSend("/api/admin/users/" + this.editing.id, "PATCH", { action: "UPDATE_PROFILE", ...this.editForm });
         this.editing = null;
-        this.toast = "Account details updated";
+        this.editForm = {};
+        this.toast = result.sessionsRevoked ? "Account details updated. The email changed, so the user must sign in again." : "Account details updated.";
         await this.load();
-        setTimeout(() => (this.toast = ""), 2500);
+        setTimeout(() => (this.toast = ""), 6000);
       } catch (e) {
         this.error = e.message;
       } finally {

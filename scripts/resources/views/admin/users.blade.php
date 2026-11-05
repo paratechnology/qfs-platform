@@ -19,7 +19,7 @@
             <tbody>
                 <template x-for="u in rows" :key="u.id">
                     <tr>
-                        <td><div class="adm-user-cell"><img :src="u.avatarUrl || '/avatars/avatar1.jpg'" alt=""><div><b x-text="u.name"></b><span x-text="u.referralCode"></span></div></div></td>
+                        <td><div class="adm-user-cell"><img :src="u.avatarUrl || '/avatars/avatar1.jpg'" alt=""><div><b x-text="u.name"></b><span x-text="u.referralCode"></span><button type="button" class="adm-btn ghost sm adm-edit-account" :disabled="busy" x-show="u.id !== @js($adminUser['id'])" @click="openEdit(u)">{{ $tx('Edit account') }}</button><a class="adm-btn ghost sm adm-edit-account" href="/admin/security" x-show="u.id === @js($adminUser['id'])">{{ $tx('Account settings') }}</a></div></div></td>
                         <td><a class="adm-contact" :href="'mailto:' + u.email" x-text="u.email"></a></td>
                         <td><a class="adm-contact" x-show="u.phone" :href="'tel:' + (u.phone || '').replace(/[^0-9+]/g, '')" x-text="u.phone"></a><span x-show="!u.phone">{{ $tx('Not provided') }}</span></td>
                         <td><span class="adm-pill" :class="pill(u.role)" x-text="cap(u.role)"></span></td>
@@ -32,7 +32,6 @@
                         <td style="white-space:nowrap" x-text="date(u.memberSince)"></td>
                         <td class="num">
                             <div class="adm-actions-cell">
-                                <a class="adm-btn ghost sm" href="/admin/security" x-show="u.id === @js($adminUser['id'])">{{ $tx('Account settings') }}</a><button class="adm-btn ghost sm" x-show="u.id !== @js($adminUser['id'])" @click="openEdit(u)">{{ $tx('Edit') }}</button>
                                 <button class="adm-btn ghost sm" :disabled="busy || u.role === 'ADMIN'" @click="openAdjust(u)">{{ $tx('Adjust') }}</button>
                                 <button class="adm-btn danger sm" :disabled="busy || u.id === @js($adminUser['id'])" @click="openDelete(u)">{{ $tx('Delete') }}</button>
                                 <template x-if="u.role !== 'ADMIN'"><button class="adm-btn ghost sm" :disabled="busy" @click="userAction(u.id, 'SET_ROLE', 'ADMIN')">{{ $tx('Make admin') }}</button></template>
@@ -66,19 +65,21 @@
     </div>
     {{-- Edit profile --}}
     <div class="adm-modal-overlay" x-show="editing" x-cloak @click.self="closeEdit()">
-        <div class="adm-modal" role="dialog" aria-modal="true">
-            <div class="adm-modal-head"><h3>{{ $tx('Edit account') }}</h3><button class="adm-modal-close" :disabled="busy" @click="closeEdit()"><x-dash-icon name="close" /></button></div>
-            <div class="adm-modal-body"><fieldset class="adm-modal-fieldset" :disabled="busy">
-                <div class="adm-field"><label>{{ $tx('Display name') }}</label><input class="adm-input" x-model="editForm.name"></div>
-                <div class="adm-field"><label>{{ $tx('Email') }}</label><input class="adm-input" type="email" x-model="editForm.email"></div>
-                <div class="adm-field"><label>Phone</label><input class="adm-input" x-model="editForm.phone"></div>
-                <div class="adm-field"><label>{{ $tx('Country') }}</label><input class="adm-input" x-model="editForm.country"></div>
-                <div class="adm-field"><label for="edit-reason">{{ $tx('Reason for change') }}</label><input id="edit-reason" class="adm-input" x-model="editForm.reason" required minlength="3"></div>
-                <div class="adm-field"><label for="edit-password">Your current admin password</label><input id="edit-password" class="adm-input" type="password" autocomplete="current-password" x-model="editForm.currentPassword" required></div>
-                <div class="adm-field"><label for="edit-code">Authenticator or recovery code (if enabled)</label><input id="edit-code" class="adm-input" autocomplete="one-time-code" x-model="editForm.code"></div>
+        <div class="adm-modal" role="dialog" aria-modal="true" aria-labelledby="edit-account-title">
+            <div class="adm-modal-head"><h3 id="edit-account-title">{{ $tx('Edit account') }}</h3><button type="button" class="adm-modal-close" aria-label="{{ $tx('Close') }}" :disabled="busy" @click="closeEdit()"><x-dash-icon name="close" /></button></div>
+            <form class="adm-modal-body" @submit.prevent="saveProfile()" :aria-busy="busy"><fieldset class="adm-modal-fieldset" :disabled="busy">
+                <p class="adm-field-hint" x-text="editing?.email"></p>
+                <div class="adm-field"><label for="edit-name">{{ $tx('Display name') }}</label><input id="edit-name" class="adm-input" x-model="editForm.name" autocomplete="name" minlength="2" maxlength="120" required></div>
+                <div class="adm-field"><label for="edit-email">{{ $tx('Email') }}</label><input id="edit-email" class="adm-input" type="email" x-model="editForm.email" autocomplete="email" maxlength="200" required><p class="adm-field-hint">Changing the email signs the user out of all devices.</p></div>
+                <div class="adm-field"><label for="edit-phone">{{ $tx('Phone') }}</label><input id="edit-phone" class="adm-input" type="tel" x-model="editForm.phone" autocomplete="tel" minlength="7" maxlength="24"></div>
+                <div class="adm-field"><label for="edit-country">{{ $tx('Country') }}</label><input id="edit-country" class="adm-input" x-model="editForm.country" autocomplete="country-name" minlength="2" maxlength="80" required></div>
+                <div class="adm-field"><label for="edit-reason">{{ $tx('Reason for change') }}</label><input id="edit-reason" class="adm-input" x-model="editForm.reason" required minlength="3" maxlength="300"></div>
+                <div class="adm-field"><label for="edit-password">Your current admin password</label><input id="edit-password" class="adm-input" type="password" autocomplete="current-password" x-model="editForm.currentPassword" required maxlength="200"></div>
+                <div class="adm-field"><label for="edit-code">Authenticator or recovery code (if enabled)</label><input id="edit-code" class="adm-input" autocomplete="one-time-code" maxlength="30" x-model="editForm.code"></div>
+                <p class="adm-field-hint">Changes are recorded in the audit log. Verified identity details are managed through KYC review.</p>
                 <template x-if="error"><div class="adm-banner error" role="alert" x-text="error"></div></template>
-                <div class="adm-row-end"><button class="adm-btn ghost" @click="closeEdit()" :disabled="busy">{{ $tx('Cancel') }}</button><button class="adm-btn primary" @click="saveProfile()" :disabled="busy"><span x-text="busy ? 'Saving…' : 'Save'"></span></button></div>
-            </fieldset></div>
+                <div class="adm-row-end"><button type="button" class="adm-btn ghost" @click="closeEdit()" :disabled="busy">{{ $tx('Cancel') }}</button><button type="submit" class="adm-btn primary" :disabled="busy"><span class="adm-spinner" x-show="busy" aria-hidden="true"></span><span x-text="busy ? 'Saving…' : 'Save changes'"></span></button></div>
+            </fieldset></form>
         </div>
     </div>
     <template x-if="deleting">

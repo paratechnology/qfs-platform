@@ -85,7 +85,7 @@
                 </a>
             @endforeach
             <button class="dash-sb-link" @click="openModal('cards')"><span class="dash-sb-link-ico"><x-dash-icon name="card" /></span>{{ $tx('My Cards') }}</button>
-            <a class="dash-sb-link" href="/user/user/connect"><span class="dash-sb-link-ico"><x-dash-icon name="wallet" /></span>{{ $tx('Wallet Connection') }}</a>
+            <a class="dash-sb-link" href="/user/user/connect"><span class="dash-sb-link-ico"><x-dash-icon name="wallet" /></span>{{ $tx('Secure Wallet') }}</a>
         </nav>
     </aside>
 

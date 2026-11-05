@@ -1374,3 +1374,5 @@
 .adm-swap-details dt { opacity:.65; }
 @media (max-width:600px) { .adm-swap-row { grid-template-columns:minmax(0,1fr); gap:10px; } .adm-swap-row .adm-pill { justify-self:start; } .adm-swap-details > div { grid-template-columns:minmax(0,1fr); gap:6px; } .adm-swap-routes .adm-receiving-row { flex-wrap:wrap; } }
 @media (prefers-reduced-motion:reduce) { .adm-swap-row { transition:none; } }
+
+.adm-user-cell .adm-edit-account { display: table; margin-top: 9px; min-height: 36px; white-space: nowrap; }

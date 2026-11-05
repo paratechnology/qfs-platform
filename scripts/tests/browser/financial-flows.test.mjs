@@ -137,3 +137,23 @@ test("sidebar follows combined crypto/USD funds updates and modal scrolling is r
  a.context.window.dispatchEvent(new a.context.CustomEvent("dash-funds-updated",{detail:{availableUsd:"$37,000.00",valuationComplete:true}}));assert.equal(d.portfolioAvailable,"$37,000.00");
  d.openModal("invest");assert.equal(a.context.document.body.style.overflow,"hidden");d.closeModal();assert.equal(a.context.document.body.style.overflow,"");d.destroy();
 });
+
+
+test("admin account editing saves profile fields, explains sign-out and clears credentials", async () => {
+ const a=app(c=>c.path.startsWith("/api/admin/users?")?{items:[],total:0}:{changed:true,sessionsRevoked:true});
+ const f=a.factories.admUsers();
+ f.openEdit({id:"member",name:"Member",email:"member@example.test",phone:"",country:"Ghana"});
+ f.editForm.name="Updated Member";f.editForm.email="updated@example.test";f.editForm.phone="+234 8000000000";f.editForm.reason="Owner requested correction";f.editForm.currentPassword="Fixture-password-01";
+ await f.saveProfile();
+ const request=a.calls.find(c=>c.path==="/api/admin/users/member");
+ assert.equal(request.method,"PATCH");assert.equal(request.body.action,"UPDATE_PROFILE");assert.equal(request.body.name,"Updated Member");assert.equal(request.body.email,"updated@example.test");assert.equal(request.body.reason,"Owner requested correction");
+ assert.equal(f.editing,null);assert.equal(Object.keys(f.editForm).length,0);assert.match(f.toast,/sign in again/);assert.equal(f.busy,false);
+});
+
+test("admin account editing retains corrections on failure and clears secrets when cancelled", async () => {
+ const a=app(()=>({status:400,error:{code:"INVALID_PASSWORD",message:"Your current password is incorrect."}}));const f=a.factories.admUsers();
+ f.openEdit({id:"member",name:"Member",email:"member@example.test",country:"Ghana"});f.editForm.name="Corrected name";f.editForm.currentPassword="Incorrect-password";
+ await f.saveProfile();assert.equal(f.editing.id,"member");assert.equal(f.editForm.name,"Corrected name");assert.match(f.error,/password/);assert.equal(f.busy,false);
+ f.closeEdit();assert.equal(f.editing,null);assert.equal(Object.keys(f.editForm).length,0);assert.equal(f.error,"");
+ await f.saveProfile();assert.equal(a.calls.length,1);
+});
