@@ -1,6 +1,6 @@
 <div x-data="kycFlow(@js($u['name'] ?? ''))">
     <template x-if="loading"><p class="dash-input-note" role="status">Loading your verification…</p></template>
-    <template x-if="!loading && !record && error"><p class="dash-form-error" role="alert"><span x-text="error"></span> <button class="dash-btn ghost" @click="load()">Retry</button></p></template>
+    <template x-if="!loading && !record && error"><p class="dash-form-error" role="alert"><span x-text="error"></span> <button class="dash-btn ghost" @click="load()">{{ $tx('Retry') }}</button></p></template>
 
     {{-- Approved / pending --}}
     <template x-if="record && (record.status === 'APPROVED' || record.status === 'PENDING')">
@@ -16,11 +16,11 @@
     <template x-if="record && record.status !== 'APPROVED' && record.status !== 'PENDING'">
         <section class="dash-kyc-flow">
             <template x-if="message"><div class="dash-success-message" role="status"><x-dash-icon name="check" :size="18" /><p x-text="message"></p></div></template>
-            <template x-if="record.status === 'NEEDS_CHANGES'"><div class="dash-notice" role="status"><span><strong>Changes requested</strong><br><span x-text="record.reviewNote"></span></span></div></template>
+            <template x-if="record.status === 'NEEDS_CHANGES'"><div class="dash-notice" role="status"><span><strong>{{ $tx('Changes requested') }}</strong><br><span x-text="record.reviewNote"></span></span></div></template>
 
-            <ol class="dash-kyc-steps" aria-label="Verification steps">
-                <li :aria-current="step === 0 ? 'step' : null"><span>1</span>Your details</li>
-                <li :aria-current="step === 1 ? 'step' : null"><span>2</span>Documents</li>
+            <ol class="dash-kyc-steps" aria-label="{{ $tx('Verification steps') }}">
+                <li :aria-current="step === 0 ? 'step' : null"><span>1</span>{{ $tx('Your details') }}</li>
+                <li :aria-current="step === 1 ? 'step' : null"><span>2</span>{{ $tx('Documents') }}</li>
                 <li :aria-current="step === 2 ? 'step' : null"><span>3</span>Review &amp; submit</li>
             </ol>
             <template x-if="error"><div class="dash-load-error" role="alert" x-text="error"></div></template>
@@ -29,18 +29,18 @@
                 {{-- Step 1: details --}}
                 <form x-show="step === 0" @submit.prevent="saveDetails()">
                     <div class="dash-kyc-fields">
-                        <div class="dash-form-group"><label>Full legal name</label><input class="dash-input" required maxlength="120" autocomplete="name" x-model="fields.legalName"></div>
-                        <div class="dash-form-group"><label>Date of birth</label><input class="dash-input" type="date" required autocomplete="bday" x-model="fields.dateOfBirth"></div>
-                        <div class="dash-form-group"><label>Country of residence</label><input class="dash-input" required maxlength="80" autocomplete="country-name" x-model="fields.country"></div>
-                        <div class="dash-form-group"><label>Identity document</label>
+                        <div class="dash-form-group"><label>{{ $tx('Full legal name') }}</label><input class="dash-input" required maxlength="120" autocomplete="name" x-model="fields.legalName"></div>
+                        <div class="dash-form-group"><label>{{ $tx('Date of birth') }}</label><input class="dash-input" type="date" required autocomplete="bday" x-model="fields.dateOfBirth"></div>
+                        <div class="dash-form-group"><label>{{ $tx('Country of residence') }}</label><input class="dash-input" required maxlength="80" autocomplete="country-name" x-model="fields.country"></div>
+                        <div class="dash-form-group"><label>{{ $tx('Identity document') }}</label>
                             <select class="dash-select" x-model="fields.documentType">
-                                <option value="PASSPORT">Passport</option>
-                                <option value="NATIONAL_ID">National identity card</option>
-                                <option value="DRIVING_LICENSE">Driving licence</option>
+                                <option value="PASSPORT">{{ $tx('Passport') }}</option>
+                                <option value="NATIONAL_ID">{{ $tx('National identity card') }}</option>
+                                <option value="DRIVING_LICENSE">{{ $tx('Driving licence') }}</option>
                             </select>
                         </div>
                     </div>
-                    <div class="dash-form-group"><label>Residential address</label><textarea class="dash-input" required maxlength="500" rows="3" autocomplete="street-address" x-model="fields.address"></textarea></div>
+                    <div class="dash-form-group"><label>{{ $tx('Residential address') }}</label><textarea class="dash-input" required maxlength="500" rows="3" autocomplete="street-address" x-model="fields.address"></textarea></div>
                     <button class="dash-btn primary" type="submit" :disabled="!!busy"><span x-text="busy || 'Save & continue'"></span></button>
                 </form>
 
@@ -53,7 +53,7 @@
                                 <div>
                                     <strong x-text="label(kind)"></strong>
                                     <span x-text="hasFile(kind) ? 'Uploaded securely' : (kind === 'PORTRAIT' ? 'A recent photo with your face clearly visible' : 'All text and document edges must be visible')"></span>
-                                    <template x-if="hasFile(kind)"><a :href="fileUrl(kind)" target="_blank" rel="noreferrer">Download uploaded file</a></template>
+                                    <template x-if="hasFile(kind)"><a :href="fileUrl(kind)" target="_blank" rel="noreferrer">{{ $tx('Download uploaded file') }}</a></template>
                                 </div>
                                 <label class="dash-btn ghost">
                                     <span x-text="hasFile(kind) ? 'Replace' : 'Choose file'"></span>
@@ -63,23 +63,23 @@
                         </template>
                     </div>
                     <div class="dash-actions-row">
-                        <button class="dash-btn ghost" @click="step = 0">Back</button>
-                        <button class="dash-btn primary" :disabled="!complete" @click="step = 2">Review submission</button>
+                        <button class="dash-btn ghost" @click="step = 0">{{ $tx('Back') }}</button>
+                        <button class="dash-btn primary" :disabled="!complete" @click="step = 2">{{ $tx('Review submission') }}</button>
                     </div>
                 </div>
 
                 {{-- Step 3: review --}}
                 <div x-show="step === 2" x-cloak>
                     <dl class="dash-investment-terms">
-                        <div><dt>Legal name</dt><dd x-text="fields.legalName"></dd></div>
-                        <div><dt>Date of birth</dt><dd x-text="fields.dateOfBirth"></dd></div>
-                        <div><dt>Country</dt><dd x-text="fields.country"></dd></div>
-                        <div><dt>Address</dt><dd x-text="fields.address"></dd></div>
+                        <div><dt>{{ $tx('Legal name') }}</dt><dd x-text="fields.legalName"></dd></div>
+                        <div><dt>{{ $tx('Date of birth') }}</dt><dd x-text="fields.dateOfBirth"></dd></div>
+                        <div><dt>{{ $tx('Country') }}</dt><dd x-text="fields.country"></dd></div>
+                        <div><dt>{{ $tx('Address') }}</dt><dd x-text="fields.address"></dd></div>
                     </dl>
-                    <p class="dash-input-note">Documents are stored privately and reviewed by authorised admins. This review does not include automated liveness checks.</p>
-                    <label class="dash-kyc-consent"><input type="checkbox" x-model="consent"> I confirm these details are mine and authorise their review for identity verification.</label>
+                    <p class="dash-input-note">{{ $tx('Documents are stored privately and reviewed by authorised admins. This review does not include automated liveness checks.') }}</p>
+                    <label class="dash-kyc-consent"><input type="checkbox" x-model="consent"> {{ $tx('I confirm these details are mine and authorise their review for identity verification.') }}</label>
                     <div class="dash-actions-row">
-                        <button class="dash-btn ghost" @click="step = 1">Back</button>
+                        <button class="dash-btn ghost" @click="step = 1">{{ $tx('Back') }}</button>
                         <button class="dash-btn primary" :disabled="!consent || !complete" @click="submitReview()"><span x-text="busy || 'Submit for review'"></span></button>
                     </div>
                 </div>

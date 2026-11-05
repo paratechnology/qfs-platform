@@ -61,10 +61,16 @@ document.addEventListener("alpine:init", () => {
     busy: false,
     theme: "light",
     toast: "",
+    portfolioAvailable: null,
     notifUnread: initial.unread ?? 0,
     notifItems: Array.isArray(initial.items) ? initial.items : [],
 
     init() {
+      this._fundsUpdated = event => { this.portfolioAvailable = event.detail.valuationComplete ? event.detail.availableUsd : "—"; };
+      this._fundsRefresh = () => { if (!document.querySelector('[x-data="cryptoFundsPanel()"]')) this.refreshFunds(); };
+      window.addEventListener("dash-funds-updated", this._fundsUpdated);
+      window.addEventListener("dash-funds-refresh", this._fundsRefresh);
+      this._fundsRefresh();
       try {
         this.theme = localStorage.getItem("qfs_dash_theme") || "light";
       } catch (_) {
@@ -72,6 +78,15 @@ document.addEventListener("alpine:init", () => {
       }
     },
 
+    async refreshFunds() {
+      try { this.portfolioAvailable = (await fundingRequest("/api/wallet/funds")).availableUsd ?? "—"; }
+      catch (_) { this.portfolioAvailable = "—"; }
+    },
+    destroy() {
+      window.removeEventListener("dash-funds-updated", this._fundsUpdated);
+      window.removeEventListener("dash-funds-refresh", this._fundsRefresh);
+      if (document.body && this.modal) document.body.style.overflow = this._bodyOverflow || "";
+    },
     toggleTheme() {
       this.theme = this.theme === "light" ? "dark" : "light";
       try {
@@ -101,6 +116,10 @@ document.addEventListener("alpine:init", () => {
       }
       this.menuOpen = false;
       this.sidebarOpen = false;
+      if (document.body && !this.modal) {
+        this._bodyOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+      }
       this.modal = name;
       if (name === "notifications") this.loadNotifications();
       if (name === "deposit") {
@@ -116,6 +135,7 @@ document.addEventListener("alpine:init", () => {
 
     closeModal() {
       this.modal = null;
+      if (document.body) document.body.style.overflow = this._bodyOverflow || "";
     },
 
     showToast(message) {

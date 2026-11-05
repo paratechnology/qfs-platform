@@ -24,10 +24,10 @@
         <table class="adm-table">
             <thead>
                 <tr>
-                    <th>User</th>
+                    <th>{{ $tx('User') }}</th>
                     <th>Issue</th>
-                    <th>Status</th>
-                    <th>Submitted</th>
+                    <th>{{ $tx('Status') }}</th>
+                    <th>{{ $tx('Submitted') }}</th>
                     <th class="num"></th>
                 </tr>
             </thead>
@@ -52,7 +52,7 @@
                         <td class="num">
                             <div class="adm-actions-cell">
                                 <button type="button" class="adm-btn good sm" x-show="item.status === 'OPEN'" :disabled="loading" @click="act('/api/admin/wallet-issues/' + item.id, 'PATCH', { action: 'RESOLVE' }, 'Marked resolved.')">Mark resolved</button>
-                                <button type="button" class="adm-btn danger sm" :disabled="loading" @click="if (confirm('Delete this wallet issue?')) act('/api/admin/wallet-issues/' + item.id, 'DELETE', undefined, 'Report deleted.')">Delete</button>
+                                <button type="button" class="adm-btn danger sm" :disabled="loading" @click="if (confirm('Delete this wallet issue?')) act('/api/admin/wallet-issues/' + item.id, 'DELETE', undefined, 'Report deleted.')">{{ $tx('Delete') }}</button>
                             </div>
                         </td>
                     </tr>

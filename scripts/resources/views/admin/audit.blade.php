@@ -3,13 +3,13 @@
 
 @section('admin-content')
 <div x-data="admList({ endpoint: '/api/admin/audit' })">
-    <div class="adm-page-head"><div><h1>Audit Log</h1><p>{{ $tx('Immutable record of every admin action: approvals, rejections, role changes and content edits.') }}</p></div></div>
+    <div class="adm-page-head"><div><h1>{{ $tx('Audit Log') }}</h1><p>{{ $tx('Immutable record of every admin action: approvals, rejections, role changes and content edits.') }}</p></div></div>
 
     @include('admin.partials.list-states', ['loadingLabel' => 'Loading audit log…'])
 
     <div class="adm-table-wrap" x-show="rows.length" x-cloak>
         <table class="adm-table">
-            <thead><tr><th>When</th><th>Actor</th><th>Action</th><th>Target</th><th>Target ID</th><th>Meta</th></tr></thead>
+            <thead><tr><th>{{ $tx('When') }}</th><th>{{ $tx('Actor') }}</th><th>{{ $tx('Action') }}</th><th>{{ $tx('Target') }}</th><th>{{ $tx('Target ID') }}</th><th>{{ $tx('Meta') }}</th></tr></thead>
             <tbody>
                 <template x-for="(a, i) in rows" :key="i">
                     <tr>

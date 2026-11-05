@@ -37,7 +37,7 @@ final class AdminReadController
         $activeInvestments = DB::table('Investment')->where('status', 'ACTIVE');
 
         return Api::ok([
-            'totalUsers' => DB::table('User')->count(),
+            'totalUsers' => DB::table('User')->where('status', '!=', 'DELETED')->count(),
             'newUsers30d' => DB::table('User')->where('createdAt', '>=', $monthAgo)->count(),
             'activeUsers' => DB::table('User')->where('role', 'USER')->where('status', 'ACTIVE')->count(),
             'suspendedUsers' => DB::table('User')->where('status', 'SUSPENDED')->count(),
@@ -57,7 +57,7 @@ final class AdminReadController
     public function users(Request $request): JsonResponse
     {
         Guard::admin($request);
-        $query = DB::table('User');
+        $query = DB::table('User')->where('status', '!=', 'DELETED');
         if ($search = trim((string) $request->query('search', ''))) {
             $like = Search::pattern($search);
             $query->where(function ($q) use ($like) {

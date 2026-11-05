@@ -25,8 +25,8 @@
                 <aside class="auth-panel">
                     <img src="/logo/logo_Asset-5-1024x318-1.png" alt="QFS" class="auth-logo" width="172" height="54">
                     <div class="auth-panel-body">
-                        <span class="label label-accent">Quantum Financial System</span>
-                        <h2>Your Financial Freedom Begins Here</h2>
+                        <span class="label label-accent">{{ $tx('Quantum Financial System') }}</span>
+                        <h2>{{ $tx('Your Financial Freedom Begins Here') }}</h2>
                         <p>{{ $tx('Unlock your financial freedom with QFS. Discover innovative solutions for secure and efficient financial management.') }}</p>
                     </div>
                     <div class="auth-panel-proof">
@@ -39,12 +39,12 @@
                             </div>
                             <div class="auth-proof-text">
                                 <strong>12.5M+</strong>
-                                <span>World Enrolled Users</span>
+                                <span>{{ $tx('World Enrolled Users') }}</span>
                             </div>
                         </div>
                         <div class="auth-proof-award">
                             <img src="/award/award_Asset-6-2.png" alt="" width="40" height="36">
-                            <p>2025's Best QFS Platform</p>
+                            <p>{{ $tx('2025\'s Best QFS Platform') }}</p>
                         </div>
                     </div>
                     <img src="/cards/cc1-1-1024x869-1.png" alt="" class="auth-panel-card" width="420" height="356">

@@ -47,7 +47,7 @@ final class LocaleHtml
             'zh-TW' => '繁體中文', 'ja' => '日本語', 'ko' => '한국어', 'id' => 'Bahasa Indonesia', 'vi' => 'Tiếng Việt', 'th' => 'ไทย',
             'sv' => 'Svenska', 'da' => 'Dansk', 'no' => 'Norsk', 'fi' => 'Suomi', 'cs' => 'Čeština',
             'ro' => 'Română', 'uk' => 'Українська', 'el' => 'Ελληνικά', 'sw' => 'Kiswahili', 'fa' => 'فارسی',
-            'ms' => 'Bahasa Melayu', 'fil' => 'Filipino', 'ha' => 'Hausa',
+            'ms' => 'Bahasa Melayu', 'fil' => 'Filipino', 'ha' => 'Hausa', 'hu' => 'Magyar',
         ];
         $out = [];
         foreach (SetLanguage::available() as $code) {

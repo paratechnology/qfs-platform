@@ -34,7 +34,7 @@ final class AdminActionController
     {
         $admin = Guard::admin($request);
         $data = $this->valid($request, [
-            'action' => 'required|in:SUSPEND,ACTIVATE,SET_ROLE,UPDATE_PROFILE', 'role' => 'required_if:action,SET_ROLE|in:USER,ADMIN',
+            'action' => 'required|in:SUSPEND,ACTIVATE,SET_ROLE,UPDATE_PROFILE,DELETE', 'role' => 'required_if:action,SET_ROLE|in:USER,ADMIN',
         ]);
         $target = DB::table('User')->where('id', $id)->first();
         if (! $target) {
@@ -42,6 +42,12 @@ final class AdminActionController
         }
         if ($id === $admin->id && $data['action'] !== 'ACTIVATE') {
             Guard::fail('BAD_REQUEST', 'You cannot change your own account from here', 400);
+        }
+        if ($data['action'] === 'DELETE') {
+            return $this->deleteUser($request, $admin, $id);
+        }
+        if ($target->status === 'DELETED') {
+            Guard::fail('CONFLICT', 'This account has been deleted.', 409);
         }
         if ($data['action'] === 'UPDATE_PROFILE') {
             return $this->updateProfile($request, $admin, $id);
@@ -78,6 +84,51 @@ final class AdminActionController
         $changed = DB::table('User')->where('id', $id)->first();
 
         return Api::ok(['id' => $id, 'status' => $changed->status, 'role' => $changed->role]);
+    }
+
+    private function deleteUser(Request $request, object $admin, string $id): JsonResponse
+    {
+        $data = $this->valid($request, [
+            'confirmation' => 'required|email|max:200', 'reason' => 'required|string|min:3|max:300',
+            'currentPassword' => 'required|string|max:200', 'code' => 'nullable|string|max:30',
+        ]);
+        $key = 'admin-delete:'.$admin->id;
+        if (RateLimiter::tooManyAttempts($key, 10)) {
+            Guard::fail('TOO_MANY_REQUESTS', 'Too many requests. Please try again later.', 429);
+        }
+        RateLimiter::hit($key, 60);
+        DB::transaction(function () use ($request, $data, $admin, $id): void {
+            $users = DB::table('User')->whereIn('id', [$admin->id, $id])->orderBy('id')->lockForUpdate()->get()->keyBy('id');
+            $actor = $users->get($admin->id);
+            $target = $users->get($id);
+            if (! $actor || $actor->role !== 'ADMIN' || $actor->status !== 'ACTIVE' ||
+                ! DB::table('Session')->where('id', $request->attributes->get('qfs_session_id'))->where('expiresAt', '>', Qfs::now())->exists()) {
+                Guard::fail('FORBIDDEN', 'You do not have access to this action.', 403);
+            }
+            if (! Hash::check($data['currentPassword'], $actor->passwordHash)) {
+                Guard::fail('INVALID_PASSWORD', 'Your current password is incorrect.', 400);
+            }
+            $security = DB::table('AccountSecurity')->where('userId', $actor->id)->lockForUpdate()->first();
+            if ($security?->enabledAt && ! TwoFactor::verify($security, $data['code'] ?? '')) {
+                Guard::fail('INVALID_CODE', 'Enter a new authenticator code or an unused recovery code.', 400);
+            }
+            if (! $target) {
+                Guard::fail('NOT_FOUND', 'User not found', 404);
+            }
+            if (strtolower(trim($data['confirmation'])) !== strtolower($target->email)) {
+                Guard::fail('CONFIRMATION', 'Enter the account email to confirm deletion.', 400);
+            }
+            if ($target->status === 'DELETED') {
+                return;
+            }
+            DB::table('User')->where('id', $id)->update(['status' => 'DELETED', 'updatedAt' => Qfs::now()]);
+            foreach (['Session', 'PasswordRecoveryToken', 'LoginChallenge'] as $table) {
+                DB::table($table)->where('userId', $id)->delete();
+            }
+            AdminLog::audit($actor->id, 'USER.DELETE', 'User', $id, ['reason' => trim($data['reason']), 'financialRecordsRetained' => true]);
+        });
+
+        return Api::ok(['id' => $id, 'deleted' => true, 'financialRecordsRetained' => true]);
     }
 
     private function updateProfile(Request $request, object $admin, string $id): JsonResponse
@@ -286,6 +337,9 @@ final class AdminActionController
             if (! $target) {
                 Guard::fail('NOT_FOUND', 'User not found', 404);
             }
+            if ($target->status === 'DELETED') {
+                Guard::fail('CONFLICT', 'This account has been deleted.', 409);
+            }
             if ($target->role !== 'USER') {
                 Guard::fail('BAD_REQUEST', 'Adjustments target regular user accounts only', 400);
             }
@@ -353,7 +407,7 @@ final class AdminActionController
                 'amountCents' => $result['abs'], 'balanceCents' => $result['newBalance'],
                 'availableCents' => $result['newAvailable']]);
         }
-        $ids = DB::table('User')->where('role', 'USER')->pluck('id');
+        $ids = DB::table('User')->where('role', 'USER')->where('status', '!=', 'DELETED')->pluck('id');
         $applied = 0;
         foreach ($ids as $id) {
             try {

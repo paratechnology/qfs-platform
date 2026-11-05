@@ -7,14 +7,14 @@
 ])
 {{-- Password field with an Alpine-driven show/hide toggle. --}}
 <div class="auth-field" x-data="{ show: false }">
-    <label for="{{ $id }}">{{ $label }}</label>
+    <label for="{{ $id }}">{{ $tx($label) }}</label>
     <div class="auth-input">
         <span class="auth-input-icon"><x-icon name="lock" :size="16" /></span>
         <input
             id="{{ $id }}"
             name="{{ $name }}"
             :type="show ? 'text' : 'password'"
-            placeholder="{{ $placeholder }}"
+            placeholder="{{ $tx($placeholder) }}"
             autocomplete="{{ $autocomplete }}"
             required
         >

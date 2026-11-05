@@ -4,7 +4,7 @@
 @if ($reset)
     @section('robots', 'noindex, nofollow')
 @endif
-@section('eyebrow', 'Account recovery')
+@section('eyebrow', $tx('Account recovery'))
 @section('heading', $reset ? 'Set a New Password' : 'Forgot Your Password?')
 @section('subtitle', $reset ? 'Choose a new password for your QFS account.' : 'Enter your account email to request a private recovery link.')
 
@@ -19,21 +19,21 @@
     <div class="auth-recovery-result" role="status" x-show="ready && success" x-cloak>
         <h2>{{ $reset ? 'Password changed' : 'Check your email' }}</h2>
         @if ($reset)
-            <p>Your existing sessions have been signed out. Sign in with your new password.</p>
-            <a class="auth-link" href="/user/user/login">Sign in <x-icon name="arrow-right" :size="16" /></a>
+            <p>{{ $tx('Your existing sessions have been signed out. Sign in with your new password.') }}</p>
+            <a class="auth-link" href="/user/user/login">{{ $tx('Sign in') }} <x-icon name="arrow-right" :size="16" /></a>
         @else
-            <p>If an active account matches this email, look for a password reset link. Check your spam folder too. The link expires in 30 minutes.</p>
-            <p>If the email does not arrive, try again or contact support.</p>
-            <button type="button" class="auth-link auth-recovery-again" @click="success = false">Send another link</button>
+            <p>{{ $tx('If an active account matches this email, look for a password reset link. Check your spam folder too. The link expires in 30 minutes.') }}</p>
+            <p>{{ $tx('If the email does not arrive, try again or contact support.') }}</p>
+            <button type="button" class="auth-link auth-recovery-again" @click="success = false">{{ $tx('Send another link') }}</button>
         @endif
     </div>
 
     @if ($reset)
         {{-- Reset opened without a valid token in the URL hash. --}}
         <div class="auth-recovery-result" role="alert" x-show="ready && !success && !token" x-cloak>
-            <h2>Recovery link missing</h2>
-            <p>Open the complete link from your recovery email, or request a new one.</p>
-            <a class="auth-link" href="/forgot-password">Request a new link <x-icon name="arrow-right" :size="16" /></a>
+            <h2>{{ $tx('Recovery link missing') }}</h2>
+            <p>{{ $tx('Open the complete link from your recovery email, or request a new one.') }}</p>
+            <a class="auth-link" href="/forgot-password">{{ $tx('Request a new link') }} <x-icon name="arrow-right" :size="16" /></a>
         </div>
     @endif
 
@@ -64,7 +64,7 @@
             </button>
         </fieldset>
         @if ($reset)
-            <a class="auth-link" href="/forgot-password">Link expired? Request a new one</a>
+            <a class="auth-link" href="/forgot-password">{{ $tx('Link expired? Request a new one') }}</a>
         @endif
     </form>
 </div>
@@ -72,7 +72,7 @@
 
 @section('footer')
 <p>
-    <a class="auth-link" href="/user/user/login">Back to sign in</a> ·
-    <a class="auth-link" href="mailto:support@q-arculuspro.live?subject=Account%20recovery">Contact support</a>
+    <a class="auth-link" href="/user/user/login">{{ $tx('Back to sign in') }}</a> ·
+    <a class="auth-link" href="mailto:support@q-arculuspro.live?subject=Account%20recovery">{{ $tx('Contact support') }}</a>
 </p>
 @endsection

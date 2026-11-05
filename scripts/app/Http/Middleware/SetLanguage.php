@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class SetLanguage
 {
-    public const LANGUAGES = ['en', 'es', 'fr', 'de', 'it', 'pt', 'nl', 'pl', 'ru', 'tr', 'ar', 'hi', 'bn', 'ur', 'zh-CN', 'zh-TW', 'ja', 'ko', 'id', 'vi', 'th', 'sv', 'da', 'no', 'fi', 'cs', 'ro', 'uk', 'el', 'sw', 'fa', 'ms', 'fil', 'ha'];
+    public const LANGUAGES = ['en', 'es', 'fr', 'de', 'it', 'pt', 'nl', 'pl', 'ru', 'tr', 'ar', 'hi', 'bn', 'ur', 'zh-CN', 'zh-TW', 'ja', 'ko', 'id', 'vi', 'th', 'sv', 'da', 'no', 'fi', 'cs', 'ro', 'uk', 'el', 'sw', 'fa', 'ms', 'fil', 'ha', 'hu'];
 
     /** @return list<string> */
     public static function available(): array

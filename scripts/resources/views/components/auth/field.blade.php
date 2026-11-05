@@ -11,7 +11,7 @@
 ])
 {{-- One auth form field: text/email/tel input, or a country <select>. --}}
 <div class="auth-field">
-    <label for="{{ $id }}">{{ $label }}</label>
+    <label for="{{ $id }}">{{ $tx($label) }}</label>
     <div class="auth-input">
         @if ($icon)
             <span class="auth-input-icon"><x-icon :name="$icon" :size="16" /></span>
@@ -28,7 +28,7 @@
                 id="{{ $id }}"
                 name="{{ $name }}"
                 type="{{ $type }}"
-                placeholder="{{ $placeholder }}"
+                placeholder="{{ $tx($placeholder) }}"
                 @if ($autocomplete) autocomplete="{{ $autocomplete }}" @endif
                 required
             >

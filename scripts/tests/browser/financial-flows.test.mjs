@@ -11,7 +11,7 @@ const funds = () => ({usd:{availableCents:0,available:"$0.00"},holdings:[
 function app(handler, {locale="en",storage=new Map()}={}) {
   const factories={}, calls=[], events=[], listeners=new Map();
   const location={origin:"http://127.0.0.1:8091",hostname:"127.0.0.1",search:"",assign(path){events.push({type:"navigate",detail:path});}};
-  const document={documentElement:{lang:locale},hidden:false,addEventListener(name,fn){if(name==="alpine:init")fn();}};
+  const document={documentElement:{lang:locale},body:{style:{overflow:""}},querySelector:()=>null,hidden:false,addEventListener(name,fn){if(name==="alpine:init")fn();}};
   const window={location,addEventListener(name,fn){if(!listeners.has(name))listeners.set(name,new Set());listeners.get(name).add(fn);},removeEventListener(name,fn){listeners.get(name)?.delete(fn);},dispatchEvent(event){events.push(event);for(const fn of listeners.get(event.type)||[])fn(event);},__QFS_TX:source=>source};
   const context={console,document,window,location,Intl,Date,BigInt,TextEncoder,Uint8Array,URL,URLSearchParams,FormData,Blob,crypto:webcrypto,navigator:{},Alpine:{data:(name,factory)=>factories[name]=(...args)=>Object.assign(factory(...args),{$nextTick:async fn=>fn?.()})},
     setInterval:()=>1,clearInterval(){},setTimeout:()=>1,clearTimeout(){},queueMicrotask:fn=>fn(),
@@ -94,4 +94,46 @@ test("transaction search opens the selected transaction instead of an unrelated 
 test("deposit QR rendering uses opaque colors, a quiet zone and whole-pixel modules",async()=>{
   const a=app(()=>funds());vm.runInContext(readFileSync(new URL("../../public/js/qrcode.bundle.js",import.meta.url),"utf8"),a.context);const real=a.context.QRCode;let options;a.context.QRCode={create:real.create,toCanvas:async(_canvas,_address,config)=>{options=config;}};
   const canvas={style:{},parentElement:{parentElement:{clientWidth:280}}};const deposit=a.factories.depositFundsForm({});deposit.intent={receivingAddress:"THHujXZgw8vhqUD42DkgspTYnZwjEKvBQC"};deposit.$refs={depositQr:canvas};deposit.drawQr();await Promise.resolve();assert(options.width>=800);assert.equal(options.margin,4);assert.equal(options.color.dark,"#000000ff");assert.equal(options.color.light,"#ffffffff");const modules=real.create(deposit.intent.receivingAddress,{errorCorrectionLevel:"M"}).modules.size+8;assert.equal(parseInt(canvas.style.width)%modules,0);assert.equal(options.width%modules,0);
+});
+
+
+test("investment preview uses exact cents and atomic units for USD and XRP input", async()=>{
+  const snapshot=funds();snapshot.holdings.push({assetKey:"XRP",symbol:"XRP",network:"XRP Ledger",decimals:6,available:"500",availableAtomic:"500000000",availableUsd:"$1,000.00",priceUsd:"2",priceAt:new Date().toISOString()});
+  const a=app(call=>call.path==="/api/wallet/funds"?snapshot:call.path==="/api/wallet/quotes"?{...quote("XRP"),quantity:"500",amountCents:110000,amount:"$1,100.00"}:{investment:{id:"xrp"}});
+  const f=a.factories.investForm({defaultPlanId:"plan"});await f.init();f.source="XRP";f.amount="1000";
+  assert.equal(f.estimate.quantity,"500");assert.equal(f.estimate.amountCents,100000);assert.equal(f.availableUsd,"$1,000.00");
+  f.amountUnit="CRYPTO";f.amount="500.000001";assert.equal(f.exceedsEstimate,true);
+  f.amount="500.0000001";assert.equal(f.estimate,null);
+  f.amount="500";assert.equal(f.estimate.amountCents,100000);await f.submit();
+  assert.deepEqual(a.calls.find(c=>c.path==="/api/wallet/quotes").body,{purpose:"INVESTMENT",assetKey:"XRP",quantity:"500"});
+  await f.submit();assert.equal(a.calls.find(c=>c.path==="/api/investments").body.amount,1100);assert.equal(f.done,true);
+});
+
+test("investment preview does not display stale or invalid prices",()=>{
+  const a=app(()=>funds());const base={decimals:6,priceUsd:"2",priceAt:new Date(Date.now()-121000).toISOString()};
+  a.context.previewAsset=base;
+  assert.equal(vm.runInContext('investmentEstimate(previewAsset,"500","CRYPTO","en",Date.now())',a.context),null);
+  base.priceAt="invalid";
+  assert.equal(vm.runInContext('investmentEstimate(previewAsset,"500","CRYPTO","en",Date.now())',a.context),null);
+});
+
+test("admin delete action submits confirmation and clears password after success",async()=>{
+  const a=app(c=>c.method==="GET"?{items:[],total:0,page:1,totalPages:1}:{deleted:true});const u=a.factories.admUsers();
+  u.openDelete({id:"member",name:"Test Member",email:"member@example.test"});
+  u.deleteForm={confirmation:"member@example.test",reason:"Remove fixture",currentPassword:"Test-password-01",code:"123456"};
+  await u.deleteUser();const call=a.calls.find(c=>c.method==="PATCH");assert.equal(call.body.action,"DELETE");assert.equal(call.body.confirmation,"member@example.test");assert.equal(u.deleting,null);assert.equal(Object.keys(u.deleteForm).length,0);
+});
+
+
+test("bulk adjustment requires a reason and reports applied/skipped accounts",async()=>{
+ const a=app(c=>c.method==="GET"?{items:[],total:0,page:1,totalPages:1}:{applied:2,skipped:1});const u=a.factories.admUsers();
+ u.openAdjustAll();u.adjAmount="100";await u.submitAdjust();assert.equal(a.calls.length,0);
+ u.adjNote="Class project adjustment";await u.submitAdjust();const post=a.calls.find(c=>c.method==="POST");assert.equal(post.body.scope,"ALL");assert.equal("userId" in post.body,false);assert.match(u.toast,/2 accounts adjusted; 1 skipped/);
+});
+
+
+test("sidebar follows combined crypto/USD funds updates and modal scrolling is restored",async()=>{
+ const a=app(()=>({...funds(),availableUsd:"$38,000.00",valuationComplete:true}));const d=a.factories.dashboard();d.init();await d.refreshFunds();assert.equal(d.portfolioAvailable,"$38,000.00");
+ a.context.window.dispatchEvent(new a.context.CustomEvent("dash-funds-updated",{detail:{availableUsd:"$37,000.00",valuationComplete:true}}));assert.equal(d.portfolioAvailable,"$37,000.00");
+ d.openModal("invest");assert.equal(a.context.document.body.style.overflow,"hidden");d.closeModal();assert.equal(a.context.document.body.style.overflow,"");d.destroy();
 });

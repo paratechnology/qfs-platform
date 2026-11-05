@@ -282,6 +282,25 @@ document.addEventListener("alpine:init", () => {
     adjError: "",
     editing: null,
     editForm: {},
+    deleting: null,
+    deleteForm: {},
+    deleteError: "",
+    openDelete(row) {
+      this.deleting = row;
+      this.deleteForm = { confirmation: "", reason: "", currentPassword: "", code: "" };
+      this.deleteError = "";
+    },
+    closeDelete() { if (!this.busy) { this.deleting = null; this.deleteForm = {}; } },
+    async deleteUser() {
+      if (this.busy || !this.deleting) return;
+      this.busy = true; this.deleteError = "";
+      try {
+        await admSend("/api/admin/users/" + encodeURIComponent(this.deleting.id), "PATCH", { action: "DELETE", ...this.deleteForm });
+        this.deleting = null; this.deleteForm = {};
+        this.toast = "Account deleted. Financial and audit records retained.";
+        await this.load();
+      } catch (error) { this.deleteError = error.message; } finally { this.busy = false; }
+    },
 
     async init() {
       await this.load();
@@ -289,7 +308,7 @@ document.addEventListener("alpine:init", () => {
 
     openEdit(row) {
       this.editing = row;
-      this.editForm = { name: row.name, phone: row.phone || "", country: row.country || "", email: row.email };
+      this.editForm = { name: row.name, phone: row.phone || "", country: row.country || "", email: row.email, reason: "", currentPassword: "", code: "" };
       this.error = "";
     },
 
@@ -368,24 +387,27 @@ document.addEventListener("alpine:init", () => {
       this.adjError = "";
     },
 
+    openAdjustAll() { this.openAdjust({ scope: "ALL", name: "All non-admin accounts", availableCents: 0 }); },
     closeAdjust() {
       if (!this.busy) this.adjust = null;
     },
 
     async submitAdjust() {
       if (this.busy || !this.adjAmount) return;
+      if (this.adjNote.trim().length < 3) { this.adjError = "Enter a reason with at least three characters."; return; }
       this.busy = true;
       this.adjError = "";
       try {
-        await admSend("/api/admin/adjustments", "POST", {
-          scope: "USER",
-          userId: this.adjust.id,
+        const result = await admSend("/api/admin/adjustments", "POST", {
+          scope: this.adjust.scope || "USER",
+          ...(this.adjust.id ? { userId: this.adjust.id } : {}),
           direction: this.adjDir,
           amount: this.adjAmount,
           note: this.adjNote.trim() || undefined,
         });
+        const all = this.adjust.scope === "ALL";
         this.adjust = null;
-        this.toast = "Balance adjusted.";
+        this.toast = all ? result.applied + " accounts adjusted; " + result.skipped + " skipped." : "Balance adjusted.";
         await this.load();
         setTimeout(() => (this.toast = ""), 2500);
       } catch (e) {

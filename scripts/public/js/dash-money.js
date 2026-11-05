@@ -17,6 +17,37 @@ const amountValue = (input, locale = document.documentElement.lang || "en") => {
   return number > 0 && number <= 1000000 ? number : null;
 };
 
+// Integer arithmetic keeps conversion previews consistent with the server's cent/atomic rounding.
+function investmentEstimate(asset, input, unit, locale, now) {
+  if (!asset?.priceUsd || !asset.priceAt || !Number.isFinite(Date.parse(asset.priceAt)) || Math.abs(now - Date.parse(asset.priceAt)) > 120000) return null;
+  const rateText = String(asset.priceUsd);
+  if (!/^[0-9]+(?:\.[0-9]+)?$/.test(rateText) || rateText.length > 60) return null;
+  const [whole, fraction = ""] = rateText.split(".");
+  const rate = BigInt(whole + fraction), scale = 10n ** BigInt(fraction.length);
+  if (rate <= 0n) return null;
+  const decimals = Number(asset.decimals), atoms = 10n ** BigInt(decimals);
+  let quantityAtomic, cents;
+  if (unit === "USD") {
+    const amount = amountValue(input, locale);
+    if (amount === null) return null;
+    cents = BigInt(Math.round(amount * 100));
+    const numerator = cents * atoms * scale, divisor = rate * 100n;
+    quantityAtomic = (numerator + divisor - 1n) / divisor;
+  } else {
+    const normalized = cryptoQuantity(input, locale);
+    if (!normalized) return null;
+    const [integer, decimal = ""] = normalized.split(".");
+    if (decimal.length > decimals) return null;
+    quantityAtomic = BigInt(integer + decimal.padEnd(decimals, "0"));
+    cents = quantityAtomic * rate * 100n / (atoms * scale);
+  }
+  if (cents > 100000000n || cents < 1n || quantityAtomic < 1n) return null;
+  const raw = quantityAtomic.toString().padStart(decimals + 1, "0");
+  const quantity = decimals ? (raw.slice(0, -decimals) + "." + raw.slice(-decimals)).replace(/\.?0+$/, "") : raw;
+  return { amountCents: Number(cents), quantity, quantityAtomic: quantityAtomic.toString(),
+    amount: new Intl.NumberFormat(locale, { style: "currency", currency: "USD" }).format(Number(cents) / 100) };
+}
+
 async function moneyPost(path, body) {
   const res = await fetch(path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
   const json = await res.json().catch(() => null);
@@ -80,7 +111,7 @@ document.addEventListener("alpine:init", () => {
   }));
 
   Alpine.data("investForm", (config = {}) => ({
-    planId: config.defaultPlanId || "", amount: "", source: "USD", funds: null,
+    planId: config.defaultPlanId || "", amount: "", amountUnit: "USD", source: "USD", funds: null,
     busy: false, loadingFunds: true, error: "", done: false, quote: null, reference: "", uncertain: false,
     needsFunds: false, preferredSource: "", now: Date.now(), timer: null, openListener: null,
 
@@ -88,7 +119,7 @@ document.addEventListener("alpine:init", () => {
       try {
         const saved = JSON.parse(sessionStorage.getItem("qfs.invest.attempt") || "null");
         if (saved?.reference && saved?.quote && saved?.planId) {
-          Object.assign(this, { planId: saved.planId, amount: saved.amount, source: saved.source, quote: saved.quote, reference: saved.reference, preferredSource: saved.source, uncertain: true });
+          Object.assign(this, { planId: saved.planId, amount: saved.amount, source: saved.source, amountUnit: saved.amountUnit || "USD", quote: saved.quote, reference: saved.reference, preferredSource: saved.source, uncertain: true });
         }
       } catch (_) { /* Optional browser storage. */ }
       this.openListener = event => {
@@ -119,6 +150,11 @@ document.addEventListener("alpine:init", () => {
     get asset() { return this.funds?.holdings.find(asset => asset.assetKey === this.source); },
     get sources() { return (this.funds?.holdings || []).filter(asset => BigInt(asset.availableAtomic || "0") > 0n || asset.assetKey === this.source); },
     get available() { return this.source === "USD" ? this.funds?.usd.available ?? "—" : this.asset ? formatCryptoQuantity(this.asset.available, document.documentElement.lang) + " " + this.asset.symbol : "—"; },
+    get estimate() { return this.source === "USD" ? null : investmentEstimate(this.asset, this.amount, this.amountUnit, document.documentElement.lang, this.now); },
+    get availableUsd() { return this.asset?.availableUsd ?? "USD estimate unavailable"; },
+    get exceedsEstimate() { return this.estimate && BigInt(this.estimate.quantityAtomic) > BigInt(this.asset?.availableAtomic || "0"); },
+    sourceChanged() { this.amountUnit = "USD"; this.amount = ""; this.resetQuote(); },
+    unitChanged() { this.amount = ""; this.resetQuote(); },
     get expired() { return !!this.quote?.expiresAt && Date.parse(this.quote.expiresAt) <= this.now; },
     get seconds() { return this.quote?.expiresAt ? Math.max(0, Math.ceil((Date.parse(this.quote.expiresAt) - this.now) / 1000)) : null; },
     resetQuote() { if (!this.busy && !this.uncertain) { this.quote = null; this.reference = ""; this.error = ""; this.needsFunds = false; } },
@@ -128,8 +164,13 @@ document.addEventListener("alpine:init", () => {
     },
     async submit() {
       if (this.busy || this.done) return;
-      const amount = amountValue(this.amount);
-      if (!this.planId || amount === null) { this.error = !this.planId ? "Select a plan." : "Enter a valid USD amount with at most two decimal places."; return; }
+      const cryptoInput = this.source !== "USD" && this.amountUnit !== "USD";
+      const quantity = cryptoInput ? cryptoQuantity(this.amount, document.documentElement.lang) : null;
+      const amount = this.quote ? this.quote.amountCents / 100 : cryptoInput ? null : amountValue(this.amount);
+      if (!this.planId || (!this.quote && (cryptoInput ? !quantity : amount === null))) {
+        this.error = !this.planId ? "Select a plan." : cryptoInput ? "Enter a valid crypto quantity without thousands separators." : "Enter a valid USD amount with at most two decimal places.";
+        return;
+      }
       this.busy = true; this.error = ""; this.needsFunds = false;
       try {
         if (!this.quote) {
@@ -137,7 +178,7 @@ document.addEventListener("alpine:init", () => {
             if (!this.funds || Math.round(amount * 100) > this.funds.usd.availableCents) throw new FundingError("Insufficient available USD balance.", "INSUFFICIENT_FUNDS", 400);
             this.quote = { amount: new Intl.NumberFormat(document.documentElement.lang, { style: "currency", currency: "USD" }).format(amount), amountCents: Math.round(amount * 100) };
           } else {
-            this.quote = await fundingRequest("/api/wallet/quotes", "POST", { purpose: "INVESTMENT", assetKey: this.source, amount });
+            this.quote = await fundingRequest("/api/wallet/quotes", "POST", { purpose: "INVESTMENT", assetKey: this.source, ...(cryptoInput ? { quantity } : { amount }) });
           }
           this.now = Date.now();
           return;
@@ -145,8 +186,8 @@ document.addEventListener("alpine:init", () => {
         if (this.expired && !this.uncertain) { this.quote = null; throw new Error("This quote expired. Review the investment again for a fresh price."); }
         if (!this.reference) this.reference = `INV-${crypto.randomUUID()}`;
         this.uncertain = true;
-        try { sessionStorage.setItem("qfs.invest.attempt", JSON.stringify({ planId: this.planId, amount: this.amount, source: this.source, quote: this.quote, reference: this.reference })); } catch (_) { /* Optional browser storage. */ }
-        await fundingRequest("/api/investments", "POST", { planId: this.planId, amount, reference: this.reference, ...(this.quote.id ? { quoteId: this.quote.id } : {}) });
+        try { sessionStorage.setItem("qfs.invest.attempt", JSON.stringify({ planId: this.planId, amount: this.amount, source: this.source, amountUnit: this.amountUnit, quote: this.quote, reference: this.reference })); } catch (_) { /* Optional browser storage. */ }
+        await fundingRequest("/api/investments", "POST", { planId: this.planId, amount: this.quote.amountCents / 100, reference: this.reference, ...(this.quote.id ? { quoteId: this.quote.id } : {}) });
         this.uncertain = false; this.done = true;
         try { sessionStorage.removeItem("qfs.invest.attempt"); } catch (_) {}
         window.dispatchEvent(new CustomEvent("dash-funds-refresh"));

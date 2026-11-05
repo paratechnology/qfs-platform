@@ -32,6 +32,7 @@
         </section>
     </template>
     <template x-if="current">
+      <div class="dash-reel-content">
         <div class="dash-reel-stage" :class="{ cinematic }">
             <article class="dash-reel-slide">
                 <blockquote dir="auto" x-text="current.text"></blockquote>
@@ -50,16 +51,17 @@
                 </div>
             </article>
         </div>
-        <footer class="dash-reel-footer">
+        <footer class="dash-reel-footer"><button type="button" class="dash-section-link" @click="openModal('reviewList')">{{ $tx('Read all reviews') }}<x-dash-icon name="chevron-right" :size="14" /></button>
             <template x-if="items.length > 1">
                 <nav class="dash-reel-navigation" aria-label="{{ $tx('Review navigation') }}">
-                    <button type="button" class="dash-reel-control previous" @click="move(-1)"><x-dash-icon name="chevron-right" :size="16" /></button>
+                    <button type="button" class="dash-reel-control previous" aria-label="{{ $tx('Previous review') }}" @click="move(-1)"><x-dash-icon name="chevron-right" :size="16" /></button>
                     <span class="dash-reel-count"><span x-text="position + 1"></span> <span>/</span> <span x-text="items.length"></span></span>
-                    <button type="button" class="dash-reel-control next" @click="move(1)"><x-dash-icon name="chevron-right" :size="16" /></button>
+                    <button type="button" class="dash-reel-control next" aria-label="{{ $tx('Next review') }}" @click="move(1)"><x-dash-icon name="chevron-right" :size="16" /></button>
                 </nav>
             </template>
         </footer>
         <div class="dash-reel-progress" x-show="playing"><span :style="`animation-duration: ${duration}ms`"></span></div>
+      </div>
     </template>
 </section>
 @endif

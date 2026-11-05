@@ -24,14 +24,14 @@
                 <strong>{{ ($kyc['status'] ?? null) === 'PENDING' ? 'Identity review in progress' : (($kyc['status'] ?? null) === 'NEEDS_CHANGES' ? 'Your verification needs an update' : 'Complete your identity verification') }}</strong>
                 <span>{{ ($kyc['status'] ?? null) === 'PENDING' ? 'Your documents are awaiting admin review.' : 'Review your details and upload your identity documents privately.' }}</span>
             </div>
-            <a href="/user/user/dashboard/verification">Verify identity <x-dash-icon name="right-arrow" :size="14" /></a>
+            <a href="/user/user/dashboard/verification">{{ $tx('Verify identity') }} <x-dash-icon name="right-arrow" :size="14" /></a>
         </div>
     @endif
 
     @if ($view !== 'dashboard')
         {{-- ---------- Sub-view workspace ---------- --}}
         <section class="dash-workspace">
-            <a class="dash-page-back" href="/user/user/dashboard"><x-dash-icon name="right-arrow" class="dash-return-arrow" :size="16" /> Back to dashboard</a>
+            <a class="dash-page-back" href="/user/user/dashboard"><x-dash-icon name="right-arrow" class="dash-return-arrow" :size="16" /> {{ $tx('Back to dashboard') }}</a>
             <header class="dash-page-header">
                 <div>
                     <span class="dash-page-eyebrow">{{ $tx('Your account') }}</span>
@@ -77,19 +77,19 @@
 
         {{-- Markets --}}
         <div class="dash-section-title" id="dashboard-markets">
-            <h2>Markets</h2>
-            <span class="dash-section-link" style="cursor:default;color:var(--dash-muted)">Live preview</span>
+            <h2>{{ $tx('Markets') }}</h2>
+            <span class="dash-section-link" style="cursor:default;color:var(--dash-muted)">{{ $tx('Live preview') }}</span>
         </div>
         <div class="dash-card dash-card-pad" x-data="{ tab: 'metals' }">
             <div class="dash-tabs" style="margin-bottom:14px">
-                <button class="dash-tab" :class="{ active: tab === 'metals' }" @click="tab = 'metals'">Markets</button>
-                <button class="dash-tab" :class="{ active: tab === 'stocks' }" @click="tab = 'stocks'">Stocks</button>
+                <button class="dash-tab" :class="{ active: tab === 'metals' }" @click="tab = 'metals'">{{ $tx('Markets') }}</button>
+                <button class="dash-tab" :class="{ active: tab === 'stocks' }" @click="tab = 'stocks'">{{ $tx('Stocks') }}</button>
                 <button class="dash-tab" :class="{ active: tab === 'crypto' }" @click="tab = 'crypto'">Metals &amp; Crypto</button>
             </div>
             @foreach (['metals', 'stocks', 'crypto'] as $segment)
                 <div class="dash-market-table-wrap" style="overflow-x:auto" x-show="tab === '{{ $segment }}'" @if($segment !== 'metals') x-cloak @endif>
                     <table class="dash-market-table">
-                        <thead><tr><th>Asset</th><th>Price</th><th>Change (24h)</th></tr></thead>
+                        <thead><tr><th>{{ $tx('Asset') }}</th><th>{{ $tx('Price') }}</th><th>{{ $tx('Change (24h)') }}</th></tr></thead>
                         <tbody>
                             @foreach ($overview['markets'][$segment] ?? [] as $m)
                                 <tr>
@@ -100,7 +100,7 @@
                                         </div>
                                     </td>
                                     @if ($segment === 'crypto' && ($m['live'] ?? true) === false)
-                                        <td class="dash-price">Quote unavailable</td>
+                                        <td class="dash-price">{{ $tx('Quote unavailable') }}</td>
                                         <td><span class="dash-change">—</span></td>
                                     @else
                                         <td class="dash-price">${{ $m['price'] }}</td>
@@ -116,12 +116,12 @@
 
         {{-- Referral --}}
         <div class="dash-section-title">
-            <h2>Referral Program</h2>
+            <h2>{{ $tx('Referral Program') }}</h2>
             <span class="dash-section-link">{{ $overview['referral']['count'] ?? 0 }} referred · {{ $overview['referral']['earnings'] ?? '$0.00' }} earned</span>
         </div>
         <div class="dash-card dash-card-pad" x-data="referralLink(@js(['url' => $overview['referral']['url'] ?? '', 'code' => $overview['user']['referralCode'] ?? '']))">
             <div class="dash-referral-input">
-                <input readonly :value="link" aria-label="Your referral link">
+                <input readonly :value="link" aria-label="{{ $tx('Your referral link') }}">
                 <button class="dash-referral-copy" :class="{ copied }" @click="navigator.clipboard?.writeText(link); copied = true; setTimeout(() => copied = false, 1500)">
                     <span x-show="!copied"><x-dash-icon name="copy" :size="14" /></span>
                     <span x-show="copied" x-cloak><x-dash-icon name="check" :size="14" /></span>
@@ -129,18 +129,18 @@
                 </button>
             </div>
             <div class="dash-referral-row">
-                <button class="dash-btn info" style="flex:1" @click="navigator.share ? navigator.share({ url: link }) : (navigator.clipboard?.writeText(link), copied = true, setTimeout(() => copied = false, 1500))"><x-dash-icon name="share" :size="14" /> Share Link</button>
+                <button class="dash-btn info" style="flex:1" @click="navigator.share ? navigator.share({ url: link }) : (navigator.clipboard?.writeText(link), copied = true, setTimeout(() => copied = false, 1500))"><x-dash-icon name="share" :size="14" /> {{ $tx('Share Link') }}</button>
                 <p class="dash-input-note" style="flex:1.4;align-self:center;margin:0">Earn {{ (($overview['referral']['rateBps'] ?? 500) / 100) }}% in USD when someone you invite has a deposit approved.</p>
             </div>
         </div>
 
         {{-- Resources: documents / reviews --}}
-        <div class="dash-section-title"><h2>Resources</h2></div>
+        <div class="dash-section-title"><h2>{{ $tx('Resources') }}</h2></div>
         <div class="dash-card" x-data="{ tab: 'documents' }">
             <div style="padding:16px 16px 0">
                 <div class="dash-tabs">
-                    <button class="dash-tab" :class="{ active: tab === 'documents' }" @click="tab = 'documents'">Documents</button>
-                    <button class="dash-tab" :class="{ active: tab === 'reviews' }" @click="tab = 'reviews'">Reviews</button>
+                    <button class="dash-tab" :class="{ active: tab === 'documents' }" @click="tab = 'documents'">{{ $tx('Documents') }}</button>
+                    <button class="dash-tab" :class="{ active: tab === 'reviews' }" @click="tab = 'reviews'">{{ $tx('Reviews') }}</button>
                 </div>
             </div>
             <div class="dash-card-pad">
@@ -165,8 +165,8 @@
 
         {{-- Recent transactions --}}
         <div class="dash-section-title">
-            <h2>Recent Transactions</h2>
-            <a class="dash-section-link" href="/user/user/dashboard/transactions" style="background:none;border:0;cursor:pointer">View All</a>
+            <h2>{{ $tx('Recent Transactions') }}</h2>
+            <a class="dash-section-link" href="/user/user/dashboard/transactions" style="background:none;border:0;cursor:pointer">{{ $tx('View All') }}</a>
         </div>
         <div class="dash-card dash-card-pad">
             <div class="dash-tx-list">

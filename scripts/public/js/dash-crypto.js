@@ -94,17 +94,21 @@ document.addEventListener("alpine:init", () => {
     locale: document.documentElement.lang || "en",
 
     async init() {
+      this.fundsListener = () => this.refresh();
+      window.addEventListener("dash-funds-refresh", this.fundsListener);
       await this.refresh();
       this.timer = setInterval(() => this.refresh(), 30000);
     },
 
     destroy() {
+      window.removeEventListener("dash-funds-refresh", this.fundsListener);
       if (this.timer) clearInterval(this.timer);
     },
 
     async refresh() {
       try {
         this.data = await fundingRequest("/api/wallet/funds");
+        window.dispatchEvent(new CustomEvent("dash-funds-updated", { detail: this.data }));
         this.error = "";
       } catch (e) {
         this.error = e.message;

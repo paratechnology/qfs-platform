@@ -1,9 +1,9 @@
 @extends('layouts.auth')
 
 @section('title', 'Admin Sign In | QFS')
-@section('eyebrow', 'QFS Control Center')
-@section('heading', 'Admin Sign In')
-@section('subtitle', 'Sign in with your administrator account.')
+@section('eyebrow', $tx('QFS Control Center'))
+@section('heading', $tx('Admin Sign In'))
+@section('subtitle', $tx('Sign in with your administrator account.'))
 
 @section('body')
 @if (request('reason') === 'session-expired')
@@ -15,12 +15,12 @@
     <fieldset :disabled="busy" style="border:0;padding:0;margin:0;min-width:0">
         {{-- Credentials --}}
         <template x-if="!challenge">
-            <div>
+            <div class="auth-login-fields">
                 <x-auth.field label="Email Address" type="email" id="admin-email" name="email"
                     placeholder="you@example.com" autocomplete="email" icon="mail" />
                 <x-auth.password label="Password" id="admin-password" name="password"
-                    placeholder="Enter your password" autocomplete="current-password" />
-                <div class="auth-form-row"><a class="auth-link" href="/forgot-password">Forgot password?</a></div>
+                    placeholder="{{ $tx('Enter your password') }}" autocomplete="current-password" />
+                <div class="auth-form-row"><a class="auth-link" href="/forgot-password">{{ $tx('Forgot password?') }}</a></div>
             </div>
         </template>
 
@@ -28,7 +28,7 @@
         <template x-if="challenge">
             <div>
                 <p>{{ $tx('Enter the code from your authenticator app, or use an unused recovery code.') }}</p>
-                <label class="auth-field" for="admin-factor">Authenticator or recovery code</label>
+                <label class="auth-field" for="admin-factor">{{ $tx('Authenticator or recovery code') }}</label>
                 <div class="auth-input">
                     <input id="admin-factor" name="code" dir="ltr" autocomplete="one-time-code" maxlength="30" required>
                 </div>
@@ -39,20 +39,20 @@
 
         <button type="submit" class="auth-submit" :disabled="busy">
             <span x-show="!busy" style="display:inline-flex;align-items:center;gap:10px">
-                <span x-text="challenge ? 'Verify and sign in' : 'Sign In'"></span>
+                <span x-text="challenge ? @js($tx('Verify and sign in')) : @js($tx('Sign In'))"></span>
                 <x-icon name="arrow-right" :size="16" />
             </span>
             <span x-show="busy" x-cloak style="display:inline-flex;align-items:center;gap:10px">
-                <span class="auth-submit-spinner" aria-hidden="true"></span>
-                <span x-text="signedIn ? 'Signed in. Opening the console…' : (challenge ? 'Verifying…' : 'Signing in…')"></span>
+                <span class="auth-submit-spinner" x-show="!signedIn" aria-hidden="true"></span>
+                <span x-text="signedIn ? @js($tx('Signed in. Opening the console…')) : (challenge ? @js($tx('Verifying…')) : @js($tx('Signing in…')))"></span>
             </span>
         </button>
 
-        <button type="button" class="auth-link" x-show="challenge" x-cloak @click="challenge=''; error=''">Back to sign in</button>
+        <button type="button" class="auth-link" x-show="challenge" x-cloak @click="challenge=''; error=''">{{ $tx('Back to sign in') }}</button>
     </fieldset>
 </form>
 @endsection
 
 @section('footer')
-<p>Looking for your account? <a class="auth-link" href="/user/user/login">User sign in</a></p>
+<p>{{ $tx('Looking for your account?') }} <a class="auth-link" href="/user/user/login">{{ $tx('User sign in') }}</a></p>
 @endsection

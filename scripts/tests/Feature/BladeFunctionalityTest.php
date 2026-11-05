@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Http\Controllers\AdminController;
 use App\Support\CryptoFunds;
 use App\Support\Qfs;
 use App\Support\Reviews;
@@ -41,6 +42,7 @@ class BladeFunctionalityTest extends TestCase
                 'tether' => ['usd' => 1, 'last_updated_at' => now()->timestamp],
                 'bitcoin' => ['usd' => 100000, 'last_updated_at' => now()->timestamp],
                 'solana' => ['usd' => 100, 'last_updated_at' => now()->timestamp],
+                'ripple' => ['usd' => 2, 'last_updated_at' => now()->timestamp],
             ]),
             '*' => Http::response([]),
         ]);
@@ -103,7 +105,13 @@ class BladeFunctionalityTest extends TestCase
         $this->assertSame(1, DB::table('Investment')->count());
         $this->assertSame('500000000000000000', DB::table('CryptoBalance')->value('totalAtomic'));
         DB::table('InvestmentPlan')->where('id', 'plan')->update(['terms' => 'Changed plan terms', 'monthlyRoiBps' => 2000]);
-        $this->member()->get('/user/user/dashboard/investments')->assertOk()->assertSee('Original investment terms')->assertSee('Funded with')->assertSee('Next profit payout')->assertSee('Supporting documents')->assertSee('Completed investments')->assertDontSee('Changed plan terms');
+        $page = $this->member()->get('/user/user/dashboard/investments')->assertOk()->assertSee('Original investment terms')->assertSee('Funded with')->assertSee('Next profit payout')->assertSee('Supporting documents')->assertSee('Completed investments');
+        $dom = new \DOMDocument;
+        @$dom->loadHTML('<?xml encoding="UTF-8">'.$page->getContent());
+        $positions = (new \DOMXPath($dom))->query('//details[@data-investment-id]');
+        $this->assertSame(1, $positions->length);
+        $this->assertStringContainsString('Original investment terms', $positions->item(0)->textContent);
+        $this->assertStringNotContainsString('Changed plan terms', $positions->item(0)->textContent);
     }
 
     public function test_document_upload_plan_assignment_and_investment_document_access_are_preserved(): void
@@ -136,6 +144,63 @@ class BladeFunctionalityTest extends TestCase
         $this->assertSame(2, Reviews::ratingSummary()['total']);
     }
 
+    public function test_crypto_quantity_investment_locks_the_usd_value_and_debits_exact_units(): void
+    {
+        DB::transaction(fn () => CryptoFunds::move(CryptoFunds::balance('member', 'XRP'), '500000000', '0', 'DEPOSIT', '500000000', 'FIXTURE-XRP'));
+        $quote = $this->member()->postJson('/api/wallet/quotes', ['purpose' => 'INVESTMENT', 'assetKey' => 'XRP', 'quantity' => '100.123456'])
+            ->assertOk()->assertJsonPath('data.amountCents', 20024)->assertJsonPath('data.quantity', '100.123456')->json('data');
+        $this->member()->postJson('/api/investments', ['planId' => 'plan', 'amount' => 200.24, 'quoteId' => $quote['id'], 'reference' => 'INV-quantity'])->assertOk();
+        $this->assertSame('399876544', DB::table('CryptoBalance')->where('assetKey', 'XRP')->value('totalAtomic'));
+        $this->assertSame(20024, DB::table('Investment')->value('amountCents'));
+        $this->member()->postJson('/api/wallet/quotes', ['purpose' => 'INVESTMENT', 'assetKey' => 'XRP', 'quantity' => '500.000001'])->assertStatus(400)->assertJsonPath('error.code', 'INSUFFICIENT_FUNDS');
+        $this->member()->postJson('/api/wallet/quotes', ['purpose' => 'INVESTMENT', 'assetKey' => 'XRP', 'quantity' => '1', 'amount' => 1])->assertStatus(400)->assertJsonPath('error.code', 'AMOUNT');
+    }
+
+    public function test_deletion_requires_confirmation_and_reauthentication_and_preserves_financial_records(): void
+    {
+        DB::table('Account')->where('userId', 'member')->update(['balanceCents' => 10000, 'availableCents' => 10000]);
+        $body = ['action' => 'DELETE', 'confirmation' => 'member@example.test', 'reason' => 'Remove fixture account', 'currentPassword' => 'Isolated-test-password-01'];
+        $this->member()->patchJson('/api/admin/users/admin', $body)->assertForbidden();
+        $this->withUnencryptedCookie('qfs_session', $this->admin)->patchJson('/api/admin/users/admin', $body)->assertStatus(400);
+        $this->patchJson('/api/admin/users/member', [...$body, 'currentPassword' => 'Wrong-password-01'])->assertStatus(400)->assertJsonPath('error.code', 'INVALID_PASSWORD');
+        $this->patchJson('/api/admin/users/member', [...$body, 'confirmation' => 'wrong@example.test'])->assertStatus(400)->assertJsonPath('error.code', 'CONFIRMATION');
+        $this->assertSame('ACTIVE', DB::table('User')->where('id', 'member')->value('status'));
+        $this->patchJson('/api/admin/users/member', $body)->assertOk()->assertJsonPath('data.financialRecordsRetained', true);
+        $this->assertSame('DELETED', DB::table('User')->where('id', 'member')->value('status'));
+        $this->assertSame(10000, DB::table('Account')->where('userId', 'member')->value('availableCents'));
+        $this->assertSame(0, DB::table('Session')->where('userId', 'member')->count());
+        $this->getJson('/api/admin/users')->assertOk()->assertJsonPath('data.total', 1);
+        $this->postJson('/api/admin/adjustments', ['scope' => 'ALL', 'direction' => 'CREDIT', 'amount' => 1, 'note' => 'Deleted accounts excluded'])->assertOk()->assertJsonPath('data.total', 0);
+        $this->postJson('/api/admin/adjustments', ['scope' => 'USER', 'userId' => 'member', 'direction' => 'CREDIT', 'amount' => 1, 'note' => 'Deleted account excluded'])->assertStatus(409);
+        $this->member()->getJson('/api/auth/me')->assertUnauthorized();
+        $this->assertSame(1, DB::table('AuditLog')->where('action', 'USER.DELETE')->count());
+    }
+
+    public function test_hungarian_auth_pages_and_full_language_names_are_available(): void
+    {
+        $this->withUnencryptedCookie('qfs_locale', 'hu')->get('/admin/login')->assertOk()
+            ->assertSee('Adminisztrátori bejelentkezés')->assertSee('Magyar')->assertSee('Deutsch')->assertSee('Kiswahili');
+    }
+
+    public function test_visual_comparison_fixture_has_funded_crypto_and_a_reviewable_plan(): void
+    {
+        DB::table('User')->where('id', 'member')->update(['name' => 'Interface Investor']);
+        DB::table('User')->where('id', 'admin')->update(['name' => 'Interface Admin']);
+        DB::table('Account')->where('userId', 'member')->update(['balanceCents' => 3500000, 'availableCents' => 3500000]);
+        DB::transaction(function (): void {
+            CryptoFunds::move(CryptoFunds::balance('member', 'XRP'), '500000000', '0', 'DEPOSIT', '500000000', 'FIXTURE-XRP');
+            CryptoFunds::move(CryptoFunds::balance('member', 'ETH'), '1000000000000000000', '0', 'DEPOSIT', '1000000000000000000', 'FIXTURE-ETH');
+        });
+        $this->member()->getJson('/api/wallet/funds')->assertOk()->assertJsonPath('data.usd.availableCents', 3500000);
+        $this->member()->postJson('/api/wallet/quotes', ['purpose' => 'INVESTMENT', 'assetKey' => 'XRP', 'quantity' => '500'])->assertOk()->assertJsonPath('data.amountCents', 100000);
+        if ($path = getenv('QFS_UI_FIXTURE')) {
+            if (! str_ends_with($path, '_test.sqlite')) {
+                throw new \RuntimeException('A disposable UI test database path is required.');
+            }
+            DB::statement('VACUUM INTO ?', [$path]);
+        }
+    }
+
     public function test_login_redirects_respect_https_only_from_the_local_reverse_proxy(): void
     {
         $this->withServerVariables(['REMOTE_ADDR' => '127.0.0.1'])
@@ -152,12 +217,33 @@ class BladeFunctionalityTest extends TestCase
     public function test_dashboard_and_admin_pages_keep_the_new_architecture_and_restored_controls(): void
     {
         foreach (['', '/investments', '/transactions', '/withdrawals', '/loans', '/verification', '/settings', '/statements'] as $view) {
-            $this->member()->get('/user/user/dashboard'.$view)->assertOk();
+            $response = $this->member()->get('/user/user/dashboard'.$view)->assertOk();
+            $this->assertAlpineTemplateRoots($response->getContent());
         }
-        foreach (['plans', 'documents', 'settings', 'reviews', 'kyc', 'wallet-issues'] as $page) {
-            $this->withUnencryptedCookie('qfs_session', $this->admin)->get('/admin/'.$page)->assertOk();
+        foreach (AdminController::PAGES as $page) {
+            $response = $this->withUnencryptedCookie('qfs_session', $this->admin)->get('/admin/'.$page)->assertOk();
+            $this->assertAlpineTemplateRoots($response->getContent());
         }
         $this->withUnencryptedCookie('qfs_session', $this->admin)->get('/admin/plans')->assertSee('Supporting documents')->assertSee('Apply reviewed translation');
         $this->withUnencryptedCookie('qfs_session', $this->admin)->get('/admin/documents')->assertSee('Upload PDF');
+    }
+
+    private function assertAlpineTemplateRoots(string $html): void
+    {
+        $document = new \DOMDocument;
+        $previous = libxml_use_internal_errors(true);
+        $document->loadHTML('<?xml encoding="UTF-8">'.$html);
+        libxml_clear_errors();
+        libxml_use_internal_errors($previous);
+        foreach ($document->getElementsByTagName('template') as $template) {
+            if (! $template->hasAttribute('x-if') && ! $template->hasAttribute('x-for')) {
+                continue;
+            }
+            $elements = 0;
+            foreach ($template->childNodes as $child) {
+                $elements += $child instanceof \DOMElement ? 1 : 0;
+            }
+            $this->assertSame(1, $elements, 'Alpine template must have one root: '.$template->getAttribute('x-if').$template->getAttribute('x-for'));
+        }
     }
 }

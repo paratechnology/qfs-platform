@@ -223,13 +223,15 @@ final class AuthController
     public function language(Request $request): JsonResponse
     {
         $data = $request->validate(['locale' => ['required', 'string', Rule::in(SetLanguage::available())]]);
-        if (SessionAuth::devUser($request)) {
-            return Api::ok(['locale' => $data['locale']]);
+        $user = SessionAuth::user($request);
+        if ($user && ! SessionAuth::devUser($request)) {
+            DB::table('User')->where('id', $user->id)->update(['locale' => $data['locale'], 'updatedAt' => Qfs::now()]);
         }
-        $user = Guard::user($request);
-        DB::table('User')->where('id', $user->id)->update(['locale' => $data['locale'], 'updatedAt' => Qfs::now()]);
 
-        return Api::ok(['locale' => $data['locale']]);
+        return Api::ok(['locale' => $data['locale']])->cookie(
+            'qfs_locale', $data['locale'], 365 * 24 * 60, '/', null,
+            $request->isSecure(), true, false, 'lax'
+        );
     }
 
     public function logout(Request $request): JsonResponse

@@ -1,8 +1,8 @@
 <div x-data="admData({ endpoint: '/api/admin/{{ $resource }}' })">
     <div class="adm-page-head"><div><h1>{{ $title }}</h1><p>{{ $subtitle }}</p></div></div>
 
-    <template x-if="loading && !data"><div class="adm-loading"><span class="adm-spinner" aria-hidden="true"></span> Loading…</div></template>
-    <template x-if="error"><div class="adm-banner error"><span x-text="error"></span> <button class="adm-btn ghost sm" @click="load()">Retry</button></div></template>
+    <template x-if="loading && !data"><div class="adm-loading"><span class="adm-spinner" aria-hidden="true"></span> {{ $tx('Loading…') }}</div></template>
+    <template x-if="error"><div class="adm-banner error"><span x-text="error"></span> <button class="adm-btn ghost sm" @click="load()">{{ $tx('Retry') }}</button></div></template>
     <template x-if="data && data.length === 0"><div class="adm-empty"><b>{{ $tx('Nothing here yet') }}</b></div></template>
 
     <div class="adm-stats-grid" x-show="data && data.length" x-cloak>

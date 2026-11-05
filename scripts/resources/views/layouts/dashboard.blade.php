@@ -61,7 +61,7 @@
 
         <div class="dash-sb-balance">
             <div class="dash-sb-balance-label">{{ $tx('Available balance') }}</div>
-            <div class="dash-sb-balance-amount">{{ $overview['balance']['available'] ?? '$0.00' }}</div>
+            <div class="dash-sb-balance-amount" x-text="portfolioAvailable ?? '—'">—</div>
             <span class="dash-sb-balance-note">{{ $tx('USD value') }}</span>
         </div>
 
@@ -70,7 +70,7 @@
             <button class="dash-sb-action dash-sb-action-danger" @click="logout" :disabled="busy"><x-dash-icon name="log-out" :size="13" /> {{ $tx('Logout') }}</button>
         </div>
 
-        <nav class="dash-sb-nav" aria-label="Account navigation">
+        <nav class="dash-sb-nav" aria-label="{{ $tx('Account navigation') }}">
             <div class="dash-sb-group-title">{{ $tx('Account') }}</div>
             @foreach ($nav as [$key, $label, $ico, $badge, $href])
                 <a class="dash-sb-link {{ $view === $key ? 'active' : '' }}" href="{{ $href }}" @if($view === $key) aria-current="page" @endif>
@@ -180,10 +180,10 @@
                     <template x-if="busy">
                         <span>{{ $tx('Marking as read…') }}</span>
                     </template>
-                    <template x-if="!busy">
+                    <template x-if="!busy"><span>
                         <x-dash-icon name="check" :size="14" />
                         <span>{{ $tx('Mark all as read') }}</span>
-                    </template>
+                    </span></template>
                 </button>
             </div>
         </div>
@@ -367,51 +367,51 @@
     <template x-if="modal === 'withdraw'">
     <div class="dash-modal-overlay" @click.self="closeModal()">
         <div class="dash-modal wide" role="dialog" aria-modal="true" x-data="withdrawFundsForm()">
-            <div class="dash-modal-head"><h3>Make New withdrawal</h3><button class="dash-modal-close" @click="closeModal()"><x-dash-icon name="close" /></button></div>
-            <div class="fund-tabs" aria-label="Funding method">
-                <button type="button" :aria-pressed="mode === 'CRYPTO'" @click="mode = 'CRYPTO'; error = ''">Crypto</button>
-                <button type="button" :aria-pressed="mode === 'BANK'" @click="mode = 'BANK'; error = ''">Bank Transfer</button>
+            <div class="dash-modal-head"><h3>{{ $tx('Make New withdrawal') }}</h3><button class="dash-modal-close" aria-label="{{ $tx('Close') }}" @click="closeModal()"><x-dash-icon name="close" /></button></div>
+            <div class="fund-tabs" aria-label="{{ $tx('Funding method') }}">
+                <button type="button" :aria-pressed="mode === 'CRYPTO'" @click="mode = 'CRYPTO'; error = ''">{{ $tx('Crypto') }}</button>
+                <button type="button" :aria-pressed="mode === 'BANK'" @click="mode = 'BANK'; error = ''">{{ $tx('Bank Transfer') }}</button>
             </div>
             <div class="dash-modal-body" x-show="mode === 'BANK'" x-cloak>
                 <template x-if="!done">
                     <div>
-                        <div class="dash-form-group"><label>Withdraw To</label>
+                        <div class="dash-form-group"><label>{{ $tx('Withdraw To') }}</label>
                             <select class="dash-select" x-model="method">
-                                <option value="Bank Transfer">Bank Transfer</option>
+                                <option value="Bank Transfer">{{ $tx('Bank Transfer') }}</option>
                             </select>
                         </div>
-                        <div class="dash-form-group"><label>Amount</label><div class="dash-input-suffix"><input class="dash-input" inputmode="decimal" placeholder="100.00" x-model="amount"><span>USD</span></div>
-                            <p class="dash-input-note">Available: <b>{{ $overview['balance']['available'] ?? '$0.00' }}</b> — you can't withdraw more than this.</p></div>
-                        <div class="dash-form-group"><label>Bank / Account or Wallet Details</label><input class="dash-input" placeholder="e.g. account number, SWIFT, wallet address" x-model="details"></div>
+                        <div class="dash-form-group"><label>{{ $tx('Amount') }}</label><div class="dash-input-suffix"><input class="dash-input" inputmode="decimal" placeholder="100.00" x-model="amount"><span>USD</span></div>
+                            <p class="dash-input-note">{{ $tx('Available:') }} <b>{{ $overview['balance']['available'] ?? '$0.00' }}</b> {{ $tx('— you can\'t withdraw more than this.') }}</p></div>
+                        <div class="dash-form-group"><label>Bank / Account or Wallet Details</label><input class="dash-input" placeholder="{{ $tx('e.g. account number, SWIFT, wallet address') }}" x-model="details"></div>
                         <template x-if="error"><p class="dash-form-error" x-text="error"></p></template>
                         <button class="dash-btn primary block" :disabled="busy" @click="submitBank()"><span x-text="busy ? 'Submitting…' : 'Request Withdrawal'"></span></button>
                     </div>
                 </template>
                 <template x-if="done">
-                    <div class="dash-payto-success"><h3>Withdrawal requested</h3><span class="dash-tx-status" data-status="pending">Pending review</span><p>Your request is under review. Funds are reserved until it's processed.</p><button class="dash-btn primary block" @click="location.reload()">Done</button></div>
+                    <div class="dash-payto-success"><h3>Withdrawal requested</h3><span class="dash-tx-status" data-status="pending">{{ $tx('Pending review') }}</span><p>Your request is under review. Funds are reserved until it's processed.</p><button class="dash-btn primary block" @click="location.reload()">{{ $tx('Done') }}</button></div>
                 </template>
             </div>
             <div class="dash-modal-body fund-form" x-show="mode === 'CRYPTO'" x-cloak>
                 <template x-if="funds && funds.features && !funds.features.cryptoWithdrawals"><p class="dash-notice" role="status">{{ $tx('Crypto withdrawals are temporarily unavailable.') }}</p></template>
                 <template x-if="error"><p class="dash-form-error" x-text="error"></p></template>
                 <template x-if="saved">
-                    <div class="fund-confirmation" role="status"><strong>Withdrawal submitted</strong>
+                    <div class="fund-confirmation" role="status"><strong>{{ $tx('Withdrawal submitted') }}</strong>
                         <p>Your funds are reserved while the withdrawal is reviewed.</p>
                         <p x-show="currentRequest()?.reference">Reference: <code x-text="currentRequest()?.reference"></code></p>
-                        <a href="/user/user/dashboard/withdrawals">View withdrawal details</a>
+                        <a href="/user/user/dashboard/withdrawals">{{ $tx('View withdrawal details') }}</a>
                     </div>
                 </template>
                 <template x-if="!saved">
                     <div>
-                    <template x-if="!funds"><p class="dash-input-note">Loading balances…</p></template>
+                    <template x-if="!funds"><p class="dash-input-note">{{ $tx('Loading balances…') }}</p></template>
                     <fieldset class="dash-form-fieldset" :disabled="busy || !!quote || !funds || funds?.features?.cryptoWithdrawals === false">
-                        <div class="dash-form-group"><label for="withdraw-source">Withdraw from</label>
+                        <div class="dash-form-group"><label for="withdraw-source">{{ $tx('Withdraw from') }}</label>
                             <select id="withdraw-source" class="dash-select" x-model="source" @change="wdAmount = ''; resetQuote()">
                                 <option value="USD" x-text="'USD account · ' + (funds?.usd?.available ?? '—')"></option>
-                                <option value="CRYPTO">Crypto balance</option>
+                                <option value="CRYPTO">{{ $tx('Crypto balance') }}</option>
                             </select>
                         </div>
-                        <div class="dash-form-group"><label for="withdraw-asset">Asset and network</label>
+                        <div class="dash-form-group"><label for="withdraw-asset">{{ $tx('Asset and network') }}</label>
                             <select id="withdraw-asset" class="dash-select" x-model="assetKey" @change="wdAmount = ''; address = ''; resetQuote()">
                                 <template x-for="item in (funds?.holdings || [])" :key="item.assetKey">
                                     <option :value="item.assetKey" x-text="item.symbol + ' · ' + item.network + ' — Available: ' + item.available + ' ' + item.symbol"></option>
@@ -420,27 +420,27 @@
                         </div>
                         <div class="dash-form-group"><label for="withdraw-quantity" x-text="source === 'USD' ? 'USD amount' : 'Crypto quantity'"></label>
                             <input id="withdraw-quantity" class="dash-input" inputmode="decimal" dir="ltr" x-model="wdAmount" @input="resetQuote()">
-                            <button type="button" class="dash-btn ghost fund-withdraw-max" @click="useMax()">Use available balance</button>
+                            <button type="button" class="dash-btn ghost fund-withdraw-max" @click="useMax()">{{ $tx('Use available balance') }}</button>
                         </div>
-                        <div class="dash-form-group"><label for="withdraw-address">Receiving address</label>
+                        <div class="dash-form-group"><label for="withdraw-address">{{ $tx('Receiving address') }}</label>
                             <input id="withdraw-address" class="dash-input" dir="ltr" x-model="address" @input="resetQuote()">
                         </div>
                         <template x-if="assetKey === 'XRP'">
-                            <div class="dash-form-group"><label for="withdraw-tag">XRP destination tag</label>
+                            <div class="dash-form-group"><label for="withdraw-tag">{{ $tx('XRP destination tag') }}</label>
                                 <input id="withdraw-tag" class="dash-input" dir="ltr" x-model="destinationTag" @input="resetQuote()">
                             </div>
                         </template>
                     </fieldset>
                     <template x-if="quote">
-                        <div class="fund-quote"><div><span>Crypto quantity</span><strong x-text="quote.quantity + ' ' + quote.symbol"></strong></div>
-                            <div><span>USD value</span><strong x-text="quote.amount"></strong></div>
+                        <div class="fund-quote"><div><span>{{ $tx('Crypto quantity') }}</span><strong x-text="quote.quantity + ' ' + quote.symbol"></strong></div>
+                            <div><span>{{ $tx('USD value') }}</span><strong x-text="quote.amount"></strong></div>
                             <p x-text="quoteSeconds() === 0 ? 'Quote expired. Request a new quote.' : 'Quote valid for ' + quoteSeconds() + ' seconds'"></p>
                         </div>
                     </template>
                     <button class="dash-btn primary block" :disabled="busy || !funds || !wdAmount.trim() || !address.trim() || funds?.features?.cryptoWithdrawals === false || (!!quote && quoteSeconds() === 0)" @click="submitCrypto()">
                         <span x-text="busy ? 'Working…' : (quote ? 'Confirm withdrawal' : 'Review withdrawal')"></span>
                     </button>
-                    <button type="button" class="dash-btn ghost block" x-show="quote" :disabled="busy" @click="resetQuote()">Edit or refresh quote</button>
+                    <button type="button" class="dash-btn ghost block" x-show="quote" :disabled="busy" @click="resetQuote()">{{ $tx('Edit or refresh quote') }}</button>
                     </div>
                 </template>
             </div>
@@ -452,14 +452,14 @@
     <template x-if="modal === 'invest'">
     <div class="dash-modal-overlay" @click.self="closeModal()">
         <div class="dash-modal" role="dialog" aria-modal="true" x-data="investForm(@js(['defaultPlanId' => $defaultPlanId]))">
-            <div class="dash-modal-head"><h3>{{ $tx('Start New Investment') }}</h3><button type="button" class="dash-modal-close" @click="$dispatch('dash-close-modal')"><x-dash-icon name="close" /></button></div>
+            <div class="dash-modal-head"><button type="button" class="dash-btn ghost" :disabled="busy" @click="quote && !uncertain ? resetQuote() : $dispatch('dash-close-modal')">{{ $tx('Back') }}</button><h3>{{ $tx('Start New Investment') }}</h3><button type="button" class="dash-modal-close" aria-label="{{ $tx('Close') }}" @click="$dispatch('dash-close-modal')"><x-dash-icon name="close" /></button></div>
             <div class="dash-modal-body">
                 <div x-show="!done">
                     <div class="dash-form-group"><label>{{ $tx('Select Plan') }}</label>
                         <div style="display:flex;flex-direction:column;gap:8px">
                             @forelse ($plans as $p)
                                 <button type="button" @click="planId = @js($p['id']); resetQuote()" :disabled="busy || !!quote || uncertain"
-                                    :style="planId === @js($p['id']) ? 'border:1px solid var(--dash-lime-2);background:rgba(206,255,12,0.07)' : 'border:1px solid var(--dash-border);background:rgba(255,255,255,0.04)'"
+                                    :aria-pressed="planId === @js($p['id'])" :style="{ border: planId === @js($p['id']) ? '1px solid var(--dash-lime-2)' : '1px solid var(--dash-border)', background: planId === @js($p['id']) ? 'rgba(206,255,12,0.07)' : 'rgba(255,255,255,0.04)' }"
                                     style="display:flex;gap:12px;padding:12px 14px;border-radius:12px;text-align:start;width:100%;cursor:pointer;color:inherit;font:inherit">
                                     <span style="flex:1;min-width:0">
                                         <b style="font-size:13.5px;display:block">{{ $p['name'] }}</b>
@@ -472,19 +472,38 @@
                             @endforelse
                         </div>
                     </div>
+                    @foreach ($plans as $plan)
+                        <details class="dash-position-prose" x-show="planId === @js($plan['id'])" style="margin-bottom:20px">
+                            <summary>{{ $tx('Investment terms') }}</summary>
+                            @if (!empty($plan['description']))<p dir="auto">{{ $plan['description'] }}</p>@endif
+                            <p>{{ $tx(($plan['payoutInterval'] ?? '') === 'HOURLY' ? 'Credited to available balance hourly' : 'Accrued hourly; credited on each monthly anniversary') }}</p>
+                            <p>{{ $tx(($plan['principalRelease'] ?? '') === 'AUTOMATIC' ? 'Principal is returned to your available balance automatically after the plan term.' : 'Principal is locked for the plan term, then released to available balance after admin approval. Early exit is not available.') }}</p>
+                            @if (!empty($plan['terms']))<p style="white-space:pre-wrap" dir="auto">{{ $plan['terms'] }}</p>@endif
+                            @if (!empty($plan['riskDisclosure']))<h4>{{ $tx('Risk disclosure') }}</h4><p style="white-space:pre-wrap" dir="auto">{{ $plan['riskDisclosure'] }}</p>@endif
+                            @foreach ($plan['documents'] ?? [] as $document)<p><a href="{{ $document['fileUrl'] }}" target="_blank" rel="noreferrer">{{ $document['title'] }} ↗</a></p>@endforeach
+                        </details>
+                    @endforeach
                     <fieldset class="dash-form-fieldset" :disabled="busy || !!quote || uncertain">
                         <p class="dash-input-note" x-show="loadingFunds" role="status">{{ $tx('Loading available balances…') }}</p>
                         <button type="button" class="dash-btn ghost" x-show="!funds && !loadingFunds" @click="loadFunds(true)">{{ $tx('Retry loading balances') }}</button>
                         <div class="dash-form-group"><label for="investment-source">{{ $tx('Fund investment from') }}</label>
-                            <select id="investment-source" class="dash-select" x-model="source" @change="resetQuote()" :disabled="!funds">
+                            <select id="investment-source" class="dash-select" x-model="source" @change="sourceChanged()" :disabled="!funds">
                                 <option value="USD" x-text="'USD account · ' + (funds?.usd?.available ?? '—')"></option>
-                                <template x-for="asset in sources" :key="asset.assetKey"><option :value="asset.assetKey" x-text="asset.symbol + ' · ' + asset.network + ' — ' + formatCryptoQuantity(asset.available, document.documentElement.lang)"></option></template>
+                                <template x-for="asset in sources" :key="asset.assetKey"><option :value="asset.assetKey" x-text="asset.symbol + ' · ' + asset.network + ' — ' + formatCryptoQuantity(asset.available, document.documentElement.lang) + ' ≈ ' + (asset.availableUsd ?? 'USD unavailable')"></option></template>
                             </select>
-                            <p class="dash-input-note">{{ $tx('Available') }}: <b x-text="available"></b></p>
+                            <p class="dash-input-note">{{ $tx('Available') }}: <b x-text="available"></b><span x-show="source !== 'USD'" x-text="' ≈ ' + availableUsd"></span></p>
                             <p class="dash-input-note" x-show="source !== 'USD'">{{ $tx('Invest directly from this crypto balance. No separate swap to USD is required. Principal and returns are fixed in USD when confirmed.') }}</p>
                         </div>
-                        <div class="dash-form-group"><label for="investment-amount">{{ $tx('Investment Amount') }}</label><div class="dash-input-suffix"><input id="investment-amount" class="dash-input" inputmode="decimal" placeholder="100.00" x-model="amount" @input="resetQuote()"><span>USD</span></div></div>
+                        <div class="dash-form-group" x-show="source !== 'USD'"><label for="investment-unit">{{ $tx('Enter investment in') }}</label><select id="investment-unit" class="dash-select" x-model="amountUnit" @change="unitChanged()"><option value="USD">USD</option><option value="CRYPTO" x-text="asset?.symbol || 'Crypto'"></option></select></div>
+                        <div class="dash-form-group"><label for="investment-amount">{{ $tx('Investment Amount') }}</label><div class="dash-input-suffix"><input id="investment-amount" class="dash-input" inputmode="decimal" placeholder="100.00" x-model="amount" @input="resetQuote()"><span x-text="source === 'USD' || amountUnit === 'USD' ? 'USD' : asset?.symbol"></span></div></div>
                     </fieldset>
+                    <div class="fund-quote investment-preview" x-show="estimate && !quote" aria-live="polite">
+                        <div><span>{{ $tx('Estimated USD principal') }}</span><strong x-text="estimate?.amount"></strong></div>
+                        <div><span>{{ $tx('Crypto to invest') }}</span><strong x-text="(estimate?.quantity || '') + ' ' + (asset?.symbol || '')"></strong></div>
+                        <p>{{ $tx('Estimate only. Review locks a fresh price before confirmation.') }}</p>
+                        <p class="dash-form-error" x-show="exceedsEstimate">{{ $tx('This exceeds your available balance. Reduce the amount or fund your account.') }}</p>
+                    </div>
+                    <p class="dash-input-note" x-show="source !== 'USD' && amount && !estimate && !quote">{{ $tx('A USD estimate is unavailable. Review will request a fresh price.') }}</p>
                     <div class="fund-quote" x-show="quote" x-cloak role="status">
                         <p>{{ $tx('Investment principal') }}: <strong x-text="quote?.amount"></strong></p>
                         <p x-show="quote?.quantity"><span>{{ $tx('Crypto to use') }}: </span><bdi x-text="(quote?.quantity ?? '') + ' ' + (asset?.symbol ?? '')"></bdi></p>
@@ -509,7 +528,7 @@
 
     {{-- ---------- Cards ---------- --}}
     <template x-if="modal === 'cards'"><div class="dash-modal-overlay" @click.self="closeModal()"><div class="dash-modal" role="dialog" aria-modal="true" x-data="cardManager()">
-        <div class="dash-modal-head"><h3>{{ $tx('Manage Cards') }}</h3><button type="button" class="dash-modal-close" @click="closeModal()" aria-label="{{ $tx('Close') }}"><x-dash-icon name="close" /></button></div>
+        <div class="dash-modal-head"><h3>{{ $tx('Manage Cards') }}</h3><button type="button" class="dash-modal-close" aria-label="{{ $tx('Close') }}" @click="closeModal()"><x-dash-icon name="close" /></button></div>
         <div class="dash-modal-body"><p x-show="loading" role="status">{{ $tx('Loading…') }}</p><p x-show="error" x-text="error" class="dash-form-error" role="alert"></p><p x-show="message" x-text="message" role="status"></p>
             <template x-for="card in cards" :key="card.id"><section class="dash-card dash-card-pad"><h4 x-text="card.brand + ' •••• ' + card.last4"></h4><p x-text="card.holder + ' · ' + card.status + (card.isDefault ? ' · Default' : '')"></p>
                 <div class="dash-actions-row"><button type="button" class="dash-btn ghost" :disabled="!!busy || card.status === 'EXPIRED'" @click="act(card.id, card.status === 'FROZEN' ? 'UNFREEZE' : 'FREEZE')" x-text="busy === card.id ? 'Saving…' : card.status === 'FROZEN' ? 'Unfreeze card' : 'Freeze card'"></button><button type="button" class="dash-btn ghost" :disabled="!!busy || card.isDefault || card.status === 'EXPIRED'" @click="act(card.id, 'SET_DEFAULT')">{{ $tx('Set default') }}</button></div>
@@ -518,10 +537,10 @@
     </div></div></template>
 
     <template x-if="modal === 'reviewForm'"><div class="dash-modal-overlay" @click.self="closeModal()"><div class="dash-modal" role="dialog" aria-modal="true" x-data="reviewForm()">
-        <div class="dash-modal-head"><h3>{{ $tx('Write a review') }}</h3><button type="button" class="dash-modal-close" @click="closeModal()" aria-label="{{ $tx('Close') }}"><x-dash-icon name="close" /></button></div>
+        <div class="dash-modal-head"><h3>{{ $tx('Write a review') }}</h3><button type="button" class="dash-modal-close" aria-label="{{ $tx('Close') }}" @click="closeModal()"><x-dash-icon name="close" /></button></div>
         <form class="dash-modal-body" @submit.prevent="submit()"><fieldset class="dash-form-fieldset" :disabled="busy || done"><div class="dash-form-group"><label for="review-rating">{{ $tx('Rating') }}</label><select id="review-rating" class="dash-select" x-model.number="rating">@foreach ([5,4,3,2,1] as $rating)<option value="{{ $rating }}">{{ $rating }} ★</option>@endforeach</select></div><div class="dash-form-group"><label for="review-text">{{ $tx('Your review') }}</label><textarea id="review-text" class="dash-input" x-model="text" minlength="10" maxlength="2000" required></textarea></div><button type="submit" class="dash-btn primary block" x-show="!done" x-text="busy ? 'Submitting…' : 'Submit review'"></button></fieldset><p class="dash-form-error" x-text="error" x-show="error" role="alert"></p><div class="dash-success-message" x-show="done" role="status">{{ $tx('Your review was submitted for admin approval.') }}</div><button type="button" class="dash-btn ghost block" @click="closeModal()">{{ $tx('Done') }}</button></form>
     </div></div></template>
-    <template x-if="modal === 'reviewList'"><div class="dash-modal-overlay" @click.self="closeModal()"><div class="dash-modal" role="dialog" aria-modal="true" x-data="reviewList()"><div class="dash-modal-head"><h3>{{ $tx('Reviews') }}</h3><button type="button" class="dash-modal-close" @click="closeModal()" aria-label="{{ $tx('Close') }}"><x-dash-icon name="close" /></button></div><div class="dash-modal-body">
+    <template x-if="modal === 'reviewList'"><div class="dash-modal-overlay" @click.self="closeModal()"><div class="dash-modal" role="dialog" aria-modal="true" x-data="reviewList()"><div class="dash-modal-head"><h3>{{ $tx('Reviews') }}</h3><button type="button" class="dash-modal-close" aria-label="{{ $tx('Close') }}" @click="closeModal()"><x-dash-icon name="close" /></button></div><div class="dash-modal-body">
         @if ($overview['illustrativeReviews'] ?? false)<p class="dash-input-note">{{ $tx('Illustrative reviews') }}</p>@endif
         <p x-show="loading" role="status">{{ $tx('Loading…') }}</p><p class="dash-form-error" x-text="error" x-show="error" role="alert"></p><template x-for="review in items" :key="review.id"><article class="dash-review-card"><strong x-text="review.userName"></strong><span class="dash-review-stars" x-text="'★'.repeat(review.rating)"></span><p dir="auto" x-text="review.text"></p></article></template><button type="button" class="dash-btn ghost block" @click="closeModal()">{{ $tx('Back') }}</button>
     </div></div></div></template>
@@ -530,24 +549,24 @@
     <template x-if="modal === 'swap'">
     <div class="dash-modal-overlay" @click.self="closeModal()">
         <div class="dash-modal wide" role="dialog" aria-modal="true" x-data="cryptoSwapForm()">
-            <div class="dash-modal-head"><h3>Swap</h3><button class="dash-modal-close" @click="closeModal()"><x-dash-icon name="close" /></button></div>
+            <div class="dash-modal-head"><h3>{{ $tx('Swap') }}</h3><button class="dash-modal-close" aria-label="{{ $tx('Close') }}" @click="closeModal()"><x-dash-icon name="close" /></button></div>
             <div class="dash-modal-body fund-form swap-form">
                 <p class="dash-input-note">Convert between your USD account and any supported crypto. Investments keep their existing terms.</p>
                 <div class="fund-error" role="alert" x-show="error" x-cloak>
                     <span x-text="error"></span>
-                    <button type="button" class="dash-btn ghost" :disabled="busy" @click="error = ''; loadSwaps()">Retry</button>
+                    <button type="button" class="dash-btn ghost" :disabled="busy" @click="error = ''; loadSwaps()">{{ $tx('Retry') }}</button>
                 </div>
-                <p role="status" x-show="!data && !error" x-cloak>Loading swaps…</p>
+                <p role="status" x-show="!data && !error" x-cloak>{{ $tx('Loading swaps…') }}</p>
                 <div class="fund-confirmation" role="status" x-show="submitted" x-cloak>
                     <strong x-text="resultStatus === 'CANCELLED' ? 'Swap cancelled' : resultStatus === 'COMPLETED' ? 'Swap completed' : resultStatus === 'REFUNDED' ? 'Swap refunded' : 'Swap submitted'"></strong>
                     <p>Your exchange is complete. Updated balances appear on the dashboard.</p>
                 </div>
-                <p class="dash-notice" role="status" x-show="uncertain" x-cloak>Checking a previous swap request. Retry with the same reference to avoid a duplicate exchange.</p>
+                <p class="dash-notice" role="status" x-show="uncertain" x-cloak>{{ $tx('Checking a previous swap request. Retry with the same reference to avoid a duplicate exchange.') }}</p>
                 <p class="dash-notice" x-show="data && !data.available && !uncertain" x-cloak>Swaps are not available yet.</p>
-                <button type="button" class="dash-btn ghost block" x-show="submitted && data?.available" :disabled="busy" @click="swapAgain()" x-cloak>Swap again</button>
+                <button type="button" class="dash-btn ghost block" x-show="submitted && data?.available" :disabled="busy" @click="swapAgain()" x-cloak>{{ $tx('Swap again') }}</button>
                 <div x-show="!submitted && (data?.available || quote)" x-cloak>
                     <fieldset class="dash-form-fieldset" :disabled="busy || !!quote">
-                        <div class="dash-form-group"><label for="swap-from">Swap from</label>
+                        <div class="dash-form-group"><label for="swap-from">{{ $tx('Swap from') }}</label>
                             <select id="swap-from" class="dash-select" x-model="from" @change="quantity = ''; submitted = false; editQuote()">
                                 <template x-for="item in fromAssets()" :key="item.assetKey">
                                     <option :value="item.assetKey" x-text="assetLabel(item.assetKey)"></option>
@@ -557,8 +576,8 @@
                         <div class="dash-form-group"><label for="swap-quantity" x-text="from === 'USD' ? 'USD amount' : 'Crypto quantity'"></label>
                             <input id="swap-quantity" class="dash-input" dir="ltr" inputmode="decimal" x-model="quantity" @input="editQuote()">
                         </div>
-                        <p class="dash-input-note">Available: <bdi x-text="from === 'USD' ? (sourceHolding?.available ?? '—') : ((sourceHolding?.available ?? '—') + ' ' + (sourceHolding?.symbol ?? ''))"></bdi></p>
-                        <div class="dash-form-group"><label for="swap-to">Receive</label>
+                        <p class="dash-input-note">{{ $tx('Available:') }} <bdi x-text="from === 'USD' ? (sourceHolding?.available ?? '—') : ((sourceHolding?.available ?? '—') + ' ' + (sourceHolding?.symbol ?? ''))"></bdi></p>
+                        <div class="dash-form-group"><label for="swap-to">{{ $tx('Receive') }}</label>
                             <select id="swap-to" class="dash-select" x-model="to" @change="editQuote()">
                                 <template x-for="item in toAssets()" :key="item.assetKey">
                                     <option :value="item.assetKey" x-text="assetLabel(item.assetKey)"></option>
@@ -566,30 +585,30 @@
                             </select>
                         </div>
                         <div class="dash-form-group swap-receive-field">
-                            <label for="swap-receive">You receive</label>
+                            <label for="swap-receive">{{ $tx('You receive') }}</label>
                             <input id="swap-receive" class="dash-input" dir="ltr" readonly :value="receiveDisplay()" placeholder="Review the swap to see the amount">
                         </div>
                     </fieldset>
                     <div class="fund-quote swap-quote" x-show="quote" x-cloak>
-                        <span>You receive</span>
+                        <span>{{ $tx('You receive') }}</span>
                         <strong dir="ltr" x-text="receiveDisplay()"></strong>
                         <span x-show="destNetwork()" x-text="destNetwork()"></span>
                         <dl>
-                            <div x-show="quote && quote.networkFee && quote.networkFee !== '0'"><dt>Network fee included</dt><dd dir="ltr" x-text="quote.networkFee + ' ' + assetSymbol(to)"></dd></div>
-                            <div><dt>Quote expires in</dt><dd x-text="seconds + 's'"></dd></div>
+                            <div x-show="quote && quote.networkFee && quote.networkFee !== '0'"><dt>{{ $tx('Network fee included') }}</dt><dd dir="ltr" x-text="quote.networkFee + ' ' + assetSymbol(to)"></dd></div>
+                            <div><dt>{{ $tx('Quote expires in') }}</dt><dd x-text="seconds + 's'"></dd></div>
                         </dl>
                     </div>
                     <button type="button" class="dash-btn primary block" id="swap-confirm" :disabled="!canSubmit()" @click="submit()">
                         <span x-text="busy ? 'Working…' : (uncertain ? 'Check swap request' : quote ? 'Confirm swap' : 'Review swap')"></span>
                     </button>
-                    <button type="button" class="dash-btn ghost block" x-show="quote && !uncertain" :disabled="busy" @click="editQuote()">Edit or refresh quote</button>
+                    <button type="button" class="dash-btn ghost block" x-show="quote && !uncertain" :disabled="busy" @click="editQuote()">{{ $tx('Edit or refresh quote') }}</button>
                 </div>
                 <div class="dash-actions-row" x-show="submitted && resultStatus === 'COMPLETED'" x-cloak>
                     <button class="dash-btn primary" type="button" @click="useSwappedFunds('invest')">{{ $tx('Invest these funds') }}</button>
                     <button class="dash-btn ghost" type="button" @click="useSwappedFunds('withdraw')">{{ $tx('Withdraw these funds') }}</button>
                 </div>
                 <section class="swap-history" x-show="data?.items?.length" x-cloak>
-                    <h3>Swap history</h3>
+                    <h3>{{ $tx('Swap history') }}</h3>
                     <template x-for="item in (data?.items || [])" :key="item.id">
                         <div class="dash-activity-row"><div><strong dir="ltr" x-text="item.quantity + ' ' + item.fromSymbol + ' → ' + (item.status === 'REFUNDED' ? item.refundQuantity + ' ' + item.fromSymbol : (item.receivedQuantity ?? item.quotedQuantity) + ' ' + item.toSymbol)"></strong>
                             <small x-text="item.reference"></small></div>
@@ -606,7 +625,7 @@
     <template x-if="modal === 'loanApply'">
     <div class="dash-modal-overlay" @click.self="closeModal()">
         <div class="dash-modal" role="dialog" aria-modal="true" x-data="loanApplyForm()">
-            <div class="dash-modal-head"><h3>{{ $tx('Loan Application') }}</h3><button class="dash-modal-close" @click="closeModal()"><x-dash-icon name="close" /></button></div>
+            <div class="dash-modal-head"><h3>{{ $tx('Loan Application') }}</h3><button class="dash-modal-close" aria-label="{{ $tx('Close') }}" @click="closeModal()"><x-dash-icon name="close" /></button></div>
             <div class="dash-modal-body">
                 <template x-if="!done">
                     <div>
@@ -655,7 +674,7 @@
     {{-- ---------- Profile ---------- --}}
     <div class="dash-modal-overlay" x-show="modal === 'profile'" x-cloak @click.self="closeModal()">
         <div class="dash-modal" role="dialog" aria-modal="true">
-            <div class="dash-modal-head"><h3>{{ $tx('My Profile') }}</h3><button class="dash-modal-close" @click="closeModal()"><x-dash-icon name="close" /></button></div>
+            <div class="dash-modal-head"><h3>{{ $tx('My Profile') }}</h3><button class="dash-modal-close" aria-label="{{ $tx('Close') }}" @click="closeModal()"><x-dash-icon name="close" /></button></div>
             <div class="dash-modal-body">
                 <div class="dash-loan-row"><span>{{ $tx('Name') }}</span><b>{{ $u['name'] ?? '—' }}</b></div>
                 <div class="dash-loan-row"><span>{{ $tx('Email') }}</span><b>{{ $u['email'] ?? '—' }}</b></div>

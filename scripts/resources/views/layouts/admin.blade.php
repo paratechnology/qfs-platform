@@ -46,8 +46,8 @@
     <aside class="adm-sidebar">
         <div class="adm-sb-head">
             <img src="/logo/logo_Asset-5-1024x318-1.png" alt="QFS">
-            <span class="adm-sb-role">Admin</span>
-            <button class="adm-sb-close" aria-label="Close menu" @click="sidebarOpen = false"><x-dash-icon name="close" /></button>
+            <span class="adm-sb-role">{{ $tx('Admin') }}</span>
+            <button class="adm-sb-close" aria-label="{{ $tx('Close menu') }}" @click="sidebarOpen = false"><x-dash-icon name="close" /></button>
         </div>
 
         <div class="adm-sb-profile">
@@ -68,8 +68,8 @@
         </nav>
 
         <div class="adm-sb-foot">
-            <a class="adm-sb-link" href="/"><span class="adm-sb-link-ico"><x-dash-icon name="card" :size="16" /></span><span>View Public Site</span></a>
-            <a class="adm-sb-link" href="/user/user/dashboard"><span class="adm-sb-link-ico"><x-dash-icon name="dashboard" :size="16" /></span><span>User Dashboard</span></a>
+            <a class="adm-sb-link" href="/"><span class="adm-sb-link-ico"><x-dash-icon name="card" :size="16" /></span><span>{{ $tx('View Public Site') }}</span></a>
+            <a class="adm-sb-link" href="/user/user/dashboard"><span class="adm-sb-link-ico"><x-dash-icon name="dashboard" :size="16" /></span><span>{{ $tx('User Dashboard') }}</span></a>
             <button class="adm-sb-link adm-sb-link-danger" @click="logout" :disabled="busy"><span class="adm-sb-link-ico"><x-dash-icon name="log-out" :size="16" /></span><span x-text="busy ? 'Signing out…' : 'Logout'"></span></button>
         </div>
     </aside>
@@ -78,15 +78,15 @@
 
     <div class="adm-main">
         <header class="adm-topbar">
-            <button class="adm-hamburger" aria-label="Open menu" @click="sidebarOpen = true"><x-dash-icon name="menu" /></button>
+            <button class="adm-hamburger" aria-label="{{ $tx('Open menu') }}" @click="sidebarOpen = true"><x-dash-icon name="menu" /></button>
             <div class="adm-topbar-title">
                 <span class="adm-topbar-kicker">{{ $tx('QFS Control Center') }}</span>
-                <b>Admin Dashboard</b>
+                <b>{{ $tx('Admin Dashboard') }}</b>
             </div>
             <div class="adm-topbar-spacer"></div>
             <div class="adm-topbar-actions">
                 @include('partials.language-selector')
-                <button class="adm-icon-btn" aria-label="Toggle theme" @click="toggleTheme">
+                <button class="adm-icon-btn" aria-label="{{ $tx('Toggle theme') }}" @click="toggleTheme">
                     <span x-show="theme === 'light'"><x-dash-icon name="moon" :size="17" /></span>
                     <span x-show="theme !== 'light'" x-cloak><x-dash-icon name="sun" :size="17" /></span>
                 </button>
@@ -104,9 +104,9 @@
         </header>
 
         <main class="adm-body">
-            <nav class="adm-crumbs" aria-label="Breadcrumb">
+            <nav class="adm-crumbs" aria-label="{{ $tx('Breadcrumb') }}">
                 <ol>
-                    <li><a href="/admin">Admin</a></li>
+                    <li><a href="/admin">{{ $tx('Admin') }}</a></li>
                     <li class="adm-crumbs-sep" aria-hidden="true">/</li>
                     <li><span aria-current="page">{{ $crumbShort[$page] ?? $current[2] }}</span></li>
                 </ol>

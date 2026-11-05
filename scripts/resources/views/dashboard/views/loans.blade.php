@@ -4,7 +4,7 @@
     <template x-if="!loading && !error && items.length === 0"><div class="dash-notice"><x-dash-icon name="info" /> You have no loan applications yet.</div></template>
     <div class="dash-market-table-wrap" x-show="items.length" style="overflow-x:auto" x-cloak>
         <table class="dash-market-table">
-            <thead><tr><th>Type</th><th>Amount</th><th>Status</th><th>Applied</th><th>Due</th></tr></thead>
+            <thead><tr><th>{{ $tx('Type') }}</th><th>{{ $tx('Amount') }}</th><th>{{ $tx('Status') }}</th><th>Applied</th><th>Due</th></tr></thead>
             <tbody>
                 <template x-for="l in items" :key="l.id">
                     <tr>

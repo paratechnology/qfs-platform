@@ -77,7 +77,7 @@ class LocalizationTest extends TestCase
 
     public function test_all_published_languages_localize_validation_recovery_and_print_direction(): void
     {
-        $this->assertCount(34, SetLanguage::available());
+        $this->assertCount(35, SetLanguage::available());
         $snapshot = ['from' => '2026-10-01', 'to' => '2026-10-16', 'generatedAt' => '2026-10-16T12:00:00Z',
             'name' => 'PRIVATE_NAME_94', 'email' => 'private@example.test', 'balanceCents' => 123456,
             'availableCents' => 123456, 'holdings' => [], 'investments' => [], 'transactions' => [], 'transactionCount' => 0];
@@ -106,13 +106,14 @@ class LocalizationTest extends TestCase
     public function test_preference_updates_only_the_authenticated_account(): void
     {
         $this->withUnencryptedCookies(['qfs_session' => SessionAuth::issue('investor')])
-            ->postJson('/api/auth/locale', ['locale' => 'es'])->assertOk()->assertJsonPath('data.locale', 'es');
+            ->postJson('/api/auth/locale', ['locale' => 'es'])->assertOk()->assertJsonPath('data.locale', 'es')->assertPlainCookie('qfs_locale', 'es');
         $this->assertSame('es', DB::table('User')->where('id', 'investor')->value('locale'));
         $this->assertNull(DB::table('User')->where('id', 'other')->value('locale'));
         $this->assertSame('USER', DB::table('User')->where('id', 'investor')->value('role'));
         $this->postJson('/api/auth/locale', ['locale' => 'unsupported'])->assertStatus(400);
         $this->assertSame('es', DB::table('User')->where('id', 'investor')->value('locale'));
-        $this->withUnencryptedCookies(['qfs_session' => ''])->postJson('/api/auth/locale', ['locale' => 'es'])->assertUnauthorized();
+        $this->withUnencryptedCookies(['qfs_session' => ''])->postJson('/api/auth/locale', ['locale' => 'hu'])->assertOk()->assertPlainCookie('qfs_locale', 'hu');
+        $this->withUnencryptedCookies(['qfs_session' => '', 'qfs_locale' => 'hu'])->get('/user/user/login')->assertOk()->assertSee('Bejelentkezés');
         $this->assertSame('es', DB::table('User')->where('id', 'investor')->value('locale'));
     }
 

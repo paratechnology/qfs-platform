@@ -36,21 +36,6 @@
   color: #eee;
   background: #18161c;
 }
-.language-compact .language-selector {
-  padding-inline: 6px;
-  gap: 4px;
-}
-.language-compact .language-selector svg {
-  display: none;
-}
-.language-compact .language-selector select {
-  width: 3.25rem;
-  text-align: center;
-  text-transform: lowercase;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
 .wallet-language { display: flex; justify-content: flex-end; margin-bottom: 20px; }
 @keyframes language-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .language-spinner { animation: none; } }
@@ -93,3 +78,15 @@ input[type="email"], input[autocomplete="current-password"], input[autocomplete=
   [dir="rtl"] .dash-main, [dir="rtl"] .adm-main { margin-right: 0; }
   [dir="rtl"] .dash-navigation-progress { right: 0; }
 }
+
+@media (max-width: 640px) {
+  .language-selector select { width: 6.25rem; text-transform: none; }
+  .adm-topbar { flex-wrap: wrap; height: auto; min-height: var(--dash-topbar-h); padding-block: 10px; }
+  .adm-topbar-title { flex: 1; min-width: 76px; }
+  .adm-topbar-title b { font-size: 12px; white-space: normal; line-height: 1.3; }
+  .adm-topbar-actions .language-selector svg, .dash-topbar-actions .language-selector svg { display: none; }
+  .adm-topbar-spacer { display: none; }
+  .adm-topbar-actions { margin-inline-start: auto; }
+}
+
+@media (max-width:640px) { .adm-toolbar { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; } .adm-toolbar > input, .adm-toolbar > button { grid-column:1/-1; } .adm-toolbar > button { justify-self:start; } }

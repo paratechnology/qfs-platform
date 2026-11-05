@@ -10,17 +10,17 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-left">
-                    <div class="reveal hero-label label label-accent">Quantum Financial System</div>
+                    <div class="reveal hero-label label label-accent">{{ $tx('Quantum Financial System') }}</div>
                     <div class="reveal" data-reveal-delay="200">
-                        <h1>Empower Your Financial Future With Quantum Financial System</h1>
+                        <h1>{{ $tx('Empower Your Financial Future With Quantum Financial System') }}</h1>
                     </div>
                     <div class="reveal" data-reveal-delay="400">
                         <div class="hero-bordered">
-                            <p>Decentralized financial system designed to democratize money and eliminate the control of central bank.</p>
+                            <p>{{ $tx('Decentralized financial system designed to democratize money and eliminate the control of central bank.') }}</p>
                         </div>
                         <div class="hero-buttons">
-                            <a class="btn btn-light" href="/user/user/connect">Connect Wallet</a>
-                            <a class="btn-arrow" href="/user/user/register">Join Us <x-icon name="arrow-right" /></a>
+                            <a class="btn btn-light" href="/user/user/connect">{{ $tx('Connect Wallet') }}</a>
+                            <a class="btn-arrow" href="/user/user/register">{{ $tx('Join Us') }} <x-icon name="arrow-right" /></a>
                         </div>
                     </div>
                     <div class="hero-users-row">
@@ -32,11 +32,11 @@
                                 <img class="avatar" src="/avatars/avatar3.jpg" alt="" width="45" height="45">
                             </div>
                             <span class="hero-counter" data-counter="12.5" data-suffix="M+">12.5M+</span>
-                            <span class="hero-users-label"><span class="dot"></span>World Enrolled Users</span>
+                            <span class="hero-users-label"><span class="dot"></span>{{ $tx('World Enrolled Users') }}</span>
                         </div>
                         <div class="reveal hero-award" data-reveal-delay="800">
                             <img src="/award/award_Asset-6-2.png" alt="" width="48" height="44">
-                            <p>2025 The ’ Best QFS Platform</p>
+                            <p>{{ $tx('2025 The ’ Best QFS Platform') }}</p>
                         </div>
                     </div>
                 </div>
@@ -56,37 +56,37 @@
                 <div class="feature-boxes">
                     <div class="reveal feature-box feature-box-dark" data-reveal-duration="1500">
                         <img class="icon" src="/icons/icon2_3-2.png" alt="" width="60" height="60">
-                        <h3>Asset Protection</h3>
-                        <p>Get Onboard today on QFS and get liberated from all financial limitations.</p>
+                        <h3>{{ $tx('Asset Protection') }}</h3>
+                        <p>{{ $tx('Get Onboard today on QFS and get liberated from all financial limitations.') }}</p>
                     </div>
                     <div class="reveal feature-box" data-reveal-delay="100" data-reveal-duration="1500">
                         <img class="icon" src="/icons/icon2_4-humanitarian.svg" alt="" width="60" height="60">
-                        <h3>Humanitarian Project</h3>
-                        <p>Get access to funds once your Humanitarian Project is Approved</p>
+                        <h3>{{ $tx('Humanitarian Project') }}</h3>
+                        <p>{{ $tx('Get access to funds once your Humanitarian Project is Approved') }}</p>
                     </div>
                     <div class="reveal feature-box" data-reveal-delay="200" data-reveal-duration="1500">
                         <img class="icon" src="/icons/icon2_2-2.png" alt="" width="60" height="60">
-                        <h3>Wallet Sync</h3>
-                        <p>Sync Your Asset to Qfs Ledger 3 System</p>
+                        <h3>{{ $tx('Wallet Sync') }}</h3>
+                        <p>{{ $tx('Sync Your Asset to Qfs Ledger 3 System') }}</p>
                     </div>
                     <div class="reveal feature-box" data-reveal-delay="300" data-reveal-duration="1500">
                         <img class="icon" src="/icons/icon2_1-recovery.svg" alt="" width="60" height="60">
-                        <h3>Asset Recovery</h3>
-                        <p>Intercept and recover stolen digital assets with help with International Police.</p>
+                        <h3>{{ $tx('Asset Recovery') }}</h3>
+                        <p>{{ $tx('Intercept and recover stolen digital assets with help with International Police.') }}</p>
                     </div>
                 </div>
                 <div class="features-right">
-                    <div class="reveal label label-muted">QFS is Coming!</div>
+                    <div class="reveal label label-muted">{{ $tx('QFS is Coming!') }}</div>
                     <div class="reveal" data-reveal-delay="200">
-                        <h2>Get Ready for revolutionary Financial System QFS Nesara Official</h2>
+                        <h2>{{ $tx('Get Ready for revolutionary Financial System QFS Nesara Official') }}</h2>
                     </div>
                     <div class="reveal" data-reveal-delay="400">
                         <div class="bordered">
-                            <p>QFS literal meaning is Quantum Financial System, which is an advanced financial system launched to eradicate monopoly on monetary system and for that purpose, a system that comprises of Artificial Intelligence and complex computer programs fully backed by banks is needed.</p>
+                            <p>{{ $tx('QFS literal meaning is Quantum Financial System, which is an advanced financial system launched to eradicate monopoly on monetary system and for that purpose, a system that comprises of Artificial Intelligence and complex computer programs fully backed by banks is needed.') }}</p>
                         </div>
                         <div class="hero-buttons">
-                            <a class="btn" href="/user/user/register">Get Started</a>
-                            <a class="btn-arrow btn-arrow-dark" href="/user/user/login">Login <x-icon name="arrow-right" /></a>
+                            <a class="btn" href="/user/user/register">{{ $tx('Get Started') }}</a>
+                            <a class="btn-arrow btn-arrow-dark" href="/user/user/login">{{ $tx('Login') }} <x-icon name="arrow-right" /></a>
                         </div>
                     </div>
                 </div>
@@ -100,16 +100,16 @@
             <div class="about-section">
                 <div class="about-head">
                     <div>
-                        <div class="reveal label label-accent">About QFS</div>
-                        <div class="reveal" data-reveal-delay="200"><h2>Quantum Financial System</h2></div>
+                        <div class="reveal label label-accent">{{ $tx('About QFS') }}</div>
+                        <div class="reveal" data-reveal-delay="200"><h2>{{ $tx('Quantum Financial System') }}</h2></div>
                     </div>
                     <div class="reveal" data-reveal-delay="400" style="margin-left:auto">
-                        <a class="btn" href="https://q-ledgerpro.live/Original%20Nesara%20PDF-1.pdf" target="_blank" rel="noreferrer">QFS Manual</a>
+                        <a class="btn" href="https://q-ledgerpro.live/Original%20Nesara%20PDF-1.pdf" target="_blank" rel="noreferrer">{{ $tx('QFS Manual') }}</a>
                     </div>
                 </div>
                 <div class="about-cols">
                     <div class="reveal col" data-reveal-delay="400">
-                        <p>QFS literal meaning is Quantum Financial System, which is an advanced financial system launched to eradicate monopoly on monetary system and for that purpose, a system that comprises of Artificial Intelligence and complex computer programs fully backed by banks is needed. Quantum Financial System would be a breakthrough in the world of banking which will lead to a new era of banking. QFS will not be influenced by Government policies, rather it will be entirely backed by tangible assets like Gold, Platinum, Oil and will not be based upon mere piece of papers which have no evidentiary value.</p>
+                        <p>{{ $tx('QFS literal meaning is Quantum Financial System, which is an advanced financial system launched to eradicate monopoly on monetary system and for that purpose, a system that comprises of Artificial Intelligence and complex computer programs fully backed by banks is needed. Quantum Financial System would be a breakthrough in the world of banking which will lead to a new era of banking. QFS will not be influenced by Government policies, rather it will be entirely backed by tangible assets like Gold, Platinum, Oil and will not be based upon mere piece of papers which have no evidentiary value.') }}</p>
                     </div>
                     <div class="reveal col" data-reveal-delay="500">
                         <p>The Global Currency Reset (GCR) and (NESARA GESARA) is upon us! Regulated ISO 20022 Cryptos like these below will change the world and EXPLODE really soon. The central banks are using them for the new QFS. Cryptos like XRP, XLM, XDC, ALGO, IOTA, SHX also Gold and Silver, Let me tell you more if you are interested in Nesara states Rainbow "Treasury" Tokens (XRP and XLM)backed by precious metals Adding Quantum &amp; ISO20022 Internationally Regulated USA Coins also backed by metals.</p>
@@ -133,9 +133,9 @@
     <section class="section services" id="services">
         <div class="container">
             <div class="services-head">
-                <div class="reveal label label-muted">Our Services</div>
+                <div class="reveal label label-muted">{{ $tx('Our Services') }}</div>
                 <div class="reveal" data-reveal-delay="200">
-                    <h2>ISO20022: GLOBAL ECONOMIC SECURITY AND REFORMATION ACT</h2>
+                    <h2>{{ $tx('ISO20022: GLOBAL ECONOMIC SECURITY AND REFORMATION ACT') }}</h2>
                 </div>
             </div>
             <div class="services-grid">
@@ -163,12 +163,12 @@
         <div class="container">
             <div class="whychoose-grid">
                 <div class="whychoose-media">
-                    <a class="play-btn glow-btn" href="/user/user/register" aria-label="Play video"><x-icon name="play" :size="29" /></a>
+                    <a class="play-btn glow-btn" href="/user/user/register" aria-label="{{ $tx('Play video') }}"><x-icon name="play" :size="29" /></a>
                 </div>
                 <div class="whychoose-right">
-                    <div class="reveal label label-accent">Why Choose QFS</div>
+                    <div class="reveal label label-accent">{{ $tx('Why Choose QFS') }}</div>
                     <div class="reveal" data-reveal-delay="200">
-                        <h2>Get to Safety before the collapse of World Banking System</h2>
+                        <h2>{{ $tx('Get to Safety before the collapse of World Banking System') }}</h2>
                     </div>
                     <div class="why-rows">
                         @foreach ([
@@ -229,31 +229,31 @@
                     <img src="/people/Screenshot%202026-09-20%20192819.png" alt="" width="1024" height="869" loading="lazy" decoding="async">
                 </div>
                 <div class="work-right">
-                    <div class="reveal label label-muted">How we work</div>
-                    <div class="reveal" data-reveal-delay="200"><h2>QUANTUM FINANCIAL SYSTEM</h2></div>
+                    <div class="reveal label label-muted">{{ $tx('How we work') }}</div>
+                    <div class="reveal" data-reveal-delay="200"><h2>{{ $tx('QUANTUM FINANCIAL SYSTEM') }}</h2></div>
 
                     <div class="reveal work-step" data-reveal-delay="400">
-                        <h4 class="step-no">Step 01</h4>
+                        <h4 class="step-no">{{ $tx('Step 01') }}</h4>
                         <span class="step-icon" aria-hidden="true"><x-icon name="document" :size="40" /></span>
                         <div class="content">
-                            <h5>Sign Up</h5>
-                            <p>Sign up for onboarding on QFS, then verify your identity.</p>
+                            <h5>{{ $tx('Sign Up') }}</h5>
+                            <p>{{ $tx('Sign up for onboarding on QFS, then verify your identity.') }}</p>
                         </div>
                     </div>
                     <div class="reveal work-step" data-reveal-delay="500">
-                        <h4 class="step-no">Step 02</h4>
+                        <h4 class="step-no">{{ $tx('Step 02') }}</h4>
                         <span class="step-icon" aria-hidden="true"><x-icon name="customer-service" :size="40" /></span>
                         <div class="content">
-                            <h4>Wait for approval</h4>
+                            <h4>{{ $tx('Wait for approval') }}</h4>
                             <p>{{ $tx('Once KYC Submission is Approved, proceed to Sync your wallet with KYC. You can also Apply for Humanitarian Project.') }}</p>
                         </div>
                     </div>
                     <div class="reveal work-step" data-reveal-delay="600">
-                        <h4 class="step-no">Step 03</h4>
+                        <h4 class="step-no">{{ $tx('Step 03') }}</h4>
                         <span class="step-icon" aria-hidden="true"><x-icon name="credit-card" :size="40" /></span>
                         <div class="content">
-                            <h4>Get your new QFS card</h4>
-                            <p>Bid for the new QFS cards that allow you to shop Worldwide</p>
+                            <h4>{{ $tx('Get your new QFS card') }}</h4>
+                            <p>{{ $tx('Bid for the new QFS cards that allow you to shop Worldwide') }}</p>
                         </div>
                     </div>
                 </div>
@@ -266,13 +266,13 @@
         <div class="container">
             <div class="getstarted-grid">
                 <div class="getstarted-left">
-                    <div class="reveal label label-accent">Get Started</div>
-                    <div class="reveal" data-reveal-delay="200"><h2>Your Financial Freedom begins Here</h2></div>
+                    <div class="reveal label label-accent">{{ $tx('Get Started') }}</div>
+                    <div class="reveal" data-reveal-delay="200"><h2>{{ $tx('Your Financial Freedom begins Here') }}</h2></div>
                     <div class="reveal" data-reveal-delay="400">
-                        <p>The History of money is entering a new era, You might just wake up with no money. We might just wake up one day with no money. Convert all paper money into a digitally gold backed currency.</p>
+                        <p>{{ $tx('The History of money is entering a new era, You might just wake up with no money. We might just wake up one day with no money. Convert all paper money into a digitally gold backed currency.') }}</p>
                         <div class="hero-buttons">
-                            <a class="btn btn-light" href="/user/user/register">Get Started</a>
-                            <a class="btn-arrow" href="mailto:support@q-arculuspro.live">Contact Us <x-icon name="arrow-right" /></a>
+                            <a class="btn btn-light" href="/user/user/register">{{ $tx('Get Started') }}</a>
+                            <a class="btn-arrow" href="mailto:support@q-arculuspro.live">{{ $tx('Contact Us') }} <x-icon name="arrow-right" /></a>
                         </div>
                     </div>
                 </div>

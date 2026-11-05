@@ -35,7 +35,10 @@ final class CryptoFundsController
         }
         $asset = CryptoAssets::get($data['assetKey']);
         $price = CryptoPrices::require($data['assetKey']);
-        if ($data['purpose'] === 'CRYPTO_WITHDRAWAL') {
+        if ($data['purpose'] === 'INVESTMENT' && isset($data['quantity'], $data['amount'])) {
+            Guard::fail('AMOUNT', 'Enter either a USD amount or a crypto quantity, not both.', 400);
+        }
+        if ($data['purpose'] === 'CRYPTO_WITHDRAWAL' || ($data['purpose'] === 'INVESTMENT' && isset($data['quantity']))) {
             $units = CryptoAssets::units($data['assetKey'], $data['quantity'] ?? null);
             try {
                 $cents = CryptoAssets::usd($data['assetKey'], $units, $price['rate']);

@@ -3,14 +3,14 @@
 
 @section('admin-content')
 <div x-data="admList({ endpoint: '/api/admin/loans', filters: { status: 'ALL' } })">
-    <div class="adm-page-head"><div><h1>Loans</h1><p>Applications from users and their current review status.</p></div></div>
+    <div class="adm-page-head"><div><h1>{{ $tx('Loans') }}</h1><p>Applications from users and their current review status.</p></div></div>
 
     <div class="adm-inline-form">
         <select class="adm-select" x-model="filters.status" @change="search()">
-            <option value="ALL">All statuses</option>
-            <option value="PENDING">Pending</option>
-            <option value="APPROVED">Approved</option>
-            <option value="REJECTED">Rejected</option>
+            <option value="ALL">{{ $tx('All statuses') }}</option>
+            <option value="PENDING">{{ $tx('Pending') }}</option>
+            <option value="APPROVED">{{ $tx('Approved') }}</option>
+            <option value="REJECTED">{{ $tx('Rejected') }}</option>
         </select>
     </div>
 
@@ -18,7 +18,7 @@
 
     <div class="adm-table-wrap" x-show="rows.length" x-cloak>
         <table class="adm-table">
-            <thead><tr><th>User</th><th>Loan</th><th>Amount</th><th>Status</th><th>Created</th><th class="num"></th></tr></thead>
+            <thead><tr><th>{{ $tx('User') }}</th><th>{{ $tx('Loan') }}</th><th>{{ $tx('Amount') }}</th><th>{{ $tx('Status') }}</th><th>{{ $tx('Created') }}</th><th class="num"></th></tr></thead>
             <tbody>
                 <template x-for="l in rows" :key="l.id">
                     <tr>
@@ -30,8 +30,8 @@
                         <td class="num">
                             <template x-if="l.status === 'PENDING'">
                                 <div class="adm-actions-cell">
-                                    <button class="adm-btn good sm" @click="openDecision(l, 'APPROVE')">Approve</button>
-                                    <button class="adm-btn danger sm" @click="openDecision(l, 'REJECT')">Reject</button>
+                                    <button class="adm-btn good sm" @click="openDecision(l, 'APPROVE')">{{ $tx('Approve') }}</button>
+                                    <button class="adm-btn danger sm" @click="openDecision(l, 'REJECT')">{{ $tx('Reject') }}</button>
                                 </div>
                             </template>
                             <template x-if="l.status !== 'PENDING'"><span class="adm-cell-sub" x-text="cap(l.status)"></span></template>
@@ -49,14 +49,14 @@
         <div class="adm-modal" role="dialog" aria-modal="true">
             <div class="adm-modal-head">
                 <h3 x-text="(decision && decision.action === 'APPROVE' ? 'Approve' : 'Reject') + ' loan'"></h3>
-                <button class="adm-modal-close" aria-label="Close" :disabled="decisionBusy" @click="closeDecision()"><x-dash-icon name="close" /></button>
+                <button class="adm-modal-close" aria-label="{{ $tx('Close') }}" :disabled="decisionBusy" @click="closeDecision()"><x-dash-icon name="close" /></button>
             </div>
             <div class="adm-modal-body"><fieldset class="adm-modal-fieldset" :disabled="decisionBusy">
                 <p class="adm-confirm-text"><b style="color:var(--dash-text)" x-text="decision && decision.row.userName"></b> · <span x-text="decision && decision.row.amount"></span></p>
                 <div class="adm-field"><label>{{ $tx('Admin note (optional, sent to the user)') }}</label><textarea class="adm-textarea" x-model="note"></textarea></div>
                 <template x-if="decisionError"><div class="adm-banner error" x-text="decisionError"></div></template>
                 <div class="adm-row-end">
-                    <button class="adm-btn ghost" @click="closeDecision()" :disabled="decisionBusy">Cancel</button>
+                    <button class="adm-btn ghost" @click="closeDecision()" :disabled="decisionBusy">{{ $tx('Cancel') }}</button>
                     <button class="adm-btn" :class="decision && decision.action === 'APPROVE' ? 'good' : 'danger'" :disabled="decisionBusy" @click="confirmDecision('/api/admin/loans/' + decision.row.id)"><span x-text="decisionBusy ? 'Working…' : (decision && decision.action === 'APPROVE' ? 'Approve' : 'Reject')"></span></button>
                 </div>
             </fieldset></div>
