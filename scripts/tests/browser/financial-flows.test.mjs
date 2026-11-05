@@ -19,7 +19,7 @@ function app(handler, {locale="en",storage=new Map()}={}) {
     sessionStorage:{getItem:key=>storage.get(key)??null,setItem:(key,value)=>storage.set(key,value),removeItem:key=>storage.delete(key)},localStorage:{getItem:()=>null,setItem(){}},
     fetch:async(path,options={})=>{let body=options.body instanceof FormData?options.body:options.body?JSON.parse(options.body):undefined;const call={path,method:options.method||"GET",body,headers:options.headers};calls.push(call);const result=await handler(call);const status=result?.status||200;return {ok:status>=200&&status<300,status,json:async()=>result?.error?{ok:false,error:result.error}:{ok:true,data:result?.data??result}};}};
   vm.createContext(context);
-  for(const file of ["dash-money.js","dash-crypto.js","dashboard.js","dash-forms.js","dash-views.js","admin.js"]){vm.runInContext(readFileSync(new URL("../../public/js/"+file,import.meta.url),"utf8"),context,{filename:file});}
+  for(const file of ["dash-money.js","dash-crypto.js","dashboard.js","dash-forms.js","dash-views.js","admin.js","wallet.js"]){vm.runInContext(readFileSync(new URL("../../public/js/"+file,import.meta.url),"utf8"),context,{filename:file});}
   return {factories,calls,events,context,storage};
 }
 const quote = asset => ({id:"quote-1",assetKey:asset,symbol:asset,amount:"$500.00",amountCents:50000,quantity:"0.25",expiresAt:new Date(Date.now()+60000).toISOString()});
@@ -156,4 +156,27 @@ test("admin account editing retains corrections on failure and clears secrets wh
  await f.saveProfile();assert.equal(f.editing.id,"member");assert.equal(f.editForm.name,"Corrected name");assert.match(f.error,/password/);assert.equal(f.busy,false);
  f.closeEdit();assert.equal(f.editing,null);assert.equal(Object.keys(f.editForm).length,0);assert.equal(f.error,"");
  await f.saveProfile();assert.equal(a.calls.length,1);
+});
+
+
+test("wallet fallback starts idle and appears only after a failed user connection attempt", async () => {
+ const a=app(()=>({wallets:[]}));const f=a.factories.connectWallet();
+ assert.equal(f.status.kind,"idle");assert.equal(f.connectionFailed,false);assert.equal(f.manualOpen,false);assert.equal(f.reviewOpen,false);
+ await f.submitReview();assert.equal(a.calls.length,0);
+ await f.connect();assert.equal(f.connectionFailed,true);assert.equal(f.status.kind,"error");assert.equal(f.manualOpen,false);assert.equal(f.reviewOpen,false);assert.equal(a.calls.length,0);
+});
+
+test("manual wallet review submits only public metadata and reloads owner status",async()=>{
+ const a=app(c=>c.method==="GET"?{items:[{id:"review",status:"UNDER_REVIEW"}]}:{data:{id:"review",status:"UNDER_REVIEW"}});const f=a.factories.connectWallet();a.context.location.pathname="/user/user/connect";
+ f.connectionFailed=true;f.reviewOpen=true;f.reviewProvider="Ledger";f.reviewAsset="ETH";f.reviewAddress="0x"+"1".repeat(40);
+ await f.submitReview();const body=a.calls[0].body;assert.equal(body.subject,"MANUAL_REVIEW");assert.equal(body.walletProvider,"Ledger");assert.equal(body.publicAddress,"0x"+"1".repeat(40));assert.deepEqual(Object.keys(body).sort(),["assetKey","pageUrl","publicAddress","subject","walletProvider"]);
+ assert.equal(f.reviewDone,true);assert.equal(f.reviewOpen,false);assert.equal(f.reviewBusy,false);assert.equal(f.reviews[0].status,"UNDER_REVIEW");assert.equal(f.wallets.length,0);
+});
+
+
+test("retrying a failed wallet connection clears fallback after successful signature verification",async()=>{
+ const address="0x"+"1".repeat(40);const a=app(c=>c.path==="/api/wallet/challenge"?{message:"Verify wallet",nonce:"nonce"}:c.path==="/api/wallet/verify"?{alreadyConnected:false}:{wallets:[{address,chainId:1}]});const f=a.factories.connectWallet();
+ await f.connect();assert.equal(f.connectionFailed,true);f.manualOpen=true;f.reviewOpen=true;
+ a.context.window.ethereum={request:async({method})=>method==="eth_requestAccounts"?[address]:method==="eth_chainId"?"0x1":"0x"+"1".repeat(130)};
+ await f.connect();assert.equal(f.status.kind,"done");assert.equal(f.connectionFailed,false);assert.equal(f.manualOpen,false);assert.equal(f.reviewOpen,false);assert.equal(f.wallets.length,1);assert(a.calls.some(c=>c.path==="/api/wallet/verify"));
 });

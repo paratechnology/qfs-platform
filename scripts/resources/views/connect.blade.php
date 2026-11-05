@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $tx('Connect Wallet') }} | QFS</title>
+    <title>{{ $tx('Secure Wallet') }} | QFS</title>
     <meta name="robots" content="noindex">
     <link rel="icon" href="/favicon.ico">
     @include('partials.head-fonts')
@@ -20,7 +20,7 @@
         <div class="wc-wrap" x-data="connectWallet()">
             <a class="wc-back" href="/user/user/dashboard">← Back to dashboard</a>
             <div class="wc-head">
-                <h1>{{ $tx('Connect Wallet') }}</h1>
+                <h1>{{ $tx('Secure Wallet') }}</h1>
                 <p>{{ $tx('Connect your Ethereum or BNB Smart Chain wallet by signing a message. Connecting verifies ownership and never moves money on its own.') }}</p>
             </div>
 
@@ -49,7 +49,7 @@
                     </label>
                 </template>
                 <div class="wc-actions">
-                    <button type="button" class="wc-btn wc-btn-primary" @click="connect()" :disabled="working || installed !== true" :aria-busy="working">
+                    <button type="button" class="wc-btn wc-btn-primary" @click="connect()" :disabled="working || installed === null" :aria-busy="working">
                         <span x-text="wallets.length > 0 ? 'Connect another wallet' : 'Connect wallet'"></span>
                     </button>
                     <button type="button" class="wc-btn wc-btn-ghost" x-show="installed === false || (!listLoading && wallets.length === 0)" x-cloak @click="openReport()">
@@ -61,7 +61,7 @@
                     <p class="wc-status" role="status"><span class="wc-spinner" aria-hidden="true"></span><span x-text="status.step"></span></p>
                 </template>
                 <template x-if="status.kind === 'error'">
-                    <p class="wc-status wc-status-error" role="alert" x-text="status.message"></p>
+                    <div class="wc-status wc-status-error" role="alert"><strong x-show="connectionFailed">Wallet connection failed</strong><span x-text="status.message"></span></div>
                 </template>
                 <template x-if="status.kind === 'done'">
                     <p class="wc-status wc-status-ok" role="status" x-text="status.message"></p>
@@ -84,9 +84,9 @@
                 </section>
             </template>
 
-            <section class="wc-card wc-manual">
+            <section class="wc-card wc-manual" x-show="connectionFailed" x-cloak>
                 <button type="button" class="wc-manual-toggle" :aria-expanded="manualOpen" aria-controls="wc-manual-form" @click="manualOpen = !manualOpen">
-                    <span x-text="manualOpen ? 'Hide manual verification' : 'Automatic connection failed? Verify manually'"></span>
+                    <span x-text="manualOpen ? 'Hide signature verification' : 'Verify with a signed message'"></span>
                 </button>
                 <div id="wc-manual-form" x-show="manualOpen" x-cloak>
                     <p class="wc-manual-intro">{{ $tx('Enter your public Ethereum address, sign the one-time message in your wallet, then paste the signature. Never enter your recovery phrase or private key here.') }}</p>
@@ -107,6 +107,42 @@
                         </div>
                     </template>
                 </div>
+            </section>
+
+            <section class="wc-card" x-show="connectionFailed && !reviewDone" x-cloak>
+                <button type="button" class="wc-manual-toggle" :aria-expanded="reviewOpen" aria-controls="wc-review-form" @click="reviewOpen = !reviewOpen">Request manual wallet review</button>
+                <form id="wc-review-form" x-show="reviewOpen" @submit.prevent="submitReview()" :aria-busy="reviewBusy" x-cloak>
+                    <p class="wc-manual-intro">Submit your wallet provider and public receiving address for support review. A review does not prove ownership or secure your wallet. Never submit a seed phrase, private key or verification secret.</p>
+                    <fieldset class="wc-review-fields" :disabled="reviewBusy">
+                        <label class="wc-field" for="wc-review-provider">Preferred wallet</label>
+                        <select id="wc-review-provider" class="wc-input" x-model="reviewProvider" required>
+                            @foreach (\App\Http\Controllers\WalletIssueController::PROVIDERS as $provider)<option value="{{ $provider }}">{{ $provider }}</option>@endforeach
+                        </select>
+                        <label class="wc-field" for="wc-review-network">Asset and network</label>
+                        <select id="wc-review-network" class="wc-input" x-model="reviewAsset" required>
+                            @foreach (\App\Support\CryptoAssets::ALL as $key => $asset)<option value="{{ $key }}">{{ $asset['symbol'] }} · {{ $asset['network'] }}</option>@endforeach
+                        </select>
+                        <label class="wc-field" for="wc-review-address">Public receiving address</label>
+                        <input id="wc-review-address" class="wc-input" x-model="reviewAddress" required maxlength="200" autocomplete="off" spellcheck="false" dir="ltr">
+                        <p class="wc-status wc-status-error" role="alert" x-show="reviewError" x-text="reviewError" x-cloak></p>
+                        <div class="wc-actions wc-manual-action">
+                            <button type="submit" class="wc-btn wc-btn-primary"><span class="wc-spinner" x-show="reviewBusy" aria-hidden="true"></span><span x-text="reviewBusy ? 'Submitting…' : 'Submit for review'"></span></button>
+                            <button type="button" class="wc-btn wc-btn-ghost" @click="reviewOpen = false">Cancel</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+            <p class="wc-status wc-status-ok" role="status" x-show="reviewDone" x-cloak>Under review. Your public-address request has been sent to the review team.</p>
+            <section class="wc-card" x-show="reviews.length || reviewsError" x-cloak>
+                <div class="wc-review-heading"><h2 class="wc-app-title">Manual wallet reviews</h2><button type="button" class="wc-btn wc-btn-ghost" @click="loadReviews()">Refresh status</button></div>
+                <p class="wc-status wc-status-error" x-show="reviewsError" role="alert">Review status could not be loaded. Try refreshing it.</p>
+                <template x-for="review in reviews" :key="review.id"><article class="wc-review-item">
+                    <strong x-text="review.walletProvider"></strong><span class="wc-review-status" x-text="reviewStatus(review.status)"></span>
+                    <p class="wc-review-address" dir="ltr" x-text="review.publicAddress"></p>
+                    <p class="wc-meta" x-text="review.assetKey"></p>
+                    <p class="wc-manual-intro" x-show="review.reviewNote" x-text="review.reviewNote"></p>
+                    <p class="wc-meta" x-show="review.status === 'APPROVED'">Review approval does not verify ownership or alter wallet security. Use a signed message to connect.</p>
+                </article></template>
             </section>
 
             <section class="wc-list">

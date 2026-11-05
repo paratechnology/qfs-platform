@@ -344,3 +344,11 @@
 .wc-spinner { display: inline-block; width: 12px; height: 12px; margin-inline-end: 8px; vertical-align: -2px; border: 2px solid currentColor; border-inline-end-color: transparent; border-radius: 50%; animation: wc-spin .8s linear infinite; }
 @keyframes wc-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .wc-spinner { animation: none; } }
+
+.wc-status-error > strong { display: block; margin-bottom: 5px; }
+.wc-review-fields { border: 0; padding: 0; margin: 0; min-width: 0; }
+.wc-review-heading { display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.wc-review-item { padding: 20px 0; border-bottom: 1px solid var(--dash-border); }
+.wc-review-item:last-child { border-bottom: 0; padding-bottom: 0; }
+.wc-review-address { overflow-wrap: anywhere; font-size: 13px; margin: 12px 0 6px; }
+.wc-review-status { display: inline-block; margin-inline-start: 10px; font-size: 12px; color: var(--dash-muted); }

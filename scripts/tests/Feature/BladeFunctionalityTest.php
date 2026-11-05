@@ -176,6 +176,18 @@ class BladeFunctionalityTest extends TestCase
         $this->assertSame(1, DB::table('AuditLog')->where('action', 'USER.DELETE')->count());
     }
 
+    public function test_public_address_review_approval_does_not_connect_a_wallet_or_change_balances(): void
+    {
+        DB::table('Account')->where('userId', 'member')->update(['balanceCents' => 10000, 'availableCents' => 10000]);
+        $id = $this->member()->postJson('/api/wallet/issues', ['subject' => 'MANUAL_REVIEW', 'walletProvider' => 'MetaMask',
+            'assetKey' => 'ETH', 'publicAddress' => '0x'.str_repeat('1', 40)])->assertOk()->json('data.id');
+        $this->withUnencryptedCookie('qfs_session', $this->admin)->patchJson('/api/admin/wallet-issues/'.$id, ['action' => 'APPROVE'])->assertOk();
+        $this->assertSame(0, DB::table('WalletConnection')->count());
+        $this->assertSame(10000, DB::table('Account')->where('userId', 'member')->value('availableCents'));
+        $this->assertSame('Wallet review approved', DB::table('Notification')->where('userId', 'member')->value('title'));
+        $this->member()->get('/user/user/connect')->assertOk()->assertSee('Request manual wallet review')->assertDontSee('<textarea id="seed', false);
+    }
+
     public function test_hungarian_auth_pages_and_full_language_names_are_available(): void
     {
         $this->withUnencryptedCookie('qfs_locale', 'hu')->get('/admin/login')->assertOk()

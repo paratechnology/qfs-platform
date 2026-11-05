@@ -159,6 +159,16 @@
       chainId: null,
       liveAccount: null,
       manualOpen: false,
+      connectionFailed: false,
+      reviewOpen: false,
+      reviewBusy: false,
+      reviewError: "",
+      reviewDone: false,
+      reviews: [],
+      reviewsError: false,
+      reviewProvider: "MetaMask",
+      reviewAsset: "ETH",
+      reviewAddress: "",
       manualAddress: "",
       manualSignature: "",
       manualChallenge: null,
@@ -177,6 +187,7 @@
 
       init() {
         this.load();
+        this.loadReviews();
         this.appLinks = walletAppLinks(window.location.origin);
         this._stopDiscovery = discoverWallets((available) => {
           this.browserWallets = available;
@@ -231,6 +242,10 @@
       async connect() {
         if (this._lock) return;
         this._lock = true;
+        this.connectionFailed = false;
+        this.reviewDone = false;
+        this.manualOpen = false;
+        this.reviewOpen = false;
         this.status = { kind: "working", step: "Opening your wallet…" };
         try {
           const [account] = await requestAccounts();
@@ -257,10 +272,37 @@
           this.status = { kind: "done", message: res.alreadyConnected ? "Wallet reconnected." : "Wallet connected and verified." };
         } catch (err) {
           this.status = { kind: "error", message: describeProviderError(err) };
-          this.manualOpen = true;
+          this.connectionFailed = true;
         } finally {
           this._lock = false;
         }
+      },
+
+      async loadReviews() {
+        try {
+          const response = await fetch("/api/wallet/issues", { cache: "no-store" });
+          const json = await response.json();
+          if (!response.ok || !json?.ok) throw new Error("Could not load review status.");
+          this.reviews = json.data.items || [];
+          this.reviewsError = false;
+        } catch { this.reviewsError = true; }
+      },
+
+      async submitReview() {
+        if (this.reviewBusy || !this.connectionFailed) return;
+        this.reviewBusy = true; this.reviewError = "";
+        try {
+          await postJson("/api/wallet/issues", { subject: "MANUAL_REVIEW", walletProvider: this.reviewProvider,
+            assetKey: this.reviewAsset, publicAddress: this.reviewAddress.trim(), pageUrl: location.pathname });
+          this.reviewDone = true; this.reviewOpen = false; this.reviewAddress = "";
+          this.connectionFailed = false; this.manualOpen = false; this.status = { kind: "idle" };
+          await this.loadReviews();
+        } catch (error) { this.reviewError = error.message || "Could not submit the review."; }
+        finally { this.reviewBusy = false; }
+      },
+
+      reviewStatus(status) {
+        return { UNDER_REVIEW: "Under review", APPROVED: "Review approved", REJECTED: "Review declined" }[status] || status;
       },
 
       async switchNetwork() {
@@ -316,6 +358,7 @@
             chainId: ETH_MAINNET.chainId,
           });
           await this.load();
+          this.connectionFailed = false; this.manualOpen = false; this.reviewOpen = false;
           this.manualChallenge = null;
           this.manualSignature = "";
           this.status = { kind: "done", message: result.alreadyConnected ? "Wallet reconnected." : "Wallet connected and verified." };

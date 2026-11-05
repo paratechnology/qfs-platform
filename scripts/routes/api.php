@@ -59,6 +59,7 @@ Route::post('/wallet', [WalletController::class, 'disconnect']);
 Route::post('/wallet/challenge', [WalletController::class, 'challenge']);
 Route::post('/wallet/verify', [WalletController::class, 'verify']);
 Route::post('/wallet/issues', [WalletIssueController::class, 'store'])->middleware('throttle:5,1');
+Route::get('/wallet/issues', [WalletIssueController::class, 'mine']);
 Route::get('/admin/wallet-issues', [WalletIssueController::class, 'index']);
 Route::patch('/admin/wallet-issues/{id}', [WalletIssueController::class, 'update']);
 Route::delete('/admin/wallet-issues/{id}', [WalletIssueController::class, 'destroy']);

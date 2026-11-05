@@ -74,6 +74,7 @@ final class AccountEmail
     {
         $path = match (true) {
             $title === 'Account registration successful.' => '/user/user/login',
+            str_starts_with(strtolower($title), 'wallet review ') => '/user/user/connect',
             str_starts_with(strtolower($title), 'withdrawal ') => '/user/user/dashboard/withdrawals',
             str_starts_with(strtolower($title), 'loan ') => '/user/user/dashboard/loans',
             str_contains(strtolower($title), 'verification') => '/user/user/dashboard/verification',
